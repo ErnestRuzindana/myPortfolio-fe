@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;800&display=swap');
+
+
+body{
+    font-family: Poppins;
+    margin: 0;
+}
+
+
+/* Navigation bar */
+
+.navbar{
+    display: grid;
+    grid-template-columns: 30% 55% 15%;
+    align-items: center;
+}
+
+.logo a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #2E667D;
+}
+
+.logo {
+    /* padding-left: 60px; */
+    text-align: center;
+    font-size: 25px;
+}
+
+.navlinks ul{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.navlinks ul li{
+    list-style-type: none;
+}
+
+.navlinks ul li a{
+    text-decoration: none;
+    color: #2E667D;
+    font-size:20px;
+}
+
+.loginlinks a{
+    text-decoration: none;
+    color: #2E667D;
+    font-size:20px;
+}
+
+.loginlinks{
+    border: 3px solid #2E667D;
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin-right: 37px;
+}
+
+.loginlinks:hover{
+    color: white;
+    background-color: #2E667D;
+}
+
+.loginlinks a:hover{
+    color: white;
+}
+
+.navlinks ul li a:hover{
+    color: orangered;
+
+}
+
+/* End of navigation bar */
+
+
+.profile {
+    background-image: url('./images/DELTA_218.jpg');
+    height: 450px;
+    width: 100%;
+    background-size: cover;
+    padding-top: 90px;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: -1;
+}
+
+div.intro {
+    background-color: lightblue;
+    width: 20%;
+    height: 15%;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+}
+
+
+
+div.about{
+    background-color: #2E667D;
+    margin-top: -20px;
+    padding: 20px;
+}
+
+div.myAbout{
+    border: 1px dotted white;
+    margin: 200px 10px 100px;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    gap: 100px;
+    padding: 50px;
+    border-radius: 30px;
+}
+
+div.left{
+    text-align: center;
+    padding: 10px 90px 70px 20px;
+}
+
+div.left p{
+    text-align: justify;
+}
+
+div.right img{
+    height: 240px;
+    margin-bottom: -7px;
+    border-radius: 10%;
+}
+
+div.homeboxes{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+}
+
+div.boxes img{
+    height: 200px;
+    width: 280px;
+    padding: 10px;
+}
+
+div.boxes{
+    background-color: white;
+    height: 300px;
+    margin-top: -150px;
+}
