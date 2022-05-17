@@ -74,7 +74,7 @@ body{
 
 
 .profile {
-    background-image: url('./images/DELTA_218.jpg');
+    background-image: url('../images/DELTA_218.jpg');
     height: 450px;
     width: 100%;
     background-size: cover;
@@ -85,12 +85,12 @@ body{
 }
 
 div.intro {
-    background-color: lightblue;
+    /* background-color: lightblue; */
     width: 20%;
     height: 15%;
     padding: 20px;
     position: absolute;
-    top: 0;
+    top: 150px;
 }
 
 
@@ -118,6 +118,7 @@ div.left{
 
 div.left p{
     text-align: justify;
+    color: white;
 }
 
 div.right img{
@@ -143,3 +144,19 @@ div.boxes{
     height: 300px;
     margin-top: -150px;
 }
+
+button.downloadCV{
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: border-radius 1s, padding 1s, background-color 1s, color 1s;
+    /* transition-delay: 1s; */
+}
+
+button.downloadCV:hover{
+    padding: 10px 15px 10px 15px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}
+
