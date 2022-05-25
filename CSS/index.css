@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;800&display=swap');
 
+:root {
+    --myColor: #cba10a;
+    --myBackground: black;
+    --Sectionbackground: rgb(236, 236, 220);
+}
 
 *{
     box-sizing: border-box;
@@ -7,14 +12,41 @@
 
 
 body{
-    font-family: Poppins;
+    font-family: Poppins,sans-serif;
     margin: 0;
+    overflow-x: hidden;
 }
 
 
-/* Navigation bar */
 
-.navbar{
+
+/* custom scrollbar */
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 0;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--myColor);
+}
+/* End of custom scrollbar */
+
+
+
+
+
+
+/* Navigation bar */
+section.nav{
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0.1px 1px 2px grey;
+    z-index: 2;
+}
+
+div.navbar{
     display: grid;
     grid-template-columns: 30% 55% 15%;
     align-items: center;
@@ -23,11 +55,10 @@ body{
 .logo a{
     text-decoration: none;
     font-weight: bold;
-    color: #2E667D;
+    color: var(--myBackground);
 }
 
 .logo {
-    /* padding-left: 60px; */
     text-align: center;
     font-size: 25px;
 }
@@ -44,19 +75,21 @@ body{
 
 .navlinks ul li a{
     text-decoration: none;
-    color: #2E667D;
-    font-size:20px;
+    color: var(--myBackground);
+    font-size: 14px;
+    font-weight: bold;
 }
 
 a.loginlinks{
     text-decoration: none;
     text-align: center;
-    color: #2E667D;
-    font-size:20px;
+    color: var(--myBackground);
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .loginlinks{
-    border: 3px solid #2E667D;
+    border: 3px solid var(--myColor);
     border-radius: 20px;
     padding: 5px 15px;
     margin-right: 37px;
@@ -64,7 +97,7 @@ a.loginlinks{
 
 .loginlinks:hover{
     color: white;
-    background-color: #2E667D;
+    background-color: var(--myColor);
 }
 
 .loginlinks a:hover{
@@ -72,16 +105,24 @@ a.loginlinks{
 }
 
 .navlinks ul li a:hover{
-    color: orangered;
+    color: var(--myColor);
 
 }
+
 
 /* End of navigation bar */
 
 
+
+
+
+
+/* Home section */
+
 .profile {
     background-image: url('../images/DELTA_218.jpg');
-    height: 450px;
+    background-attachment: fixed;
+    height: 500px;
     width: 100%;
     background-size: cover;
     padding-top: 90px;
@@ -92,24 +133,41 @@ a.loginlinks{
 
 div.intro {
     /* background-color: lightblue; */
-    width: 20%;
-    height: 15%;
+    width: 60%;
+    height: 50%;
     padding: 20px;
     position: absolute;
-    top: 150px;
+    top: 70px;
 }
 
+div.intro p{
+    color: var(--myColor);
+    font-size: 30px;
+    font-weight: bold;
+}
 
+div.intro p span{
+    color: var(--myBackground);
+}
+
+/* End of home section */
+
+
+
+
+
+/* About section */
 
 div.about{
-    background-color: #2E667D;
+    background-color: var(--Sectionbackground);
     margin-top: -20px;
-    padding: 20px;
+    padding: 20px 150px 20px 150px;
 }
 
 div.myAbout{
-    border: 1px dotted white;
-    margin: 200px 10px 100px;
+    background-color: var(--Sectionbackground); 
+    border: 3px dotted var(--myColor);
+    margin: 150px 10px 100px;
     display: grid;
     grid-template-columns: 20% 80%;
     gap: 100px;
@@ -118,20 +176,32 @@ div.myAbout{
 }
 
 div.left{
+
     text-align: center;
     padding: 10px 90px 70px 20px;
 }
+div.left h2, h5{
+    color: var(--myBackground);
+}
 
 div.left p{
+    font-family: calibri;
+    font-size: 16px;
     text-align: justify;
-    color: white;
+    color: var(--myBackground);
+    padding-left: 70px;
+    padding-right: 70px;
 }
 
 div.right img{
+    margin-top: 40px;
     height: 240px;
     margin-bottom: -7px;
-    border-radius: 10%;
+    border-radius: 10px;
+    border: 1px solid var(--myBackground);
 }
+
+
 
 div.homeboxes{
     display: grid;
@@ -139,40 +209,76 @@ div.homeboxes{
     justify-content: space-around;
 }
 
+
+
+
+
 div.boxes img{
-    height: 200px;
+    height: 220px;
     width: 280px;
-    padding: 10px;
+    padding: 20px;
+    background-color: white;
+    transition: all 1s;
+}
+
+div.boxes img:hover{
+    border-radius: 50%;
+}
+
+div.boxes p{
+    color: var(--myBackground);
+    font-weight: bold;
+    text-align: center;
+}
+
+div.boxes p:hover{
+    color: var(--myBackground);
 }
 
 div.boxes{
-    background-color: white;
+    background-color:white;
     height: 300px;
     margin-top: -150px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px;
+    padding: 20px;
+    transition: all 1s;
 }
+
+div.boxes:hover{
+    background-color: var(--myColor);
+    transform: scale(0.9, 0.9);
+}
+
 
 button.downloadCV{
     padding: 5px 10px 5px 10px;
     border-radius: 15px;
     cursor: pointer;
-    transition: border-radius 1s, padding 1s, background-color 1s, color 1s, box-shadow 1s;
-    box-shadow: 1px 3px 5px black;
+    /* transition: border-radius 1s, padding 1s, background-color 1s, color 1s, box-shadow 1s; */
+    transition: all 1s;
+    box-shadow: 1px 3px 5px gray;
 }
 
 button.downloadCV:hover{
-    padding: 10px 15px 10px 15px;
-    border-radius: 5px;
-    background-color: black;
+    /* padding: 10px 15px 10px 15px; */
+    transform: scale(1.1, 1.1);
+    border: var(--myColor);
+    border-radius: 15px;
+    background-color: var(--myBackground);
     color: white;
-    box-shadow: 1px 3px 3px black;
 }
+
+
+/* End of about section */
+
 
 
 
 /* section skills */
 
 section.Skills{
-    padding: 150px;
+    padding: 50px 150px 50px 150px;
 }
 
 div.mySkillsTitle{
@@ -192,73 +298,78 @@ div.skills_boxes{
     text-align: center;
     padding: 30px;
     border-radius: 10px;
+    margin-top: 20px;
     margin-bottom: 50px;
     cursor: pointer;
 }
 
+div.skills_text p{
+    font-family: calibri;
+}
+
 div.box1{
-    transition: height 1s, width 1s, background-color 1s, color 1s;
+    /* transition: transform 1s, background-color 1s, color 1s; */
+    transition: all 1s;
 }
 
 div.box1:hover{
     background-color: rgb(10, 76, 147);
-    height: 86%;
-    width: 102%;
+    transform: scale(1.1, 1.1);
     color: white;
 }
 
 div.box2{
-    transition: height 1s, width 1s, background-color 1s, color 1s;
+    /* transition: transform 1s, background-color 1s, color 1s; */
+    transition: all 1s;
 }
 
 div.box2:hover{
-    background-color: #5D6D7E;
-    height: 86%;
-    width: 102%;
+    background-color: #4A235A;
+    transform: scale(1.1, 1.1);
     color: white;
 }
 
 div.box3{
-    transition: height 1s, width 1s, background-color 1s, color 1s;
+    /* transition: transform 1s, background-color 1s, color 1s; */
+    transition: all 1s;
 }
 
 div.box3:hover{
     background-color: #1C2833;
-    height: 86%;
-    width: 102%;
+    transform: scale(1.1, 1.1);
     color: white;
 }
 
 div.box4{
-    transition: height 1s, width 1s, background-color 1s, color 1s;
+    /* transition: transform 1s, background-color 1s, color 1s; */
+    transition: all 1s;
 }
 
 div.box4:hover{
-    background-color: burlywood;
-    height: 86%;
-    width: 102%;
+    background-color: #5D6D7E;
+    transform: scale(1.1, 1.1);
     color: white;
 }
 
 div.box5{
-    transition: height 1s, width 1s, background-color 1s, color 1s;
+    /* transition: transform 1s, background-color 1s, color 1s; */
+    transition: all 1s;
 }
 
 div.box5:hover{
-    background-color: #5D6D7E;
-    height: 86%;
-    width: 102%;
+    background-color: #6E2C00;
+    transform: scale(1.1, 1.1);
     color: white;
 }
 
 div.box6{
-    transition: height 1s, width 1s, background-color 1s, color 1s;
+    /* transition: transform 1s, background-color 1s, color 1s; */
+    transition: all 1s;
 }
 
 div.box6:hover{
     background-color: #2E667D;
-    height: 86%;
-    width: 102%;
+    transform: scale(1.1, 1.1);
     color: white;
 }
 
@@ -272,9 +383,157 @@ div.skills_icons{
 div.skills_icons i{
     color:white;
     font-size: 35px;
-    background-color: #2E667D;
+    background-color: var(--myColor);
     padding: 15px;
     border-radius: 50%;
 }
 
-/* End of section */
+/* End of skills section */
+
+
+
+/* Contact section */
+div.contactform form{
+    display: flex;
+    flex-direction: column;
+}
+
+div.contactform h2{
+    text-align: center;
+    margin: 50px;
+}
+
+div.contactform form input, textarea{
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    
+}
+
+div.contactform form input[type="submit"]{
+    width: 20%;
+    font-size: 20px;
+    background-color: black;
+    box-shadow: grey;
+    color: white;
+    transition:all 1s;
+}
+
+div.contactform form input[type="submit"]:hover{
+    background-color: var(--myColor);
+    border: 1px solid white;
+    box-shadow: grey;
+    transform: scale(0.8, 0.8);
+    color: white;
+    cursor: pointer;
+}
+
+div.myContact{
+    display: grid;
+    grid-template-columns: 20% 40%;
+    /* padding: 20px 90px 20px 90px; */
+    justify-content: space-around;
+}
+
+div.contactpicture{
+    margin-top: 200px;
+}
+
+div.contactpicture:hover{
+    opacity: 0.7;
+}
+
+div.contactform p{
+    font-family: calibri;
+    font-size: 17px;
+    text-align: center;
+}
+
+div.contactform span{
+    color: var(--myColor);
+    font-weight: bold;
+    text-align: center;
+}
+
+/* End of contact section */
+
+
+
+/* My Work section */
+div.myWorkTitle{
+    text-align: center;
+    margin-bottom: -100px;
+}
+
+div.myWorkGrids{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+    padding: 150px;
+    gap: 90px;
+}
+
+
+div.myWorkGridBox{
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px 5px 30px;
+    box-shadow: 1px 1px 20px grey;
+    position: relative;
+}
+
+
+div.myWorkGridBox h4{
+    text-align: center;
+}
+
+div.myWorkGridBox a img{
+    width: 80%;  
+}
+
+div.myWorkGridBox a img:hover{
+    opacity: 0.7;
+}
+
+div.myWorkDesign1{
+    background-color: var(--myColor);
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: -1;
+    top: -10px;
+    left: -10px;
+}
+
+div.myWorkDesign3{
+    background-color: var(--myColor);
+    width: 160px;
+    height: 150px;
+    position: absolute;
+    z-index: -1;
+    top: -10px;
+    right: -10px;
+}
+
+div.myWorkDesign4{
+    background-color: var(--myColor);
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: -1;
+    bottom: -10px;
+    left: -10px;
+}
+
+div.myWorkDesign6{
+    background-color: var(--myColor);
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: -1;
+    bottom: -10px;
+    right: -10px;
+}
+/* End of my work section */
+
