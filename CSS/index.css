@@ -17,14 +17,14 @@ body{
     overflow-x: hidden;
 }
 
-
+/* ------------------------------------------------------------------------------------------------------------------------------ */
 
 
 /* custom scrollbar */
 ::-webkit-scrollbar{
     width: 10px;
-    background-color: rgba(0, 0, 0, 0);
-    opacity: 0;
+    background-color: transparent;
+    z-index: -1;
 }
 
 ::-webkit-scrollbar-thumb{
@@ -33,8 +33,7 @@ body{
 /* End of custom scrollbar */
 
 
-
-
+/* ------------------------------------------------------------------------------------------------------------------------------ */
 
 
 /* Navigation bar */
@@ -55,6 +54,7 @@ div.navbar{
 .logo a{
     text-decoration: none;
     font-weight: bold;
+    font-size: 22px;
     color: var(--myBackground);
 }
 
@@ -113,7 +113,7 @@ a.loginlinks{
 /* End of navigation bar */
 
 
-
+/* ------------------------------------------------------------------------------------------------------------------------------ */
 
 
 
@@ -153,7 +153,7 @@ div.intro p span{
 /* End of home section */
 
 
-
+/* ------------------------------------------------------------------------------------------------------------------------------ */
 
 
 /* About section */
@@ -273,7 +273,7 @@ button.downloadCV:hover{
 /* End of about section */
 
 
-
+/* ------------------------------------------------------------------------------------------------------------------------------ */
 
 /* section skills */
 
@@ -299,7 +299,7 @@ div.skills_boxes{
     padding: 30px;
     border-radius: 10px;
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     cursor: pointer;
 }
 
@@ -374,8 +374,6 @@ div.box6:hover{
 }
 
 
-
-
 div.skills_icons{
     margin-top: -20%;
 }
@@ -390,6 +388,108 @@ div.skills_icons i{
 
 /* End of skills section */
 
+/* ------------------------------------------------------------------------------------------------------------------------------ */
+
+/* My Work section */
+div.myWork{
+    position: relative;
+    background-color: var(--Sectionbackground);
+    padding-top: 20px;
+    z-index: -2;
+}
+
+div.myWorkTitle{
+    text-align: center;
+    margin-bottom: -120px;
+}
+
+div.myWorkGrids{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+    padding: 150px;
+    gap: 90px;
+}
+
+
+div.myWorkGridBox{
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px 5px 30px;
+    box-shadow: 1px 1px 20px grey;
+    position: relative;
+    border-radius: 5%;
+}
+
+
+div.myWorkGridBox h4{
+    text-align: center;
+}
+
+div.myWorkGridBox a img{
+    width: 80%;
+    border-radius: 5%;
+}
+
+div.myWorkGridBox a img:hover{
+    opacity: 0.6  ;
+}
+
+div.myWorkDesign1{
+    background-color: var(--myColor);
+    border-top-left-radius: 15px;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    z-index: -1;
+}
+
+div.myWorkDesign3{
+    background-color: var(--myColor);
+    border-top-right-radius: 15px;
+    width: 160px;
+    height: 150px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    z-index: -1;
+}
+
+div.myWorkDesign4{
+    background-color: var(--myColor);
+    border-bottom-left-radius: 15px;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    z-index: -1;
+}
+
+div.myWorkDesign6{
+    background-color: var(--myColor);
+    border-bottom-right-radius: 15px;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    z-index: -1;
+}
+/* End of my work section */
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ */
+
+
+/* Services section */
+/* End of services section */
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ */
 
 
 /* Contact section */
@@ -459,81 +559,49 @@ div.contactform span{
 /* End of contact section */
 
 
+/* ------------------------------------------------------------------------------------------------------------------------------ */
 
-/* My Work section */
-div.myWorkTitle{
-    text-align: center;
-    margin-bottom: -100px;
+
+
+/* Footer section */
+section.footer{
+    background-color: var(--myBackground);
+    margin-bottom: -50px;
 }
 
-div.myWorkGrids{
+div.myFooter{
     display: grid;
-    grid-template-columns: auto auto auto;
-    justify-content: space-around;
-    padding: 150px;
-    gap: 90px;
-}
-
-
-div.myWorkGridBox{
-    background-color: rgb(255, 255, 255);
+    grid-template-columns: auto;
+    gap: 20px;
+    padding: 20px 150px 20px 150px;
     text-align: center;
-    padding: 10px 5px 30px;
-    box-shadow: 1px 1px 20px grey;
-    position: relative;
+    color: White;
+}
+div.footerLinks{
+    display: grid;
+    grid-template-columns: 20% 50% 30%;
 }
 
-
-div.myWorkGridBox h4{
-    text-align: center;
+div.footerLinkQuickLinks a{
+    text-decoration: none;
+    display: grid;
+    color: white;
 }
 
-div.myWorkGridBox a img{
-    width: 80%;  
-}
+/* End of footer section */
 
-div.myWorkGridBox a img:hover{
-    opacity: 0.7;
-}
+/* -------------------------------------------------------------------------------------------------------------------------- */
 
-div.myWorkDesign1{
+/* NorthArrow */
+a.northArrow{
+    --offset: 50px;
+    margin-top: calc(100vh + var(--offset));
+    position: sticky;
     background-color: var(--myColor);
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    z-index: -1;
-    top: -10px;
-    left: -10px;
+    border-radius: 5px;
+    padding: 15px;
+    bottom: 20px;
+    left: 96%;
 }
 
-div.myWorkDesign3{
-    background-color: var(--myColor);
-    width: 160px;
-    height: 150px;
-    position: absolute;
-    z-index: -1;
-    top: -10px;
-    right: -10px;
-}
-
-div.myWorkDesign4{
-    background-color: var(--myColor);
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    z-index: -1;
-    bottom: -10px;
-    left: -10px;
-}
-
-div.myWorkDesign6{
-    background-color: var(--myColor);
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    z-index: -1;
-    bottom: -10px;
-    right: -10px;
-}
-/* End of my work section */
-
+/* End of northArrow direction */
