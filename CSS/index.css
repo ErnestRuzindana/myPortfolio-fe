@@ -19,6 +19,7 @@ body{
     font-family: Poppins,sans-serif;
     margin: 0;
     overflow-x: hidden;
+    overflow: overlay;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------------------ */
@@ -37,7 +38,9 @@ body::-webkit-scrollbar {
    
 body::-webkit-scrollbar-thumb {
     background-color: var(--myColor);
+    border-radius: 2px;
   }
+    
 /* End of custom scrollbar */
 
 
@@ -400,10 +403,8 @@ div.skills_icons i{
 
 /* My Work section */
 div.myWork{
-    position: relative;
     background-color: var(--Sectionbackground);
-    padding-top: 20px;
-    z-index: -2;
+    padding-top: 20px;  
 }
 
 div.myWorkTitle{
@@ -413,6 +414,8 @@ div.myWorkTitle{
 
 div.myWorkGrids{
     display: grid;
+    position: relative;
+    z-index: 0;
     grid-template-columns: auto auto auto;
     justify-content: space-around;
     padding: 150px;
