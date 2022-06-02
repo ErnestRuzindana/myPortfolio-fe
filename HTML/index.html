@@ -11,6 +11,19 @@
     <title>Ernest Ruzindana</title>
 </head>
 <body>
+    <section class="preNav">
+        <div class="preNavLinks">
+            <ul>
+                <li><a href="https://web.facebook.com/ruzindana.elannoernest/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com/ruzindanaernes5" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/elanno_official/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/ernest-ruzindana-7481b8183/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="https://api.whatsapp.com/send/?phone=250783486141&text&app_absent=0" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+                <li><a href="https://github.com/ErnestRuzindana" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+            </ul>
+        </div>            
+    </section>
+
     <section class="nav">
         <div class="navbar">
             <div class="logo">
@@ -19,22 +32,22 @@
 
             <div class="navlinks">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">My skills</a></li>
-                    <li><a href="#">My work</a></li>
+                    <li><a href="#myProfile">Home</a></li>
+                    <li><a href="#aboutme">About</a></li>
+                    <li><a href="#Skills">My skills</a></li>
+                    <li><a href="#work">My work</a></li>
                     <li><a href="#">Blog</a></li>
-                    <li><a href="#">Services</a></li>
+                    <li><a href="#services">Services</a></li>
                 </ul>
             </div>
-            <a href="#" class="loginlinks">
-                <div>Login / Sign Up</div>
+            <a href="#contact" class="loginlinks">
+                <div>Contact me</div>
             </a>
         </div>
     </section>
 
 
-    <section class="myProfile">
+    <section class="myProfile" id="myProfile">
         <div class="profile">
             <div class="intro">
                 <p>Hi, <br> I'm <span>Ernest</span>, <br> GIS Developer</p>
@@ -62,44 +75,48 @@
                     <p>Urban and Regional Planner</p>
                 </div>
             </div>
+            <div id="aboutme">
+                <div>
+                    <div class="myAbout">
 
-            <div class="myAbout">
+                        <div class="right">
+                            <img src="../images/Ruzindana.jpg" alt="">
+                        </div>
 
-                <div class="right">
-                    <img src="../images/Ruzindana.jpg" alt="">
+
+                        <div class="left">
+                            <h2>About</h2>
+                            <h5>I'm Ernest RUZINDANA</h5>
+                            <p>
+                                GIS developer with expertise in the use of python libraries such as GDAL, Pyproj, Fiona, Geopandas for 
+                                intelligent mapping and geospatial data science. GIS engineer experienced in land use planning and 
+                                spatial data analysis using geospatial technologies, particularly GIS and remote sensing. 
+                                A full stack web developer using the python django framework for backend development; JS, CSS and related 
+                                frameworks such as React and Bootstrap for frontend development and hosting the projects on various servers, 
+                                including AWS Amazon.
+                            </p>
+
+                            <a href="../Documents/Ernest Ruzindana CV.pdf" download="Ernest CV">
+                                <button class="downloadCV"> Download my CV </button>
+                            </a>
+                            
+                        </div>
+                        
+                    </div>
                 </div>
-
-
-                <div class="left">
-                    <h2>About</h2>
-                    <h5>I'm Ernest RUZINDANA</h5>
-                    <p>
-                        GIS developer with expertise in the use of python libraries such as GDAL, Pyproj, Fiona, Geopandas for 
-                        intelligent mapping and geospatial data science. GIS engineer experienced in land use planning and 
-                        spatial data analysis using geospatial technologies, particularly GIS and remote sensing. 
-                        A full stack web developer using the python django framework for backend development; JS, CSS and related 
-                        frameworks such as React and Bootstrap for frontend development and hosting the projects on various servers, 
-                        including AWS Amazon.
-                    </p>
-
-                    <a href="../Documents/Ernest Ruzindana CV.pdf" download="Ernest CV">
-                        <button class="downloadCV"> Download my CV </button>
-                    </a>
-                    
-                </div>
-                
             </div>
         </div>
     </section>
 
     
-    <section class="Skills">
+    <section class="Skills" id="Skills">
         <div class="mySkillsTitle">
             <h2>My Skills</h2>
         </div>
         <div class="mySkills">
             <div class="skills_boxes box1">
                 <div class="skills_icons">
+                    <!-- <img src="../images/mappinglogowhite-01-01.png" alt=""> -->
                     <i class="fa-solid fa-map-location-dot" style="background-color: rgb(10, 76, 147);"></i>
                 </div>
                 <div class="skills_text">
@@ -176,7 +193,7 @@
 
 
 
-    <section class="work">
+    <section class="work" id="work">
         <div class="myWork">
             <div class="myWorkTitle">
                 <h2>My Work</h2>
@@ -247,7 +264,7 @@
     <!-- ---------------------------------------------------------------------------------------------------------------------------- -->
 
     <!-- Services section -->
-    <section class="services">
+    <section class="services" id="services">
         <div class="myServices">
             <div class="myServicesTitle">
                 <h3>My Services</h3>
@@ -255,7 +272,7 @@
             </div>
             <div class="myServicesGrids">
                 <div class="myServicesBoxes serviceBox1">
-                    <img src="../images/mappinglogo.jpg" alt="">
+                    <img src="../images/mappinglogo-01.png" alt="">
                     <h4>Mapping</h4>
                     <p>
                         I map the real world to generate data that helps governments, individuals, NGOs and humanitarian agencies 
@@ -263,7 +280,7 @@
                     </p>
                 </div>
                 <div class="myServicesBoxes serviceBox2">
-                    <img src="../images/mappinglogo.jpg" alt="">
+                    <img src="../images/mappinglogo-01.png" alt="">
                     <h4>Mapping</h4>
                     <p>
                         I map the real world to generate data that helps governments, individuals, NGOs and humanitarian agencies 
@@ -271,7 +288,7 @@
                     </p>
                 </div>
                 <div class="myServicesBoxes serviceBox3">
-                    <img src="../images/mappinglogo.jpg" alt="">
+                    <img src="../images/mappinglogo-01.png" alt="">
                     <h4>Mapping</h4>
                     <p>
                         I map the real world to generate data that helps governments, individuals, NGOs and humanitarian agencies 
@@ -279,7 +296,7 @@
                     </p>
                 </div>
                 <div class="myServicesBoxes serviceBox4">
-                    <img src="../images/mappinglogo.jpg" alt="">
+                    <img src="../images/mappinglogo-01.png" alt="">
                     <h4>Mapping</h4>
                     <p>
                         I map the real world to generate data that helps governments, individuals, NGOs and humanitarian agencies 
@@ -295,7 +312,7 @@
     
     <!-- Contact section -->
 
-    <section class="contact">
+    <section class="contact" id="contact">
         <div class="myContact">
             <div class="contactpicture">
                 <img src="../images/contact.jpg" alt="contact me" width="500px" height="300px">
@@ -333,7 +350,7 @@
                     <h3>Be the first to know</h3>
                     <p>Please subscribe to this platform with your email to know more about what I do and stay connected</p>
                 </div>
-                <div class="myFooterTopForm">
+                <div class="myFooterTopForm" autocomplete="on">
                     <input type="email" placeholder="Email address">
                     <input type="submit" value="Subscribe">
                 </div>
@@ -352,24 +369,24 @@
                 <div class="myFooterLinks">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">My skills</a></li>
-                        <li><a href="#">My work</a></li>
+                        <li><a href="#myProfile">Home</a></li>
+                        <li><a href="#aboutme">About</a></li>
+                        <li><a href="#Skills">My skills</a></li>
+                        <li><a href="#work">My work</a></li>
                         <li><a href="#">Blog</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="myFooterSocialMedia">
                     <h4>Social Media</h4>
                     <ul>
-                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+                        <li><a href="https://web.facebook.com/ruzindana.elannoernest/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="https://twitter.com/ruzindanaernes5" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/elanno_official/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/ernest-ruzindana-7481b8183/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                        <li><a href="https://api.whatsapp.com/send/?phone=250783486141&text&app_absent=0" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+                        <li><a href="https://github.com/ErnestRuzindana" target="_blank"><i class="fa-brands fa-github"></i></a></li>
                     </ul>
                 </div>
             </div>

@@ -43,13 +43,32 @@ body::-webkit-scrollbar-thumb {
     
 /* End of custom scrollbar */
 
+/* ------------------------------------------------------------------------------------------------------------------------------ */
+
+/* PreNav Section */
+
+div.preNavLinks ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-end;
+}
+
+div.preNavLinks ul li a{
+    font-size: 20px;
+    padding-right: 30px;
+}
+
+div.preNavLinks ul li a:hover{
+    color: var(--myColor);
+}
+/* End of preNav Section */
 
 /* ------------------------------------------------------------------------------------------------------------------------------ */
 
 
 /* Navigation bar */
 section.nav{
-    position: fixed;
+    position: sticky;
     background-color: white;
     width: 100%;
     box-shadow: 0.1px 1px 2px grey;
@@ -324,6 +343,13 @@ div.box1{
     transition: all 1s;
 }
 
+/* div.skills_icons img{
+    width: 20%;
+    background-color: rgb(10, 76, 147);
+    border-radius: 30px;
+    padding: 1px;
+} */
+
 div.box1:hover{
     background-color: rgb(10, 76, 147);
     transform: scale(1.1, 1.1);
@@ -524,8 +550,7 @@ div.serviceBox1{
 }
 
 div.serviceBox1:hover{
-    background-color: var(--myBackground);
-    color: white;
+    opacity: 0.7;
     cursor: pointer;
     /* transform: scale(0.9, 0.9); */
     /* box-shadow: 0.5px 1px 10px; */
@@ -537,8 +562,7 @@ div.serviceBox2{
 }
 
 div.serviceBox2:hover{
-    background-color: var(--myBackground);
-    color: white;
+    opacity: 0.7;
     cursor: pointer;
     /* transform: scale(0.9, 0.9); */
     /* box-shadow: 0.5px 1px 10px; */
@@ -551,8 +575,7 @@ div.serviceBox3{
 }
 
 div.serviceBox3:hover{
-    background-color: var(--myBackground);
-    color: white;
+    opacity: 0.7;
     cursor: pointer;
     /* transform: scale(0.9, 0.9); */
     /* box-shadow: 0.5px 1px 10px; */
@@ -564,8 +587,7 @@ div.serviceBox4{
 }
 
 div.serviceBox4:hover{
-    background-color: var(--myBackground);
-    color: white;
+    opacity: 0.7;
     cursor: pointer;
     /* transform: scale(0.9, 0.9); */
     /* box-shadow: 0.5px 1px 10px; */
@@ -575,6 +597,7 @@ div.myServicesBoxes{
     text-align: center;
     padding: 20px;
 }
+
 
 div.myServicesBoxes p{
     font-family: calibri;
@@ -669,6 +692,22 @@ div.myFooter p, div.myFooter h2, div.myFooter h3, div.myFooter h4, div.myFooter 
     color: white;
 }
 
+div.myFooterTopForm input[type="email"] {
+    padding: 10px 100px 10px 10px;
+    border-radius: 5px;
+}
+
+div.myFooterTopForm input[type="submit"] {
+    padding: 10px;
+    background-color: var(--myColor);
+    border-radius: 5px;
+}
+
+div.myFooterTopForm input[type="submit"]:hover {
+    padding: 10px;
+    background-color: grey;
+    cursor: pointer;
+}
 
 div.myFooterTop{
     display: grid;
@@ -684,6 +723,7 @@ div.myFooterTop{
 div.myFooterTop p.border{
     border-top: 1px solid rgb(83, 81, 81);
 }
+
 
 div.myFooterBottom{
     display: grid;
@@ -734,9 +774,6 @@ div.myFooterLinks ul li a{
     line-height: 35px;
 }
 
-/* div.myFooterLinks ul li a:hover{
-    font-size: 15px;
-} */
 
 div.myFooterSocialMedia h4{
     text-align: left;
@@ -752,7 +789,6 @@ div.myFooterSocialMedia ul{
 
 div.myFooterSocialMedia ul li a{
     font-size: 20px;
-    transition: all 1s;
 }
 
 div.myFooterSocialMedia ul li a:hover{
@@ -776,7 +812,7 @@ div.myFooterCopyRight{
 /* NorthArrow */
 a.northArrow{
     --offset: 50px;
-    margin-top: calc(100vh + var(--offset));
+    margin-top: calc(350vh + var(--offset));
     position: sticky;
     background-color: var(--myColor);
     border-radius: 5px;
