@@ -70,6 +70,7 @@ div.preNavLinks ul li a:hover{
 /* Navigation bar */
 section.nav{
     position: sticky;
+    top: 0;
     background-color: white;
     width: 100%;
     box-shadow: 0.1px 1px 2px grey;
@@ -198,7 +199,7 @@ div.about{
 div.myAbout{
     background-color: var(--Sectionbackground); 
     border: 3px dotted var(--myColor);
-    margin: 150px 10px 100px;
+    margin: 100px 10px 100px;
     display: grid;
     grid-template-columns: 20% 80%;
     gap: 100px;
@@ -435,7 +436,7 @@ div.skills_icons img{
 /* My Work section */
 div.myWork{
     background-color: var(--Sectionbackground);
-    padding-top: 20px;  
+    padding-top: 50px;  
 }
 
 div.myWorkTitle{
