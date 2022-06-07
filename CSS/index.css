@@ -56,40 +56,48 @@ section.preNav{
 
 div.preNavLinks{
     display: grid;
-    grid-template-columns: 20% 30% 50%;
-    gap: 40px;
+    grid-template-columns: 25% 30% 40%;
+    gap: 10px;
     align-items: center;
 }
 
 div.preNavLogo{
     padding: 10px 140px 5px 140px ;
 }
-div.preNavLogo img{
+div.preNavLogo a img{
     /* width: 80%; */
-    width: 80px;
-    border: 2px solid var(--myBackground);
-    border-radius: 50%;
+    width: 90px;
+    transition: all 1s;
+}
+
+div.preNavLogo a img:hover{
+    transform: scale(1.2, 1.2);
+    opacity: 0.8;
 }
 
 div.preNavDocumentation{
     display: flex;
     justify-content: center;
-    gap: 5px;
+    gap: 0px;
 }
 
-div.preNavExercises, div.preNavVideos{
+a.preNavExercises div{
     padding: 20px;
+    font-size: 16px;
+    color: var(--myBackground);
+    transition: all 1s;
 }
-div.preNavExercises:hover, div.preNavVideos:hover{
+
+a.preNavExercises div:hover{
     background-color: white;
 }
+
 
 div.preNavDocumentation a {
     font-size: 14px;
     color: black;
     text-decoration: none;
 }
-
 
 
 div.preNavLogin h5 a{
@@ -101,6 +109,7 @@ div.preNavLogin h5 a{
     padding: 5px 20px 5px 20px;  
     border: 2px solid white;
     border-radius: 20px;
+    transition: all 1s;
 }
 
 div.preNavLogin h5 a:hover{
@@ -121,12 +130,13 @@ div.preNavSocioMediaLogin{
 
 div.preNavSocioMedia ul{
     display: flex;
-    justify-content: space-around;
     list-style-type: none;
 }
 
+
 div.preNavLinks ul li a{
     font-size: 20px;
+    justify-content: center;
     padding-right: 30px;
     color: var(--myBackground);
 }
@@ -167,6 +177,10 @@ div.navbar{
     font-size: 25px;
 }
 
+.logo a:hover{
+    opacity: 0.5;
+}
+
 .navlinks ul{
     display: flex;
     align-items: center;
@@ -182,6 +196,13 @@ div.navbar{
     color: var(--myBackground);
     font-size: 14px;
     font-weight: bold;
+    transition: all 1s;
+}
+
+.navlinks ul li a:hover{
+    color: var(--myColor);
+    padding-top: 10px;
+    border-top: 3px solid var(--myColor);
 }
 
 
@@ -209,9 +230,6 @@ a.loginlinks{
     color: white;
 }
 
-.navlinks ul li a:hover{
-    color: var(--myColor);
-}
 
 .navlinks ul li a:active{
     color: var(--myColor);
@@ -547,7 +565,7 @@ div.myWorkGridBox h4{
 
 div.myWorkGridBox a img{
     width: 80%;
-    border-radius: 5%;
+    /* border-radius: 5%; */
 }
 
 div.myWorkGridBox a img:hover{
@@ -851,9 +869,13 @@ div.myFooterLinks ul li::before{
 
 div.myFooterLinks ul li a{
     text-decoration: none;
-    font-weight: bold;
-    font-size: 12px;
+    /* font-weight: bold; */
+    font-size: 15px;
     line-height: 35px;
+}
+
+div.myFooterLinks ul li a:hover{
+    font-weight: bold;
 }
 
 
