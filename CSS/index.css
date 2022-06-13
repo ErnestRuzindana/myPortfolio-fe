@@ -82,7 +82,7 @@ div.preNavDocumentation{
 }
 
 a.preNavExercises div{
-    padding: 20px;
+    padding: 30px;
     font-size: 16px;
     color: var(--myBackground);
     transition: all 1s;
@@ -898,6 +898,20 @@ div.myFooterSocialMedia ul li a{
 div.myFooterSocialMedia ul li a:hover{
     color: var(--myColor);
     font-size: 30px;
+}
+
+div.FooterLogo{
+    padding: 10px 140px 5px 140px ;
+}
+div.FooterLogo a img{
+    /* width: 80%; */
+    width: 90px;
+    transition: all 1s;
+}
+
+div.FooterLogo a img:hover{
+    transform: scale(1.2, 1.2);
+    opacity: 0.8;
 }
 
 div.myFooterCopyRight{
