@@ -16,8 +16,10 @@ html{
 
 
 body{
+
     font-family: Poppins,sans-serif;
-    margin: 0;
+    margin: auto;
+    width: 100%;
     overflow-x: hidden;
     overflow: overlay;
 }
@@ -179,6 +181,14 @@ div.navbar{
 
 .logo a:hover{
     opacity: 0.5;
+}
+
+div.toggleButton{
+    display: none;
+}
+
+li.closeButton{
+    display: none;
 }
 
 .navlinks ul{
@@ -940,3 +950,150 @@ a.northArrow{
 }
 
 /* End of northArrow direction */
+
+/* -------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+/* Responsive Designs */
+
+/* Navigation bar */
+@media only screen and (max-width: 600px) {
+
+    section.preNav {
+        display: none;
+    }
+
+    div.navbar{
+        position: relative;
+        display: grid;
+        grid-template-columns: auto;
+        align-items: unset;
+    }
+
+    div.toggleButton{
+        display: block;
+        cursor: pointer;
+    }
+
+    li.closeButton{
+        display: block;
+        font-size: 30px;
+        padding-left: 200%;
+        color: rgb(156, 9, 9);
+        cursor: pointer;
+    }
+
+    div.navlinks ul{
+        position: absolute;
+        display: flex;
+        background-color: var(--myColor);
+        flex-direction: column;
+        top: -16px;
+        right: 0px;
+        padding: 10px 70px;
+    }
+
+    a.loginlinks{
+        display: none;
+    }
+
+
+    div.logo{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center; 
+        gap: 30%;       
+    }
+
+    .logo a{
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 15px;
+        
+        color: var(--myBackground);
+    }
+
+    
+    /* .logo {
+        text-align: unset;
+        font-size: 15px;
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    .logo a{
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 22px;
+        color: var(--myBackground);
+    }
+    
+    .logo a:hover{
+        opacity: 0.5;
+    }
+    
+    div.toggleButton{
+        display: none;
+    }
+    
+    .navlinks ul{
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+    
+    .navlinks ul li{
+        list-style-type: none;
+    }
+    
+    .navlinks ul li a{
+        text-decoration: none;
+        color: var(--myBackground);
+        font-size: 14px;
+        font-weight: bold;
+        transition: all 1s;
+    }
+    
+    .navlinks ul li a:hover{
+        color: var(--myColor);
+        padding-top: 10px;
+        border-top: 3px solid var(--myColor);
+    }
+    
+    
+    a.loginlinks{
+        text-decoration: none;
+        text-align: center;
+        color: var(--myBackground);
+        font-size: 14px;
+        font-weight: bold;
+    }
+    
+    .loginlinks{
+        border: 3px solid var(--myColor);
+        border-radius: 20px;
+        padding: 5px 15px;
+        margin-right: 37px;
+    }
+    
+    .loginlinks:hover{
+        color: white;
+        background-color: var(--myColor);
+    }
+    
+    .loginlinks a:hover{
+        color: white;
+    }
+    
+    
+    .navlinks ul li a:active{
+        color: var(--myColor);
+    }  */
+}
+/* End Navigation bar */
+
+/* End of Responsive Designs */
+
