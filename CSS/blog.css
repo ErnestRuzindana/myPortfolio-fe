@@ -1,0 +1,499 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;800&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root {
+    --myColor: #cba10a;
+    --myBackground: black;
+    --Sectionbackground: rgb(236, 236, 220);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+
+body{
+
+    font-family: Poppins,sans-serif;
+    margin: auto;
+    width: 100%;
+    overflow-x: hidden;
+    overflow: overlay;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------ */
+
+
+/* custom scrollbar */
+
+body::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+  }
+   
+  body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+  }
+   
+body::-webkit-scrollbar-thumb {
+    background-color: var(--myColor);
+    border-radius: 2px;
+  }
+    
+/* End of custom scrollbar */
+
+/* ------------------------------------------------------------------------------------------------------------------------------ */
+
+/* PreNav Section */
+
+section.preNav{
+    background-color: var(--myColor);
+    margin-top: -17px;
+    padding: 15px 50px 0.2px;
+
+}
+
+div.preNavLinks{
+    display: grid;
+    grid-template-columns: 25% 30% 40%;
+    gap: 10px;
+    align-items: center;
+}
+
+div.preNavLogo{
+    padding: 10px 140px 5px 140px ;
+}
+div.preNavLogo a img{
+    /* width: 80%; */
+    width: 100%;
+    transition: all 1s;
+}
+
+div.preNavLogo a img:hover{
+    transform: scale(1.2, 1.2);
+    opacity: 0.8;
+}
+
+div.preNavDocumentation{
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+}
+
+a.preNavExercises div{
+    padding: 20px;
+    font-size: 16px;
+    color: var(--myBackground);
+    transition: all 1s;
+}
+
+a.preNavExercises div:hover{
+    background-color: white;
+}
+
+
+div.preNavDocumentation a {
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+}
+
+
+div.preNavLogin h5 a{
+    margin-right: 40px;
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+    background-color: var(--myColor);
+    padding: 5px 20px 5px 20px;  
+    border: 2px solid white;
+    border-radius: 20px;
+    transition: all 1s;
+}
+
+div.preNavLogin h5 a:hover{
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+    color: var(--myColor);
+    background-color: white;
+    padding: 5px 20px 5px 20px;  
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
+div.preNavSocioMediaLogin{
+    display: flex;
+    justify-content: space-around;
+}
+
+div.preNavSocioMedia ul{
+    display: flex;
+    list-style-type: none;
+}
+
+
+div.preNavLinks ul li a{
+    font-size: 20px;
+    justify-content: center;
+    padding-right: 30px;
+    color: var(--myBackground);
+}
+
+div.preNavLinks ul li a:hover{
+    color: white;
+}
+/* End of preNav Section */
+
+/* ------------------------------------------------------------------------------------------------------------------------------ */
+
+
+/* Navigation bar */
+section.nav{
+    position: sticky;
+    top: 0;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0.1px 1px 2px grey;
+    z-index: 2;
+}
+
+div.navbar{
+    display: grid;
+    grid-template-columns: 30% 55% 15%;
+    align-items: center;
+}
+
+.logo a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 22px;
+    color: var(--myBackground);
+}
+
+.logo {
+    text-align: center;
+    font-size: 25px;
+}
+
+.logo a:hover{
+    opacity: 0.5;
+}
+
+div.toggleButton{
+    display: none;
+}
+
+li.closeButton{
+    display: none;
+}
+
+.navlinks ul{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.navlinks ul li{
+    list-style-type: none;
+}
+
+.navlinks ul li a{
+    text-decoration: none;
+    color: var(--myBackground);
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 1s;
+}
+
+.navlinks ul li a:hover{
+    color: var(--myColor);
+    padding-top: 10px;
+    border-top: 3px solid var(--myColor);
+}
+
+
+a.loginlinks{
+    text-decoration: none;
+    text-align: center;
+    color: var(--myBackground);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.loginlinks{
+    border: 3px solid var(--myColor);
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin-right: 37px;
+}
+
+.loginlinks:hover{
+    color: white;
+    background-color: var(--myColor);
+}
+
+.loginlinks a:hover{
+    color: white;
+}
+
+
+.navlinks ul li a:active{
+    color: var(--myColor);
+}
+
+
+/* End of navigation bar */
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ */
+
+
+/* Blog section */
+div.myBlogs {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 30px 140px 30px;
+    gap: 10%;
+}
+
+div.BlogList{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+div.blogBox{
+    border: 1px solid black;
+    padding: 30px;
+    border-radius: 10px;
+}
+/* Blog section */
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ */
+
+
+
+/* Footer section */
+div.myFooter p, div.myFooter h2, div.myFooter h3, div.myFooter h4, div.myFooter a{
+    color: white;
+}
+
+div.myFooterTopForm input[type="email"] {
+    padding: 10px 100px 10px 10px;
+    border-radius: 5px;
+}
+
+div.myFooterTopForm input[type="submit"] {
+    padding: 10px;
+    background-color: var(--myColor);
+    border-radius: 5px;
+}
+
+div.myFooterTopForm input[type="submit"]:hover {
+    padding: 10px;
+    background-color: grey;
+    cursor: pointer;
+}
+
+div.myFooterTop{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    align-items: center;
+    gap: 40px;
+    padding-left: 95px;
+    padding-top: 20px;
+    background-color: rgb(39, 38, 38);
+
+}
+
+div.myFooterTop p.border{
+    border-top: 1px solid rgb(83, 81, 81);
+}
+
+
+div.myFooterBottom{
+    display: grid;
+    grid-template-columns: 40% 20% 20%;
+    justify-content: center;
+    gap: 60px;
+    background-color: rgb(39, 38, 38);
+    padding-top: 20px;
+}
+
+div.myFooterAbout h4{
+    text-align: left;
+}
+
+div.myFooterAbout p{
+    text-align: justify;
+}
+
+div.myFooterLinks h4{
+    text-align: center;
+}
+
+div.myFooterLinks{
+    padding-right: 100px;
+}
+
+div.myFooterLinks ul li{
+    list-style-type: none;
+    margin-left: 20px;
+    transition: all 1s;
+}
+
+div.myFooterLinks ul li:hover{
+    margin-left: 30px;
+}
+
+div.myFooterLinks ul li::before{
+    content: ">";
+    padding-right: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+div.myFooterLinks ul li a{
+    text-decoration: none;
+    /* font-weight: bold; */
+    font-size: 15px;
+    line-height: 35px;
+}
+
+div.myFooterLinks ul li a:hover{
+    font-weight: bold;
+}
+
+
+div.myFooterSocialMedia h4{
+    text-align: left;
+    padding-left: 40px;
+    padding-bottom: 15px;
+}
+
+div.myFooterSocialMedia ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+}
+
+div.myFooterSocialMedia ul li a{
+    font-size: 20px;
+}
+
+div.myFooterSocialMedia ul li a:hover{
+    color: var(--myColor);
+    font-size: 30px;
+}
+
+div.FooterLogo{
+    padding: 10px 140px 5px 140px ;
+}
+div.FooterLogo a img{
+    /* width: 80%; */
+    width: 90px;
+    transition: all 1s;
+}
+
+div.FooterLogo a img:hover{
+    transform: scale(1.2, 1.2);
+    opacity: 0.8;
+}
+
+div.myFooterCopyRight{
+    text-align: center;
+    font-size: 12px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: black;
+    margin-bottom: -80px;
+}
+
+/* End of footer section */
+
+/* -------------------------------------------------------------------------------------------------------------------------- */
+
+/* NorthArrow */
+a.northArrow{
+    --offset: 50px;
+    margin-top: calc(350vh + var(--offset));
+    position: sticky;
+    background-color: var(--myColor);
+    border-radius: 5px;
+    padding: 15px;
+    bottom: 20px;
+    left: 96%;
+}
+
+/* End of northArrow direction */
+
+/* -------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* Responsive Designs */
+
+/* Navigation bar */
+@media only screen and (max-width: 600px) {
+
+    section.preNav {
+        display: none;
+    }
+
+    div.navbar{
+        position: relative;
+        display: grid;
+        grid-template-columns: auto;
+        align-items: unset;
+    }
+
+    div.toggleButton{
+        display: block;
+        cursor: pointer;
+    }
+
+    li.closeButton{
+        display: block;
+        font-size: 30px;
+        padding-left: 200%;
+        color: rgb(156, 9, 9);
+        cursor: pointer;
+    }
+
+    div.navlinks ul{
+        position: absolute;
+        display: flex;
+        background-color: var(--myColor);
+        flex-direction: column;
+        top: -16px;
+        right: 0px;
+        padding: 10px 70px;
+    }
+
+    a.loginlinks{
+        display: none;
+    }
+
+
+    div.logo{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center; 
+        gap: 30%;       
+    }
+
+    .logo a{
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 15px;
+        
+        color: var(--myBackground);
+    }
+}

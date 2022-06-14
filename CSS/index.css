@@ -68,7 +68,7 @@ div.preNavLogo{
 }
 div.preNavLogo a img{
     /* width: 80%; */
-    width: 90px;
+    width: 100%;
     transition: all 1s;
 }
 
@@ -84,7 +84,7 @@ div.preNavDocumentation{
 }
 
 a.preNavExercises div{
-    padding: 30px;
+    padding: 20px;
     font-size: 16px;
     color: var(--myBackground);
     transition: all 1s;
@@ -1015,83 +1015,6 @@ a.northArrow{
         
         color: var(--myBackground);
     }
-
-    
-    /* .logo {
-        text-align: unset;
-        font-size: 15px;
-        display: grid;
-        grid-template-columns: auto auto;
-    }
-
-    .logo a{
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 22px;
-        color: var(--myBackground);
-    }
-    
-    .logo a:hover{
-        opacity: 0.5;
-    }
-    
-    div.toggleButton{
-        display: none;
-    }
-    
-    .navlinks ul{
-        display: flex;
-        align-items: center;
-        gap: 40px;
-    }
-    
-    .navlinks ul li{
-        list-style-type: none;
-    }
-    
-    .navlinks ul li a{
-        text-decoration: none;
-        color: var(--myBackground);
-        font-size: 14px;
-        font-weight: bold;
-        transition: all 1s;
-    }
-    
-    .navlinks ul li a:hover{
-        color: var(--myColor);
-        padding-top: 10px;
-        border-top: 3px solid var(--myColor);
-    }
-    
-    
-    a.loginlinks{
-        text-decoration: none;
-        text-align: center;
-        color: var(--myBackground);
-        font-size: 14px;
-        font-weight: bold;
-    }
-    
-    .loginlinks{
-        border: 3px solid var(--myColor);
-        border-radius: 20px;
-        padding: 5px 15px;
-        margin-right: 37px;
-    }
-    
-    .loginlinks:hover{
-        color: white;
-        background-color: var(--myColor);
-    }
-    
-    .loginlinks a:hover{
-        color: white;
-    }
-    
-    
-    .navlinks ul li a:active{
-        color: var(--myColor);
-    }  */
 }
 /* End Navigation bar */
 
