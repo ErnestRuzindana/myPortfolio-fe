@@ -1,0 +1,140 @@
+[33mcommit fa0f876b53e5fa4bed1b5e183aed8066056cb41f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Ernest Ruzindana <ruzindana.ernest99@gmail.com>
+Date:   Tue Jun 14 09:19:18 2022 +0200
+
+    blogsection
+
+[33mcommit 492d7a49b3f98f7acc47b2992fb1e14754a1e657[m
+Merge: 8bc8da6 b073649
+Author: Ernest Ruzindana <ruzindana.ernest99@gmail.com>
+Date:   Mon Jun 13 21:18:08 2022 +0200
+
+    Merge branch 'master' of https://github.com/ErnestRuzindana/myPortfolio-fe
+
+[33mcommit 8bc8da69a1e74c6d0557ce6fc60aef42689fc427[m
+Author: Ernest Ruzindana <ruzindana.ernest99@gmail.com>
+Date:   Mon Jun 13 18:57:20 2022 +0200
+
+    Some modifications have been done including the logo in the footer
+
+[33mcommit b073649f7cc5219f56db4bde9144b85876ec7f26[m
+Author: Ernest Ruzindana <elannodeveloper@gmail.com>
+Date:   Sat Jun 11 00:37:03 2022 +0200
+
+    woking on responsiveness of devices
+
+[33mcommit ff839a02e9460c316c5d3ff055f8b36d797033e4[m
+Author: Ernest Ruzindana <ruzindana.ernest99@gmail.com>
+Date:   Tue Jun 7 18:55:21 2022 +0200
+
+    modification on the content
+
+[33mcommit 004de254c885fe02df4b9f9888fa4e3ee6b25ebd[m
+Author: Ernest Ruzindana <ruzindana.ernest99@gmail.com>
+Date:   Mon Jun 6 23:36:41 2022 +0200
+
+    Prenavigation bar customization
+
+[33mcommit 2f66e14c1870c1d90efa67f0a313a987a801beb3[m
+Merge: e0ca552 f855c3a
+Author: Ernest Ruzindana <ruzindana.ernest99@gmail.com>
+Date:   Mon Jun 6 21:15:35 2022 +0200
+
+    Merge branch 'master' of https://github.com/ErnestRuzindana/myPortfolio-fe
+
+[33mcommit f855c3afee0f5e6e1997ba176018378cc8b56ed2[m
+Merge: 3a8625a 1bb8e65
+Author: Ernest Ruzindana <73387192+ErnestRuzindana@users.noreply.github.com>
+Date:   Mon Jun 6 21:14:42 2022 +0200
+
+    Merge pull request #2 from ErnestRuzindana/ft-fixingSomeBugs
+    
+    Just fixed some bugs
+
+[33mcommit 1bb8e65a2a23b14546de823111575207988ef58f[m[33m ([m[1;31morigin/ft-fixingSomeBugs[m[33m)[m
+Author: Steve Ndicunguye <ndicunguyesteve4@gmail.com>
+Date:   Mon Jun 6 17:52:51 2022 -0700
+
+    just fixed some bugs
+
+[33mcommit e0ca55296db81d73c83c338c59a380007e46cfbd[m
+Author: Ernest Ruzindana <ruzindana.ernest99@gmail.com>
+Date:   Mon Jun 6 21:11:34 2022 +0200
+
+    some changes about the content on portfolio
+
+[33mcommit 3a8625a36ba908f8208be234b2baa746e5996c4d[m
+Author: Ernest Ruzindana <ruzindana.ernest99@gmail.com>
+Date:   Thu Jun 2 23:37:07 2022 +0200
+
+    Coloring footer section and adding preNav
+
+[33mcommit a31bf3ebe8969de206134f12ca5f1cdb10cd9a7c[m
+Author: Ernest Ruzindana <ruzindana.ernest99@gmail.com>
+Date:   Thu Jun 2 07:48:54 2022 +0200
+
+    Footer section
+
+[33mcommit e7ab37df7db270d67194280e79af052726580e0c[m
+Author: Ernest Ruzindana <ruzindana.ernest99@gmail.com>
+Date:   Tue May 31 23:57:25 2022 +0200
+
+    my services section
+
+[33mcommit 03061ef79f5900399740e9bbd7b924e03e466b5c[m
+Merge: a34a71e c39d10e
+Author: Ernest Ruzindana <ruzindana.ernest99@gmail.com>
+Date:   Tue May 31 21:41:07 2022 +0200
+
+    merged changes
+
+[33mcommit a34a71e5ef66c8c3d325f43e34c72cb1737e3f53[m
+Author: Ernest Ruzindana <ruzindana.ernest99@gmail.com>
+Date:   Tue May 31 21:35:08 2022 +0200
+
+    this message can help me to commit what have not committed before, then make a pull
+
+[33mcommit c39d10e9d3fb0168eb93807f4ca032dd5f1ea698[m
+Merge: 587fdc9 228eb8d
+Author: Ernest Ruzindana <73387192+ErnestRuzindana@users.noreply.github.com>
+Date:   Tue May 31 21:30:10 2022 +0200
+
+    Merge pull request #1 from ErnestRuzindana/ft-fixingSomeBugs
+    
+    Feature: Fixed some bugs
+
+[33mcommit 228eb8d4a1b6d54d2598a530d1227f6256cce382[m
+Author: Steve Ndicunguye <ndicunguyesteve4@gmail.com>
+Date:   Tue May 31 21:11:20 2022 +0200
+
+    fixed some bugs
+
+[33mcommit 587fdc9b94f8d1257a0123849fa8722ac724b1b2[m
+Author: Ernest Ruzindana <ruzindana.ernest99@gmail.com>
+Date:   Fri May 27 07:55:01 2022 +0200
+
+    Worked on footer section, and arrow scrollback to top
+
+[33mcommit 0d0a0f8704bbdaa2535c578350735aae03612466[m
+Author: Ernest Ruzindana <ruzindana.ernest99@gmail.com>
+Date:   Wed May 25 23:28:00 2022 +0200
+
+    The combination of contack me, scroldown webkit, my skills, and my work section as well as making the navbar fixed.
+
+[33mcommit d94520801ebbaf0d1e089bd4d0179d18440493d2[m
+Author: Ernest Ruzindana <ruzindana.ernest99@gmail.com>
+Date:   Fri May 20 13:48:21 2022 +0200
+
+    skills section and Download button
+
+[33mcommit 430ac32acd5d7bb9cdfa738160fb38afdfa8353a[m
+Author: Ernest Ruzindana <ruzindana.ernest99@gmail.com>
+Date:   Tue May 17 22:48:30 2022 +0200
+
+    rebuilding the button to download cv
+
+[33mcommit 31cbaddb259bec634c6fca8fdde329638545b02d[m
+Author: Ernest Ruzindana <ruzindana.ernest99@gmail.com>
+Date:   Mon May 16 22:54:33 2022 +0200
+
+    this is my first commit on the project
