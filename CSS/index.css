@@ -191,6 +191,7 @@ li.closeButton{
     display: none;
 }
 
+
 .navlinks ul{
     display: flex;
     align-items: center;
@@ -985,6 +986,10 @@ a.northArrow{
         cursor: pointer;
     }
 
+    div.navlinks {
+        display: none;
+    }
+
     div.navlinks ul{
         position: absolute;
         display: flex;
@@ -1015,8 +1020,151 @@ a.northArrow{
         
         color: var(--myBackground);
     }
+
+    /* End Navigation bar */
+
+    /* ----------------------------------------------------------------------------------------- */
+
+    /* Home section */
+    div.intro p{
+        font-size: 40px;
+    }
+    div.homeboxes{
+        display: none;
+    }
+    /* End of home section */
+
+    /* About section */
+
+    div.about{
+        padding: 20px 20px 20px;
+    }
+
+    div.myAbout{
+        grid-template-columns: auto;
+        margin: 20px 0px 20px;
+        padding: unset;
+    }
+
+    div.right{
+        text-align: center;
+    }
+
+    div.right img{
+        margin-bottom: -100px;
+        margin-top: 40px;
+    }
+
+    div.left{
+        padding: 4px 5px 20px;
+    }
+    /* End of about section */
+
+    /* -------------------------------------------------------------------------------- */
+
+    /* My Skills section */
+    section.skills{
+        padding: 20px 0px 20px;
+    }
+    div.mySkills{
+        grid-template-columns: auto;
+        padding: 0px;
+        gap: 5px;
+    }
+
+    div.skills_boxes{
+        margin-right: -60px;
+        margin-left: -60px;
+    }
+    /* End of my skills section */
+
+    /* -------------------------------------------------------------------------------- */
+
+    /* My work section */
+    div.myWork{
+        padding-top: unset;
+    }
+
+    div.myWorkTitle{
+        padding: 60px;    
+    }
+
+    div.myWorkGrids{
+        grid-template-columns: auto;
+        gap: 40px;
+        padding: 90px;
+    }
+
+    /* End of my work section */
+
+    /* -------------------------------------------------------------------------------- */
+
+    /* Service section */
+    div.myServicesTitle{
+        margin-bottom: -20px;
+        padding-top: 60px 90px 0px;
+    }
+
+    div.myServicesTitle p{
+        padding: 0px 90px 0px;
+    }
+    div.myServicesGrids{
+        flex-direction: column;
+        padding: 60px;
+    }
+     /* End of service section */
+
+    /* -------------------------------------------------------------------------------- */
+
+    /* contact section */
+    div.myContact{
+        grid-template-columns: auto;
+        padding: 40px;
+    }
+    
+    div.contactpicture{
+        display: none;
+    }
+    /* End of my contact section */
+
+
+    /* -------------------------------------------------------------------------------- */
+
+    /* footer section */
+    div.myFooterTop{
+        grid-template-columns: auto;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    div.myFooterBottom{
+        grid-template-columns: auto;
+        padding:20px 40px 0px;
+    }
+
+    div.myFooterLinks{
+        padding-right: unset;
+    }
+
+    div.myFooterLinks ul{
+        padding-left: 170px;
+    }
+
+    div.myFooterSocialMedia{
+        margin-top: -40px;
+        padding-bottom: 20px;
+    }
+
+    div.myFooterSocialMedia h4{
+        padding-left: 185px;
+    }
+
+     /* End of my footer section */
+
+
+    /* -------------------------------------------------------------------------------- */
+
+
+    /* End of Responsive Designs */
+
 }
-/* End Navigation bar */
-
-/* End of Responsive Designs */
-
