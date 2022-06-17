@@ -64,7 +64,7 @@ div.preNavLinks{
 }
 
 div.preNavLogo{
-    padding: 10px 140px 5px 140px ;
+    padding: 10px 100px 5px 140px ;
 }
 div.preNavLogo a img{
     /* width: 80%; */
@@ -108,7 +108,7 @@ div.preNavLogin h5 a{
     color: black;
     text-decoration: none;
     background-color: var(--myColor);
-    padding: 5px 20px 5px 20px;  
+    padding: 5px 15px 5px 15px;  
     border: 2px solid white;
     border-radius: 20px;
     transition: all 1s;
@@ -120,7 +120,7 @@ div.preNavLogin h5 a:hover{
     text-decoration: none;
     color: var(--myColor);
     background-color: white;
-    padding: 5px 20px 5px 20px;  
+    padding: 5px 15px 5px 15px;  
     border: 2px solid white;
     border-radius: 20px;
 }
@@ -152,6 +152,11 @@ div.preNavLinks ul li a:hover{
 
 
 /* Navigation bar */
+
+/* show the nav */
+nav.menu-btn{
+    display: block;
+}
 section.nav{
     position: sticky;
     top: 0;
@@ -163,10 +168,16 @@ section.nav{
 
 div.navbar{
     display: grid;
-    grid-template-columns: 30% 55% 15%;
+    grid-template-columns: auto auto;
     align-items: center;
 }
 
+/* position well the navbar */
+nav{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
 .logo a{
     text-decoration: none;
     font-weight: bold;
@@ -255,7 +266,9 @@ a.loginlinks{
 
 
 /* Home section */
-
+div.paddles{
+    display: none;
+}
 .profile {
     background-image: url('../images/sabyinyo.jpg');
     background-attachment: fixed;
@@ -986,10 +999,15 @@ a.northArrow{
         cursor: pointer;
     }
 
-    div.navlinks {
-        display: none;
-    }
 
+/* initially hide the nav */
+    
+    /* div.navlinks {
+        display: none;
+    } */
+nav{
+    display: none;
+}
     div.navlinks ul{
         position: absolute;
         display: flex;
@@ -1000,8 +1018,20 @@ a.northArrow{
         padding: 10px 70px;
     }
 
+    /* position the contact button */
     a.loginlinks{
-        display: none;
+        position: absolute;
+        border: unset;
+        background-color: var(--myColor);
+        border-radius: unset;
+        top: 455px;
+        right: -80px;
+        padding: 30px 100px 30px 61px;
+       
+    }
+
+    .navlinks a{
+        text-align: center;
     }
 
 
@@ -1030,7 +1060,31 @@ a.northArrow{
         font-size: 40px;
     }
     div.homeboxes{
-        display: none;
+        position: relative;
+        overflow: auto;
+        padding: 150px 70px 20px 70px;
+        display: flex;
+        justify-content: flex-start;
+        gap: 10%;
+    }
+
+
+    div.paddles{
+        display: block;
+    }
+
+    button.left-paddle{
+        position: absolute;
+        right: 450px;
+        bottom: -200px;
+        z-index: 1;
+    }
+
+    button.right-paddle{
+        position: absolute;
+        left: 450px;
+        bottom: -200px;
+        z-index: 1;
     }
     /* End of home section */
 
@@ -1167,4 +1221,5 @@ a.northArrow{
 
     /* End of Responsive Designs */
 
+  
 }

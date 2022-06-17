@@ -1,20 +1,36 @@
 
 const toggleButton = document.getElementById ("toggleButton");
 
-const navlinks = document.getElementById ("navlinks");
+// const navlinks = document.getElementById ("navlinks");
 
 const closeButton = document.getElementById("closeButton");
 
-
+const nav = document.querySelector('nav')
 
 
 toggleButton.addEventListener ("click", function(){
-    navlinks.style.display = "block";
+    nav.classList.add('menu-btn');
 })
 
 closeButton.addEventListener("click", function(){
-    navlinks.style.display = "none";
+    nav.classList.remove('menu-btn');
 })
 
+
+function slide(direction){
+    var container = document.getElementById('homeboxes');
+    scrollCompleted = 0;
+    var slideVar = setInterval(function(){
+        if(direction == 'left'){
+            container.scrollLeft -= 10;
+        }else {
+            container.scrollLeft += 10;
+        }
+        scrollCompleted += 10;
+        if(scrollCompleted >= 330){
+            window.clearInterval(slideVar);
+        }
+    }, 50);
+}
 
 
