@@ -345,7 +345,8 @@ div.left p{
 
 div.right img{
     margin-top: 10px;
-    width: 95%;
+    height: 360px;
+    width: 360px;
     margin-bottom: -7px;
     border-radius: 30px;
     border: 1px solid var(--myBackground);
@@ -971,14 +972,13 @@ a.northArrow{
 
 /* Responsive Designs */
 
-
-@media only screen and (max-width: 412px) {
+/* Navigation bar */
+@media only screen and (max-width: 600px) {
 
     section.preNav {
         display: none;
     }
 
-    /* Navigation bar */
     div.navbar{
         position: relative;
         display: grid;
@@ -1057,7 +1057,7 @@ nav{
 
     /* Home section */
     div.intro p{
-        font-size: 28px;
+        font-size: 40px;
     }
     div.homeboxes{
         position: relative;
@@ -1088,8 +1088,6 @@ nav{
     }
     /* End of home section */
 
-    /* ----------------------------------------------------------------------------------------- */
-    
     /* About section */
 
     div.about{
@@ -1106,21 +1104,13 @@ nav{
         text-align: center;
     }
 
-    div.right p{
-        text-align: center;
-    }
-
     div.right img{
         margin-bottom: -100px;
-        margin-top: 10px;
+        margin-top: 40px;
     }
 
     div.left{
-        padding: 20px 0px 20px;
-    }
-
-    div.left p{
-        padding:1px 20px 20px;
+        padding: 4px 5px 20px;
     }
     /* End of about section */
 
@@ -1137,10 +1127,9 @@ nav{
     }
 
     div.skills_boxes{
-        margin-right: -120px;
-        margin-left: -120px;
+        margin-right: -60px;
+        margin-left: -60px;
     }
-
     /* End of my skills section */
 
     /* -------------------------------------------------------------------------------- */
@@ -1151,212 +1140,84 @@ nav{
     }
 
     div.myWorkTitle{
-        padding: 60px;
-        margin-bottom: 0px;    
+        padding: 60px;    
     }
 
     div.myWorkGrids{
         grid-template-columns: auto;
         gap: 40px;
-        padding:40px;
-        margin-top: -80px;
+        padding: 90px;
     }
-
-    div.myWorkDesign3{
-            display: none;
-        }
-
-        div.myWorkDesign4{
-            display: none;
-        }
 
     /* End of my work section */
 
-   /* -------------------------------------------------------------------------------- */
-    
-        /* Service section */
-        div.myServicesTitle{
-            margin-bottom: -20px;
-            padding-top: 60px 90px 0px;
-        }
-    
-        div.myServicesTitle p{
-            padding: 0px 90px 0px;
-        }
-        div.myServicesGrids{
-            flex-direction: column;
-            padding: 30px;
-        }
-         /* End of service section */
-    
-        /* -------------------------------------------------------------------------------- */
-    
-        /* contact section */
-        div.myContact{
-            grid-template-columns: auto;
-            padding: 40px;
-        }
-        
-        div.contactpicture{
-            display: none;
-        }
-        /* End of my contact section */
-    
-    
-        /* -------------------------------------------------------------------------------- */
-    
-        /* footer section */
-        div.myFooterTop{
-            grid-template-columns: auto;
-            padding-left: 40px;
-            padding-right: 40px;
-        }
-    
-        div.myFooterBottom{
-            grid-template-columns: auto;
-            padding:20px 40px 0px;
-        }
-    
-        div.myFooterLinks{
-            padding-right: unset;
-        }
-    
-        div.myFooterLinks ul{
-            padding-left: 130px;
-        }
-    
-        div.myFooterSocialMedia{
-            margin-top: -40px;
-            padding-bottom: 20px;
-        }
-    
-        div.myFooterSocialMedia h4{
-            padding-left: 140px;
-        }
-    
-         /* End of my footer section */
-    
-    
-        /* -------------------------------------------------------------------------------- */
-    
+    /* -------------------------------------------------------------------------------- */
+
+    /* Service section */
+    div.myServicesTitle{
+        margin-bottom: -20px;
+        padding-top: 60px 90px 0px;
+    }
+
+    div.myServicesTitle p{
+        padding: 0px 90px 0px;
+    }
+    div.myServicesGrids{
+        flex-direction: column;
+        padding: 60px;
+    }
+     /* End of service section */
 
     /* -------------------------------------------------------------------------------- */
 
+    /* contact section */
+    div.myContact{
+        grid-template-columns: auto;
+        padding: 40px;
+    }
+    
+    div.contactpicture{
+        display: none;
+    }
+    /* End of my contact section */
 
 
+    /* -------------------------------------------------------------------------------- */
+
+    /* footer section */
+    div.myFooterTop{
+        grid-template-columns: auto;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    div.myFooterBottom{
+        grid-template-columns: auto;
+        padding:20px 40px 0px;
+    }
+
+    div.myFooterLinks{
+        padding-right: unset;
+    }
+
+    div.myFooterLinks ul{
+        padding-left: 170px;
+    }
+
+    div.myFooterSocialMedia{
+        margin-top: -40px;
+        padding-bottom: 20px;
+    }
+
+    div.myFooterSocialMedia h4{
+        padding-left: 185px;
+    }
+
+     /* End of my footer section */
 
 
+    /* -------------------------------------------------------------------------------- */
 
-    @media only screen and (max-width: 360px) {
-
-        /* Home section */
-        div.intro p{
-            font-size: 23px;
-        }
-        div.profile{
-            height: 450px;
-        }
-        /* End of home section */
-    
-        /* ----------------------------------------------------------------------------------------- */
-        
-        /* My Skills section */
-        div.mySkillsTitle h2{
-            font-weight: bold;
-            font-size: 13px;
-        }
-        div.skills_boxes{
-            margin-right: -130px;
-            margin-left: -130px;
-        }
-    
-        /* End of my skills section */
-    
-        /* -------------------------------------------------------------------------------- */
-    
-        /* My work section */
-        div.myWorkTitle h2{
-            font-weight: bold;
-            font-size: 13px; 
-        }
-
-        div.myWorkDesign3{
-            display: none;
-        }
-
-        div.myWorkDesign4{
-            display: none;
-        }
-    
-        /* End of my work section */
-    
-        /* -------------------------------------------------------------------------------- */
-    
-        /* Service section */
-        div.myServicesTitle{
-            margin-bottom: -20px;
-            padding-top: 60px 90px 0px;
-        }
-    
-        div.myServicesTitle p{
-            padding: 0px 90px 0px;
-        }
-        div.myServicesGrids{
-            flex-direction: column;
-            padding: 30px;
-        }
-         /* End of service section */
-    
-        /* -------------------------------------------------------------------------------- */
-    
-        /* contact section */
-        div.myContact{
-            grid-template-columns: auto;
-            padding: 40px;
-        }
-        
-        div.contactpicture{
-            display: none;
-        }
-        /* End of my contact section */
-    
-    
-        /* -------------------------------------------------------------------------------- */
-    
-        /* footer section */
-        div.myFooterTop{
-            grid-template-columns: auto;
-            padding-left: 40px;
-            padding-right: 40px;
-        }
-    
-        div.myFooterBottom{
-            grid-template-columns: auto;
-            padding:20px 40px 0px;
-        }
-    
-        div.myFooterLinks{
-            padding-right: unset;
-        }
-    
-        div.myFooterLinks ul{
-            padding-left: 130px;
-        }
-    
-        div.myFooterSocialMedia{
-            margin-top: -40px;
-            padding-bottom: 20px;
-        }
-    
-        div.myFooterSocialMedia h4{
-            padding-left: 140px;
-        }
-    
-         /* End of my footer section */
-    
-    
-        /* -------------------------------------------------------------------------------- */
-    
 
     /* End of Responsive Designs */
 
