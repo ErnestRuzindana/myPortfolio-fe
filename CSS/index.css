@@ -103,7 +103,7 @@ div.preNavDocumentation a {
 
 div.preNavLogin h5 a{
    
-    font-size: 100%;
+    font-size: 0.9vw;
     color: black;
     text-decoration: none;
     background-color: var(--myColor);
@@ -219,7 +219,7 @@ li.closeButton{
 .navlinks ul li a{
     text-decoration: none;
     color: var(--myBackground);
-    font-size: 1.1vw;
+    font-size: 0.9vw;
     font-weight: bold;
     transition: all 1s;
 }
@@ -235,7 +235,7 @@ a.loginlinks{
     text-decoration: none;
     text-align: center;
     color: var(--myBackground);
-    font-size: 1.1vw;
+    font-size: 0.9vw;
     font-weight: bold;
 }
 
@@ -376,13 +376,13 @@ div.boxes img{
     /* height: 220px;
     width: 280px; */
     padding: 20px;
-    background-color: white;
+    /* background-color: white; */
     transition: all 1s;
 }
 
-div.boxes img:hover{
+/* div.boxes img:hover{
     border-radius: 50%;
-}
+} */
 
 div.boxes p{
     color: var(--myBackground);
@@ -837,10 +837,11 @@ div.contactform p{
     text-align: center;
 }
 
-div.contactform span{
+div.contactform span a{
     color: var(--myColor);
     font-weight: bold;
     text-align: center;
+    text-decoration: none;
 }
 
 /* End of contact section */

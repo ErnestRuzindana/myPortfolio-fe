@@ -8,7 +8,9 @@ toggleButton.addEventListener ("click", function(){
     nav.classList.add('menu-btn');
 })
 
-closeButton.addEventListener("click", function(){
+
+
+nav.addEventListener("click", function(){
     nav.classList.remove('menu-btn');
 })
 
