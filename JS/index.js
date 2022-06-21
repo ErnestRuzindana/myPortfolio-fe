@@ -1,11 +1,7 @@
-
 const toggleButton = document.getElementById ("toggleButton");
-
-// const navlinks = document.getElementById ("navlinks");
-
 const closeButton = document.getElementById("closeButton");
-
 const nav = document.querySelector('nav')
+nav.classList.remove('menu-btn');
 
 
 toggleButton.addEventListener ("click", function(){

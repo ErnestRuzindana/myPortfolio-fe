@@ -51,24 +51,23 @@ body::-webkit-scrollbar-thumb {
 
 section.preNav{
     background-color: var(--myColor);
-    margin-top: -17px;
-    padding: 15px 50px 0.2px;
-
+    width: 100%;
 }
 
 div.preNavLinks{
     display: grid;
-    grid-template-columns: 25% 30% 40%;
-    gap: 10px;
+    grid-template-columns: 18% 32% 50%;
     align-items: center;
+    width: 100%;
 }
 
 div.preNavLogo{
-    padding: 10px 100px 5px 140px ;
-}
-div.preNavLogo a img{
-    /* width: 80%; */
+    padding: 0 5% 0 70%;
     width: 100%;
+}
+
+div.preNavLogo a img{
+    max-width: 120%;
     transition: all 1s;
 }
 
@@ -79,13 +78,13 @@ div.preNavLogo a img:hover{
 
 div.preNavDocumentation{
     display: flex;
-    justify-content: center;
-    gap: 0px;
+    justify-content: flex-end;
+    width: 100%;
 }
 
 a.preNavExercises div{
-    padding: 20px;
-    font-size: 16px;
+    padding: 1.25em;
+    font-size: 1rem;
     color: var(--myBackground);
     transition: all 1s;
 }
@@ -96,19 +95,19 @@ a.preNavExercises div:hover{
 
 
 div.preNavDocumentation a {
-    font-size: 14px;
+    font-size: 14%;
     color: black;
     text-decoration: none;
 }
 
 
 div.preNavLogin h5 a{
-    margin-right: 40px;
-    font-size: 14px;
+   
+    font-size: 100%;
     color: black;
     text-decoration: none;
     background-color: var(--myColor);
-    padding: 5px 15px 5px 15px;  
+    padding: 5px 20px 5px 20px;  
     border: 2px solid white;
     border-radius: 20px;
     transition: all 1s;
@@ -120,7 +119,7 @@ div.preNavLogin h5 a:hover{
     text-decoration: none;
     color: var(--myColor);
     background-color: white;
-    padding: 5px 15px 5px 15px;  
+    padding: 5px 20px 5px 20px;  
     border: 2px solid white;
     border-radius: 20px;
 }
@@ -153,10 +152,11 @@ div.preNavLinks ul li a:hover{
 
 /* Navigation bar */
 
-/* show the nav */
+
 nav.menu-btn{
     display: block;
 }
+
 section.nav{
     position: sticky;
     top: 0;
@@ -170,24 +170,27 @@ div.navbar{
     display: grid;
     grid-template-columns: auto auto;
     align-items: center;
+    width: 100%;
 }
 
-/* position well the navbar */
 nav{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 75% 23%;
     align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 .logo a{
     text-decoration: none;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 1.5vw;
+    padding: 0;
     color: var(--myBackground);
 }
 
 .logo {
     text-align: center;
-    font-size: 25px;
+    width: 100%;
 }
 
 .logo a:hover{
@@ -206,7 +209,7 @@ li.closeButton{
 .navlinks ul{
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 3.5vw;
 }
 
 .navlinks ul li{
@@ -216,7 +219,7 @@ li.closeButton{
 .navlinks ul li a{
     text-decoration: none;
     color: var(--myBackground);
-    font-size: 14px;
+    font-size: 1.1vw;
     font-weight: bold;
     transition: all 1s;
 }
@@ -232,15 +235,15 @@ a.loginlinks{
     text-decoration: none;
     text-align: center;
     color: var(--myBackground);
-    font-size: 14px;
+    font-size: 1.1vw;
     font-weight: bold;
 }
 
 .loginlinks{
     border: 3px solid var(--myColor);
     border-radius: 20px;
-    padding: 5px 15px;
-    margin-right: 37px;
+    padding: 5px 0;
+    margin-right: 25px;
 }
 
 .loginlinks:hover{
@@ -269,13 +272,13 @@ a.loginlinks{
 div.paddles{
     display: none;
 }
+
 .profile {
     background-image: url('../images/sabyinyo.jpg');
     background-attachment: fixed;
     height: 600px;
     width: 100%;
     background-size: cover;
-    padding-top: 90px;
     background-repeat: no-repeat;
     position: relative;
     z-index: -1;
@@ -283,16 +286,16 @@ div.paddles{
 
 div.intro {
     /* background-color: lightblue; */
-    width: 60%;
+    width: 100%;
     height: 50%;
-    padding: 20px;
+    padding: 2.5vw;
     position: absolute;
     top: 70px;
 }
 
 div.intro p{
     color: var(--myColor);
-    font-size: 60px;
+    font-size: 4vw;
     font-weight: bold;
 }
 
@@ -310,44 +313,50 @@ div.intro p span{
 
 div.about{
     background-color: var(--Sectionbackground);
-    margin-top: -20px;
-    padding: 20px 150px 20px 150px;
+    padding: 1vw 13vw 1vw 10vw;
+    width: 100%;
 }
 
 div.myAbout{
     background-color: var(--Sectionbackground); 
     border: 3px dotted var(--myColor);
-    margin: 150px 10px 100px;
+    margin: 5vw 0 7vw;
     display: grid;
     grid-template-columns: 20% 80%;
-    gap: 100px;
-    padding: 50px;
+    gap: 7vw;
+    padding: 5vw;
     border-radius: 30px;
+    width: 100%;
 }
 
 div.left{
-
+    width: 100%;
+    margin: auto;
     text-align: center;
-    padding: 10px 90px 70px 20px;
+    padding: 0 1.5vw;
 }
-div.left h2, h5{
+div.left h5{
     color: var(--myBackground);
+    font-size: 1.3vw;
+}
+
+div.left h2{
+  font-size: 2vw;
 }
 
 div.left p{
     font-family: calibri;
-    font-size: 16px;
+    font-size: 1.3vw;
     text-align: justify;
     color: var(--myBackground);
-    padding-left: 70px;
-    padding-right: 70px;
+    padding-left: 6vw;
+    padding-right: 6vw;
 }
 
+
 div.right img{
-    margin-top: 10px;
-    height: 360px;
-    width: 360px;
-    margin-bottom: -7px;
+    width: 25vw;
+    height: 30vw;
     border-radius: 30px;
     border: 1px solid var(--myBackground);
 }
@@ -357,16 +366,15 @@ div.right img{
 div.homeboxes{
     display: grid;
     grid-template-columns: auto auto auto;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 100%;
+    gap: 8vw;
 }
 
 
-
-
-
 div.boxes img{
-    height: 220px;
-    width: 280px;
+    /* height: 220px;
+    width: 280px; */
     padding: 20px;
     background-color: white;
     transition: all 1s;
@@ -380,6 +388,7 @@ div.boxes p{
     color: var(--myBackground);
     font-weight: bold;
     text-align: center;
+    font-size: 1.1vw;
 }
 
 div.boxes p:hover{
@@ -387,12 +396,16 @@ div.boxes p:hover{
 }
 
 div.boxes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color:white;
-    height: 300px;
-    margin-top: -150px;
+    height: 120%;
+    width: 120%;
+    margin-top: -170px;
     border-radius: 10px;
     box-shadow: 2px 2px 5px;
-    padding: 20px;
+    padding: 2vw;
     transition: all 1s;
 }
 
@@ -401,9 +414,25 @@ div.boxes:hover{
     transform: scale(0.9, 0.9);
 }
 
+div.homeboxes div.boxA img{
+    width: 100%;
+    height: 90%;
+  }
+
+div.homeboxes div.boxB img{
+    width: 100%;
+  height: 90%;
+}
+
+div.homeboxes div.boxC img{
+    width: 100%;
+    height: 90%;
+  }
+
 
 button.downloadCV{
     padding: 5px 10px 5px 10px;
+    font-size: 1.1vw;
     border-radius: 15px;
     cursor: pointer;
     /* transition: border-radius 1s, padding 1s, background-color 1s, color 1s, box-shadow 1s; */
@@ -429,46 +458,46 @@ button.downloadCV:hover{
 /* section skills */
 
 section.Skills{
-    padding: 50px 150px 50px 150px;
+    padding: 4vw 7vw;
+    width: 100%;
 }
 
 div.mySkillsTitle{
     text-align: center;
+    width: 100%;
 }
 
 div.mySkills{
     display: grid;
     grid-template-columns: auto auto auto;
-    gap: 30px;
-    padding: 20px;
+    gap: 2.5vw;
+    padding: 1.2vw;
+    width: 100%;
 }
 
 div.skills_boxes{
     background-color: white;
     box-shadow: 0px 0px 20px gray;
     text-align: center;
-    padding: 30px;
+    padding: 2.4vw;
     border-radius: 10px;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 1.5vw;
+    margin-bottom: 2.4vw;
     cursor: pointer;
+}
+
+div.skills_text h4{
+    font-size: 1.2vw;
 }
 
 div.skills_text p{
     font-family: calibri;
+    font-size: 1.16vw;
 }
 
 div.box1{
-    /* transition: transform 1s, background-color 1s, color 1s; */
     transition: all 1s;
 }
-
-/* div.skills_icons img{
-    width: 20%;
-    background-color: rgb(10, 76, 147);
-    border-radius: 30px;
-    padding: 1px;
-} */
 
 div.box1:hover{
     background-color: rgb(10, 76, 147);
@@ -477,7 +506,6 @@ div.box1:hover{
 }
 
 div.box2{
-    /* transition: transform 1s, background-color 1s, color 1s; */
     transition: all 1s;
 }
 
@@ -488,7 +516,6 @@ div.box2:hover{
 }
 
 div.box3{
-    /* transition: transform 1s, background-color 1s, color 1s; */
     transition: all 1s;
 }
 
@@ -499,7 +526,6 @@ div.box3:hover{
 }
 
 div.box4{
-    /* transition: transform 1s, background-color 1s, color 1s; */
     transition: all 1s;
 }
 
@@ -510,7 +536,6 @@ div.box4:hover{
 }
 
 div.box5{
-    /* transition: transform 1s, background-color 1s, color 1s; */
     transition: all 1s;
 }
 
@@ -521,7 +546,6 @@ div.box5:hover{
 }
 
 div.box6{
-    /* transition: transform 1s, background-color 1s, color 1s; */
     transition: all 1s;
 }
 
@@ -534,13 +558,14 @@ div.box6:hover{
 
 div.skills_icons{
     margin-top: -20%;
+    width: 100%;
 }
 
 div.skills_icons i{
     color:white;
-    font-size: 35px;
+    font-size: 2.4vw;
     background-color: var(--myColor);
-    padding: 15px;
+    padding: 1.1vw;
     border-radius: 50%;
 }
 
@@ -554,12 +579,14 @@ div.skills_icons img{
 /* My Work section */
 div.myWork{
     background-color: var(--Sectionbackground);
-    padding-top: 50px;  
+    padding-top: 4vw;
+    width: 100%;  
 }
 
 div.myWorkTitle{
     text-align: center;
-    margin-bottom: -120px;
+    margin-bottom: -8vw;
+    width: 100%;
 }
 
 div.myWorkGrids{
@@ -568,15 +595,16 @@ div.myWorkGrids{
     z-index: 0;
     grid-template-columns: auto auto auto;
     justify-content: space-around;
-    padding: 150px;
-    gap: 90px;
+    padding: 10vw;
+    gap: 4vw;
+    width: 100%;
 }
 
 
 div.myWorkGridBox{
     background-color: rgb(255, 255, 255);
     text-align: center;
-    padding: 10px 5px 30px;
+    padding: 1.3vw 1vw 2vw;
     box-shadow: 1px 1px 20px grey;
     position: relative;
     border-radius: 5%;
@@ -585,11 +613,11 @@ div.myWorkGridBox{
 
 div.myWorkGridBox h4{
     text-align: center;
+    font-size: 1.2vw;
 }
 
 div.myWorkGridBox a img{
     width: 80%;
-    /* border-radius: 5%; */
 }
 
 div.myWorkGridBox a img:hover{
@@ -653,17 +681,20 @@ section.services{
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
+    width: 100%;
 }
 div.myServicesGrids{
     display: flex;
-    padding: 150px;
+    padding: 11vw;
+    width: 100%;
 }
 
 div.myServicesTitle{
     text-align: center;
     color: white;
-    margin-bottom: -120px;
+    margin-bottom: -8vw;
     padding-top: 60px;
+    width: 100%;
 }
 
 div.serviceBox1{
@@ -675,8 +706,6 @@ div.serviceBox1{
 div.serviceBox1:hover{
     opacity: 0.7;
     cursor: pointer;
-    /* transform: scale(0.9, 0.9); */
-    /* box-shadow: 0.5px 1px 10px; */
 }
 
 div.serviceBox2{
@@ -687,8 +716,6 @@ div.serviceBox2{
 div.serviceBox2:hover{
     opacity: 0.7;
     cursor: pointer;
-    /* transform: scale(0.9, 0.9); */
-    /* box-shadow: 0.5px 1px 10px; */
 }
 
 div.serviceBox3{
@@ -700,8 +727,6 @@ div.serviceBox3{
 div.serviceBox3:hover{
     opacity: 0.7;
     cursor: pointer;
-    /* transform: scale(0.9, 0.9); */
-    /* box-shadow: 0.5px 1px 10px; */
 }
 
 div.serviceBox4{
@@ -712,22 +737,28 @@ div.serviceBox4{
 div.serviceBox4:hover{
     opacity: 0.7;
     cursor: pointer;
-    /* transform: scale(0.9, 0.9); */
-    /* box-shadow: 0.5px 1px 10px; */
 }
 
 div.myServicesBoxes{
     text-align: center;
-    padding: 20px;
+    padding: 1.7vw;
 }
 
+div.myServicesBoxes h4{
+    font-size: 1.3vw;
+}
 
 div.myServicesBoxes p{
     font-family: calibri;
+    font-size: 1.2vw;
 }
 
 div.myServicesBoxes img{
-    width: 100px;
+    width: 6vw
+}
+
+div.serviceBox3 img{
+    width: 9.5vw;
 }
 /* End of services section */
 
@@ -737,8 +768,17 @@ div.myServicesBoxes img{
 
 /* Contact section */
 div.myContact{
+    display: grid;
+    grid-template-columns: 20% 40%;
+    justify-content: space-around;
     padding-bottom: 70px;
+    width: 100%;
 }
+
+div.contactform{
+    width: 100%;
+}
+
 div.contactform form{
     display: flex;
     flex-direction: column;
@@ -746,13 +786,13 @@ div.contactform form{
 
 div.contactform h2{
     text-align: center;
-    margin: 50px;
+    margin: 4vw 4vw 2vw;
     color: black;
 }
 
 div.contactform form input, textarea{
-    margin-bottom: 20px;
-    padding: 15px;
+    margin-bottom: 1.5vw;
+    padding: 1vw;
     border: 2px solid grey;
     border-radius: 10px;
     
@@ -760,12 +800,12 @@ div.contactform form input, textarea{
 
 div.contactform form input[type="submit"]{
     width: 15%;
-    font-size: 20px;
-    padding: 6px;
+    font-size: 1.5vw;
+    padding: 0.5vw;
     background-color: rgb(39, 38, 38);
     box-shadow: grey;
     color: white;
-    transition:all 1s;
+    transition: all 1s;
 }
 
 div.contactform form input[type="submit"]:hover{
@@ -777,15 +817,14 @@ div.contactform form input[type="submit"]:hover{
     cursor: pointer;
 }
 
-div.myContact{
-    display: grid;
-    grid-template-columns: 20% 40%;
-    /* padding: 20px 90px 20px 90px; */
-    justify-content: space-around;
+div.contactpicture{
+    margin-top: 15vw;
+    width: 100%;
 }
 
-div.contactpicture{
-    margin-top: 200px;
+div.contactpicture img{
+    width: 180%;
+    height: 60%;
 }
 
 div.contactpicture:hover{
@@ -794,7 +833,7 @@ div.contactpicture:hover{
 
 div.contactform p{
     font-family: calibri;
-    font-size: 17px;
+    font-size: 1.4vw;
     text-align: center;
 }
 
@@ -817,18 +856,22 @@ div.myFooter p, div.myFooter h2, div.myFooter h3, div.myFooter h4, div.myFooter 
 }
 
 div.myFooterTopForm input[type="email"] {
-    padding: 10px 100px 10px 10px;
+    padding: 0.8vw 10vw 0.8vw 0.8vw;
     border-radius: 5px;
 }
 
+div.myFooterTopForm input[type="email"]::placeholder{
+    font-size: 1vw;
+}
+
 div.myFooterTopForm input[type="submit"] {
-    padding: 10px;
+    padding: 0.8vw;
+    font-size: 1vw;
     background-color: var(--myColor);
     border-radius: 5px;
 }
 
 div.myFooterTopForm input[type="submit"]:hover {
-    padding: 10px;
     background-color: grey;
     cursor: pointer;
 }
@@ -837,12 +880,17 @@ div.myFooterTop{
     display: grid;
     grid-template-columns: 40% 40%;
     align-items: center;
-    gap: 40px;
-    padding-left: 95px;
-    padding-top: 20px;
+    gap: 0 4vw;
+    padding-left: 5vw;
+    padding-top: 3vw;
     background-color: rgb(39, 38, 38);
 
 }
+
+div.myFooterTopBeFirst h3, div.myFooterTopBeFirst p{
+    font-size: 1.25vw;
+}
+
 
 div.myFooterTop p.border{
     border-top: 1px solid rgb(83, 81, 81);
@@ -853,49 +901,54 @@ div.myFooterBottom{
     display: grid;
     grid-template-columns: 40% 20% 20%;
     justify-content: center;
-    gap: 60px;
+    gap: 5vw;
     background-color: rgb(39, 38, 38);
-    padding-top: 20px;
+    padding-top: 1vw;
+    width: 100%;
 }
 
 div.myFooterAbout h4{
     text-align: left;
+    font-size: 1.25vw;
+
 }
 
 div.myFooterAbout p{
     text-align: justify;
+    font-size: 1.15vw;
 }
 
 div.myFooterLinks h4{
     text-align: center;
+    font-size: 1.25vw;
 }
 
 div.myFooterLinks{
-    padding-right: 100px;
+    padding-right: 8vw;
 }
 
 div.myFooterLinks ul li{
     list-style-type: none;
-    margin-left: 20px;
+    margin-left: 2vw;
     transition: all 1s;
 }
 
+
 div.myFooterLinks ul li:hover{
-    margin-left: 30px;
+    margin-left: 2.5vw;
 }
 
 div.myFooterLinks ul li::before{
     content: ">";
-    padding-right: 10px;
+    padding-right: 0.8vw;
     font-weight: bold;
     color: white;
 }
 
 div.myFooterLinks ul li a{
     text-decoration: none;
-    /* font-weight: bold; */
-    font-size: 15px;
-    line-height: 35px;
+    font-size: 1.1vw;
+    line-height: 2.8vw;
 }
 
 div.myFooterLinks ul li a:hover{
@@ -905,8 +958,9 @@ div.myFooterLinks ul li a:hover{
 
 div.myFooterSocialMedia h4{
     text-align: left;
-    padding-left: 40px;
-    padding-bottom: 15px;
+    padding-left: 3vw;
+    padding-bottom: 0.6vw;
+    font-size: 1.25vw;
 }
 
 div.myFooterSocialMedia ul{
@@ -916,20 +970,20 @@ div.myFooterSocialMedia ul{
 }
 
 div.myFooterSocialMedia ul li a{
-    font-size: 20px;
+    font-size: 1.5vw;
+    transition: all 1s;
 }
 
 div.myFooterSocialMedia ul li a:hover{
     color: var(--myColor);
-    font-size: 30px;
+    font-size: 2vw;
 }
 
 div.FooterLogo{
-    padding: 10px 140px 5px 140px ;
+    padding: 0.8vw 13vw 3vw 10vw;
 }
 div.FooterLogo a img{
-    /* width: 80%; */
-    width: 90px;
+    width: 40%;
     transition: all 1s;
 }
 
@@ -940,9 +994,9 @@ div.FooterLogo a img:hover{
 
 div.myFooterCopyRight{
     text-align: center;
-    font-size: 12px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    font-size: 1vw;
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
     background-color: black;
     margin-bottom: -80px;
 }
@@ -972,91 +1026,999 @@ a.northArrow{
 
 /* Responsive Designs */
 
-/* Navigation bar */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1108px) {
+  /* About section */
 
-    section.preNav {
-        display: none;
-    }
-
-    div.navbar{
-        position: relative;
-        display: grid;
-        grid-template-columns: auto;
-        align-items: unset;
-    }
-
-    div.toggleButton{
-        display: block;
-        cursor: pointer;
-    }
-
-    li.closeButton{
-        display: block;
-        font-size: 30px;
-        padding-left: 200%;
-        color: rgb(156, 9, 9);
-        cursor: pointer;
-    }
-
-
-/* initially hide the nav */
-    
-    /* div.navlinks {
-        display: none;
-    } */
-nav{
-    display: none;
+  div.myAbout{
+    gap: 9vw;
 }
-    div.navlinks ul{
-        position: absolute;
-        display: flex;
-        background-color: var(--myColor);
-        flex-direction: column;
-        top: -16px;
-        right: 0px;
-        padding: 10px 70px;
-    }
 
-    /* position the contact button */
-    a.loginlinks{
-        position: absolute;
-        border: unset;
-        background-color: var(--myColor);
-        border-radius: unset;
-        top: 455px;
-        right: -80px;
-        padding: 30px 100px 30px 61px;
-       
-    }
+div.left h5{
+    font-size: 1.3vw;
+}
 
-    .navlinks a{
-        text-align: center;
-    }
+div.left h2{
+  font-size: 2vw;
+}
+
+div.left p{
+    font-size: 1.6vw;
+}
 
 
-    div.logo{
-        display: flex;
-        justify-content: space-around;
+div.right img{
+    width: 27vw;
+    height: 34vw;
+}
+
+button.downloadCV{
+    font-size: 1.2vw;
+}
+
+
+/* End of about section */
+
+/* Skills section */
+
+div.mySkills{
+    grid-template-columns: auto auto auto;
+    gap: 2.3vw;
+    padding: 1.2vw;
+}
+
+div.skills_text h4{
+    font-size: 1.4vw;
+}
+
+div.skills_text p{
+    font-family: calibri;
+    font-size: 1.4vw;
+}
+
+/* End of skills section */
+
+/* Services section */
+
+div.myServicesGrids{
+    display: flex;
+    padding: 11vw 8vw;
+}
+
+div.myServicesTitle{
+    text-align: center;
+    color: white;
+    margin-bottom: -8vw;
+    padding-top: 60px;
+    width: 100%;
+}
+
+div.myServicesBoxes{
+    text-align: center;
+    padding: 1.7vw 1.5vw;
+}
+
+div.myServicesBoxes h4{
+    font-size: 1.6vw;
+}
+
+div.myServicesBoxes p{
+    font-size: 1.5vw;
+}
+
+div.myServicesBoxes img{
+    width: 6vw
+}
+
+div.serviceBox3 img{
+    width: 10vw;
+}
+/* End of services section */
+
+/* Contact section */
+div.myContact{
+    grid-template-columns: 20% 40%;
+    justify-content: space-around;
+}
+
+div.contactform h2{
+    margin: 4vw 4vw 2vw;
+}
+
+div.contactform form input, textarea{
+    margin-bottom: 1.5vw;
+    padding: 1vw;
+    border: 2px solid grey;
+    border-radius: 10px;
+    
+}
+
+div.contactform form input[type="submit"]{
+    width: 15%;
+    font-size: 1.5vw;
+    padding: 0.5vw;
+    background-color: rgb(39, 38, 38);
+    box-shadow: grey;
+    color: white;
+    transition: all 1s;
+}
+
+
+div.contactpicture{
+    margin-top: 15vw;
+    width: 100%;
+}
+
+div.contactform p{
+    font-family: calibri;
+    font-size: 1.7vw;
+    text-align: center;
+}
+
+/* End of contact section */
+
+/* Footer section */
+
+div.myFooterTopForm input[type="email"] {
+    padding: 0.8vw 10vw 0.8vw 0.8vw;
+}
+
+div.myFooterTopForm input[type="email"]::placeholder{
+    font-size: 1.2vw;
+}
+
+div.myFooterTopForm input[type="submit"] {
+    padding: 0.8vw;
+    font-size: 1.2vw;;
+}
+
+div.myFooterTop{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    align-items: center;
+    gap: 0 4vw;
+    padding-left: 5vw;
+    padding-top: 3vw;
+    background-color: rgb(39, 38, 38);
+
+}
+
+div.myFooterTopBeFirst h3, div.myFooterTopBeFirst p{
+    font-size: 1.4vw;
+}
+
+div.myFooterBottom{
+    display: grid;
+    grid-template-columns: 40% 20% 20%;
+    justify-content: center;
+    gap: 5vw;
+    background-color: rgb(39, 38, 38);
+    padding-top: 1vw;
+    width: 100%;
+}
+
+div.myFooterAbout h4{
+    font-size: 1.4vw;
+}
+
+div.myFooterAbout p{
+    font-size: 1.3vw;
+}
+
+div.myFooterLinks h4{
+    font-size: 1.4vw;
+}
+
+div.myFooterLinks{
+    padding-right: 5vw;
+    width: 100%;
+}
+
+div.myFooterLinks ul li{
+    list-style-type: none;
+    margin-left: 2vw;
+    transition: all 1s;
+}
+
+
+div.myFooterLinks ul li:hover{
+    margin-left: 2.5vw;
+}
+
+div.myFooterLinks ul li::before{
+    content: ">";
+    padding-right: 0.8vw;
+    font-weight: bold;
+    color: white;
+}
+
+div.myFooterLinks ul li a{
+    text-decoration: none;
+    font-size: 1.3vw;
+    line-height: 2.8vw;
+}
+
+div.myFooterLinks ul li a:hover{
+    font-weight: bold;
+}
+
+
+div.myFooterSocialMedia h4{
+    text-align: left;
+    padding-left: 3vw;
+    padding-bottom: 0.5vw;
+    font-size: 1.25vw;
+}
+
+div.myFooterSocialMedia ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    margin-left: 4vw;
+    list-style-type: none;
+    justify-content: space-between;
+}
+
+div.FooterLogo{
+    padding: 0.8vw 13vw 3vw 10vw;
+}
+div.FooterLogo a img{
+    width: 40%;
+    transition: all 1s;
+}
+
+div.FooterLogo a img:hover{
+    transform: scale(1.2, 1.2);
+    opacity: 0.8;
+}
+
+div.myFooterCopyRight{
+    text-align: center;
+    font-size: 1vw;
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
+    background-color: black;
+    margin-bottom: -80px;
+}
+
+/* End of footer section */
+
+
+}
+
+@media only screen and (max-width: 937px) {
+
+  /* prenav section */
+  div.preNavLogo{
+    padding: 0 33% 0 33%;
+    width: 100%;
+}
+    div.preNavLinks{
+        display: grid;
+        grid-template-columns: 15% 20% 65%;
         align-items: center;
-        text-align: center; 
-        gap: 30%;       
+        width: 100%;
+    }
+    
+    div.preNavDocumentation{
+        display: unset;
+    }
+    
+    a.preNavExercises div{
+        padding: 0;
+        font-size: 1rem;
+        color: var(--myBackground);
+        transition: all 1s;
+    }
+    
+    a.preNavExercises div:hover{
+        background-color: unset;
+    }
+    
+    div.preNavDocumentation a div h5{
+        transition: all 1s;
+  }
+
+  div.preNavDocumentation a div h5::before{
+    content: ">";
+    padding-right: 10px;
+    font-weight: bold;
+    color: black;
+}
+
+    div.preNavDocumentation a div h5:hover{
+          transform: scale(1.1,1.1);
     }
 
+    /* End of prenav section */
+    
+
+    /* Navigation Bar section */
+
+    nav{
+        display: grid;
+        grid-template-columns: 75% 23%;
+        align-items: center;
+        justify-content: unset;
+        gap: 2vw;
+        width: 100%;
+    }
     .logo a{
         text-decoration: none;
         font-weight: bold;
-        font-size: 15px;
-        
+        font-size: 2vw;
+        padding: 0;
         color: var(--myBackground);
     }
+    
+    .logo {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .logo a:hover{
+        opacity: 0.5;
+    }
+    
+    div.toggleButton{
+        display: none;
+    }
+    
+    li.closeButton{
+        display: none;
+    }
+    
+    
+    
+    .navlinks ul li{
+        list-style-type: none;
+    }
+    
+    .navlinks ul li a{
+        text-decoration: none;
+        color: var(--myBackground);
+        font-size: 1.5vw;
+        font-weight: bold;
+        transition: all 1s;
+    }
+    
+    .navlinks ul li a:hover{
+        color: var(--myColor);
+        padding-top: 10px;
+        border-top: 3px solid var(--myColor);
+    }
+    
+    
+    a.loginlinks{
+        text-decoration: none;
+        text-align: center;
+        color: var(--myBackground);
+        font-size: 1.5vw;
+        font-weight: bold;
+    }
 
-    /* End Navigation bar */
+    /* End of navigation Bar section */
+
+    /* Home section */
+
+    div.intro p{
+        font-size: 5vw;
+    }
+    
+
+    /* End of Home section */
+
+           /* About section */
+
+     div.myAbout{
+       gap: 10vw;
+    }
+
+     div.left h5{
+         font-size: 1.5vw;
+     }
+
+    div.left h2{
+      font-size: 2.5vw;
+    }
+
+    div.left p{
+        font-size: 1.7vw;
+    }
+
+
+    div.right img{
+        width: 28vw;
+        height: 38vw;
+    }
+
+    button.downloadCV{
+        font-size: 1.3vw;
+    }
+
+
+/* End of about section */
+
+/* Skills section */
+
+div.mySkills{
+    grid-template-columns: auto auto;
+    gap: 5vw;
+    padding: 1.2vw;
+}
+
+div.skills_text h4{
+    font-size: 2vw;
+}
+
+div.skills_text p{
+    font-family: calibri;
+    font-size: 1.8vw;
+}
+
+div.skills_icons{
+    margin-top: -14%;
+    width: 100%;
+}
+
+div.skills_icons i{
+    color:white;
+    font-size: 3vw;
+    background-color: var(--myColor);
+    padding: 1.3vw;
+    border-radius: 50%;
+}
+
+/* End of skills section */
+
+
+/* My work section */
+div.myWorkGrids{
+    grid-template-columns: auto auto auto;
+    padding: 10vw 5vw;
+    gap: 3vw;
+}
+
+div.myWorkTitle{
+   padding: 1vw 2.5vw 3vw; 
+}
+
+div.myWorkTitle h2{
+    font-size: 2.5vw;
+}
+
+div.myWorkTitle p{
+    font-size: 1.9vw; 
+}
+
+div.myWorkGridBox{
+    padding: 1.3vw 1vw 2vw;
+}
+
+
+div.myWorkGridBox h4{
+    font-size: 1.7vw;
+}
+
+/* End of my work section */
+
+/* Services section */
+
+div.myServicesGrids{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 2vw 0;
+    padding: 11vw 8vw;
+}
+
+div.myServicesTitle{
+    text-align: center;
+    color: white;
+    margin-bottom: -8vw;
+    padding-top: 60px;
+    width: 100%;
+}
+
+div.myServicesBoxes{
+    text-align: center;
+    padding: 1.7vw 1.7vw;
+}
+
+div.myServicesBoxes h4{
+    font-size: 2.1vw;
+}
+
+div.myServicesBoxes p{
+    font-size: 2vw;
+}
+
+div.myServicesBoxes img{
+    width: 10vw;
+}
+
+div.serviceBox3 img{
+    width: 16vw;
+}
+/* End of services section */
+
+/* Contact section */
+div.myContact{
+    grid-template-columns: 20% 40%;
+    justify-content: space-around;
+}
+
+div.contactform h2{
+    margin: 4vw 4vw 2vw;
+}
+
+div.contactform form input, textarea{
+    margin-bottom: 1.5vw;
+    padding: 1.2vw;
+    border: 2px solid grey;
+    border-radius: 10px;
+    
+}
+
+div.contactform form input[type="submit"]{
+    width: 15%;
+    font-size: 1.4vw;
+    padding: 1vw;
+    background-color: rgb(39, 38, 38);
+    box-shadow: grey;
+    color: white;
+    transition: all 1s;
+}
+
+
+div.contactpicture{
+    margin-top: 15vw;
+    width: 100%;
+}
+
+div.contactform p{
+    font-family: calibri;
+    font-size: 2vw;
+    text-align: center;
+}
+
+/* End of contact section */
+
+/* Footer section */
+
+div.myFooterTopForm input[type="email"] {
+    padding: 0.8vw 10vw 0.8vw 0.8vw;
+}
+
+div.myFooterTopForm input[type="email"]::placeholder{
+    font-size: 1.4vw;
+}
+
+div.myFooterTopForm input[type="submit"] {
+    padding: 0.8vw;
+    font-size: 1.4vw;
+}
+
+div.myFooterTop{
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    padding-left: 5vw;
+    padding-top: 3vw;
+    background-color: rgb(39, 38, 38);
+}
+
+div.myFooterTopBeFirst h3, div.myFooterTopBeFirst p{
+    font-size: 1.7vw;
+}
+
+div.myFooterBottom{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-content: center;
+    background-color: rgb(39, 38, 38);
+    padding-top: 1vw;
+    width: 100%;
+}
+
+div.myFooterAbout h4{
+    font-size: 1.7vw;
+}
+
+div.myFooterAbout p{
+    font-size: 1.5vw;
+}
+
+div.myFooterLinks h4{
+    font-size: 1.7vw;
+}
+
+div.myFooterLinks{
+    width: 100%;
+}
+
+div.myFooterLinks ul li{
+    list-style-type: none;
+    margin-left: 2vw;
+    transition: all 1s;
+}
+
+
+div.myFooterLinks ul li:hover{
+    margin-left: 2.5vw;
+}
+
+div.myFooterLinks ul li::before{
+    content: ">";
+    padding-right: 0.8vw;
+    font-weight: bold;
+    color: white;
+}
+
+div.myFooterLinks ul li a{
+    text-decoration: none;
+    font-size: 1.6vw;
+    line-height: 3.5vw;
+}
+
+div.myFooterLinks ul li a:hover{
+    font-weight: bold;
+}
+
+
+div.myFooterSocialMedia h4{
+    text-align: left;
+    
+    padding-bottom: 0.5vw;
+    font-size: 1.25vw;
+}
+
+div.myFooterSocialMedia ul{
+    display: flex;
+    flex-direction: unset;
+    list-style-type: none;
+    justify-content: space-between;
+}
+
+div.FooterLogo{
+    padding: 0.8vw 13vw 3vw 10vw;
+}
+div.FooterLogo a img{
+    width: 40%;
+    transition: all 1s;
+}
+
+div.FooterLogo a img:hover{
+    transform: scale(1.2, 1.2);
+    opacity: 0.8;
+}
+
+div.myFooterCopyRight{
+    text-align: center;
+    font-size: 1vw;
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
+    background-color: black;
+    margin-bottom: -80px;
+}
+
+/* End of footer section */
+
+}
+
+@media only screen and (max-width: 730px) {
+
+ /*navigation bar section */
+
+ section.preNav {
+    display: none;
+}
+
+section.nav{
+    width: 100%;
+}
+
+div.navbar{
+    position: relative;
+    display: grid;
+    grid-template-columns: auto;
+    width: 100%;
+}
+
+div.toggleButton{
+    display: block;
+    cursor: pointer;
+    font-size: 100%;
+}
+
+li.closeButton{
+    display: block;
+    font-size: 30px;
+    padding-left: 200%;
+    color: rgb(156, 9, 9);
+    cursor: pointer;
+}
+
+nav{
+display: none;
+}
+div.navlinks ul{
+    position: absolute;
+    display: flex;
+    background-color: var(--myColor);
+    flex-direction: column;
+    top: -16px;
+    right: 0;
+    padding: 10px 70px;
+    gap: 30px;
+}
+
+a.loginlinks{
+    position: absolute;
+    border: unset;
+    background-color: var(--myColor);
+    border-radius: unset;
+    top: 390px;
+    right: -67px;
+    padding: 30px 100px 30px 61px;
+    font-size: 13px;
+}
+
+a.loginlinks div{
+    transition: all 1s;
+}
+
+a.loginlinks div:hover{
+    color: white;
+    padding-top: 8px;
+    border-top: 3px solid white; 
+    margin-top: -8px; 
+}
+
+.navlinks ul li a{
+    text-align: center;
+    font-size: 13px;
+}
+
+.navlinks ul li a:hover{
+    color: white;
+    padding-top: 8px;
+    border-top: 3px solid white;
+}
+
+div.logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center; 
+    padding: 2vw 5vw;
+    gap: 30%;       
+}
+
+.logo a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 100%;
+    
+    color: var(--myBackground);
+}
+
+/* End Navigation bar */
+
+
+    /* Home section */
+
+    div.intro p{
+        font-size: 6vw;
+    }
+    
+
+    /* End of Home section */
+
+
+
+    /* About section */
+
+     div.about{
+        padding: 1vw 10vw 1vw 10vw;
+    }
+    
+    div.myAbout{
+        grid-template-columns: auto;
+        gap: 5vw;
+        padding: 5vw;
+    }
+    
+    div.left{
+        padding: 0 1.5vw;
+    }
+    div.left h5{
+        font-size: 2vw;
+    }
+    
+    div.left h2{
+      font-size: 3.5vw;
+    }
+    
+    div.left p{
+        font-size: 2.5vw;
+        padding-left: unset;
+        padding-right: unset;
+    }
+    
+    div.right img{
+        width: 100%;
+        height: 100%;
+    }
+      
+    button.downloadCV{
+        font-size: 1.8vw;
+    }  
+    
+    /* End of about section */
+
+    /* Services section */
+
+div.mySkills{
+    grid-template-columns: auto auto;
+    gap: 3vw;
+    padding: 1.2vw;
+}
+
+div.skills_text h4{
+    font-size: 2.3vw;
+}
+
+div.skills_text p{
+    font-family: calibri;
+    font-size: 2.2vw;
+}
+
+div.skills_icons{
+    margin-top: -14%;
+    width: 100%;
+}
+
+div.skills_icons i{
+    color:white;
+    font-size: 3vw;
+    background-color: var(--myColor);
+    padding: 1.3vw;
+    border-radius: 50%;
+}
+
+/* End of services section */
+
+/* My work section */
+div.myWorkGrids{
+    grid-template-columns: auto auto;
+    padding: 10vw 5vw;
+    gap: 3vw;
+}
+
+div.myWorkTitle{
+    padding: 2vw 2.5vw 3vw; 
+ }
+ 
+ div.myWorkTitle h2{
+     font-size: 3vw;
+ }
+ 
+ div.myWorkTitle p{
+     font-size: 2.3vw; 
+ }
+
+div.myWorkGridBox{
+    padding: 1.3vw 1vw 2vw;
+}
+
+
+div.myWorkGridBox h4{
+    font-size: 2.3vw;
+}
+
+div.myWorkDesign{
+    display: none;
+}
+
+/* End of my work section */
+
+/* Services section */
+
+div.myServicesGrids{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 2vw 0;
+    padding: 11vw 6vw;
+}
+
+div.myServicesTitle{
+    text-align: center;
+    color: white;
+    margin-bottom: -8vw;
+    padding-top: 60px;
+    width: 100%;
+}
+
+div.myServicesBoxes{
+    text-align: center;
+    padding: 1.7vw 1.8vw;
+}
+
+div.myServicesBoxes h4{
+    font-size: 2.6vw;
+}
+
+div.myServicesBoxes p{
+    font-size: 2.5vw;
+}
+
+div.myServicesBoxes img{
+    width: 10vw;
+}
+
+div.serviceBox3 img{
+    width: 16vw;
+}
+/* End of services section */
+
+/* Contact section */
+div.myContact{
+    grid-template-columns: auto;
+    justify-content: center;
+}
+
+div.contactform{
+  padding: 2vw 10vw;
+}
+
+div.contactform h2{
+    margin: 4vw 4vw 2vw;
+}
+
+div.contactform form input, textarea{
+    margin-bottom: 2vw;
+    padding: 1.5vw;
+    border: 2px solid grey;
+    border-radius: 10px;
+    
+}
+
+div.contactform form input[type="submit"]{
+    width: 15%;
+    font-size: 2.2vw;
+    padding: 1vw;
+    background-color: rgb(39, 38, 38);
+    box-shadow: grey;
+    color: white;
+    transition: all 1s;
+}
+
+
+div.contactpicture{
+    display: none;
+}
+
+div.contactform h2{
+    font-size: 4vw;
+}
+
+div.contactform p{
+    font-family: calibri;
+    font-size: 2.7vw;
+    text-align: center;
+}
+
+/* End of contact section */
+
+}
+
+
+
+@media only screen and (max-width: 600px) {
 
     /* ----------------------------------------------------------------------------------------- */
 
     /* Home section */
-    div.intro p{
+    /* div.intro p{
         font-size: 40px;
     }
     div.homeboxes{
@@ -1085,101 +2047,219 @@ nav{
         left: 450px;
         bottom: -200px;
         z-index: 1;
-    }
+    } */
     /* End of home section */
-
-    /* About section */
-
-    div.about{
-        padding: 20px 20px 20px;
-    }
-
-    div.myAbout{
-        grid-template-columns: auto;
-        margin: 20px 0px 20px;
-        padding: unset;
-    }
-
-    div.right{
-        text-align: center;
-    }
-
-    div.right img{
-        margin-bottom: -100px;
-        margin-top: 40px;
-    }
-
-    div.left{
-        padding: 4px 5px 20px;
-    }
-    /* End of about section */
 
     /* -------------------------------------------------------------------------------- */
 
-    /* My Skills section */
-    section.skills{
-        padding: 20px 0px 20px;
-    }
-    div.mySkills{
-        grid-template-columns: auto;
-        padding: 0px;
-        gap: 5px;
-    }
 
-    div.skills_boxes{
-        margin-right: -60px;
-        margin-left: -60px;
+    /* About section */
+
+    div.left h5{
+        font-size: 2.6vw;
     }
-    /* End of my skills section */
+    
+    div.left h2{
+      font-size: 4.1vw;
+    }
+    
+    div.left p{
+        font-size: 3vw;
+        padding-left: unset;
+        padding-right: unset;
+    }
+      
+    button.downloadCV{
+        font-size: 2.2vw;
+    }  
+    
+    /* End of about section */
+
+
+     /* Services section */
+
+section.Skills{
+    padding: 4vw 5vw;
+    width: 100%;
+}
+
+div.mySkillsTitle{
+    font-size: 3.2vw;
+}
+
+div.mySkills{
+    grid-template-columns: auto;
+    gap: 5vw;
+    padding: 10.3vw;
+}
+
+div.skills_text h4{
+    font-size: 3.4vw;
+}
+
+div.skills_text p{
+    font-family: calibri;
+    font-size: 3.1vw;
+}
+
+div.skills_boxes{
+    padding: 7vw 6vw;
+    border-radius: 10px;
+    margin-top: 1.5vw;
+    margin-bottom: 2.4vw;
+    cursor: pointer;
+}
+
+div.skills_icons{
+    margin-top: -20%;
+    width: 100%;
+}
+
+div.skills_icons i{
+    color:white;
+    font-size: 5vw;
+    background-color: var(--myColor);
+    padding: 2vw;
+    border-radius: 50%;
+}
+
+/* End of services section */
 
     /* -------------------------------------------------------------------------------- */
 
     /* My work section */
-    div.myWork{
-        padding-top: unset;
-    }
+div.myWorkGrids{
+    grid-template-columns: auto;
+    padding: 12vw 15vw;
+    gap: 8vw;
+}
 
-    div.myWorkTitle{
-        padding: 60px;    
-    }
+div.myWorkTitle{
+    padding: 3.5vw 2.5vw 3vw; 
+ }
+ 
+ div.myWorkTitle h2{
+     font-size: 4vw;
+ }
+ 
+ div.myWorkTitle p{
+     font-size: 3vw; 
+ }
 
-    div.myWorkGrids{
-        grid-template-columns: auto;
-        gap: 40px;
-        padding: 90px;
-    }
+div.myWorkGridBox{
+    padding: 1.3vw 1vw 2vw;
+}
 
-    /* End of my work section */
+
+div.myWorkGridBox h4{
+    font-size: 3vw;
+}
+
+div.myWorkDesign{
+    display: none;
+}
+
+/* End of my work section */
+    /* -------------------------------------------------------------------------------- */
+
+   /* Services section */
+
+div.myServicesGrids{
+    display: grid;
+    grid-template-columns: auto;
+    gap: unset;
+    padding: 11vw 10vw;
+}
+
+div.myServicesTitle h3{
+    font-size: 4.2vw;
+}
+
+div.myServicesTitle p{
+    font-size: 3.5vw;
+}
+
+div.myServicesBoxes{
+    text-align: center;
+    padding: 3vw ;
+}
+
+div.myServicesBoxes h4{
+    font-size: 3.5vw;
+}
+
+div.myServicesBoxes p{
+    font-size: 3.4vw;
+}
+
+div.myServicesBoxes img{
+    width: 10vw;
+}
+
+div.serviceBox3 img{
+    width: 16vw;
+}
+/* End of services section */
 
     /* -------------------------------------------------------------------------------- */
 
-    /* Service section */
-    div.myServicesTitle{
-        margin-bottom: -20px;
-        padding-top: 60px 90px 0px;
-    }
+    /* Contact section */
+div.myContact{
+    grid-template-columns: auto;
+    justify-content: center;
+    padding-bottom: 3vw;
+}
 
-    div.myServicesTitle p{
-        padding: 0px 90px 0px;
-    }
-    div.myServicesGrids{
-        flex-direction: column;
-        padding: 60px;
-    }
-     /* End of service section */
+div.contactform{
+  padding: 2vw 10vw;
+}
 
-    /* -------------------------------------------------------------------------------- */
+div.contactform h2{
+    margin: 4vw 4vw 2vw;
+}
 
-    /* contact section */
-    div.myContact{
-        grid-template-columns: auto;
-        padding: 40px;
-    }
+div.contactform form input, textarea{
+    margin-bottom: 2vw;
+    padding: 1.5vw;
+    border: 2px solid grey;
+    border-radius: 10px;
     
-    div.contactpicture{
-        display: none;
-    }
-    /* End of my contact section */
+}
+
+div.contactform form input::placeholder{
+    font-size: 2.5vw; 
+}
+
+div.contactform form textarea::placeholder{
+    font-size: 2.5vw; 
+}
+
+div.contactform form input[type="submit"]{
+    width: 15%;
+    font-size: 2.5vw;
+    padding: 1vw;
+    background-color: rgb(39, 38, 38);
+    box-shadow: grey;
+    color: white;
+    transition: all 1s;
+}
+
+
+div.contactpicture{
+    display: none;
+}
+
+div.contactform h2{
+    font-size: 4vw;
+}
+
+div.contactform p{
+    font-family: calibri;
+    font-size: 3.3vw;
+    text-align: center;
+}
+
+/* End of contact section */
 
 
     /* -------------------------------------------------------------------------------- */
@@ -1223,3 +2303,7 @@ nav{
 
   
 }
+
+
+
+
