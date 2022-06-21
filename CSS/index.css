@@ -103,7 +103,7 @@ div.preNavDocumentation a {
 
 div.preNavLogin h5 a{
    
-    font-size: 0.9vw;
+    font-size: 100%;
     color: black;
     text-decoration: none;
     background-color: var(--myColor);
@@ -219,7 +219,7 @@ li.closeButton{
 .navlinks ul li a{
     text-decoration: none;
     color: var(--myBackground);
-    font-size: 0.9vw;
+    font-size: 1.1vw;
     font-weight: bold;
     transition: all 1s;
 }
@@ -235,7 +235,7 @@ a.loginlinks{
     text-decoration: none;
     text-align: center;
     color: var(--myBackground);
-    font-size: 0.9vw;
+    font-size: 1.1vw;
     font-weight: bold;
 }
 
@@ -477,74 +477,6 @@ div.right img{
     border-radius: 30px;
     border: 1px solid var(--myBackground);
 }
-
-
-
-div.homeboxes{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    justify-content: space-between;
-    width: 100%;
-    gap: 8vw;
-}
-
-
-div.boxes img{
-    /* height: 220px;
-    width: 280px; */
-    padding: 20px;
-    /* background-color: white; */
-    transition: all 1s;
-}
-
-/* div.boxes img:hover{
-    border-radius: 50%;
-} */
-
-div.boxes p{
-    color: var(--myBackground);
-    font-weight: bold;
-    text-align: center;
-    font-size: 1.1vw;
-}
-
-div.boxes p:hover{
-    color: var(--myBackground);
-}
-
-div.boxes{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color:white;
-    height: 120%;
-    width: 120%;
-    margin-top: -170px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px;
-    padding: 2vw;
-    transition: all 1s;
-}
-
-div.boxes:hover{
-    background-color: var(--myColor);
-    transform: scale(0.9, 0.9);
-}
-
-div.homeboxes div.boxA img{
-    width: 100%;
-    height: 90%;
-  }
-
-div.homeboxes div.boxB img{
-    width: 100%;
-  height: 90%;
-}
-
-div.homeboxes div.boxC img{
-    width: 100%;
-    height: 90%;
-  }
 
 
 button.downloadCV{
@@ -954,11 +886,10 @@ div.contactform p{
     text-align: center;
 }
 
-div.contactform span a{
+div.contactform span{
     color: var(--myColor);
     font-weight: bold;
     text-align: center;
-    text-decoration: none;
 }
 
 /* End of contact section */
