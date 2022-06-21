@@ -269,14 +269,11 @@ a.loginlinks{
 
 
 /* Home section */
-div.paddles{
-    display: none;
-}
 
 .profile {
     background-image: url('../images/sabyinyo.jpg');
     background-attachment: fixed;
-    height: 600px;
+    height: 40vw;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -285,7 +282,6 @@ div.paddles{
 }
 
 div.intro {
-    /* background-color: lightblue; */
     width: 100%;
     height: 50%;
     padding: 2.5vw;
@@ -305,6 +301,127 @@ div.intro p span{
 
 /* End of home section */
 
+/* Homeboxes section */
+
+section.homeboxesContainer{
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  background-color: var(--Sectionbackground);
+}
+
+.homeboxesContainer a.switchLeft,
+.homeboxesContainer a.switchRight{
+    color: var(--myColor);
+    font-weight: bold;
+    font-size: 45px;
+    text-align: center;
+    font-family: sans-serif;
+    top: 0;
+    cursor: pointer;
+    z-index: 1;
+    background-color: black;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.homeboxesContainer a{
+  display: none;
+}
+
+.homeboxesContainer a.switchLeft{
+    position: absolute;
+    left: 10px;
+    top: 193px;
+    padding: 0 5px 0 5px ;
+}
+
+.homeboxesContainer a.switchRight{
+    position: absolute;
+    right: 10px;
+    top: 193px;
+    padding: 0 5px 0 5px;
+}
+
+div.homeboxes{
+    height: 450px;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-align: center;
+    padding-bottom: 10px !important;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 25px 50px 25px;
+}
+
+
+div.boxes img{
+    
+    background-color: white;
+    transition: all 1s;
+}
+
+div.boxes img:hover{
+    border-radius: 50%;
+}
+
+div.boxes p{
+    color: var(--myBackground);
+    font-weight: bold;
+    text-align: center;
+    font-size: 17px;
+}
+
+div.boxes p span{
+    font-weight: lighter;
+    font-size: 13px;
+}
+
+div.boxes p:hover{
+    color: var(--myBackground);
+}
+
+div.boxes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:white;
+    height: 350px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px;
+    padding: 35px;
+    transition: all 1s;
+    margin-top: -25px;
+}
+
+div.boxes:hover{
+    background-color: var(--myColor);
+    transform: scale(0.9, 0.9);
+}
+
+div.homeboxes div.boxA img{
+    width: 280px;
+    height: 250px;
+  }
+
+div.homeboxes div.boxB img{
+    width: 280px;
+  height: 250px;
+}
+
+div.homeboxes div.boxC img{
+    width: 280px;
+    height: 250px;
+  }
+
+/* End of Homeboxes section */
+
 
 /* ------------------------------------------------------------------------------------------------------------------------------ */
 
@@ -313,14 +430,14 @@ div.intro p span{
 
 div.about{
     background-color: var(--Sectionbackground);
-    padding: 1vw 13vw 1vw 10vw;
+    padding: 0vw 10vw 0.3vw 10vw;
     width: 100%;
 }
 
 div.myAbout{
     background-color: var(--Sectionbackground); 
     border: 3px dotted var(--myColor);
-    margin: 5vw 0 7vw;
+    margin: 2vw 0 7vw;
     display: grid;
     grid-template-columns: 20% 80%;
     gap: 7vw;
@@ -1026,8 +1143,17 @@ a.northArrow{
 
 
 /* Responsive Designs */
+@media only screen and (max-width: 1300px) {
+    .homeboxesContainer a{
+        display: block;
+      }
+}
+
 
 @media only screen and (max-width: 1108px) {
+
+   
+      
   /* About section */
 
   div.myAbout{
@@ -1404,9 +1530,13 @@ div.myFooterCopyRight{
     div.intro p{
         font-size: 5vw;
     }
-    
 
-    /* End of Home section */
+.profile {
+    height: 45vw;
+}
+
+
+/* End of home section */
 
            /* About section */
 
@@ -1601,6 +1731,7 @@ div.myFooterTopForm input[type="submit"] {
 div.myFooterTop{
     display: grid;
     grid-template-columns: auto;
+    gap: 2vw;
     align-items: center;
     padding-left: 5vw;
     padding-top: 3vw;
@@ -1618,6 +1749,7 @@ div.myFooterBottom{
     background-color: rgb(39, 38, 38);
     padding-top: 1vw;
     width: 100%;
+    gap: 1vw;
 }
 
 div.myFooterAbout h4{
@@ -1625,7 +1757,7 @@ div.myFooterAbout h4{
 }
 
 div.myFooterAbout p{
-    font-size: 1.5vw;
+    font-size: 1.55vw;
 }
 
 div.myFooterLinks h4{
@@ -1638,13 +1770,13 @@ div.myFooterLinks{
 
 div.myFooterLinks ul li{
     list-style-type: none;
-    margin-left: 2vw;
+    margin-left: 11vw;
     transition: all 1s;
 }
 
 
 div.myFooterLinks ul li:hover{
-    margin-left: 2.5vw;
+    margin-left: 11.5vw;
 }
 
 div.myFooterLinks ul li::before{
@@ -1667,9 +1799,9 @@ div.myFooterLinks ul li a:hover{
 
 div.myFooterSocialMedia h4{
     text-align: left;
-    
     padding-bottom: 0.5vw;
-    font-size: 1.25vw;
+    font-size: 1.7vw;
+    margin-left: -3vw;
 }
 
 div.myFooterSocialMedia ul{
@@ -1677,6 +1809,17 @@ div.myFooterSocialMedia ul{
     flex-direction: unset;
     list-style-type: none;
     justify-content: space-between;
+    margin-left: 0.5vw;
+}
+
+div.myFooterSocialMedia ul li a{
+    font-size: 2vw;
+    transition: all 1s;
+}
+
+div.myFooterSocialMedia ul li a:hover{
+    color: var(--myColor);
+    font-size: 2.5vw;
 }
 
 div.FooterLogo{
@@ -1694,7 +1837,7 @@ div.FooterLogo a img:hover{
 
 div.myFooterCopyRight{
     text-align: center;
-    font-size: 1vw;
+    font-size: 1.5vw;
     padding-top: 1.5vw;
     padding-bottom: 1.5vw;
     background-color: black;
@@ -1741,6 +1884,7 @@ li.closeButton{
 nav{
 display: none;
 }
+
 div.navlinks ul{
     position: absolute;
     display: flex;
@@ -1757,7 +1901,7 @@ a.loginlinks{
     border: unset;
     background-color: var(--myColor);
     border-radius: unset;
-    top: 390px;
+    top: 385px;
     right: -67px;
     padding: 30px 100px 30px 61px;
     font-size: 13px;
@@ -1809,6 +1953,10 @@ div.logo{
 
     div.intro p{
         font-size: 6vw;
+    }
+
+    .profile {
+        height: 55vw;
     }
     
 
@@ -2010,6 +2158,138 @@ div.contactform p{
 
 /* End of contact section */
 
+/* Footer section */
+
+div.myFooterTopForm input[type="email"] {
+    padding: 0.8vw 10vw 0.8vw 0.8vw;
+}
+
+div.myFooterTopForm input[type="email"]::placeholder{
+    font-size: 1.8vw;
+}
+
+div.myFooterTopForm input[type="submit"] {
+    padding: 0.8vw;
+    font-size: 1.8vw;
+}
+
+div.myFooterTop{
+    display: grid;
+    grid-template-columns: auto;
+    gap: 2vw;
+    align-items: center;
+    padding-left: 5vw;
+    padding-top: 3vw;
+    background-color: rgb(39, 38, 38);
+}
+
+div.myFooterTopBeFirst h3, div.myFooterTopBeFirst p{
+    font-size: 2vw;
+}
+
+div.myFooterBottom{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-content: center;
+    background-color: rgb(39, 38, 38);
+    padding-top: 1vw;
+    width: 100%;
+    gap: 1vw;
+}
+
+div.myFooterAbout h4{
+    font-size: 2.3vw;
+}
+
+div.myFooterAbout p{
+    font-size: 1.8vw;
+}
+
+div.myFooterLinks h4{
+    font-size: 2.3vw;
+}
+
+div.myFooterLinks{
+    width: 100%;
+}
+
+div.myFooterLinks ul li{
+    list-style-type: none;
+    margin-left: 11vw;
+    transition: all 1s;
+}
+
+
+div.myFooterLinks ul li:hover{
+    margin-left: 11.5vw;
+}
+
+div.myFooterLinks ul li::before{
+    content: ">";
+    padding-right: 0.8vw;
+    font-weight: bold;
+    color: white;
+}
+
+div.myFooterLinks ul li a{
+    text-decoration: none;
+    font-size: 1.9vw;
+    line-height: 3.5vw;
+}
+
+div.myFooterLinks ul li a:hover{
+    font-weight: bold;
+}
+
+
+div.myFooterSocialMedia h4{
+    text-align: left;
+    padding-bottom: 0.5vw;
+    font-size: 2.3vw;
+}
+
+div.myFooterSocialMedia ul{
+    display: flex;
+    flex-direction: unset;
+    list-style-type: none;
+    justify-content: space-between;
+    margin-left: 1vw;
+}
+
+div.myFooterSocialMedia ul li a{
+    font-size: 2.3vw;
+    transition: all 1s;
+}
+
+div.myFooterSocialMedia ul li a:hover{
+    color: var(--myColor);
+    font-size: 2.8vw;
+}
+
+div.FooterLogo{
+    padding: 0.8vw 13vw 3vw 10vw;
+}
+div.FooterLogo a img{
+    width: 50%;
+    transition: all 1s;
+}
+
+div.FooterLogo a img:hover{
+    transform: scale(1.2, 1.2);
+    opacity: 0.8;
+}
+
+div.myFooterCopyRight{
+    text-align: center;
+    font-size: 1.5vw;
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
+    background-color: black;
+    margin-bottom: -80px;
+}
+
+/* End of footer section */
+
 }
 
 
@@ -2019,36 +2299,10 @@ div.contactform p{
     /* ----------------------------------------------------------------------------------------- */
 
     /* Home section */
-    /* div.intro p{
-        font-size: 40px;
-    }
-    div.homeboxes{
-        position: relative;
-        overflow: auto;
-        padding: 150px 70px 20px 70px;
-        display: flex;
-        justify-content: flex-start;
-        gap: 10%;
-    }
 
-
-    div.paddles{
-        display: block;
+    .profile {
+        height: 80vw;
     }
-
-    button.left-paddle{
-        position: absolute;
-        right: 450px;
-        bottom: -200px;
-        z-index: 1;
-    }
-
-    button.right-paddle{
-        position: absolute;
-        left: 450px;
-        bottom: -200px;
-        z-index: 1;
-    } */
     /* End of home section */
 
     /* -------------------------------------------------------------------------------- */
@@ -2265,40 +2519,155 @@ div.contactform p{
 
     /* -------------------------------------------------------------------------------- */
 
-    /* footer section */
-    div.myFooterTop{
-        grid-template-columns: auto;
-        padding-left: 40px;
-        padding-right: 40px;
-    }
+    /* Footer section */
 
-    div.myFooterBottom{
-        grid-template-columns: auto;
-        padding:20px 40px 0px;
-    }
+div.myFooterTopForm input[type="email"] {
+    padding: 1vw 10vw 1vw 1vw;
+}
 
-    div.myFooterLinks{
-        padding-right: unset;
-    }
+div.myFooterTopForm input[type="email"]::placeholder{
+    font-size: 2.5vw;
+}
 
-    div.myFooterLinks ul{
-        padding-left: 170px;
-    }
+div.myFooterTopForm input[type="submit"] {
+    padding: 1vw;
+    font-size: 2.5vw;
+}
 
-    div.myFooterSocialMedia{
-        margin-top: -40px;
-        padding-bottom: 20px;
-    }
+div.myFooterTop{
+    display: grid;
+    grid-template-columns: auto;
+    gap: 2vw;
+    align-items: center;
+    padding-left: 5vw;
+    padding-top: 3vw;
+    background-color: rgb(39, 38, 38);
+}
 
-    div.myFooterSocialMedia h4{
-        padding-left: 185px;
-    }
+div.myFooterTopBeFirst h3, div.myFooterTopBeFirst p{
+    font-size: 2.7vw;
+}
 
-     /* End of my footer section */
+div.myFooterBottom{
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
+    background-color: rgb(39, 38, 38);
+    padding: 5vw;
+    width: 100%;
+    gap: 1vw;
+}
+
+div.myFooterAbout h4{
+    font-size: 2.7vw;
+}
+
+div.myFooterAbout p{
+    font-size:2.5vw;
+}
+
+div.myFooterLinks h4{
+    font-size: 2.3vw;
+    margin-left: -50vw;
+}
+
+div.myFooterLinks{
+    width: 100%;
+    margin-left: -10vw;
+}
+
+div.myFooterLinks ul{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+}
+
+div.myFooterLinks ul li{
+    list-style-type: none;
+    transition: all 1s;
+}
+
+
+div.myFooterLinks ul li:hover{
+    margin-left: 11.5vw;
+}
+
+div.myFooterLinks ul li::before{
+    content: ">";
+    padding-right: 1vw;
+    font-size: 3vw;
+    font-weight: bold;
+    color: white;
+}
+
+div.myFooterLinks ul li a{
+    text-decoration: none;
+    font-size: 2.4vw;
+    line-height: 3.5vw;
+}
+
+div.myFooterLinks ul li a:hover{
+    font-weight: bold;
+}
+
+
+div.myFooterSocialMedia h4{
+    text-align: left;
+    padding-bottom: 0.5vw;
+    font-size: 2.7vw;
+}
+
+div.myFooterSocialMedia ul{
+    display: flex;
+    flex-direction: unset;
+    list-style-type: none;
+    justify-content: space-between;
+    margin-left: 1vw;
+    padding: 0 15vw 0 7vw;
+}
+
+div.myFooterSocialMedia ul li a{
+    font-size: 3vw;
+    transition: all 1s;
+}
+
+div.myFooterSocialMedia ul li a:hover{
+    color: var(--myColor);
+    font-size: 3.5vw;
+}
+
+div.FooterLogo{
+    padding: 0.8vw 13vw 3vw 10vw;
+}
+div.FooterLogo a img{
+    width: 15%;
+    transition: all 1s;
+}
+
+div.FooterLogo a img:hover{
+    transform: scale(1.2, 1.2);
+    opacity: 0.8;
+}
+
+div.myFooterCopyRight{
+    text-align: center;
+    font-size: 2.5vw;
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
+    background-color: black;
+    margin-bottom: -80px;
+}
+
+/* End of footer section */
 
 
     /* -------------------------------------------------------------------------------- */
 
+@media only screen and (max-width: 313px) {
+    body{
+        overflow-x: hidden;
+    }
+}
 
     /* End of Responsive Designs */
 
