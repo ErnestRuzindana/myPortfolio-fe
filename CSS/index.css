@@ -219,7 +219,7 @@ li.closeButton{
 .navlinks ul li a{
     text-decoration: none;
     color: var(--myBackground);
-    font-size: 1.1vw;
+    font-size: 0.9vw;
     font-weight: bold;
     transition: all 1s;
 }
@@ -235,7 +235,7 @@ a.loginlinks{
     text-decoration: none;
     text-align: center;
     color: var(--myBackground);
-    font-size: 1.1vw;
+    font-size: 0.9vw;
     font-weight: bold;
 }
 
@@ -273,7 +273,7 @@ a.loginlinks{
 .profile {
     background-image: url('../images/sabyinyo.jpg');
     background-attachment: fixed;
-    height: 40vw;
+    height: 35vw;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -357,30 +357,22 @@ div.homeboxes{
     align-items: center;
     gap: 50px;
     padding: 25px 50px 25px;
+    justify-content: center;
+    
 }
 
 
 div.boxes img{
-    
-    background-color: white;
     transition: all 1s;
-}
-
-div.boxes img:hover{
-    border-radius: 50%;
 }
 
 div.boxes p{
     color: var(--myBackground);
     font-weight: bold;
     text-align: center;
-    font-size: 17px;
-}
-
-div.boxes p span{
-    font-weight: lighter;
     font-size: 13px;
 }
+
 
 div.boxes p:hover{
     color: var(--myBackground);
@@ -872,8 +864,8 @@ div.contactpicture{
 }
 
 div.contactpicture img{
-    width: 180%;
-    height: 60%;
+    width: 160%;
+    height: 80%;
 }
 
 div.contactpicture:hover{
@@ -886,11 +878,13 @@ div.contactform p{
     text-align: center;
 }
 
-div.contactform span{
+div.contactform span a{
     color: var(--myColor);
     font-weight: bold;
     text-align: center;
+    text-decoration: none;
 }
+
 
 /* End of contact section */
 
@@ -1829,13 +1823,16 @@ div.navlinks ul{
 
 a.loginlinks{
     position: absolute;
-    border: unset;
+    display: flex;
     background-color: var(--myColor);
-    border-radius: unset;
-    top: 385px;
-    right: -67px;
-    padding: 30px 100px 30px 61px;
+    flex-direction: column;
+    top: 387px;
+    right: -25px;
+    padding: 10px 70px;
+    gap: 30px;
     font-size: 13px;
+    border-radius: unset;
+    width: 199px;
 }
 
 a.loginlinks div{
