@@ -1,3 +1,5 @@
+//Phone Navigation Bar
+
 const toggleButton = document.getElementById ("toggleButton");
 const closeButton = document.getElementById("closeButton");
 const nav = document.querySelector('nav')
@@ -15,20 +17,35 @@ nav.addEventListener("click", function(){
 })
 
 
-function slide(direction){
-    var container = document.getElementById('homeboxes');
-    scrollCompleted = 0;
-    var slideVar = setInterval(function(){
-        if(direction == 'left'){
-            container.scrollLeft -= 10;
-        }else {
-            container.scrollLeft += 10;
-        }
-        scrollCompleted += 10;
-        if(scrollCompleted >= 330){
-            window.clearInterval(slideVar);
-        }
-    }, 50);
+//Homeboxes Horizontal Scrollbar
+
+const sliders = document.querySelector('.homeboxes');
+var ImagePadding = 50;
+var scrollPerClick = document.querySelector('.boxes').clientWidth + ImagePadding;
+var ScrollAmount = 0;
+
+function SliderScrollLeft(){
+    sliders.scrollTo({
+        top: 0,
+        left: (ScrollAmount -= scrollPerClick),
+        behavior: 'smooth'
+    });
+
+    if(ScrollAmount < 0) {
+        ScrollAmount = 0;
+    }
+}
+
+function SliderScrollRight(){
+    if(ScrollAmount <= sliders.scrollWidth - sliders.clientWidth){
+    sliders.scrollTo({
+        top: 0,
+        left: (ScrollAmount += scrollPerClick),
+        behavior: 'smooth'
+    });
+
+}
+
 }
 
 
