@@ -48,10 +48,12 @@ function SliderScrollRight(){
 
 }
 
+
 // Navigation Active links
 
 var NavLinks = document.getElementById("navlinks");
 var navActive = NavLinks.getElementsByClassName("navActive");
+var loginLinks = document.getElementsByClassName("loginlinks");
 
 for (var i = 0; i < navActive.length; i++){
     navActive[i].addEventListener('click', function(){

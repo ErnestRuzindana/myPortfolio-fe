@@ -93,6 +93,10 @@ a.preNavExercises div:hover{
     background-color: white;
 }
 
+a.preNavExercises div h5{
+    font-size: 0.9vw;
+}
+
 
 div.preNavDocumentation a {
     font-size: 14%;
@@ -103,7 +107,7 @@ div.preNavDocumentation a {
 
 div.preNavLogin h5 a{
    
-    font-size: 100%;
+    font-size: 0.9vw;
     color: black;
     text-decoration: none;
     background-color: var(--myColor);
@@ -1832,11 +1836,11 @@ a.loginlinks{
     flex-direction: column;
     top: 387px;
     right: -25px;
-    padding: 10px 70px;
+    padding: 15px 70px;
     gap: 30px;
     font-size: 13px;
     border-radius: unset;
-    width: 199px;
+    width: 198.5px;
 }
 
 a.loginlinks div{
