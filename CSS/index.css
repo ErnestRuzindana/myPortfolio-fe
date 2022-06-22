@@ -236,6 +236,8 @@ li.closeButton{
 
 .navlinks ul li a.navHover{
     color: var(--myColor);
+    padding-top: 10px;
+    border-top: 3px solid var(--myColor);
 }
 
 
