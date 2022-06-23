@@ -48,4 +48,15 @@ function SliderScrollRight(){
 
 }
 
+// Navigation Active links
 
+var NavLinks = document.getElementById("navlinks");
+var navActive = NavLinks.getElementsByClassName("navActive");
+
+for (var i = 0; i < navActive.length; i++){
+    navActive[i].addEventListener('click', function(){
+        var current = document.getElementsByClassName("navHover"); 
+        current[0].className = current[0].className.replace(" navHover", "");
+        this.className += " navHover";
+    });
+}

@@ -230,6 +230,10 @@ li.closeButton{
     border-top: 3px solid var(--myColor);
 }
 
+.navlinks ul li a.navHover{
+    color: var(--myColor);
+}
+
 
 a.loginlinks{
     text-decoration: none;
