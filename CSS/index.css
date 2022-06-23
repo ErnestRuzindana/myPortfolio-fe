@@ -1464,8 +1464,6 @@ div.preNavLogin h5 a{
         display: none;
     }
     
-    
-    
     .navlinks ul li{
         list-style-type: none;
     }
@@ -1483,6 +1481,12 @@ div.preNavLogin h5 a{
         padding-top: 10px;
         border-top: 3px solid var(--myColor);
     }
+
+    ul li.active a{
+    color: var(--myColor);
+    padding-top: 10px;
+    border-top: 3px solid var(--myColor);
+}
     
     ul li.loginlinksLi a{
         font-size: 1.5vw;
