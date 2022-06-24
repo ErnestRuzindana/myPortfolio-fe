@@ -974,12 +974,12 @@ div.myFooterLinks h4{
 }
 
 div.myFooterLinks{
-    padding-right: 8vw;
+    padding-right: 5vw;
 }
 
 div.myFooterLinks ul li{
     list-style-type: none;
-    margin-left: 2vw;
+    margin-left: 1vw;
     transition: all 1s;
 }
 
@@ -997,7 +997,7 @@ div.myFooterLinks ul li::before{
 
 div.myFooterLinks ul li a{
     text-decoration: none;
-    font-size: 1.1vw;
+    font-size: 1vw;
     line-height: 2.8vw;
 }
 
@@ -1298,7 +1298,7 @@ div.myFooterLinks h4{
 }
 
 div.myFooterLinks{
-    padding-right: 5vw;
+    padding-right: 3.5vw;
     width: 100%;
 }
 
@@ -1322,7 +1322,7 @@ div.myFooterLinks ul li::before{
 
 div.myFooterLinks ul li a{
     text-decoration: none;
-    font-size: 1.3vw;
+    font-size: 1.22vw;
     line-height: 2.8vw;
 }
 
@@ -2593,6 +2593,7 @@ div.myFooterLinks h4{
 div.myFooterLinks{
     width: 100%;
     margin-left: -10vw;
+    padding-right: 0;
 }
 
 div.myFooterLinks ul{
@@ -2608,7 +2609,7 @@ div.myFooterLinks ul li{
 
 
 div.myFooterLinks ul li:hover{
-    margin-left: 11.5vw;
+    margin-left: 10vw;
 }
 
 div.myFooterLinks ul li::before{
@@ -2621,7 +2622,7 @@ div.myFooterLinks ul li::before{
 
 div.myFooterLinks ul li a{
     text-decoration: none;
-    font-size: 2.4vw;
+    font-size: 2.3vw;
     line-height: 3.5vw;
 }
 
