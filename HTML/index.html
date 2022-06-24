@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/557e6c8ef8.js" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="../CSS/index.css">
     
 
@@ -64,23 +63,26 @@
                 </div>
             </div>
 
-           <nav class="menu-btn">
+           <nav class="menu-btn" id="menu">
             <div class="navlinks" id="navlinks">
-                <ul>
+                <ul >
                     <li class="closeButton" id="closeButton">
                         <i class="fa-solid fa-xmark"></i>
                     </li>
-                    <li><a href="#myProfile" class="navActive navHover">Home</a></li>
-                    <li><a href="#aboutme" class="navActive">About</a></li>
-                    <li><a href="#Skills" class="navActive">My skills</a></li>
-                    <li><a href="#work" class="navActive">My work</a></li>
-                    <li><a href="#" class="navActive">Blog</a></li>
-                    <li><a href="#services" class="navActive">Services</a></li>
+                    <li class="active"><a href="#myProfile">Home</a></li>
+                    <li><a href="#aboutme">About</a></li>
+                    <li><a href="#Skills">My skills</a></li>
+                    <li><a href="#work">My work</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#services">Services</a></li>
                 </ul>
             </div>
-            <a href="#contact" class="loginlinks navActive">
-                <div>Contact</div>
-            </a>
+            <ul>
+                <li class="loginlinksLi"><a href="#contact" class="loginlinks active">
+                    <div>Contact</div>
+                </a></li>
+            </ul>
+            
         </nav>  
         </div>
     </section>
@@ -456,7 +458,9 @@
         <i class="fa-solid fa-arrow-up-long"></i>
     </a>
 
-
+    <!--[if lte IE 8]><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><![endif]-->
+	<!--[if gt IE 8]><!--><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script><!--<![endif]-->
     <script src="../JS/index.js"></script>
+    <script type="text/javascript" src="../JS/webActiveNav.js"></script>
 </body>
 </html>

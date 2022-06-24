@@ -94,7 +94,7 @@ a.preNavExercises div:hover{
 }
 
 a.preNavExercises div h5{
-    font-size: 0.9vw;
+    font-size: 1vw;
 }
 
 
@@ -107,7 +107,7 @@ div.preNavDocumentation a {
 
 div.preNavLogin h5 a{
    
-    font-size: 0.9vw;
+    font-size: 1vw;
     color: black;
     text-decoration: none;
     background-color: var(--myColor);
@@ -223,7 +223,7 @@ li.closeButton{
 .navlinks ul li a{
     text-decoration: none;
     color: var(--myBackground);
-    font-size: 0.9vw;
+    font-size: 1vw;
     font-weight: bold;
     transition: all 1s;
 }
@@ -234,7 +234,7 @@ li.closeButton{
     border-top: 3px solid var(--myColor);
 }
 
-.navlinks ul li a.navHover{
+ul li.active a{
     color: var(--myColor);
     padding-top: 10px;
     border-top: 3px solid var(--myColor);
@@ -245,29 +245,28 @@ a.loginlinks{
     text-decoration: none;
     text-align: center;
     color: var(--myBackground);
-    font-size: 0.9vw;
     font-weight: bold;
 }
 
-.loginlinks{
+ul li.loginlinksLi{
     border: 3px solid var(--myColor);
     border-radius: 20px;
-    padding: 5px 0;
-    margin-right: 25px;
+    padding: 0.15vw 0.8vw;
+    margin-right: 3vw;
+    list-style-type: none;
 }
 
-.loginlinks:hover{
+ul li.loginlinksLi:hover{
     color: white;
     background-color: var(--myColor);
 }
 
-.loginlinks a:hover{
-    color: white;
+ul li.loginlinksLi a{
+  font-size: 1vw;
 }
 
-
-.navlinks ul li a:active{
-    color: var(--myColor);
+ul li.loginlinksLi a:hover{
+    color: white;
 }
 
 
@@ -366,9 +365,7 @@ div.homeboxes{
     display: flex;
     align-items: center;
     gap: 50px;
-    padding: 25px 50px 25px;
-    justify-content: center;
-    
+    padding: 25px 50px 25px;   
 }
 
 
@@ -1087,7 +1084,37 @@ a.northArrow{
 
 @media only screen and (max-width: 1108px) {
 
-   
+/* PreNav Section */
+
+a.preNavExercises div h5{
+    font-size: 1.2vw;
+}
+
+div.preNavLogin h5 a{
+    font-size: 1.2vw;
+}
+
+/* End of preNav Section */
+
+/* Navigation bar */
+
+.navlinks ul li a{
+    text-decoration: none;
+    color: var(--myBackground);
+    font-size: 1.25vw;
+    font-weight: bold;
+    transition: all 1s;
+}
+
+ul li.loginlinksLi a{
+  font-size: 1.25vw;
+}
+
+ul li.loginlinksLi{
+    padding: 0.1vw 1.5vw;
+}
+
+/* End of navigation bar */
       
   /* About section */
 
@@ -1391,6 +1418,14 @@ div.myFooterCopyRight{
           transform: scale(1.1,1.1);
     }
 
+a.preNavExercises div h5{
+    font-size: 1.4vw;
+}
+
+div.preNavLogin h5 a{
+    font-size: 1.4vw;
+}
+
     /* End of prenav section */
     
 
@@ -1448,6 +1483,12 @@ div.myFooterCopyRight{
         padding-top: 10px;
         border-top: 3px solid var(--myColor);
     }
+    
+    ul li.loginlinksLi a{
+        font-size: 1.5vw;
+      }
+
+    
     
     
     a.loginlinks{
@@ -1522,8 +1563,12 @@ div.skills_text p{
 }
 
 div.skills_icons{
-    margin-top: -14%;
+    margin-top: -15%;
     width: 100%;
+}
+
+div.skills_icons img{
+    width: 17.5%;
 }
 
 div.skills_icons i{
@@ -1779,6 +1824,10 @@ div.myFooterCopyRight{
     margin-bottom: -80px;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 /* End of footer section */
 
 }
@@ -1837,8 +1886,8 @@ a.loginlinks{
     background-color: var(--myColor);
     flex-direction: column;
     top: 387px;
-    right: -25px;
-    padding: 15px 70px;
+    right: 0;
+    padding: 27px 70px;
     gap: 30px;
     font-size: 13px;
     border-radius: unset;
@@ -1854,6 +1903,17 @@ a.loginlinks div:hover{
     padding-top: 8px;
     border-top: 3px solid white; 
     margin-top: -8px; 
+}
+
+ul li.active a{
+    color: white;
+    padding-top: 10px;
+    border-top: 3px solid white;
+}
+
+ul li.active a.loginlinks{
+    border-top: unset;
+    padding-top: 25px;
 }
 
 .navlinks ul li a{
@@ -1880,9 +1940,26 @@ div.logo{
     text-decoration: none;
     font-weight: bold;
     font-size: 100%;
-    
     color: var(--myBackground);
 }
+
+ul li.loginlinksLi{
+    all: unset;
+}
+
+ul li.loginlinksLi:hover{
+    color: white;
+    background-color: var(--myColor);
+}
+
+ul li.loginlinksLi a{
+  font-size: 13px;
+}
+
+ul li.loginlinksLi a:hover{
+    color: white;
+}
+
 
 /* End Navigation bar */
 
@@ -2304,7 +2381,7 @@ div.skills_boxes{
 }
 
 div.skills_icons{
-    margin-top: -20%;
+    margin-top: -20.8%;
     width: 100%;
 }
 

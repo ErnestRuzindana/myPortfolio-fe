@@ -20,7 +20,7 @@ nav.addEventListener("click", function(){
 //Homeboxes Horizontal Scrollbar
 
 const sliders = document.querySelector('.homeboxes');
-var ImagePadding = 50;
+var ImagePadding = 45;
 var scrollPerClick = document.querySelector('.boxes').clientWidth + ImagePadding;
 var ScrollAmount = 0;
 
@@ -51,14 +51,14 @@ function SliderScrollRight(){
 
 // Navigation Active links
 
-var NavLinks = document.getElementById("navlinks");
-var navActive = NavLinks.getElementsByClassName("navActive");
-var loginLinks = document.getElementsByClassName("loginlinks");
+jQuery(function($) {
+$('#menu').onePageNav({
+	currentClass: 'active',
+	changeHash: false,
+	scrollSpeed: 750,
+	scrollThreshold: 0.2,
+	filter: '',
+	easing: 'swing'
+});
 
-for (var i = 0; i < navActive.length; i++){
-    navActive[i].addEventListener('click', function(){
-        var current = document.getElementsByClassName("navHover"); 
-        current[0].className = current[0].className.replace(" navHover", "");
-        this.className += " navHover";
-    });
-}
+});
