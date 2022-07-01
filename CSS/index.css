@@ -428,115 +428,11 @@ div.intro p span{
 
 /* End of home section */
 
+
+/* -------------------------------------------------------------------------------------------- */
+
+
 /* Homeboxes section */
-
-section.homeboxesContainer{
-  height: 100%;
-  width: 100%;
-  margin: auto;
-  position: relative;
-  background-color: var(--Sectionbackground);
-}
-
-.homeboxesContainer a.switchLeft,
-.homeboxesContainer a.switchRight{
-    color: var(--myColor);
-    font-weight: bold;
-    font-size: 45px;
-    text-align: center;
-    font-family: sans-serif;
-    top: 0;
-    cursor: pointer;
-    z-index: 1;
-    background-color: black;
-    height: 50px;
-    border-radius: 50%;
-}
-
-.homeboxesContainer a{
-  display: none;
-}
-
-.homeboxesContainer a.switchLeft{
-    position: absolute;
-    left: 10px;
-    top: 193px;
-    padding: 0 5px 0 5px ;
-}
-
-.homeboxesContainer a.switchRight{
-    position: absolute;
-    right: 10px;
-    top: 193px;
-    padding: 0 5px 0 5px;
-}
-
-div.homeboxes{
-    height: 450px;
-    width: 100%;
-    margin: auto;
-    overflow: hidden;
-    white-space: nowrap;
-    display: inline-block;
-    text-align: center;
-    padding-bottom: 10px !important;
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    padding: 25px 50px 25px;   
-}
-
-
-div.boxes img{
-    transition: all 1s;
-}
-
-div.boxes p{
-    color: var(--myBackground);
-    font-weight: bold;
-    text-align: center;
-    font-size: 13px;
-}
-
-
-div.boxes p:hover{
-    color: var(--myBackground);
-}
-
-div.boxes{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color:white;
-    height: 350px;
-    width: 400px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px;
-    padding: 35px;
-    transition: all 1s;
-    margin-top: -25px;
-}
-
-div.boxes:hover{
-    background-color: var(--myColor);
-    transform: scale(0.9, 0.9);
-    cursor: pointer;
-}
-
-div.homeboxes div.boxA img{
-    width: 280px;
-    height: 250px;
-  }
-
-div.homeboxes div.boxB img{
-    width: 280px;
-  height: 250px;
-}
-
-div.homeboxes div.boxC img{
-    width: 280px;
-    height: 250px;
-  }
 
 /* End of Homeboxes section */
 
@@ -1117,7 +1013,7 @@ div.myFooterLinks ul li::before{
 div.myFooterLinks ul li a{
     text-decoration: none;
     font-size: 1vw;
-    line-height: 2.8vw;
+    line-height: 2vw;
 }
 
 div.myFooterLinks ul li a:hover{
@@ -1188,12 +1084,256 @@ a.northArrow{
 
 /* End of northArrow direction */
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+
 /* -------------------------------------------------------------------------------------------------------------------------- */
 
-
-
-
 /* Responsive Designs */
+
+@media only screen and (min-width: 1400px){
+      /* Homeboxes section */
+
+section.homeboxesContainer{
+    background-color: var(--Sectionbackground);
+  }
+  
+  .homeboxesContainer a.switchLeft,
+  .homeboxesContainer a.switchRight{
+      color: var(--myColor);
+      font-weight: bold;
+      font-size: 45px;
+      text-align: center;
+      font-family: sans-serif;
+      top: 0;
+      cursor: pointer;
+      z-index: 1;
+      background-color: black;
+      height: 50px;
+      border-radius: 50%;
+  }
+  
+  .homeboxesContainer a{
+    display: none;
+  }
+  
+  .homeboxesContainer a.switchLeft{
+      position: absolute;
+      left: 10px;
+      top: 193px;
+      padding: 0 5px 0 5px ;
+  }
+  
+  .homeboxesContainer a.switchRight{
+      position: absolute;
+      right: 10px;
+      top: 193px;
+      padding: 0 5px 0 5px;
+  }
+  
+  div.homeboxes{
+        height: 450px;
+        width: 100%;
+        margin: auto;
+        overflow: hidden;
+        white-space: nowrap;
+        display: inline-block;
+        text-align: center;
+        padding-bottom: 10px !important;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        padding: 25px 50px 25px;   
+        display: flex;
+        justify-content: center;
+  }
+  
+  
+  div.boxes img{
+      transition: all 1s;
+  }
+  
+  div.boxes p{
+      color: var(--myBackground);
+      font-weight: bold;
+      text-align: center;
+      font-size: 13px;
+  }
+  
+  
+  div.boxes p:hover{
+      color: var(--myBackground);
+  }
+  
+  div.boxes{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color:white;
+      height: 350px;
+      width: 400px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 5px;
+      padding: 35px;
+      transition: all 1s;
+      margin-top: -25px;
+  }
+  
+  div.boxes:hover{
+      background-color: var(--myColor);
+      transform: scale(0.9, 0.9);
+      cursor: pointer;
+  }
+  
+  div.homeboxes div.boxA img{
+      width: 280px;
+      height: 250px;
+    }
+  
+  div.homeboxes div.boxB img{
+    width: 280px;
+    height: 250px;
+  }
+  
+  div.homeboxes div.boxC img{
+      width: 280px;
+      height: 250px;
+    }  
+}
+
+
+
+
+
+@media only screen and (max-width: 1400px){
+    /* Homeboxes section */
+
+section.homeboxesContainer{
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    background-color: var(--Sectionbackground);
+  }
+  
+  .homeboxesContainer a.switchLeft,
+  .homeboxesContainer a.switchRight{
+      color: var(--myColor);
+      font-weight: bold;
+      font-size: 45px;
+      text-align: center;
+      font-family: sans-serif;
+      top: 0;
+      cursor: pointer;
+      z-index: 1;
+      background-color: black;
+      height: 50px;
+      border-radius: 50%;
+  }
+  
+  .homeboxesContainer a{
+    display: none;
+  }
+  
+  .homeboxesContainer a.switchLeft{
+      position: absolute;
+      left: 10px;
+      top: 193px;
+      padding: 0 5px 0 5px ;
+  }
+  
+  .homeboxesContainer a.switchRight{
+      position: absolute;
+      right: 10px;
+      top: 193px;
+      padding: 0 5px 0 5px;
+  }
+  
+  div.homeboxes{
+      height: 450px;
+      width: 100%;
+      margin: auto;
+      overflow: hidden;
+      white-space: nowrap;
+      display: inline-block;
+      text-align: center;
+      padding-bottom: 10px !important;
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      padding: 25px 50px 25px;   
+  }
+  
+  
+  div.boxes img{
+      transition: all 1s;
+  }
+  
+  div.boxes p{
+      color: var(--myBackground);
+      font-weight: bold;
+      text-align: center;
+      font-size: 13px;
+  }
+  
+  
+  div.boxes p:hover{
+      color: var(--myBackground);
+  }
+  
+  div.boxes{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color:white;
+      height: 350px;
+      width: 400px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 5px;
+      padding: 35px;
+      transition: all 1s;
+      margin-top: -25px;
+  }
+  
+  div.boxes:hover{
+      background-color: var(--myColor);
+      transform: scale(0.9, 0.9);
+      cursor: pointer;
+  }
+  
+  div.homeboxes div.boxA img{
+      width: 280px;
+      height: 250px;
+    }
+  
+  div.homeboxes div.boxB img{
+      width: 280px;
+    height: 250px;
+  }
+  
+  div.homeboxes div.boxC img{
+      width: 280px;
+      height: 250px;
+    }
+  
+}
+/* End of Homeboxes section */
+
+    
+
+
+
 @media only screen and (max-width: 1300px) {
     .homeboxesContainer a{
         display: block;
