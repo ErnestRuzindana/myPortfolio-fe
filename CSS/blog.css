@@ -389,7 +389,7 @@ div.myBlog{
 }
 
 div.leftBlog{
-    background-color: var(--myColor);
+    background-color: rgb(107, 107, 107);
     text-align: center;
     padding: 2vw;
 }
@@ -401,10 +401,19 @@ div.leftBlog img{
 
 div.leftBlog p{
     font-size: 1vw;
+    color: white;
 }
 
 div.leftBlog p a{
-    color: var(--Sectionbackground);
+    color: var(--myColor);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1vw;
+}
+
+.leftSideTitle{
+    color: white;
+    font-size: 1.3vw;
 }
 
 div.blogLinks{
@@ -429,6 +438,7 @@ div.blogLinks ul li{
 
 div.blogLinks ul li a{
     color: var(--myColor);
+    font-size: 1vw;
 }
 
 
