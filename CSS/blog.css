@@ -389,6 +389,10 @@ div.myBlog{
 }
 
 div.leftBlog{
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    max-height: 100%;
     background-color: rgb(107, 107, 107);
     text-align: center;
     padding: 2vw;
@@ -441,6 +445,9 @@ div.blogLinks ul li a{
     font-size: 1vw;
 }
 
+div.rightBlog div.mainContent{
+    padding: 30px 100px 20px 100px;
+}
 
 
 /* End of Blog */
