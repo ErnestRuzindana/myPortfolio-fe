@@ -641,6 +641,13 @@ div.skills_icons img{
 
 /* Testimanials section */
 
+section.testimonials{
+    background-image: url(../images/sabyinyo.jpg);
+    background-attachment: fixed;
+    padding: 0.5vw 13vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
   
   .orb {
     width: 50px;
