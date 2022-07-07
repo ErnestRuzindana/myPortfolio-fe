@@ -111,6 +111,8 @@ div.blogSocioMedia ul li a{
 
 /* Parent container */
 
+/* ---------------------------------------------------------------------------------- */
+
 /* PreNav Section */
 
 section.preNav{
@@ -459,8 +461,10 @@ ul li.loginlinksLi a:hover{
 
 div.blogBoxes{
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 30% 70%;
     gap: 3vw;
+    border-bottom: 1px solid rgb(131, 131, 131);
+    padding: 3vw;
 }
 
 div.blogImage img{
@@ -468,6 +472,35 @@ div.blogImage img{
     height: 100%;
 }
 
+div.blogAuthor{
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+img.AuthorImage{
+    width: 7%;
+    border-radius: 50%;
+}
+
+div.blogAuthor small{
+    font-size: 1.2vw;
+    color: rgb(131, 131, 131);
+}
+
+div.blogAuthor small a{
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(131, 131, 131);
+}
+
+div.blogContent{
+    padding-right: 5vw;
+}
+
+p.ContentSection{
+    text-align: justify;
+}
 div.blogContent h3 a{
     text-decoration: none;
     color: black;
@@ -475,6 +508,12 @@ div.blogContent h3 a{
 
 div.blogContent h3 a:hover{
     text-decoration: underline;
+}
+
+p.blogLikesComments{
+    color: rgb(131, 131, 131);
+    font-weight: bold;
+    font-size: 0.8vw;
 }
 
 
