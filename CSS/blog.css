@@ -474,9 +474,13 @@ div.blogBoxes{
     padding: 3vw;
 }
 
+div.blogImage{
+    display: flex;
+    align-items: center;
+}
+
 div.blogImage img{
     width: 100%;
-    height: 100%;
 }
 
 div.blogAuthor{
@@ -1097,7 +1101,6 @@ div.blogBoxes{
 
 div.blogImage img{
     width: 100%;
-    height: 100%;
 }
 
 div.blogAuthor{
@@ -1580,7 +1583,6 @@ div.blogBoxes{
 
 div.blogImage img{
     width: 100%;
-    height: 100%;
 }
 
 div.blogAuthor{
