@@ -437,14 +437,6 @@ div.intro p span{
 /* End of home section */
 
 
-/* -------------------------------------------------------------------------------------------- */
-
-
-/* Homeboxes section */
-
-/* End of Homeboxes section */
-
-
 /* ------------------------------------------------------------------------------------------------------------------------------ */
 
 
@@ -668,6 +660,14 @@ div.testimonialsTitle{
 
 }
 
+span.testimonialContainer{
+    margin-left: -2vw;
+    width: 0;
+    height: 0;
+    border-top: 60px solid red;
+    border-right: 60px solid transparent;
+}
+
 span.testimonialContainer p{
     font-size: 1.2vw;
 }
@@ -738,14 +738,14 @@ span.testimonialOwner img{
   100% { transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements))); }
 }
 .marquee-content li {
-  background-color: white;
-  box-shadow: 0px 0px 10px grey;
-  flex-shrink: 0;
-  color: black;
-  max-height: 90%;
-  width: 30vw;
-  padding: 1vw 2vw 3vw 2vw;
-  border-radius: 3px;
+    background-color: white;
+    box-shadow: 0px 0px 10px grey;
+    flex-shrink: 0;
+    color: black;
+    max-height: 90%;
+    width: 30vw;
+    padding: 0vw 2vw 3vw 2vw;
+    border-radius: 3px;
 }
 
 
@@ -758,6 +758,15 @@ span.testimonialOwner img{
   }
   .marquee:before, .marquee:after { width: 5rem; }
 }
+
+img.quoteImage{
+    width: 10%;
+}
+
+/* End of testimonial section */
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------- */
 
 
 /* My Work section */
@@ -1222,236 +1231,6 @@ a.northArrow{
 /* -------------------------------------------------------------------------------------------------------------------------- */
 
 /* Responsive Designs */
-
-@media only screen and (min-width: 1400px){
-      /* Homeboxes section */
-
-section.homeboxesContainer{
-    background-color: var(--Sectionbackground);
-  }
-  
-  .homeboxesContainer a.switchLeft,
-  .homeboxesContainer a.switchRight{
-      color: var(--myColor);
-      font-weight: bold;
-      font-size: 45px;
-      text-align: center;
-      font-family: sans-serif;
-      top: 0;
-      cursor: pointer;
-      z-index: 1;
-      background-color: black;
-      height: 50px;
-      border-radius: 50%;
-  }
-  
-  .homeboxesContainer a{
-    display: none;
-  }
-  
-  .homeboxesContainer a.switchLeft{
-      position: absolute;
-      left: 10px;
-      top: 193px;
-      padding: 0 5px 0 5px ;
-  }
-  
-  .homeboxesContainer a.switchRight{
-      position: absolute;
-      right: 10px;
-      top: 193px;
-      padding: 0 5px 0 5px;
-  }
-  
-  div.homeboxes{
-        height: 450px;
-        width: 100%;
-        margin: auto;
-        overflow: hidden;
-        white-space: nowrap;
-        display: inline-block;
-        text-align: center;
-        padding-bottom: 10px !important;
-        display: flex;
-        align-items: center;
-        gap: 50px;
-        padding: 25px 50px 25px;   
-        display: flex;
-        justify-content: center;
-  }
-  
-  
-  div.boxes img{
-      transition: all 1s;
-  }
-  
-  div.boxes p{
-      color: var(--myBackground);
-      font-weight: bold;
-      text-align: center;
-      font-size: 13px;
-  }
-  
-  
-  div.boxes p:hover{
-      color: var(--myBackground);
-  }
-  
-  div.boxes{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color:white;
-      height: 350px;
-      width: 400px;
-      border-radius: 10px;
-      box-shadow: 2px 2px 5px;
-      padding: 35px;
-      transition: all 1s;
-      margin-top: -25px;
-  }
-  
-  div.boxes:hover{
-      background-color: var(--myColor);
-      transform: scale(0.9, 0.9);
-      cursor: pointer;
-  }
-  
-  div.homeboxes div.boxA img{
-      width: 280px;
-      height: 250px;
-    }
-  
-  div.homeboxes div.boxB img{
-    width: 280px;
-    height: 250px;
-  }
-  
-  div.homeboxes div.boxC img{
-      width: 280px;
-      height: 250px;
-    }  
-}
-
-
-
-
-
-@media only screen and (max-width: 1400px){
-    /* Homeboxes section */
-
-section.homeboxesContainer{
-    height: 100%;
-    width: 100%;
-    margin: auto;
-    position: relative;
-    background-color: var(--Sectionbackground);
-  }
-  
-  .homeboxesContainer a.switchLeft,
-  .homeboxesContainer a.switchRight{
-      color: var(--myColor);
-      font-weight: bold;
-      font-size: 45px;
-      text-align: center;
-      font-family: sans-serif;
-      top: 0;
-      cursor: pointer;
-      z-index: 1;
-      background-color: black;
-      height: 50px;
-      border-radius: 50%;
-  }
-  
-  .homeboxesContainer a{
-    display: none;
-  }
-  
-  .homeboxesContainer a.switchLeft{
-      position: absolute;
-      left: 10px;
-      top: 193px;
-      padding: 0 5px 0 5px ;
-  }
-  
-  .homeboxesContainer a.switchRight{
-      position: absolute;
-      right: 10px;
-      top: 193px;
-      padding: 0 5px 0 5px;
-  }
-  
-  div.homeboxes{
-      height: 450px;
-      width: 100%;
-      margin: auto;
-      overflow: hidden;
-      white-space: nowrap;
-      display: inline-block;
-      text-align: center;
-      padding-bottom: 10px !important;
-      display: flex;
-      align-items: center;
-      gap: 50px;
-      padding: 25px 50px 25px;   
-  }
-  
-  
-  div.boxes img{
-      transition: all 1s;
-  }
-  
-  div.boxes p{
-      color: var(--myBackground);
-      font-weight: bold;
-      text-align: center;
-      font-size: 13px;
-  }
-  
-  
-  div.boxes p:hover{
-      color: var(--myBackground);
-  }
-  
-  div.boxes{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color:white;
-      height: 350px;
-      width: 400px;
-      border-radius: 10px;
-      box-shadow: 2px 2px 5px;
-      padding: 35px;
-      transition: all 1s;
-      margin-top: -25px;
-  }
-  
-  div.boxes:hover{
-      background-color: var(--myColor);
-      transform: scale(0.9, 0.9);
-      cursor: pointer;
-  }
-  
-  div.homeboxes div.boxA img{
-      width: 280px;
-      height: 250px;
-    }
-  
-  div.homeboxes div.boxB img{
-      width: 280px;
-    height: 250px;
-  }
-  
-  div.homeboxes div.boxC img{
-      width: 280px;
-      height: 250px;
-    }
-  
-}
-/* End of Homeboxes section */
-
-    
 
 
 
