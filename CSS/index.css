@@ -660,13 +660,6 @@ div.testimonialsTitle{
 
 }
 
-span.testimonialContainer{
-    margin-left: -2vw;
-    width: 0;
-    height: 0;
-    border-top: 60px solid red;
-    border-right: 60px solid transparent;
-}
 
 span.testimonialContainer p{
     font-size: 1.2vw;
@@ -759,9 +752,6 @@ span.testimonialOwner img{
   .marquee:before, .marquee:after { width: 5rem; }
 }
 
-img.quoteImage{
-    width: 10%;
-}
 
 /* End of testimonial section */
 
