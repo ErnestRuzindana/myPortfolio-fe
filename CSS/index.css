@@ -295,13 +295,6 @@ div.navbar{
     width: 100%;
 }
 
-nav{
-    display: grid;
-    grid-template-columns: 75% 23%;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
 .logo a{
     text-decoration: none;
     font-weight: bold;
@@ -369,8 +362,8 @@ a.loginlinks{
 ul li.loginlinksLi{
     border: 3px solid var(--myColor);
     border-radius: 20px;
-    padding: 0.15vw 0.8vw;
-    margin-right: 3vw;
+    padding: 0.15vw 2.5vw;
+    margin-left: 4vw;
     list-style-type: none;
 }
 
@@ -435,6 +428,14 @@ div.intro p span{
 }
 
 /* End of home section */
+
+
+/* -------------------------------------------------------------------------------------------- */
+
+
+/* Homeboxes section */
+
+/* End of Homeboxes section */
 
 
 /* ------------------------------------------------------------------------------------------------------------------------------ */
@@ -649,7 +650,8 @@ section.testimonials{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 45vw;
+    padding: 0 2vw 2vw 2vw;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -657,35 +659,44 @@ section.testimonials{
 div.testimonialsTitle{
     color: white;
     margin-bottom: 45px;
+<<<<<<< HEAD
 
 }
 
+=======
+}
+>>>>>>> 0d3194d428e80d76e129a120c73d23d6ca1fced5
 
 span.testimonialContainer p{
-    font-size: 1.2vw;
-}
-
-span.testimonialOwner p{
-    line-height: 1.5vw;
+    font-family: calibri;
+    font-size: 1.4vw;
 }
 
 span.testimonialOwner{
     display: grid;
     grid-template-columns: 30% 70%;
-    align-items: center;
-    
+    align-items: center;   
+}
+
+span.testimonialOwnerIdentity{
+    margin-left: -1.1vw;
+}
+
+span.testimonialOwnerIdentity p{
+   line-height: 0.8vw; 
+   font-size: 1.2vw;
+   font-family: calibri;
 }
 
 span.testimonialOwner img{
     width: 60%;
-    height: 65%;
+    height: 90%;
     border-radius: 50%;
 }
 
 :root {
   --marquee-width: 80vw;
-  --marquee-height: 50vh;
-  /* --marquee-elements: 12; */ /* defined with JavaScript */
+  --marquee-height: 23vw;
   --marquee-elements-displayed: 5;
   --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
   --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
@@ -731,17 +742,47 @@ span.testimonialOwner img{
   100% { transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements))); }
 }
 .marquee-content li {
-    background-color: white;
-    box-shadow: 0px 0px 10px grey;
-    flex-shrink: 0;
-    color: black;
-    max-height: 90%;
-    width: 30vw;
-    padding: 0vw 2vw 3vw 2vw;
-    border-radius: 3px;
+  background-color: white;
+  box-shadow: 0px 0px 10px grey;
+  flex-shrink: 0;
+  color: black;
+  max-height: 90%;
+  width: 30vw;
+  padding: 2vw 2vw 3vw 2vw;
+  border-radius: 3px;
+  position: relative;
+  transition: all 1s;
+}
+
+.marquee-content li:hover{
+    background-color: var(--myColor);
+    transform: scale(1.1, 1.1);
+    color: white;
+}
+
+.marquee-content li::before{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 3.5vw 3.5vw 0 0;
+  border-color: var(--myColor) transparent transparent transparent;
+}
+
+span.description i{
+    position: absolute;
+    left: 0.5vw;
+    top: 0.6vw;
+    color: #ffff;
+    font-size: 0.95vw;
 }
 
 
+<<<<<<< HEAD
 @media (max-width: 600px) {
   html { font-size: 12px; }
   :root {
@@ -757,6 +798,9 @@ span.testimonialOwner img{
 
 
 /* ---------------------------------------------------------------------------------------------------------------------------- */
+=======
+/* End of Testimanials section */
+>>>>>>> 0d3194d428e80d76e129a120c73d23d6ca1fced5
 
 
 /* My Work section */
@@ -1222,15 +1266,6 @@ a.northArrow{
 
 /* Responsive Designs */
 
-
-
-@media only screen and (max-width: 1300px) {
-    .homeboxesContainer a{
-        display: block;
-      }
-}
-
-
 @media only screen and (max-width: 1108px) {
 
 /* PreNav Section */
@@ -1268,7 +1303,7 @@ ul li.loginlinksLi a{
 }
 
 ul li.loginlinksLi{
-    padding: 0.1vw 1.5vw;
+    padding: 0.1vw 2.7vw;
 }
 
 /* End of navigation bar */
@@ -1595,81 +1630,26 @@ div.preNavLogin h5 a{
     /* End of prenav section */
     
 
-    /* Navigation Bar section */
+    /* Navigation bar */    
 
-    nav{
-        display: grid;
-        grid-template-columns: 75% 23%;
-        align-items: center;
-        justify-content: unset;
-        gap: 2vw;
-        width: 100%;
-    }
-    .logo a{
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 2vw;
-        padding: 0;
-        color: var(--myBackground);
-    }
-    
-    .logo {
-        text-align: center;
-        width: 100%;
-    }
-    
-    .logo a:hover{
-        opacity: 0.5;
-    }
-    
-    div.toggleButton{
-        display: none;
-    }
-    
-    li.closeButton{
-        display: none;
-    }
-    
-    .navlinks ul li{
-        list-style-type: none;
-    }
-    
-    .navlinks ul li a{
-        text-decoration: none;
-        color: var(--myBackground);
-        font-size: 1.5vw;
-        font-weight: bold;
-        transition: all 1s;
-    }
-    
-    .navlinks ul li a:hover{
-        color: var(--myColor);
-        padding-top: 10px;
-        border-top: 3px solid var(--myColor);
-    }
-
-    ul li.active a{
-    color: var(--myColor);
-    padding-top: 10px;
-    border-top: 3px solid var(--myColor);
+.navlinks ul li a{
+    text-decoration: none;
+    color: var(--myBackground);
+    font-size: 1.4vw;
+    font-weight: bold;
+    transition: all 1s;
 }
-    
-    ul li.loginlinksLi a{
-        font-size: 1.5vw;
-      }
 
-    
-    
-    
-    a.loginlinks{
-        text-decoration: none;
-        text-align: center;
-        color: var(--myBackground);
-        font-size: 1.5vw;
-        font-weight: bold;
-    }
+ul li.loginlinksLi a{
+  font-size: 1.33vw;
+}
 
-    /* End of navigation Bar section */
+ul li.loginlinksLi{
+    padding: 0.1vw 2.7vw;
+    margin-left: -0.8vw;
+}
+
+/* End of navigation bar */
 
     /* Home section */
 
@@ -2046,34 +2026,10 @@ div.navlinks ul{
     flex-direction: column;
     top: -16px;
     right: 0;
-    padding: 10px 70px;
+    padding: 10px 70px 25px;
     gap: 30px;
 }
 
-a.loginlinks{
-    position: absolute;
-    display: flex;
-    background-color: var(--myColor);
-    flex-direction: column;
-    top: 387px;
-    right: 0;
-    padding: 27px 70px;
-    gap: 30px;
-    font-size: 13px;
-    border-radius: unset;
-    width: 198.5px;
-}
-
-a.loginlinks div{
-    transition: all 1s;
-}
-
-a.loginlinks div:hover{
-    color: white;
-    padding-top: 8px;
-    border-top: 3px solid white; 
-    margin-top: -8px; 
-}
 
 ul li.active a{
     color: white;
@@ -2111,23 +2067,6 @@ div.logo{
     font-weight: bold;
     font-size: 100%;
     color: var(--myBackground);
-}
-
-ul li.loginlinksLi{
-    all: unset;
-}
-
-ul li.loginlinksLi:hover{
-    color: white;
-    background-color: var(--myColor);
-}
-
-ul li.loginlinksLi a{
-  font-size: 13px;
-}
-
-ul li.loginlinksLi a:hover{
-    color: white;
 }
 
 
