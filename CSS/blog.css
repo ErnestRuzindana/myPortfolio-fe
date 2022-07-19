@@ -650,7 +650,7 @@ div.myFooterLinks h4{
 }
 
 div.myFooterLinks{
-    padding-right: 5vw;
+    padding-right: 2vw;
 }
 
 div.myFooterLinks ul li{
@@ -933,7 +933,7 @@ div.myFooterLinks h4{
 }
 
 div.myFooterLinks{
-    padding-right: 3.5vw;
+    padding-right: 0;
     width: 100%;
 }
 
@@ -958,7 +958,7 @@ div.myFooterLinks ul li::before{
 div.myFooterLinks ul li a{
     text-decoration: none;
     font-size: 1.22vw;
-    line-height: 2.8vw;
+    line-height: 2vw;
 }
 
 div.myFooterLinks ul li a:hover{

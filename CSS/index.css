@@ -259,13 +259,18 @@ div.preNavSocioMedia ul{
 
 div.preNavLinks ul li a{
     font-size: 20px;
+    width: 20px;
     justify-content: center;
     padding-right: 30px;
     color: var(--myBackground);
 }
 
-div.preNavLinks ul li a:hover{
-    color: white;
+div.preNavLinks ul li a img{
+    width: 2vw;
+}
+
+div.preNavLinks ul li a img:hover{
+    opacity: 50%;
 }
 /* End of preNav Section */
 
