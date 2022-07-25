@@ -402,8 +402,8 @@ div.myLogin{
 .center h1{
   text-align: center;
   padding: 1vw 0;
-  font-size: 1.7vw;
-  color: var(--myColor);
+  font-size: 1.3vw;
+  color: var(--myBackground);
   font-weight: bold;
   border-bottom: 1px solid #a6a6a6;
 }
@@ -505,6 +505,52 @@ label.checkbox{
     color: var(--myColor);
     font-weight: 501;
     font-size: 1.1vw;
+}
+
+
+
+
+div.loginSocialMedia{
+    border-bottom: 1px solid #a6a6a6;
+    margin-top: 40px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+div.loginSocialMedia p{
+    color: var(--myColor);
+    font-weight: bold;
+}
+
+div.loginS{
+    padding: 0 6vw;
+}
+
+div.loginS a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid grey;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: black;
+    transition: all 1s;
+}
+
+div.loginS a:hover{
+    background-color: #e2e2e2;
+}
+
+div.loginS a img{
+    width: 30px;   
+}
+
+div.loginParag p{
+    color: unset;
+    font-weight: bold;
 }
 
 

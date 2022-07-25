@@ -425,7 +425,6 @@ div.intro p{
 
 div.intro img{
     width: 20%;
-    border-radius: 50%;
 }
 
 div.intro p span{
@@ -720,11 +719,11 @@ span.testimonialOwner img{
 }
 .marquee:before {
   left: 0;
-  background: linear-gradient(to right, #cba10a 0%, transparent 20%);
+  background: linear-gradient(to right, #6d6d6d 0%, transparent 20%);
 }
 .marquee:after {
   right: 0;
-  background: linear-gradient(to left, #cba10a 0%, transparent 20%);
+  background: linear-gradient(to left, #6d6d6d 0%, transparent 20%);
 }
 .marquee-content {
   list-style: none;
@@ -783,25 +782,7 @@ span.description i{
 }
 
 
-<<<<<<< HEAD
-@media (max-width: 600px) {
-  html { font-size: 12px; }
-  :root {
-    --marquee-width: 100vw;
-    --marquee-height: 16vh;
-    --marquee-elements-displayed: 3;
-  }
-  .marquee:before, .marquee:after { width: 5rem; }
-}
-
-
-/* End of testimonial section */
-
-
-/* ---------------------------------------------------------------------------------------------------------------------------- */
-=======
 /* End of Testimanials section */
->>>>>>> 0d3194d428e80d76e129a120c73d23d6ca1fced5
 
 
 /* My Work section */
@@ -1242,9 +1223,15 @@ a.northArrow{
     position: sticky;
     background-color: var(--myColor);
     border-radius: 5px;
-    padding: 15px;
+    padding: 25px 10px 10px 10px;
     bottom: 20px;
     left: 96%;
+}
+
+a.northArrow img{
+    width: 15px;
+    margin-top: 3px;
+    padding-top: 20px;
 }
 
 /* End of northArrow direction */
