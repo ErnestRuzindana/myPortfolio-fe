@@ -229,10 +229,15 @@
         <div class="center">
             <h1>Log In</h1>
             <form method="post" id="loginForm" >
+                <div id="loginMessage" style="text-align: center;">
+
+                </div> 
+
+
                 <div class="txt_field">
                     <input type="text" id="email">
                     <span></span>
-                    <label>Username / email</label>
+                    <label>Email</label>
                 </div>
                 <div class="txt_field">
                     <input type="password" id="password">
@@ -242,9 +247,9 @@
                 <div class="pass"> 
                     <a href="forgotPassword.html">Forgot Password?</a> 
                 </div>
-                    <input type="submit" class="loginType" value="Login">
                     <input type="checkbox" class="checkMe">
                     <label for="checkbox" class="checkbox">Remember me</label>
+                    <input type="submit" id="submit" class="loginType" value="Login">
             </form>
 
             <div class="loginSocialMedia">
@@ -377,5 +382,6 @@
     </a>
 
     <script src="../JS/index.js"></script>
+    <script src="../JS/login.js"></script>
 </body>
 </html>

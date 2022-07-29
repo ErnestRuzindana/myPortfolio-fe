@@ -228,16 +228,19 @@
     <div class="mySignup">
         <div class="center">
             <h1>Sign Up</h1>
+
             <form method="post" id="signupForm">
-                
+                <div id="signupMessage">
+                    
+                </div>         
 
                 <div class="txt_field">
-                    <input type="text" id="firstname">
+                    <input type="text" id="firstName">
                     <span></span>
                     <label>First Name</label>
                 </div>
                 <div class="txt_field">
-                    <input type="text" id="lastname">
+                    <input type="text" id="lastName">
                     <span></span>
                     <label>Last Name</label>
                 </div>
@@ -254,19 +257,17 @@
                 <label> Password</label>
                 </div>
                 <div class="txt_field">
-                    <input type="password" id="password">
+                    <input type="password" id="repeatPassword">
                     <span></span>
                     <label>Repeat password</label>
                     </div>
-            
-                <input type="submit" class="signupType" value="Create an account">
-                <input type="checkbox">
-                <label for="checkbox">Remember me</label>
+                    
+                <input type="submit" id="submitData" class="signupType" value="Create an account">
             </form>
 
 
             <div class="loginSocialMedia">
-                <p>Log in with:</p>
+                <p>Sign Up with:</p>
                 <div class="loginS loginGoogle">
                     <a href=""> 
                         <div class="loginImage">
@@ -305,7 +306,7 @@
             </div>
 
 
-            <div class="signup">Have an account? &nbsp <a href="login.html">Login</a></div>
+            <div class="signup">Already have an account? &nbsp <a href="login.html">Login</a></div>
 
         </div>
     </div>
@@ -390,5 +391,6 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <script src="../JS/index.js"></script>
     <script type="text/javascript" src="../JS/webActiveNav.js"></script>
+    <script src="../JS/signup.js"></script>
 </body>
 </html>
