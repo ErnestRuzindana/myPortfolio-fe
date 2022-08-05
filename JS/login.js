@@ -4,7 +4,9 @@ const user_password = document.getElementById("password");
 const submit = document.getElementById("submit");
 const loginMessage = document.getElementById("loginMessage");
 
+
 loginMessage.style.display = "none"
+
 
 submit.addEventListener("click", (event)=>{
     event.preventDefault();

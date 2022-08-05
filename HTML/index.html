@@ -725,12 +725,17 @@
                 </p>
                 
                 <p>or you can use the form below</p>
-                <form action="">
-                    <input type="text" placeholder="Your names">
-                    <input type="email" placeholder="Your email">
-                    <input type="tel" placeholder="Your phone number">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Your message"></textarea>
-                    <input type="submit" value="Send!">
+                <form action="" id="contactForm">
+
+                    <div id="contactMessage" style="text-align: center; padding: 20px;">
+                        
+                    </div>
+
+                    <input type="text" placeholder="Your names" id="visitorName">
+                    <input type="email" placeholder="Your email" id="visitorEmail">
+                    <input type="tel" placeholder="Your phone number" id="visitorTel">
+                    <textarea name="" id="visitorMessage" cols="30" rows="10" placeholder="Your message"></textarea>
+                    <input type="submit" value="Send!" id="messageSubmit">
                 </form>
             </div>
         </div>
@@ -810,5 +815,6 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <script src="../JS/index.js"></script>
     <script type="text/javascript" src="../JS/webActiveNav.js"></script>
+    <script src="../JS/contact.js"></script>
 </body>
 </html>
