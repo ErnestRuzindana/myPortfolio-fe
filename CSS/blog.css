@@ -116,6 +116,15 @@ div.blogSocioMedia ul li a{
     color: var(--myColor);
 }
 
+p.siteRole{
+    background-attachment: fixed;
+    background-image: url(../images/sabyinyo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10px;
+    border-radius: 5px;
+}
+
 /* Parent container */
 
 /* ---------------------------------------------------------------------------------- */
@@ -494,7 +503,7 @@ img.AuthorImage{
 }
 
 div.blogAuthor small{
-    font-size: 0.8vw;
+    font-size: 10px;
     font-weight: bold;
     color: rgb(131, 131, 131);
 }
@@ -502,7 +511,7 @@ div.blogAuthor small{
 div.blogAuthor small a{
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.8vw;
+    font-size: 12px;
     color: rgb(131, 131, 131);
 }
 
@@ -526,7 +535,7 @@ div.blogContent h3 a:hover{
 p.blogLikesComments{
     color: rgb(131, 131, 131);
     font-weight: bold;
-    font-size: 0.8vw;
+    font-size: 10px;
 }
 
 a.readmore{
@@ -701,7 +710,7 @@ div.myFooterSocialMedia ul li a{
 
 div.myFooterSocialMedia ul li a:hover{
     color: var(--myColor);
-    font-size: 2vw;
+    /* font-size: 2vw; */
 }
 
 div.FooterLogo{

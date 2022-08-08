@@ -1187,7 +1187,6 @@ div.myFooterSocialMedia ul li a{
 
 div.myFooterSocialMedia ul li a:hover{
     color: var(--myColor);
-    font-size: 2vw;
 }
 
 div.FooterLogo{

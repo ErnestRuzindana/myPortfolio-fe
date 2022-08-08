@@ -109,7 +109,18 @@ div.blogSocioMedia ul li a{
     color: var(--myColor);
 }
 
+p.siteRole{
+    background-attachment: fixed;
+    background-image: url(../images/sabyinyo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10px;
+    border-radius: 5px;
+}
+
 /* Parent container */
+
+/* ------------------------------------------------------------------------------------------------------- */
 
 /* PreNav Section */
 
@@ -610,7 +621,7 @@ div.myFooterSocialMedia ul li a{
 
 div.myFooterSocialMedia ul li a:hover{
     color: var(--myColor);
-    font-size: 2vw;
+    /* font-size: 2vw; */
 }
 
 div.FooterLogo{
