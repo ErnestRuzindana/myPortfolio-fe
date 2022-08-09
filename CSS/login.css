@@ -307,6 +307,9 @@ li.closeButton{
     display: none;
 }
 
+.navlinks{
+    width: 70%;
+}
 
 .navlinks ul{
     display: flex;
@@ -347,6 +350,7 @@ a.loginlinks{
 }
 
 ul li.loginlinksLi{
+    width: 25%;
     border: 3px solid var(--myColor);
     border-radius: 20px;
     padding: 0.15vw 0.8vw;
@@ -770,13 +774,13 @@ nav.dropDown a {
 .navlinks ul li a{
     text-decoration: none;
     color: var(--myBackground);
-    font-size: 1.25vw;
+    font-size: 1vw;
     font-weight: bold;
     transition: all 1s;
 }
 
 ul li.loginlinksLi a{
-  font-size: 1.25vw;
+  font-size: 1vw;
 }
 
 ul li.loginlinksLi{

@@ -756,9 +756,10 @@ span.testimonialOwner img{
 
 .marquee-content li:hover{
     background-color: var(--myColor);
-    transform: scale(1.1, 1.1);
+    /* transform: scale(1.1, 1.1); */
     color: white;
 }
+
 
 .marquee-content li::before{
   content: "";

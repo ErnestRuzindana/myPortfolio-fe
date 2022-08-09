@@ -300,13 +300,8 @@ div.preNavLogin h5 a{
 }
 
 div.preNavLogin h5 a:hover{
-    color: black;
-    text-decoration: none;
     color: var(--myColor);
-    background-color: white;
-    padding: 5px 20px 5px 20px;  
-    border: 2px solid white;
-    border-radius: 20px;
+    background-color: white; 
 }
 
 div.preNavSocioMediaLogin{
