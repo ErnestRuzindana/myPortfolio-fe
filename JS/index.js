@@ -86,3 +86,27 @@ root.style.setProperty("--marquee-elements", marqueeContent.children.length);
 for(let i=0; i<marqueeElementsDisplayed; i++) {
   marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
 }
+
+
+
+// Showing and hidding the user profile 
+
+const UserProfilePicture = document.getElementById("profilePicture");
+const UserProfile = document.getElementById("userProfile");
+const Body = document.getElementById("myBody")
+
+UserProfile.style.display = "none";
+
+UserProfilePicture.addEventListener("click", ()=>{
+   UserProfile.style.display = "block"
+})
+
+$("#myBody").click(function(e){
+   var myID = e.target.id;
+   if(myID!='userProfile'){
+       //your action here
+       $("#userProfile").hide();
+   }
+});
+
+

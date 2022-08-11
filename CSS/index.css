@@ -246,8 +246,10 @@ div.preNavLogin h5 a:hover{
 }
 
 div.preNavSocioMediaLogin{
+    position: relative;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 div.preNavSocioMedia ul{
@@ -271,6 +273,42 @@ div.preNavLinks ul li a img{
 div.preNavLinks ul li a img:hover{
     opacity: 50%;
 }
+
+div.profilePicture img{
+    width: 50px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+}
+
+div.profilePictureIn img{
+    width: 100px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+}
+
+div.userProfile{
+    position: absolute;
+    background-color: beige;
+    width: 400px;
+    height: 600px;
+    border-radius: 10px;
+    z-index: 3;
+    top: 60px;
+    right: 80px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+a.ManageAccountLink{
+    text-decoration: none;
+    border: 2px solid black;
+    padding: 7px;
+    border-radius: 10px;
+    color: black;
+}
+
+
+
 /* End of preNav Section */
 
 /* ------------------------------------------------------------------------------------------------------------------------------ */
