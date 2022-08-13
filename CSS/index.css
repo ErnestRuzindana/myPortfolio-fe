@@ -287,24 +287,25 @@ div.profilePictureIn img{
 }
 
 div.userProfile{
-    position: absolute;
-    background-color: beige;
-    width: 400px;
+    position: fixed;
+    background-color:rgb(88, 86, 86);
+    width: 350px;
     height: 600px;
     border-radius: 10px;
     z-index: 3;
-    top: 60px;
+    top: 70px;
     right: 80px;
     text-align: center;
     padding-top: 20px;
+    color: white;
 }
 
 a.ManageAccountLink{
     text-decoration: none;
-    border: 2px solid black;
+    border: 2px solid white;
     padding: 7px;
     border-radius: 10px;
-    color: black;
+    color: white;
 }
 
 
