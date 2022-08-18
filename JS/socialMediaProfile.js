@@ -1,16 +1,19 @@
-async function loggedInUser(){
+async function socialMediaLoggedInUser(){
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-  let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
+  let response = await fetch("http://localhost:5000/socialMediaLoggedInUser", getData)
   const fetchedData = await response.json()
   console.log(fetchedData)
 
 
-   
 
+    
+
+
+    
 
 
 
@@ -81,24 +84,6 @@ async function loggedInUser(){
             text-align: center;
         }
 
-        div.profilePictureIn{
-            background: #cba10a;
-            color: black;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-left: 137px;
-            line-height: 80px;
-            font-weight: bold;
-            font-size: 30px;
-            cursor: pointer;
-        }
-
-        div.profilePictureIn:hover{
-            background: black;
-            color: #cba10a;
-        }
-
         p.userFetchedEmail{
             margin-top: -15px;
             margin-bottom: 50px;
@@ -128,16 +113,16 @@ async function loggedInUser(){
   </head>
   <body>
       <div class="profilePicture" id="profilePicture">
-        ${fetchedData.userEmail.firstName.charAt(0)}${fetchedData.userEmail.lastName.charAt(0)}
+        <img src="${fetchedData.user.picture}" alt=""></img>
       </div>
           
       <div class="userProfile" id="userProfile">
           <div class="profilePictureIn">
-          ${fetchedData.userEmail.firstName.charAt(0)}${fetchedData.userEmail.lastName.charAt(0)}
+            <img src="${fetchedData.user.picture}" alt=""></img>
           </div>
 
-          <h3>${fetchedData.userEmail.firstName} ${fetchedData.userEmail.lastName}</h3>
-          <p class="userFetchedEmail" style="font-weight: 500;">${fetchedData.userEmail.email}</p>
+          <h3>${fetchedData.user.userName}</h3>
+          <p class="userFetchedEmail" style="font-weight: 500;">${fetchedData.user.email}</p>
           <a href="" class="ManageAccountLink">Edit profile</a>
           <br><br>
 
@@ -152,7 +137,7 @@ async function loggedInUser(){
           <p style="font-weight: 500;">example@gmail.com</p>
 
           <div class="preNavLogin" style="cursor: pointer; border-top: 1px solid #cba10a;">
-              <h5><a onClick="preNavLogoutUser()">Logout</a></h5>
+              <h5><a onClick="socialMediaLogoutUser()">Logout</a></h5>
           </div>
       </div>
       
@@ -170,7 +155,6 @@ async function loggedInUser(){
 
         const preNavLogin = document.getElementById("preNavLogin");
         preNavLogin.style.display = "none"
-
         
 
         UserProfile.style.display = "none";
@@ -200,4 +184,5 @@ async function loggedInUser(){
         })
 }
 
-loggedInUser()
+
+socialMediaLoggedInUser()

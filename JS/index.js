@@ -90,6 +90,24 @@ for(let i=0; i<marqueeElementsDisplayed; i++) {
 
 
 
+// Showing login/signup or logout in footer
+
+const loginLogoutUser = document.getElementById("loginLogout");
+const logoutUser = document.getElementById("logoutUser");
+const MyToken = JSON.parse(sessionStorage.getItem("token"))
+
+if (MyToken){
+   loginLogoutUser.style.display = "none";
+}
+
+else{
+   logoutUser.style.display = "none"
+}
+
+
+
+
+
 
 
 

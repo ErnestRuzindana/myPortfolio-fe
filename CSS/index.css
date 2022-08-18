@@ -721,15 +721,19 @@ span.testimonialOwnerIdentity{
     margin-left: -1.1vw;
 }
 
-span.testimonialOwnerIdentity p{
-   line-height: 0.8vw; 
-   font-size: 1.2vw;
+span.testimonialOwnerIdentity strong{
+    font-size: 0.9vw;
+}
+
+
+span.testimonialOwnerIdentity small{
+   line-height: 0.7vw; 
+   font-size: 1vw;
    font-family: calibri;
 }
 
 span.testimonialOwner img{
     width: 60%;
-    height: 90%;
     border-radius: 50%;
 }
 
@@ -751,18 +755,18 @@ span.testimonialOwner img{
 .marquee:before, .marquee:after {
   position: absolute;
   top: 0;
-  width: 10rem;
+  width: 0rem;
   height: 100%;
   content: "";
   z-index: 1;
 }
 .marquee:before {
   left: 0;
-  background: linear-gradient(to right, #6d6d6d 0%, transparent 20%);
+  background: linear-gradient(to right, #6d6d6d3b 0%, transparent 20%);
 }
 .marquee:after {
   right: 0;
-  background: linear-gradient(to left, #6d6d6d 0%, transparent 20%);
+  background: linear-gradient(to left, #6d6d6d3b 0%, transparent 20%);
 }
 .marquee-content {
   list-style: none;
@@ -782,7 +786,6 @@ span.testimonialOwner img{
 }
 .marquee-content li {
   background-color: white;
-  box-shadow: 0px 0px 10px grey;
   flex-shrink: 0;
   color: black;
   max-height: 90%;
@@ -795,8 +798,7 @@ span.testimonialOwner img{
 
 .marquee-content li:hover{
     background-color: var(--myColor);
-    /* transform: scale(1.1, 1.1); */
-    color: white;
+    cursor: pointer;
 }
 
 
