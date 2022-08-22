@@ -71,19 +71,7 @@ async function socialMediaLoggedInUser(){
             background: #cba10a;
         }
 
-        div.profilePicture{
-            background: black;
-            color: #cba10a;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            line-height: 50px;
-            font-weight: bold;
-            font-size: 18px;
-            cursor: pointer;
-            text-align: center;
-        }
-
+        
         p.userFetchedEmail{
             margin-top: -15px;
             margin-bottom: 50px;
@@ -134,9 +122,8 @@ async function socialMediaLoggedInUser(){
           </div>
 
           <p style="font-weight: 500;">example@gmail.com</p>
-          <p style="font-weight: 500;">example@gmail.com</p>
 
-          <div class="preNavLogin" style="cursor: pointer; border-top: 1px solid #cba10a;">
+          <div class="preNavLogin" style="border-top: 1px solid #cba10a;">
               <h5><a onClick="socialMediaLogoutUser()">Logout</a></h5>
           </div>
       </div>
@@ -155,7 +142,7 @@ async function socialMediaLoggedInUser(){
 
         const preNavLogin = document.getElementById("preNavLogin");
         preNavLogin.style.display = "none"
-        
+
 
         UserProfile.style.display = "none";
 

@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/557e6c8ef8.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../CSS/login.css">
+    <link rel="stylesheet" href="../CSS/index.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     
 
     <link rel="icon" href="../images/Logo.png" type="image/x-icon">
@@ -14,15 +17,15 @@
     </title>
 
 </head>
-<body>
+<body id="myBody">
     <section class="preNav">
         <div class="preNavLinks">
             
-            <div class="preNavLogo">
-                <a href="index.html" id=""><img src="../images/Logo.png" alt="My Logo"></a>
+            <div class="preNavLogo" id="hideUserProfile">
+                <a href="" id=""><img src="../images/Logo.png" alt="My Logo"></a>
             </div>
 
-            <div class="preNavDocumentation">
+            <div class="preNavDocumentation" id="hideUserProfile">
                 <nav class="dropDown">
                     <menu>
                         <menuitem id="demo1">
@@ -166,27 +169,35 @@
             </div>
 
             <div class="preNavSocioMediaLogin">
-                <div class="preNavSocioMedia">
+                <div class="preNavSocioMedia" id="hideUserProfile">
                     <ul>
-                        <li><a href="https://web.facebook.com/ruzindana.elannoernest/" target="_blank" text-align: center; ><i class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="https://twitter.com/ruzindanaernes5" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                        <li><a href="https://www.instagram.com/elanno_official/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/ernest-ruzindana-7481b8183/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
-                        <li><a href="https://api.whatsapp.com/send/?phone=250783486141&text&app_absent=0" target="_bank"><i class="fa-brands fa-whatsapp"></i></a></li>
-                        <li><a href="https://github.com/ErnestRuzindana" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                        <li><a href="https://web.facebook.com/ruzindana.elannoernest/" target="_blank" text-align: center; ><img src="../images/facebook_black.png" alt=""></a></li>
+                        <li><a href="https://twitter.com/ruzindanaernes5" target="_blank"><img src="../images/twitter_black.png" alt=""></a></li>
+                        <li><a href="https://www.instagram.com/elanno_official/" target="_blank"><img src="../images/instagram_black.png" alt=""></a></li>
+                        <li><a href="https://www.linkedin.com/in/ernest-ruzindana-7481b8183/" target="_blank"><img src="../images/linkedin_black.png" alt=""></i></a></li>
+                        <li><a href="https://api.whatsapp.com/send/?phone=250783486141&text&app_absent=0" target="_bank"><img src="../images/whatsapp_black.png" alt=""></a></li>
+                        <li><a href="https://github.com/ErnestRuzindana" target="_blank"><img src="../images/github_black.png" alt=""></i></a></li>
                     </ul>
                 </div>
-                <div class="preNavLogin">
+                <div class="preNavLogin" id="preNavLogin">
                     <h5><a href="login.html">Login / Sign Up</a></h5>
                 </div>
+
+                <div class="addProfile" id="addProfile">
+
+                </div>
+
+                                
             </div>
         </div>            
     </section>
 
-    <section class="nav">
-        <div class="navbar">
+
+
+    <section class="nav" id="nav">
+        <div class="navbar" id="hideUserProfile">
             <div class="logo">
-                <a href="index.html">Ernest RUZINDANA</a>
+                <a href="#">Ernest RUZINDANA</a>
 
                 <div class="toggleButton" id="toggleButton">
                     <i class="fa-solid fa-bars"></i>
@@ -194,115 +205,72 @@
             </div>
 
            <nav class="menu-btn" id="menu">
-                <div class="navlinks" id="navlinks">
-                    <ul >
-                        <li class="closeButton" id="closeButton">
-                            <i class="fa-solid fa-xmark"></i>
-                        </li>
-                        <li class="active"><a href="index.html#myProfile">Home</a></li>
-                        <li><a href="index.html#aboutme" data-rb-event-key="/#aboutme">About</a></li>
-                        <li><a href="index.html#Skills">My skills</a></li>
-                        <li><a href="index.html#work">My work</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="index.html#services">Services</a></li>
-                    </ul>
-                </div>
-                <ul>
-                    <li class="loginlinksLi"><a href="index.html#contact" class="loginlinks active">
+            <div class="navlinks" id="navlinks">
+                <ul >
+                    <li class="closeButton" id="closeButton">
+                        <i class="fa-solid fa-xmark"></i>
+                    </li>
+                    <li class="active"><a href="#myProfile">Home</a></li>
+                    <li><a href="#aboutme">About</a></li>
+                    <li><a href="#Skills">My skills</a></li>
+                    <li><a href="#Testimonials">Testimonials</a></li>
+                    <li><a href="#work">My work</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li class="loginlinksLi"><a href="#contact" class="loginlinks active">
                         <div>Contact</div>
                     </a></li>
                 </ul>
+            </div>
+            <ul>
+                
+            </ul>
             
-            </nav>  
+          </nav>  
         </div>
     </section>
 
-    <!-- End of navigation bar section -->
 
-    <!-- -------------------------------------------------------------------------------------------------- -->
+
+    <section class="profilePage">
+        <div class="userProfilePage">
+            <div class="userProfilePageLeft">
+                <div class="userProfilePageLeftPicture">
+                    <img src="../images/userProfile.png" width="150px" alt="">
+                </div>
+
+                <div class="userProfilePageRight">
+                    <p>Names</p>
+                    <p>Email</p>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+                        Aenean commodo ligula eget dolor. Aenean massa. 
+                        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                </div>
     
-
-
-
-<section class="login">
-    <div class="myLogin">
-        <div class="center">
-            <h1>Log In</h1>
-            <form method="post" id="loginForm" >
-                <div id="loginMessage" style="text-align: center;">
-
-                </div> 
-
-
-                <div class="txt_field">
-                    <input type="text" id="email">
-                    <span></span>
-                    <label>Email</label>
-                </div>
-                <div class="txt_field">
-                    <input type="password" id="password">
-                    <span></span>
-                    <label>Password</label>
-                </div>
-                <div class="pass"> 
-                    <a href="forgotPassword.html">Forgot Password?</a> 
-                </div>
-                    <input type="checkbox" class="checkMe">
-                    <label for="checkbox" class="checkbox">Remember me</label>
-                    <input type="submit" id="submit" class="loginType" value="Login">
-            </form>
-
-            <div class="loginSocialMedia">
-                <p>Login with:</p>
-
-                <div class="loginS loginGoogle" id="loginGoogle" style="cursor: pointer;">
-                    <a> 
-                        <div class="loginImage">
-                            <img src="../images/google.png" alt="">
-                        </div>
-                        &nbsp &nbsp
-                        <div class="loginParag">
-                            <p>Google</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="loginS loginFacebook" id="loginFacebook" style="cursor: pointer;">
-                    <a> 
-                        <div class="loginImage">
-                            <img src="../images/facebook.png" alt="">
-                        </div>
-                        &nbsp &nbsp
-                        <div class="loginParag">
-                            <p>Facebook</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="loginS loginGithub" id="loginGithub" style="cursor: pointer;">
-                    <a> 
-                        <div class="loginImage">
-                            <img src="../images/github.png" alt="">
-                        </div>
-                        &nbsp &nbsp
-                        <div class="loginParag">
-                            <p>Github</p>
-                        </div>
-                    </a>
+                <div class="userProfilePageRight">
+                    <p>Twitter</p>
+                    <p>Facebook</p>
+                    <p>Linkedin</p>
+                    <p>Instagram</p>
                 </div>
             </div>
+            <div class="userProfilePageRight">
+                <div class="userProfilePageRightInfo">
+                    <h3>Edit Profile</h3>
+                    <p>First Name</p>
+                    <p>Second Name</p>
+                    <p>Email</p>
+                    <p>Bio</p>
+                </div>
 
-            <div class="signup">
-                Don't have an account? &nbsp 
-                <a href="signup.html">
-                    Sign Up
-                </a>
+                <div class="uploadPicture">
+                    <form action="upload"> photo </form>
+                </div>
+    
             </div>
             
-
         </div>
-    </div>
-</section>
+    </section>
 
 
 
@@ -312,12 +280,10 @@
 
 
 
-    <!-- ---------------------------------------------------------------------------------------------------------------------------- -->
 
-   
     <!-- Footer section -->
     <section class="footer">
-        <div class="myFooter">
+        <div class="myFooter" id="hideUserProfile">
             <div class="myFooterTop">
                 <div class="myFooterTopBeFirst">
                     <h3>Be the first to know</h3>
@@ -345,14 +311,15 @@
                 <div class="myFooterLinks">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html#myProfile">Home</a></li>
-                        <li><a href="index.html#aboutme">About</a></li>
-                        <li><a href="index.html#Skills">My skills</a></li>
-                        <li><a href="index.html#work">My work</a></li>
+                        <li><a href="#myProfile">Home</a></li>
+                        <li><a href="#aboutme">About</a></li>
+                        <li><a href="#Skills">My skills</a></li>
+                        <li><a href="#work">My work</a></li>
                         <li><a href="blog.html">Blog</a></li>
-                        <li><a href="index.html#services">Services</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                        <li><a href="login.html">Login/Signup</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li id="loginLogout" style="cursor: pointer;"><a href="login.html">Login/Signup</a></li>
+                        <li id="logoutUser" style="cursor: pointer;"><a onclick="footerLogoutUser()">Logout</a></li>
                         <li><a href="#">GIS Exercises</a></li>
                         <li><a href="#">GIS Videos</a></li>
                     </ul>
@@ -360,16 +327,16 @@
                 <div class="myFooterSocialMedia">
                     <h4>Social Media</h4>
                     <ul>
-                        <li><a href="https://web.facebook.com/ruzindana.elannoernest/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="https://twitter.com/ruzindanaernes5" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                        <li><a href="https://www.instagram.com/elanno_official/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/ernest-ruzindana-7481b8183/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
-                        <li><a href="https://api.whatsapp.com/send/?phone=250783486141&text&app_absent=0" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
-                        <li><a href="https://github.com/ErnestRuzindana" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                        <li><a href="https://web.facebook.com/ruzindana.elannoernest/" target="_blank" text-align: center; ><img src="../images/facebook white-01.png" alt=""></a></li>
+                        <li><a href="https://twitter.com/ruzindanaernes5" target="_blank"><img src="../images/twitter white-01.png" alt=""></a></li>
+                        <li><a href="https://www.instagram.com/elanno_official/" target="_blank"><img src="../images/instagram white-01.png" alt=""></a></li>
+                        <li><a href="https://www.linkedin.com/in/ernest-ruzindana-7481b8183/" target="_blank"><img src="../images/linkedin white-01.png" alt=""></i></a></li>
+                        <li><a href="https://api.whatsapp.com/send/?phone=250783486141&text&app_absent=0" target="_bank"><img src="../images/whatsapp white-01.png" alt=""></a></li>
+                        <li><a href="https://github.com/ErnestRuzindana" target="_blank"><img src="../images/github white-01.png" alt=""></i></a></li>
                     </ul>
                 </div>
             </div>
-            <div class="myFooterCopyRight">
+            <div class="myFooterCopyRight" id="myFooterCopyRight">
                 <p>Copyright 2022 | All Rights Reserved by Ernest Ruzindana</p>
             </div>
         </div>
@@ -378,13 +345,17 @@
 
 
      <a href="#" class="northArrow">
-        <i class="fa-solid fa-arrow-up-long"></i>
+        <img src="../images/UpArrow.png" alt="">
     </a>
 
-    <!-- <script src="../JS/index.js"></script> -->
-    <script src="../JS/login.js"></script>
-    <script src="../JS/googleLogin.js"></script>
-    <script src="../JS/facebookLogin.js"></script>
-    <script src="../JS/githubLogin.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="../JS/index.js"></script>
+    <script type="text/javascript" src="../JS/webActiveNav.js"></script>
+    <script src="../JS/contact.js"></script>
+    <script src="../JS/loggedInUser.js"></script>
+    <script src="../JS/logout.js"></script>
+    <script src="../JS/logoutFooter.js"></script>
+    <script src="../JS/socialMediaProfile.js"></script>
+    <script src="../JS/socialMediaLogout.js"></script>
 </body>
 </html>

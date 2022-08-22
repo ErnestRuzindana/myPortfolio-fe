@@ -236,10 +236,10 @@ div.preNavLogin h5 a{
 }
 
 div.preNavLogin h5 a:hover{
-    color: black;
     text-decoration: none;
     color: var(--myColor);
     background-color: white;
+    cursor: pointer;
     padding: 5px 20px 5px 20px;  
     border: 2px solid white;
     border-radius: 20px;
@@ -257,6 +257,15 @@ div.preNavSocioMedia ul{
     list-style-type: none;
 }
 
+div.preNavSocioMedia ul li a img{
+    transition: 1s;
+}
+
+div.preNavSocioMedia ul li a img:hover{
+    background-color: white;
+    border-radius: 50%;
+}
+
 
 div.preNavLinks ul li a{
     font-size: 20px;
@@ -270,9 +279,9 @@ div.preNavLinks ul li a img{
     width: 2vw;
 }
 
-div.preNavLinks ul li a img:hover{
+/* div.preNavLinks ul li a img:hover{
     opacity: 50%;
-}
+} */
 
 div.profilePicture img{
     width: 50px; 
@@ -290,7 +299,6 @@ div.userProfile{
     position: fixed;
     background-color:rgb(88, 86, 86);
     width: 350px;
-    height: 600px;
     border-radius: 10px;
     z-index: 3;
     top: 70px;
@@ -1222,13 +1230,14 @@ div.myFooterSocialMedia ul{
     justify-content: space-between;
 }
 
-div.myFooterSocialMedia ul li a{
-    font-size: 1.5vw;
+div.myFooterSocialMedia ul li a img{
+    width: 25px;
     transition: all 1s;
 }
 
-div.myFooterSocialMedia ul li a:hover{
-    color: var(--myColor);
+div.myFooterSocialMedia ul li a img:hover{
+    background-color: var(--myColor);
+    border-radius: 50%;
 }
 
 div.FooterLogo{
