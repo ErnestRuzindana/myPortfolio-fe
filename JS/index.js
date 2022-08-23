@@ -92,49 +92,37 @@ for(let i=0; i<marqueeElementsDisplayed; i++) {
 
 // Showing login/signup or logout in footer using the normal login
 
-const loginLogoutUser = document.getElementById("loginLogout");
-const logoutUser = document.getElementById("logoutUser");
-const MyToken = JSON.parse(sessionStorage.getItem("token"))
+async function MediaLoginLogout(){
+   const loginLogoutUser = document.getElementById("loginLogout");
+   const logoutUser = document.getElementById("logoutUser");
+   const MyToken = JSON.parse(sessionStorage.getItem("token"))
 
-if (MyToken){
-   loginLogoutUser.style.display = "none";
+
+   const getData = {
+      method: "GET",
+      headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
+   }
+
+   let response = await fetch("http://localhost:5000/socialMediaLoggedInUser", getData)
+   const fetchedData = await response.json()
+
+   if (MyToken){
+      loginLogoutUser.style.display = "none";
+   }
+
+   else if(!fetchedData.message){
+      loginLogoutUser.style.display = "none";
+   }
+
+   else{
+      logoutUser.style.display = "none"
+   }
 }
 
-else{
-   logoutUser.style.display = "none"
-}
 
 
 
-
-
-
-
-
-// Showing login/signup or logout in footer using social media
-
-// const medialoginLogoutUser = document.getElementById("medialoginLogout");
-// const medialogoutUser = document.getElementById("medialogoutUser");
-
-
-// const getData = {
-//       method: "GET",
-//       headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
-// }
-
-// let response = await fetch("http://localhost:5000/socialMediaLoggedInUser", getData)
-// const fetchedData = await response.json()
-// console.log(fetchedData)
-
-// if (!fetchedData.message){
-//    medialoginLogoutUser.style.display = "none";
-// }
-
-// else if(!fetchedData.user){
-//    medialogoutUser.style.display = "none";
-// }
-
-
+MediaLoginLogout()
 
 
 
