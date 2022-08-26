@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+
     <script src="https://kit.fontawesome.com/557e6c8ef8.js" crossorigin="anonymous"></script>
+
+    
+
     <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/userProfile.css">
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    
     
 
     <link rel="icon" href="../images/Logo.png" type="image/x-icon">
@@ -236,35 +245,63 @@
         <div class="userProfilePage">
             <div class="userProfilePageLeft">
                 <div class="userProfilePageLeftPicture">
-                    <img src="../images/userProfile.png" width="150px" alt="">
+                    <div class="ImageDiv" id="ImageDiv">
+                        
+                    </div>
+                    
                 </div>
 
-                <div class="userProfilePageRight">
-                    <p>Names</p>
-                    <p>Email</p>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-                        Aenean commodo ligula eget dolor. Aenean massa. 
-                        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                <div>
+                    <h3 id="userProfileNames"></h3>
+                    <p class="userProfileEmail" id="userProfileEmail"></p>
+                    <h4 class="biography">Biography</h4>
+                    <p id="userProfileBio" style="text-align: justify; color: black; font-family: calibri;"></p>
                 </div>
     
-                <div class="userProfilePageRight">
-                    <p>Twitter</p>
-                    <p>Facebook</p>
-                    <p>Linkedin</p>
-                    <p>Instagram</p>
+                <div class="userProfileSocialMedia">
+                    <p><img src="../images/facebook_black.png" alt="">: ruzindana.elannoernest </p>
+                    <p><img src="../images/twitter_black.png" alt="">: @ruzindanaernes5</p>
+                    <p><img src="../images/linkedin_black.png" alt="">: ernest-ruzindana-7481b8183/</p>
+                    <p><img src="../images/instagram_black.png" alt="">: elanno_official</p>
                 </div>
             </div>
             <div class="userProfilePageRight">
                 <div class="userProfilePageRightInfo">
                     <h3>Edit Profile</h3>
-                    <p>First Name</p>
-                    <p>Second Name</p>
-                    <p>Email</p>
-                    <p>Bio</p>
-                </div>
 
-                <div class="uploadPicture">
-                    <form action="upload"> photo </form>
+                    <div class="profile-pic">
+                        <label class="-label" for="file">
+                        <span class="glyphicon glyphicon-camera"></span>
+                        <span>
+                            <!-- <img src="../images/camera.png" alt=""> -->
+                            Edit Image
+                        </span>
+                        </label>
+                        <input id="file" type="file" onchange="loadFile(event)"/>
+                        
+                        <div class="profile-picRight" id="profilePicRight">
+                        
+                        </div>
+                        <!-- <img src="https://cdn.pixabay.com/photo/2017/08/06/21/01/louvre-2596278_960_720.jpg" id="output" width="200" /> -->
+                    </div>
+
+
+                    <form action="">
+                        <label for="firstName"> First name: </label>
+                        <input type="text" id="profileFirstName" value="">
+                        <br>
+                        <label for="lastName"> Last name: </label>
+                        <input type="text" id="profileLastName" value="">
+                        <br>
+                        <label for="email"> Email: </label>
+                        <input type="email" id="profileEmail" value="">
+                        <br>
+                        <label for="bio"> Bio: </label>
+                        <textarea name="" id="profileBio" cols="30" rows="10" value=""></textarea>
+                        <br>
+                        <input class="updateChanges" type="submit" value="Update Changes">
+                        
+                    </form>
                 </div>
     
             </div>
@@ -357,5 +394,15 @@
     <script src="../JS/logoutFooter.js"></script>
     <script src="../JS/socialMediaProfile.js"></script>
     <script src="../JS/socialMediaLogout.js"></script>
+    <script src="../JS/userProfile.js"></script>
+
+
+    <script>
+        function loadFile(event) {
+       var image = document.getElementById("output");
+       image.src = URL.createObjectURL(event.target.files[0]);
+         };
+         
+     </script>
 </body>
 </html>

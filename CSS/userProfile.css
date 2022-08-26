@@ -1,0 +1,214 @@
+
+html{
+    scroll-behavior: smooth;
+}
+
+section.profilePage{
+    overflow: hidden;
+}
+
+div.userProfilePageLeft{
+    padding: 5vw;
+}
+
+div.userProfilePage{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 4vw;
+}
+
+div.ImageDiv{
+    background: #cba10a;
+    color: black;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    /* margin-left: 137px; */
+    line-height: 150px;
+    font-weight: bold;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+div.ImageDiv img{
+    width: 100px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+}
+
+div.ImageDiv{
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+}
+
+img.Image{
+    border: 1px solid black;
+    border-radius: 100px;
+    width: 150px;
+    height: 150px;
+}
+
+img.editImage{
+    position: absolute;
+    width: 30px;
+    top: 260px;
+    left: 60px;
+}
+
+
+
+
+p.userProfileEmail{
+    padding-bottom: 20px;
+    margin-top: -20px;
+    font-weight: 550;
+    font-size: 12px;
+}
+
+h4.biography{
+    border-bottom: 1px solid gray;
+    padding: 5px;
+    margin-bottom: -10px;
+}
+
+div.userProfileSocialMedia{
+    border-top: 1px solid grey;
+    margin-top: 40px;
+    align-items: center;
+}
+
+div.userProfileSocialMedia p img{
+    width: 25px;
+    align-items: center;
+}
+/* End of user profile in the right side */
+
+
+
+
+/* -------------------------------------------------------------------------------- */
+
+
+
+
+/* Edit profile section */
+
+:root {
+    --circleSize: 165px;
+    --radius: 100px;
+    --shadow: 0 0 10px 0 rgba(255,255,255,.35);
+    --fontColor: rgb(250,250,250);
+}
+  
+  
+.profile-pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: transparent;
+    transition: all .3s ease;
+    position: relative;
+    width: 31%;
+    margin-bottom: 30px;
+    margin-top: 50px;
+  }
+    
+.profile-pic input {
+      display: none;
+}
+
+.profile-picRight{
+    position: absolute;
+    object-fit: cover;
+    /* width: var(--circleSize);
+    height: var(--circleSize); */
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    z-index: 0;
+
+    background: #cba10a;
+    color: black;
+    width: 165px;
+    height: 165px;
+    border-radius: 50%;
+    text-align: center;
+    /* margin-left: 137px; */
+    line-height: 165px;
+    font-weight: bold;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+
+.profile-pic img {
+    position: absolute;
+    object-fit: cover;
+    width: var(--circleSize);
+    height: var(--circleSize);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    z-index: 0;
+  }
+  
+  .profile-pic .-label {
+    cursor: pointer;
+    height: var(--circleSize);
+    width: var(--circleSize);
+  }
+
+
+  .profile-pic:hover .-label {
+       
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.54);
+    z-index: 10000;
+    color: var(--fontColor);
+    transition: background-color .2s ease-in-out;
+    border-radius: var(--radius);
+
+}
+
+.profile-pic span {
+  display: flex;
+  padding: .2em;
+  height: 1.5em;
+}
+
+.profile-pic span img{
+    display: flex;
+    padding: .2em;
+    height: 1.5em;
+  }
+
+
+
+
+div.userProfilePageRight{
+    padding: 5vw;
+}
+
+div.userProfilePageRightInfo h3{
+    border-bottom: 2px solid gray;
+    margin-right: 10vw;
+}
+
+div.userProfilePageRightInfo form{
+    display: flex;
+    flex-direction: column;
+    padding-right: 10vw;
+}
+
+div.userProfilePageRightInfo form input{
+    padding: 8px;
+    border-radius: 5px;
+}
+
+input.updateChanges{
+    width: 20%;
+}
