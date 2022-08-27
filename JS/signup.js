@@ -14,6 +14,7 @@ submitData.addEventListener("click", (event) =>{
     singup();
 });
 
+
 function singup(){
     const first_name = document.getElementById("firstName");
     const last_name = document.getElementById("lastName");

@@ -259,10 +259,10 @@
                 </div>
     
                 <div class="userProfileSocialMedia">
-                    <p><img src="../images/facebook_black.png" alt="">: ruzindana.elannoernest </p>
-                    <p><img src="../images/twitter_black.png" alt="">: @ruzindanaernes5</p>
-                    <p><img src="../images/linkedin_black.png" alt="">: ernest-ruzindana-7481b8183/</p>
-                    <p><img src="../images/instagram_black.png" alt="">: elanno_official</p>
+                    <p id="profileFacebook"></p>
+                    <p id="profileTwitter"><img src="../images/twitter_black.png" alt="">&nbsp;: @ruzindanaernes5</p>
+                    <p id="profileLinkedin"><img src="../images/linkedin_black.png" alt="">&nbsp;: ernest-ruzindana-7481b8183/</p>
+                    <p id="profileInstagram"><img src="../images/instagram_black.png" alt="">&nbsp;: elanno_official</p>
                 </div>
             </div>
             <div class="userProfilePageRight">
@@ -287,19 +287,36 @@
 
 
                     <form action="">
-                        <label for="firstName"> First name: </label>
+                        
+                        <label for="firstName"> First name* </label>
                         <input type="text" id="profileFirstName" value="">
                         <br>
-                        <label for="lastName"> Last name: </label>
+                        <label for="lastName"> Last name* </label>
                         <input type="text" id="profileLastName" value="">
                         <br>
-                        <label for="email"> Email: </label>
+                        <label for="email"> Email* </label>
                         <input type="email" id="profileEmail" value="">
                         <br>
-                        <label for="bio"> Bio: </label>
+                        <label for="profileFacebook"> Facebook </label>
+                        <input type="text" id="UserProfileFacebook" value="">
+                        <br>
+                        <label for="profileTwitter"> Twitter </label>
+                        <input type="text" id="UserProfileTwitter" value="">
+                        <br>
+                        <label for="profileLinkedin"> Linkedin </label>
+                        <input type="text" id="UserProfileLinkedin" value="">
+                        <br>
+                        <label for="profileInstagram"> Instagram </label>
+                        <input type="text" id="UserProfileInstagram" value="">
+                        <br>
+                        <label for="bio"> Bio </label>
                         <textarea name="" id="profileBio" cols="30" rows="10" value=""></textarea>
                         <br>
-                        <input class="updateChanges" type="submit" value="Update Changes">
+
+                        <div id="profileMessage"></div>
+                        <br>
+
+                        <input class="updateChanges" id="updateChanges" type="submit" value="Update Changes">
                         
                     </form>
                 </div>

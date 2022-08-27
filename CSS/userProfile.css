@@ -9,6 +9,11 @@ section.profilePage{
 
 div.userProfilePageLeft{
     padding: 5vw;
+    background-color: rgb(224, 224, 224);
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 400px;
+    border-radius: 10px;
 }
 
 div.userProfilePage{
@@ -28,7 +33,6 @@ div.ImageDiv{
     line-height: 150px;
     font-weight: bold;
     font-size: 40px;
-    cursor: pointer;
 }
 
 div.ImageDiv img{
@@ -81,10 +85,17 @@ div.userProfileSocialMedia{
     align-items: center;
 }
 
+div.userProfileSocialMedia p{
+    display: flex;
+    align-items: center;
+}
+
 div.userProfileSocialMedia p img{
     width: 25px;
     align-items: center;
 }
+
+
 /* End of user profile in the right side */
 
 
