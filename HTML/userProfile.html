@@ -226,9 +226,11 @@
                     <li><a href="#work">My work</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li class="loginlinksLi"><a href="#contact" class="loginlinks active">
-                        <div>Contact</div>
-                    </a></li>
+                    <li class="loginlinksLi">
+                        <a href="#contact" class="loginlinks active">
+                            <div>Contact</div>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <ul>
@@ -248,6 +250,7 @@
                     <div class="ImageDiv" id="ImageDiv">
                         
                     </div>
+                    <img src="" id="profileImageLinkLeft" width="200"/>
                     
                 </div>
 
@@ -277,12 +280,12 @@
                             Edit Image
                         </span>
                         </label>
-                        <input id="file" type="file" onchange="loadFile(event)"/>
+                        <input id="file" type="file" onchange="UpdateUserProfile(event)"/>
                         
                         <div class="profile-picRight" id="profilePicRight">
                         
                         </div>
-                        <!-- <img src="https://cdn.pixabay.com/photo/2017/08/06/21/01/louvre-2596278_960_720.jpg" id="output" width="200" /> -->
+                        <img src="" id="profileImageLink" width="200"/>
                     </div>
 
 
@@ -414,12 +417,6 @@
     <script src="../JS/userProfile.js"></script>
 
 
-    <script>
-        function loadFile(event) {
-       var image = document.getElementById("output");
-       image.src = URL.createObjectURL(event.target.files[0]);
-         };
-         
-     </script>
+    
 </body>
 </html>

@@ -710,7 +710,6 @@ section.testimonials{
 div.testimonialsTitle{
     color: white;
     margin-bottom: 45px;
-
 }
 
 
@@ -797,7 +796,7 @@ span.testimonialOwner img{
   flex-shrink: 0;
   color: black;
   max-height: 90%;
-  width: 30vw;
+  width: 40vw;
   padding: 2vw 2vw 3vw 2vw;
   border-radius: 3px;
   position: relative;

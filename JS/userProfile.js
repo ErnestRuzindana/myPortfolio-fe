@@ -16,7 +16,20 @@ async function UserProfile(){
   userProfileEmail.innerHTML = profileFetchedData.email
 
   const ImageDiv = document.getElementById("ImageDiv");
+  const profileImageLinkLeft = document.getElementById("profileImageLinkLeft")
   ImageDiv.innerHTML = profileFetchedData.firstName.charAt(0) +""+ profileFetchedData.lastName.charAt(0)
+
+  if (profileFetchedData.imageLink) {
+    profileImageLinkLeft.src = profileFetchedData.imageLink
+    ImageDiv.style.display = "none"
+  }
+
+  else{
+    profileImageLinkLeft.style.display = "none"
+  }
+
+
+
 
   const userProfileBio = document.getElementById("userProfileBio");
   if (profileFetchedData.bio){
@@ -72,7 +85,18 @@ async function UserProfile(){
 
   // edit profile section
   const profilePicRight = document.getElementById("profilePicRight");
+  const profileImageLink = document.getElementById("profileImageLink")
   profilePicRight.innerHTML = profileFetchedData.firstName.charAt(0) +""+ profileFetchedData.lastName.charAt(0)
+
+  if (profileFetchedData.imageLink) {
+    profileImageLink.src = profileFetchedData.imageLink
+    profilePicRight.style.display = "none"
+  }
+
+  else{
+    profileImageLink.style.display = "none"
+  }
+
 
 
 
@@ -161,7 +185,7 @@ updateChanges.addEventListener("click", (event) =>{
 });
 
 
-function UpdateUserProfile(){
+function UpdateUserProfile(event){
     const profileFirstName = document.getElementById("profileFirstName");
     const profileLastName = document.getElementById("profileLastName");
     const profileEmail = document.getElementById("profileEmail");
@@ -170,6 +194,12 @@ function UpdateUserProfile(){
     const UserProfileLinkedin = document.getElementById("UserProfileLinkedin");
     const UserProfileInstagram = document.getElementById("UserProfileInstagram");
     const profileBio = document.getElementById("profileBio");
+
+    const UserProfileImage = document.getElementById("profileImageLink");
+    UserProfileImage.src = URL.createObjectURL(event.target.files[0])
+
+    const finalProfileImage = UserProfileImage.src
+
 
     const data = {
         firstName: profileFirstName.value, 
@@ -180,6 +210,7 @@ function UpdateUserProfile(){
         profileLinkedin: UserProfileLinkedin.value,
         profileInstagram: UserProfileInstagram.value,
         bio: profileBio.value,
+        imageLink: finalProfileImage
     }
 
     const sendData = {

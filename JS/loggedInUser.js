@@ -130,6 +130,7 @@ async function loggedInUser(){
       <div class="profilePicture" id="profilePicture">
         ${fetchedData.firstName.charAt(0)}${fetchedData.lastName.charAt(0)}
       </div>
+
           
       <div class="userProfile" id="userProfile">
           <div class="profilePictureIn">
@@ -197,6 +198,8 @@ async function loggedInUser(){
         myFooterCopyRight.addEventListener("click", ()=>{
         UserProfile.style.display = "none"
         })
+
+
 }
 
 loggedInUser()
