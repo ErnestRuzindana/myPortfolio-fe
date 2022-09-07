@@ -20,7 +20,7 @@ async function UserProfile(){
   ImageDiv.innerHTML = profileFetchedData.firstName.charAt(0) +""+ profileFetchedData.lastName.charAt(0)
 
   if (profileFetchedData.imageLink) {
-    profileImageLinkLeft.src = profileFetchedData.imageLink
+    profileImageLinkLeft.src = `http://localhost:5000/images/${profileFetchedData.imageLink}`
     ImageDiv.style.display = "none"
   }
 
@@ -89,7 +89,7 @@ async function UserProfile(){
   profilePicRight.innerHTML = profileFetchedData.firstName.charAt(0) +""+ profileFetchedData.lastName.charAt(0)
 
   if (profileFetchedData.imageLink) {
-    profileImageLink.src = profileFetchedData.imageLink
+    profileImageLink.src = `http://localhost:5000/images/${profileFetchedData.imageLink}`
     profilePicRight.style.display = "none"
   }
 
@@ -185,7 +185,7 @@ updateChanges.addEventListener("click", (event) =>{
 });
 
 
-function UpdateUserProfile(event){
+function UpdateUserProfile(){
     const profileFirstName = document.getElementById("profileFirstName");
     const profileLastName = document.getElementById("profileLastName");
     const profileEmail = document.getElementById("profileEmail");
@@ -195,28 +195,38 @@ function UpdateUserProfile(event){
     const UserProfileInstagram = document.getElementById("UserProfileInstagram");
     const profileBio = document.getElementById("profileBio");
 
-    const UserProfileImage = document.getElementById("profileImageLink");
-    UserProfileImage.src = URL.createObjectURL(event.target.files[0])
+    const formData = new FormData()
+    formData.append("fisrtName", profileFirstName.value)
+    formData.append("lastName", profileLastName.value)
+    formData.append("email", profileEmail.value)
+    formData.append("profileFacebook", UserProfileFacebook.value)
+    formData.append("profileTwitter", UserProfileTwitter.value)
+    formData.append("profileLinkedin", UserProfileLinkedin.value)
+    formData.append("profileInstagram", UserProfileInstagram.value)
+    formData.append("bio", profileBio.value)
+    formData.append("profileImage", file.files[0])
 
-    const finalProfileImage = UserProfileImage.src
+    
 
 
-    const data = {
-        firstName: profileFirstName.value, 
-        lastName: profileLastName.value,
-        email: profileEmail.value,
-        profileFacebook: UserProfileFacebook.value,
-        profileTwitter: UserProfileTwitter.value,
-        profileLinkedin: UserProfileLinkedin.value,
-        profileInstagram: UserProfileInstagram.value,
-        bio: profileBio.value,
-        imageLink: finalProfileImage
-    }
+
+
+    // const data = {
+    //     firstName: profileFirstName.value, 
+    //     lastName: profileLastName.value,
+    //     email: profileEmail.value,
+    //     profileFacebook: UserProfileFacebook.value,
+    //     profileTwitter: UserProfileTwitter.value,
+    //     profileLinkedin: UserProfileLinkedin.value,
+    //     profileInstagram: UserProfileInstagram.value,
+    //     bio: profileBio.value,
+    //     imageLink: finalProfileImage
+    // }
 
     const sendData = {
         method: "POST",
-        body: JSON.stringify(data),
-        headers: new Headers({'Content-Type': 'application/json; charset=UTF-8', "auth_token": JSON.parse(sessionStorage.getItem("token"))})
+        body: formData,
+        headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token"))})
     }
 
 fetch("http://localhost:5000/login/updateUser", sendData)
@@ -227,7 +237,7 @@ fetch("http://localhost:5000/login/updateUser", sendData)
     if (fetchedData.message){
         profileMessage.style.color = "green"
         profileMessage.innerHTML = fetchedData.message
-        setTimeout(()=>{location = "userProfile.html"}, 1000)
+        location = "userProfile.html"
     }
 
     // else if (fetchedData.successMessage){

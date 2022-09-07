@@ -81,6 +81,22 @@ async function loggedInUser(){
             text-align: center;
         }
 
+        img.topProfileImage{
+            border: 1px solid black;
+            width: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        img.inProfileImage{
+            border: 1px solid black;
+            width: 70px;
+            border-radius: 50%;
+            cursor: pointer;
+            text-align: center; 
+        }
+
         div.profilePictureIn{
             background: #cba10a;
             color: black;
@@ -130,12 +146,14 @@ async function loggedInUser(){
       <div class="profilePicture" id="profilePicture">
         ${fetchedData.firstName.charAt(0)}${fetchedData.lastName.charAt(0)}
       </div>
+      <img src="http://localhost:5000/images/${fetchedData.imageLink}" class="topProfileImage" id="topProfileImage" alt="">
 
           
       <div class="userProfile" id="userProfile">
-          <div class="profilePictureIn">
+          <div class="profilePictureIn" id="profilePictureIn">
           ${fetchedData.firstName.charAt(0)}${fetchedData.lastName.charAt(0)}
           </div>
+          <img src="http://localhost:5000/images/${fetchedData.imageLink}" class="inProfileImage" id="inProfileImage" alt="">
 
           <h3>${fetchedData.firstName} ${fetchedData.lastName}</h3>
           <p class="userFetchedEmail" style="font-weight: 500;">${fetchedData.email}</p>
@@ -165,7 +183,35 @@ async function loggedInUser(){
         const UserProfile = document.getElementById("userProfile");
         const HideUserProfile = document.querySelectorAll("[id='hideUserProfile']");
         const myProfile = document.getElementById("myProfile");
-        const myFooterCopyRight = document.getElementById ("myFooterCopyRight")
+        const myFooterCopyRight = document.getElementById ("myFooterCopyRight");
+        const profilePictureIn = document.getElementById("profilePictureIn");
+        
+
+        const topProfileImage = document.getElementById("topProfileImage");
+        topProfileImage.addEventListener("click", ()=>{
+            if(UserProfile.style.display !== "none"){
+                UserProfile.style.display = "none"
+            }
+    
+            else {
+                UserProfile.style.display = "block"
+            }
+            })
+
+        // hidding and showing the image profile in the top right corner
+        const inProfileImage = document.getElementById("inProfileImage");
+
+        if (fetchedData.imageLink) {
+            UserProfilePicture.style.display = "none"
+            profilePictureIn.style.display = "none"
+        }
+
+        
+        else{
+            topProfileImage.style.display = "none"
+            inProfileImage.style.display = "none"
+        }
+
 
 
         const preNavLogin = document.getElementById("preNavLogin");

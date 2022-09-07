@@ -280,7 +280,7 @@
                             Edit Image
                         </span>
                         </label>
-                        <input id="file" type="file" onchange="UpdateUserProfile(event)"/>
+                        <input id="file" type="file" onchange="UpdateUserProfile()" name="profileImage"/>
                         
                         <div class="profile-picRight" id="profilePicRight">
                         
@@ -292,28 +292,28 @@
                     <form action="">
                         
                         <label for="firstName"> First name* </label>
-                        <input type="text" id="profileFirstName" value="">
+                        <input type="text" id="profileFirstName" value="" name="firstName">
                         <br>
                         <label for="lastName"> Last name* </label>
-                        <input type="text" id="profileLastName" value="">
+                        <input type="text" id="profileLastName" value="" name="lastName">
                         <br>
                         <label for="email"> Email* </label>
-                        <input type="email" id="profileEmail" value="">
+                        <input type="email" id="profileEmail" value="" name="email">
                         <br>
                         <label for="profileFacebook"> Facebook </label>
-                        <input type="text" id="UserProfileFacebook" value="">
+                        <input type="text" id="UserProfileFacebook" value="" name="profileFacebook">
                         <br>
                         <label for="profileTwitter"> Twitter </label>
-                        <input type="text" id="UserProfileTwitter" value="">
+                        <input type="text" id="UserProfileTwitter" value="" name="profileTwitter">
                         <br>
                         <label for="profileLinkedin"> Linkedin </label>
-                        <input type="text" id="UserProfileLinkedin" value="">
+                        <input type="text" id="UserProfileLinkedin" value="" name="profileLinkedin">
                         <br>
                         <label for="profileInstagram"> Instagram </label>
-                        <input type="text" id="UserProfileInstagram" value="">
+                        <input type="text" id="UserProfileInstagram" value="" name="profileInstagram">
                         <br>
                         <label for="bio"> Bio </label>
-                        <textarea name="" id="profileBio" cols="30" rows="10" value=""></textarea>
+                        <textarea name="" id="profileBio" cols="30" rows="10" value="" name="bio"></textarea>
                         <br>
 
                         <div id="profileMessage"></div>
