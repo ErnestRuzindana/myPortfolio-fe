@@ -194,34 +194,20 @@ function UpdateUserProfile(){
     const UserProfileLinkedin = document.getElementById("UserProfileLinkedin");
     const UserProfileInstagram = document.getElementById("UserProfileInstagram");
     const profileBio = document.getElementById("profileBio");
-
-    const formData = new FormData()
-    formData.append("fisrtName", profileFirstName.value)
-    formData.append("lastName", profileLastName.value)
-    formData.append("email", profileEmail.value)
-    formData.append("profileFacebook", UserProfileFacebook.value)
-    formData.append("profileTwitter", UserProfileTwitter.value)
-    formData.append("profileLinkedin", UserProfileLinkedin.value)
-    formData.append("profileInstagram", UserProfileInstagram.value)
-    formData.append("bio", profileBio.value)
-    formData.append("profileImage", file.files[0])
-
-    
+    const file = document.getElementById("file");
 
 
+    const formData = new FormData();
+        formData.append("firstName", profileFirstName.value);
+        formData.append("lastName", profileLastName.value);
+        formData.append("email", profileEmail.value);
+        formData.append("profileFacebook", UserProfileFacebook.value);
+        formData.append("profileTwitter", UserProfileTwitter.value);
+        formData.append("profileLinkedin", UserProfileLinkedin.value);
+        formData.append("profileInstagram", UserProfileInstagram.value);  
+        formData.append("bio", profileBio.value);
+        formData.append("profileImage", file.files[0]);
 
-
-    // const data = {
-    //     firstName: profileFirstName.value, 
-    //     lastName: profileLastName.value,
-    //     email: profileEmail.value,
-    //     profileFacebook: UserProfileFacebook.value,
-    //     profileTwitter: UserProfileTwitter.value,
-    //     profileLinkedin: UserProfileLinkedin.value,
-    //     profileInstagram: UserProfileInstagram.value,
-    //     bio: profileBio.value,
-    //     imageLink: finalProfileImage
-    // }
 
     const sendData = {
         method: "POST",
@@ -239,22 +225,5 @@ fetch("http://localhost:5000/login/updateUser", sendData)
         profileMessage.innerHTML = fetchedData.message
         location = "userProfile.html"
     }
-
-    // else if (fetchedData.successMessage){
-    //     signupMessage.style.color = "green"
-    //     signupMessage.innerHTML = fetchedData.successMessage
-    //     signupForm.reset()
-    //     setTimeout(()=>{location = "login.html"}, 4000)
-    // }
-
-    // else if (fetchedData.validationError){
-    //     signupMessage.style.color = "red"
-    //     signupMessage.innerHTML = fetchedData.validationError
-    // }
-
-    // else {
-    //     signupMessage.style.color = "red"
-    //     signupMessage.innerHTML = fetchedData.errorMessage
-    // }
 })
 }

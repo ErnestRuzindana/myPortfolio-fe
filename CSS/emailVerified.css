@@ -1,0 +1,24 @@
+div.verifiedMessage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 40px;
+
+}
+
+div.verifiedMessage img{
+    width: 100%;
+}
+
+div.verifiedMessageImage {
+    width: 20%;
+    margin: auto;
+}
+
+div.verifiedMessage h4{
+    text-align: center;
+}
+
+div.verifiedMessage p{
+    text-align: center;
+}
