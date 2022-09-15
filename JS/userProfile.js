@@ -210,7 +210,7 @@ function UpdateUserProfile(){
 
 
     const sendData = {
-        method: "POST",
+        method: "PUT",
         body: formData,
         headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token"))})
     }
