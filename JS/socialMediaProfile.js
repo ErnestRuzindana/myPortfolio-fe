@@ -111,7 +111,7 @@ async function socialMediaLoggedInUser(){
 
           <h3>${fetchedData.user.userName}</h3>
           <p class="userFetchedEmail" style="font-weight: 500;">${fetchedData.user.email}</p>
-          <a href="" class="ManageAccountLink">Edit profile</a>
+          <a href="socialMediaUserProfile.html" class="ManageAccountLink">Edit profile</a>
           <br><br>
 
           <div class="switchAccount" style="font-weight: 500; padding: 20px;">
