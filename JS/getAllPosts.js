@@ -15,9 +15,11 @@ async function getAllPosts(){
         const postArray = posts[i];
 
         const title = postArray.title;
-        const body = postArray.postBody;
+        const body = postArray.postBody.slice(0, 600)+"...";
         const image = postArray.postImage;
-        const postId = postArray._id;
+        const post_id = postArray._id;
+        const date = postArray.dateCreated
+
 
 
         const blogPost = document.getElementById("blogPost");
@@ -28,18 +30,18 @@ async function getAllPosts(){
                         <img src="${image}" alt="" >
                     </div>
                     <div class="blogContent">
-                        <h3> <a href="singleBlog.html">${title}</a> </h3>
+                        <h3> <a id="${post_id}" onclick="getSinglePost('${post_id}')" style="cursor: pointer;">${title}</a> </h3>
                         <hr>
                         <div class="blogAuthor">
                             <img src="../images/Ruzindana.jpg" alt="" class="AuthorImage">
                             <small><a href="" class="AuthorName">Ernest Ruzindana</a></small>
-                            <small> /July 07, 2022</small>
+                            <small> /${date}</small>
                         </div>
                         <p class="ContentSection">
                             ${body}
                         </p>
                         <p class="blogLikesComments">15 Likes . &nbsp;  &nbsp; 8 Comments</p>
-                        <a href="singleBlog.html" class="readmore">Read more &rarr; </a>
+                        <a id="${post_id}" onclick="getSinglePost('${post_id}')" class="readmore" style="cursor: pointer;">Read more &rarr; </a>
                     </div>
                 </div>
         `
@@ -47,5 +49,6 @@ async function getAllPosts(){
         blogPost.innerHTML += postTemplate
     }
 }
+
 
 getAllPosts()
