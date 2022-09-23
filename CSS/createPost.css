@@ -1,0 +1,45 @@
+div.createPost{
+    padding: 20px 100px;
+}
+
+
+div.createPost form input[type="file"]{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    border: 1px solid gainsboro;
+    width: 84%;
+    background-color: white;
+    padding: 10px;
+}
+
+div.createPost form input[type="text"]{
+    display: flex;
+    flex-direction: column;
+    width: 84%;
+}
+
+div.createPost form label{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    font-size: 17px;
+}
+
+label.postBody{
+    margin-bottom: -40px;
+}
+
+div.createPost form input[type="submit"]{
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 100px;
+}
+
+div.postMessage{
+    padding: 20px 0;
+    font-size: 17px;
+}
+
+
+

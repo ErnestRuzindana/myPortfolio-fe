@@ -30,14 +30,14 @@ async function getAllPosts(){
                         <img src="${image}" alt="" >
                     </div>
                     <div class="blogContent">
-                        <h3> <a id="${post_id}" onclick="getSinglePost('${post_id}')" style="cursor: pointer;">${title}</a> </h3>
+                        <h3> <a id="${post_id}" onclick="getSinglePost('${post_id}')" style="cursor: pointer; font-family: poppins;">${title}</a> </h3>
                         <hr>
                         <div class="blogAuthor">
                             <img src="../images/Ruzindana.jpg" alt="" class="AuthorImage">
                             <small><a href="" class="AuthorName">Ernest Ruzindana</a></small>
                             <small> /${date}</small>
                         </div>
-                        <p class="ContentSection">
+                        <p class="ContentSection" style="font-family: calibri;">
                             ${body}
                         </p>
                         <p class="blogLikesComments">15 Likes . &nbsp;  &nbsp; 8 Comments</p>

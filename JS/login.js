@@ -73,7 +73,7 @@ function login(){
             loginMessage.innerHTML = fetchedData.successMessage
 
             sessionStorage.setItem("token", JSON.stringify(fetchedData.Access_Token))
-            setTimeout(()=>{location = "index.html"}, 500)
+            setTimeout(()=>{location = "blog.html"}, 500)
         }
 
         else{
