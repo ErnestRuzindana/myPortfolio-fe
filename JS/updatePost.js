@@ -41,9 +41,11 @@ async function getPostDetails(){
     const postTitleDetails = document.getElementById("postTitleDetails")
     postTitleDetails.value = singlePost.title
 
-    const postBodyDetails = document.getElementById("summernote")
-    postBodyDetails.innerHTML = singlePost.postBody
-    console.log(postBodyDetails.value)
+
+    const postBodyDetails = document.getElementsByClassName("postBodyDetails")
+    postBodyDetails.value = "Okey, let me type here and see if anything will be visible"
+    $("#summernote textarea.postBody").text("Welcome");
+
 }
 
 getPostDetails()
