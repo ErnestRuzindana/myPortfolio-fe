@@ -42,7 +42,7 @@ async function update_delete_post(){
                         </p>
                         
                         <button id="${post_id}" onclick="getSinglePost('${post_id}')">Update post</button>
-                        <button>Delete post</button>
+                        <button id="${post_id}" onclick="deletePost('${post_id}')">Delete post</button>
                     </div>
                 </div>
         `

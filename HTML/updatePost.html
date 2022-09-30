@@ -13,11 +13,14 @@
   <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
   <link rel="stylesheet" href="../CSS/index.css">
   <link rel="stylesheet" href="../CSS/createPost.css">
+
   <!-- plugins -->
   <link rel="stylesheet" type="text/css" href="asset/css/plugins/font-awesome.min.css"/>
   <link rel="stylesheet" type="text/css" href="asset/css/plugins/summernote.css"/>
   <link rel="stylesheet"hidden-sm type="text/css" href="asset/css/plugins/animate.min.css"/>
   <link href="asset/css/style.css" rel="stylesheet">
+
+
   <!-- end: Css -->
   <link rel="icon" href="../images/Logo.png" type="image/x-icon">
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -261,17 +264,16 @@
             <div class="col-md-12">
                 <div class="panel" style="margin-left: -250px; margin-right: 200px;">
                     <div class="panel-body">
-                    <!-- <div id="summernote" name="postBody" style="display: block;"></div> -->
-                    <textarea name="postBody" id="summernote" class="postBodyDetails"></textarea>
+                        <textarea name="postBody" id="summernote" class="postBodyDetails"></textarea>
                     </div>
                 </div>
             </div>
         </div>
         <!-- end: content -->
 
-        <div class="postMessage" id="postMessage"></div>
+        <div class="postMessage" id="blogMessage"></div>
 
-        <input type="submit" id="submitPost" value="Update post">
+        <input type="submit" id="submitBlog" value="Update post">
     </form>
 </div>
 
@@ -299,7 +301,7 @@
 <script type="text/javascript">
   $(document).ready(function(){
        $('#summernote').summernote({
-        height:400
+        height:500
        });
   });
 </script>
