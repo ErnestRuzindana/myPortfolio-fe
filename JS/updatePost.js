@@ -80,12 +80,15 @@ function UpdatePost(){
         formData.append("postImage", postImage.files[0]);
         formData.append("headerImage", headerImage.files[0]);
         formData.append("title", postTitleDetails.value);
-        formData.append("postBody", summernote.innerHTML);
+        // formData.append("postBody", summernote.innerHTML);
+        const data = {
+            postBody: summernote.innerHTML
+        }
 
 
     const sendData = {
         method: "PUT",
-        body: formData,
+        body: JSON.stringify(data), formData, 
         headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token"))})
     }
 
