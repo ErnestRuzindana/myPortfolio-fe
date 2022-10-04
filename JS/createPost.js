@@ -15,7 +15,7 @@ submitPost.addEventListener("click", (event) =>{
 });
 
 
-function createPost(){
+async function createPost(){
     const postImage = document.getElementById("postImage");
     const headerImage = document.getElementById("headerImage");
     const postTitle = document.getElementById("postTitle");
@@ -32,13 +32,49 @@ function createPost(){
     // today = mm + '/' + dd + '/' + yyyy;
 
 
+    const getData = {
+        method: "GET",
+        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+    }
+
+    let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
+    const fetchedData = await response.json()
+    console.log(fetchedData)
+
+    const authorNames = fetchedData.firstName +" "+ fetchedData.lastName
+
+    var authorPicture
+    if(fetchedData.imageLink){
+        authorPicture = `http://localhost:5000/images/${fetchedData.imageLink}`
+    }
+
+    else{
+        authorPicture = fetchedData.firstName.charAt(0)+fetchedData.lastName.charAt(0)
+    }
+    
+
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var yyyy = today.getFullYear();
+
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+
+    const month = monthNames[today.getMonth()]
+
+
+    today = month + ' ' + dd + ', ' + yyyy;
+
     
     const formData = new FormData();
         formData.append("postImage", postImage.files[0]);
         formData.append("headerImage", headerImage.files[0]);
         formData.append("title", postTitle.value);
         formData.append("postBody", postBody.value);
-        // formData.append("dateCreated", today);
+        formData.append("authorName", authorNames)
+        formData.append("authorImage", authorPicture)
+        formData.append("dateCreated", today)
         
 
 
@@ -56,7 +92,7 @@ fetch("http://localhost:5000/createPost", sendData)
     if (fetchedData.successMessage){
         postMessage.style.color = "green"
         postMessage.innerHTML = fetchedData.successMessage
-        location = "blog.html"
+        // location = "blog.html"
     }
 
     else if (fetchedData.validationError){

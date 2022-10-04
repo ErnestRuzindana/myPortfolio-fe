@@ -1,5 +1,8 @@
 
 async function getAllPosts(){
+
+    
+
     const getData = {
         method: "GET",
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
@@ -19,6 +22,9 @@ async function getAllPosts(){
         const image = postArray.postImage;
         const post_id = postArray._id;
         const date = postArray.dateCreated
+        const authorName = postArray.authorName
+        const authorImage = postArray.authorImage 
+        localStorage.setItem("authorImage", authorImage)
 
 
 
@@ -26,6 +32,7 @@ async function getAllPosts(){
         
         const postTemplate = `
                 <div class="blogBoxes blogBox1">
+
                     <div class="blogImage">
                         <img src="${image}" alt="" >
                     </div>
@@ -33,9 +40,15 @@ async function getAllPosts(){
                         <h3> <a id="${post_id}" onclick="getSinglePost('${post_id}')" style="cursor: pointer; font-family: poppins;">${title}</a> </h3>
                         <hr>
                         <div class="blogAuthor">
-                            <img src="../images/Ruzindana.jpg" alt="" class="AuthorImage">
-                            <small><a href="" class="AuthorName">Ernest Ruzindana</a></small>
-                            <small> /${date}</small>
+
+                            <div class="authorImageCharts" id="authorImageCharts">
+                                ${authorImage}
+                            </div>
+
+                            <img src="${authorImage}" alt="" class="AuthorImage" id="authorProfilePicture">
+
+                            <small><a href="" class="AuthorName">${authorName}</a></small>
+                            <small> / ${date}</small>
                         </div>
                         <p class="ContentSection" style="font-family: calibri;">
                             ${body}
@@ -52,3 +65,15 @@ async function getAllPosts(){
 
 
 getAllPosts()
+
+const authorImage = localStorage.getItem("authorImage");
+const authorImageCharts = document.getElementById("authorImageCharts");
+const authorProfilePicture = document.getElementById("authorProfilePicture");
+
+if (authorImage.includes("http" || "https")){
+    authorImageCharts.style.display = "none"
+}
+
+else{
+    authorProfilePicture.style.display = "none" 
+}
