@@ -24,7 +24,7 @@ async function getAllPosts(){
         const date = postArray.dateCreated
         const authorName = postArray.authorName
         const authorImage = postArray.authorImage 
-        localStorage.setItem("authorImage", authorImage)
+       console.log (authorImage)
 
 
 
@@ -58,22 +58,22 @@ async function getAllPosts(){
                     </div>
                 </div>
         `
-        
+        // const authorImage = localStorage.getItem("authorImage");
+        // const authorImageCharts = document.getElementById("authorImageCharts");
+        // const authorProfilePicture = document.getElementById("authorProfilePicture");
+
+        // console.log(authorImageCharts)
+        // if (authorImage.includes("http" || "https")){
+        //     authorImageCharts.style.display = "none"
+        // }
+
+        // else{
+        //     authorProfilePicture.style.display = "none" 
+        // }
+
         blogPost.innerHTML += postTemplate
     }
 }
 
 
 getAllPosts()
-
-const authorImage = localStorage.getItem("authorImage");
-const authorImageCharts = document.getElementById("authorImageCharts");
-const authorProfilePicture = document.getElementById("authorProfilePicture");
-
-if (authorImage.includes("http" || "https")){
-    authorImageCharts.style.display = "none"
-}
-
-else{
-    authorProfilePicture.style.display = "none" 
-}
