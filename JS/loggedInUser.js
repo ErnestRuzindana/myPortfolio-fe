@@ -123,7 +123,6 @@ async function loggedInUser(){
         div.switchAccount{
             border-top: 1px solid #cba10a;
             padding-top: 20px;
-            margin-bottom: -30px;
         }
 
         p.switchAccountLink{
@@ -160,14 +159,12 @@ async function loggedInUser(){
           <a href="userProfile.html" class="ManageAccountLink">Edit profile</a>
           <br><br>
 
-          <div class="switchAccount" style="font-weight: 500; padding: 20px;">
+          <div class="switchAccount" style="font-weight: 500; padding: 20px;" id="adminPanel">
                 <p class="switchAccountLink"> 
-                <img style="width: 20px; margin-bottom: -5px;" src="../images/switch.png" alt="">
-                    Switch an account
+                <img style="width: 20px; margin-bottom: -5px;" src="../images/admin.jpg" alt="">
+                    Admin Panel
                 </p>
           </div>
-
-          <p style="font-weight: 500;">example@gmail.com</p>
 
           <div class="preNavLogin" style="border-top: 1px solid #cba10a;">
               <h5><a onClick="preNavLogoutUser()">Logout</a></h5>
@@ -185,7 +182,18 @@ async function loggedInUser(){
         const myProfile = document.getElementById("myProfile");
         const myFooterCopyRight = document.getElementById ("myFooterCopyRight");
         const profilePictureIn = document.getElementById("profilePictureIn");
+        const adminPanel = document.getElementById("adminPanel");
         
+
+        //show or hide admin panel
+        if(fetchedData.role == "user"){
+            adminPanel.style.display = "none"
+        }
+    
+        //Go to admin panel
+        adminPanel.addEventListener("click", ()=>{
+            location = "../admin/dashboard.html"
+        })
 
         const topProfileImage = document.getElementById("topProfileImage");
         topProfileImage.addEventListener("click", ()=>{
@@ -244,6 +252,7 @@ async function loggedInUser(){
         myFooterCopyRight.addEventListener("click", ()=>{
         UserProfile.style.display = "none"
         })
+
 
 
 }
