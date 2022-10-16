@@ -136,9 +136,49 @@
                 font-size: 16px;
                 margin: -20px auto 20px auto;
                 "></div>
-                <div class="col-md-12 padding-0" id="messagesContainer">
-                  <!-- <div id="confirmReplyMessage" style="padding: 20px 0px 0px; font-size: 16px;"> Hello</div> -->
+                
+                <div class="col-md-6" style="width: 150%;">
+                    <div class="panel box-v1">
+                        <div style="font-size: 16px; text-align: center; color: #cba10a; text-decoration: underline; font-weight: bold; 
+                        padding-top: 15px;
+                        ">Sender Info</div>
+                            <div class="panel-body text-center" style=" font-size: 15px; margin-top: -30px; padding-bottom: 20px;">
+                           <span style="text-decoration: underline;">Names</span>: <span id="senderNames"></span></br>
+                           <span style="text-decoration: underline;">Email</span>: <span id="senderEmailInfo"></span> </br> 
+                           <span style="text-decoration: underline;">Phone Number</span>: <span id="senderPhone"></span> </br>
+                           </div>
+                           <div style="font-size: 16px; text-align: center; color: #cba10a; text-decoration: underline; font-weight: bold; 
+                           padding-top: 15px; border-top: 5px solid #f0f3f4;
+                           ">Sender Message</div>
+            
+                        <div class="panel-body text-center" style=" font-size: 15px; margin-top: -30px; padding-bottom: 20px;">
+                            <span id="senderMessage"></span>
+                        </div> 
+                        <div style="
+                        border-top: 5px solid #f0f3f4;
+                        display: flex;
+                        flex-direction: column;
+                        padding: 20px;
+                        ">
+                            <textarea name="message" id="replyMessage" placeholder="Enter your reply here" rows="4" cols="50"></textarea> 
+                            <div id="confirmReplyMessage" style="font-size: 16px; text-align: center; padding-top: 15px;">
+                                
+                            </div>
+                            <button id="submitReplyMessage" class="add-btn" style="margin-top: 20px;
+                            border: none;
+                            background: #ff6b6b;
+                            width: 15%;
+                            position: relative;
+                            left: 425px;
+                            font-size: 15px;
+                            padding: 7px 10px; color: white;"
+                            ><span class="fa fa-envelope-o"></span> Reply </button>
+                        </div>  
+                        
+                        </div>
                 </div>
+                </div>
+        
 
     <!-- start: Javascript -->
     <script src="asset/js/jquery.min.js"></script>
