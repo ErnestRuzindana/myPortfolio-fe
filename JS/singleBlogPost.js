@@ -42,6 +42,26 @@ async function postDetails(){
     const authorNameSingleBlog = document.getElementById("authorNameSingleBlog")
     authorNameSingleBlog.innerHTML = singlePost.authorName
 
+    const dateCreatedSingleBlog = document.getElementById("dateCreatedSingleBlog")
+    dateCreatedSingleBlog.innerHTML = `/ ${singlePost.dateCreated} `
+
+    const singleBlogImageTemplate = document.getElementById("singleBlogImageTemplate")
+
+    const str = "http" || "https"
+    const authorImage = singlePost.authorImage
+
+        if(authorImage.includes(str)){
+            singleBlogImageTemplate.innerHTML = 
+           `<img src="${authorImage}" alt="" class="authorImageSingleBlog" id="authorImageSingleBlog">`
+        }
+             
+        else{
+            singleBlogImageTemplate.innerHTML = 
+           ` <div class="authorImageCharts" id="authorImageCharts">
+           ${authorImage}
+           </div>`
+        }
+
 	const commentorAvatar = document.getElementById("commentorAvatar")
 	const Token = JSON.parse(sessionStorage.getItem("token"))
 	if (!Token){
@@ -71,24 +91,6 @@ async function postDetails(){
         </div>`
     }
 
-
-
-    const dateCreatedSingleBlog = document.getElementById("dateCreatedSingleBlog")
-    dateCreatedSingleBlog.innerHTML = `/ ${singlePost.dateCreated} `
-
-    const singleBlogImageTemplate = document.getElementById("singleBlogImageTemplate")
-    const str = "http" || "https"
-        if(singlePost.authorImage.includes(str)){
-            singleBlogImageTemplate.innerHTML = 
-           `<img src="${singlePost.authorImage}" alt="" class="authorImageSingleBlog" id="authorImageSingleBlog">`
-        }
-             
-        else{
-            singleBlogImageTemplate.innerHTML = 
-           ` <div class="authorImageCharts" id="authorImageCharts">
-           ${singlePost.authorImage}
-           </div>`
-        }
 }
 
 postDetails()
@@ -111,6 +113,7 @@ async function getAllComments(){
     
     const countComments = document.getElementById("countComments")
     countComments.innerHTML = `<span>(${comments.length})</span>`
+    
 
     for(let i=0; i<comments.length; i++){
         const commentsArray = comments[i];

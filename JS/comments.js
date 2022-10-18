@@ -1,4 +1,6 @@
 const submitComment = document.getElementById("submitComment");
+const disableComment = document.getElementById("disableComment")
+disableComment.style.display = "none";
 
 submitComment.addEventListener("click", (event) =>{
     event.preventDefault(); 
@@ -8,6 +10,11 @@ submitComment.addEventListener("click", (event) =>{
 
 const post_id = localStorage.getItem("postId")
 async function comment(){
+    const checkToken = JSON.parse(sessionStorage.getItem("token"))
+	if (!checkToken){
+		disableComment.style.display = "block";
+        disableComment.innerHTML = "Please Login to Comment!"
+	   }
     const commentBody = document.getElementById("commentBody");
     
     //LoggedIn user

@@ -565,17 +565,18 @@ div.authorImageCharts{
 /* Pagination */
 
 div.myPagination{
-    margin-bottom: 10vw;
+    margin-bottom: 4vw;
 }
 ul.pageLinks{
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 20px;
     padding: 0 15vw;
     list-style-type: none;
     align-items: center;
 }
-ul.pageLinks a{
+ul.pageLinks button{
     text-decoration: none;
     font-weight: bold;
     font-size: 0.9vw;
@@ -585,10 +586,12 @@ ul.pageLinks a{
     padding: 0.3vw 1vw;
 }
 
-ul.pageLinks a:hover{
+ul.pageLinks button:hover{
     background-color: var(--myBackground);
     color: var(--myColor);
 }
+
+
 /* End of pagination */
 
 
