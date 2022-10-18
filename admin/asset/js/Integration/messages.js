@@ -68,7 +68,7 @@ async function fetchMessages(){
             <div class="panel-body text-center" style=" font-size: 15px; margin-top: -30px; padding-bottom: 20px;">
              ${message}
             </div>   
-                <div class="deleteMessage" style="font-size: 20px; text-align: right; width: 20%; border-top: 5px solid #f0f3f4; border-right: 5px solid #f0f3f4; padding-bottom: 5px; padding-top: 5px; padding-right: 22px;" id= '${resultId}' onclick="deleteMessage('${resultId}')">
+                <div class="deleteMessage" style="font-size: 20px; text-align: right; width: 20%; border-top: 5px solid #f0f3f4; border-left: 5px solid #f0f3f4; padding-bottom: 5px; padding-top: 5px; padding-right: 22px;" id= '${resultId}' onclick="deleteMessage('${resultId}')">
                 <i class="fa fa-trash" aria-hidden="true"></i>
                 </div>
 
@@ -82,7 +82,7 @@ async function fetchMessages(){
                 background: #ff6b6b;
                 width: 40%;
                 position: relative;
-                left: 85px;
+                right: 85px;
                 padding: 5px 20px; color: white;"
                 onclick="getSingleMessage('${resultId}')"
                 ><span class="fa fa-envelope-o"></span> Reply </button>

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/557e6c8ef8.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../CSS/blog.css">
     <link rel="stylesheet" href="../CSS/singleBlog.css">
     <link rel="stylesheet" href="../CSS/index.css">
@@ -270,13 +271,15 @@
                 <div class="singleBlogContainer">
 
                     <div class="singleBlogAuthor">
-                        <img src="../images/Ruzindana.jpg" alt="" class="authorImageSingleBlog">
-                        <p class="authorNameSingleBlog">
-                            Ernest RUZINDANA
+                        <div id="singleBlogImageTemplate">
+                            
+                        </div>
+                        <p class="authorNameSingleBlog" id="authorNameSingleBlog">
+                            
                         </p> 
 
-                        <p class="dateCreatedSingleBlog">
-                            / September 09, 2022
+                        <p class="dateCreatedSingleBlog" id="dateCreatedSingleBlog">
+                            
                         </p>                       
                     </div>
 
@@ -291,24 +294,113 @@
 
                     <!-- Likes and comments -->
                     <div class="likesAndComments">
-                        <a href="">
+                        <a id="postLike">
                             <p class="postLikes">
-                                <img class="postLikes" src="../images/like.png" alt=""> (20)
+                                <img class="postLikes" src="../images/like.png" alt=""><span id="countLikes"></span>
                             </p>
                         </a>
                          
-                        <a href="">
+                        <a id="postUnlike">
                             <p class="postLikes">
-                                <img class="postLikes" src="../images/dislike.png" alt="">(0)
+                                <img class="postLikes" src="../images/dislike.png" alt=""><span id="countUnlikes"></span>
                             </p> 
                         </a>
 
                         <a href="">
                             <p class="postComments">
-                                <img class="postLikes" src="../images/Comments.png" alt="">(8)
+                                <img class="postLikes" src="../images/Comments.png" alt=""><span id="countComments"></span>
                             </p> 
                         </a> 
                     </div>
+
+
+                    <section class="comments">
+                            <div class="container">
+                                <div class="col-md-12" id="fbcomment">
+                        
+                                    <div class="body_comment">
+                                        <div class="row">
+                                            <div class="avatar_comment col-md-1" id="commentorAvatar" style="padding: 10px;">
+                                                
+                                            </div>
+                                            <div class="box_comment col-md-11">
+                                                <textarea class="commentar" placeholder="Add a comment..." id="commentBody"></textarea>
+                                                <div class="box_post">
+                                                <div class="pull-right">
+                                                    <button  type="button" value="1" id="submitComment">Post</button>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <ul id="list_comment" class="col-md-12">
+                                                <!-- Start List Comment 1 -->
+                                                <!-- <li class="box_result row">
+                                                    <div class="avatar_comment col-md-1">
+                                                        <img src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg" alt="avatar"/>
+                                                    </div>
+                                                    <div class="result_comment col-md-11">
+                                                        <h4>Nath Ryuzaki</h4>
+                                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
+                                                        <div class="tools_comment">
+                                                            <a class="like" href="#">Like</a>
+                                                            <span aria-hidden="true"> · </span>
+                                                            <a class="replay" href="#">Reply</a>
+                                                            <span aria-hidden="true"> · </span>
+                                                            <i class="fa fa-thumbs-o-up"></i> <span class="count">1</span> 
+                                                            <span aria-hidden="true"> · </span>
+                                                            <span>26m</span>
+                                                        </div>
+                                                        <ul class="child_replay">
+                                                            <li class="box_reply row">
+                                                                <div class="avatar_comment col-md-1">
+                                                                    <img src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg" alt="avatar"/>
+                                                                </div>
+                                                                    <div class="result_comment col-md-11">
+                                                                    <h4>Sugito</h4>
+                                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
+                                                                    <div class="tools_comment">
+                                                                        <a class="like" href="#">Like</a>
+                                                                        <span aria-hidden="true"> · </span>
+                                                                        <a class="replay" href="#">Reply</a>
+                                                                        <span aria-hidden="true"> · </span>
+                                                                        <i class="fa fa-thumbs-o-up"></i> <span class="count">1</span> 
+                                                                        <span aria-hidden="true"> · </span>
+                                                                        <span>26m</span>
+                                                                    </div>
+                                                                    <ul class="child_replay"></ul>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li> -->
+                                                
+                                                <!-- Start List Comment 2 -->
+                                                <!-- <li class="box_result row">
+                                                    <div class="avatar_comment col-md-1">
+                                                        <img src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg" alt="avatar"/>
+                                                    </div>
+                                                    <div class="result_comment col-md-11">
+                                                        <h4>Gung Wah</h4>
+                                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
+                                                        <div class="tools_comment">
+                                                            <a class="like" href="#">Like</a>
+                                                            <span aria-hidden="true"> · </span>
+                                                            <a class="replay" href="#">Reply</a>
+                                                            <span aria-hidden="true"> · </span>
+                                                            <i class="fa fa-thumbs-o-up"></i> <span class="count">1</span> 
+                                                            <span aria-hidden="true"> · </span>
+                                                            <span>26m</span>
+                                                        </div>
+                                                        <ul class="child_replay"></ul>
+                                                    </div>
+                                                </li> -->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </section>
                     
                 </div>
             </div>
@@ -395,6 +487,9 @@
     <script src="../JS/blog.js"></script>
     <script src="../JS/getAllPosts.js"></script>
     <script src="../JS/singleBlogPost.js"></script>
+    <script src="../JS/comments.js"></script>
+    <script src="../JS/likes.js"></script>
+    <script src="../JS/unlikes.js"></script>
 
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>

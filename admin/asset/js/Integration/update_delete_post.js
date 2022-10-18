@@ -19,6 +19,22 @@ async function update_delete_post(){
         const image = postArray.postImage;
         const post_id = postArray._id;
         const date = postArray.dateCreated
+        const authorName = postArray.authorName
+        const authorImage = postArray.authorImage 
+
+        const str = "http" || "https"
+        var authorImageTemplate;
+        if(authorImage.includes(str)){
+           authorImageTemplate = 
+           `<img src="${authorImage}" alt="" class="AuthorImage" id="authorProfilePicture">`
+        }
+             
+        else{
+            authorImageTemplate = 
+           ` <div class="authorImageCharts" id="authorImageCharts">
+           ${authorImage}
+           </div>`
+        }
 
 
 
@@ -33,8 +49,8 @@ async function update_delete_post(){
                         <h3> <a id="${post_id}" onclick="getSinglePost('${post_id}')" style="cursor: pointer; font-family: poppins;">${title}</a> </h3>
                         <hr>
                         <div class="blogAuthor">
-                            <img src="../images/Ruzindana.jpg" alt="" class="AuthorImage">
-                            <small><a href="" class="AuthorName">Ernest Ruzindana</a></small>
+                            ${authorImageTemplate}
+                            <small><a href="" class="AuthorName">${authorName}</a></small>
                             <small> /${date}</small>
                         </div>
                         <p class="ContentSection" style="font-family: calibri;">

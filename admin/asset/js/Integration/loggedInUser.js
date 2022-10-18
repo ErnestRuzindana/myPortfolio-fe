@@ -89,6 +89,7 @@ async function loggedInUser(){
             border-radius: 50%;
             cursor: pointer;
             text-align: center;
+            margin: 8px 25px 20px 20px;
         }
 
         img.inProfileImage{

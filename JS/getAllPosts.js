@@ -1,8 +1,6 @@
 
 async function getAllPosts(){
 
-    
-
     const getData = {
         method: "GET",
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
@@ -24,14 +22,26 @@ async function getAllPosts(){
         const date = postArray.dateCreated
         const authorName = postArray.authorName
         const authorImage = postArray.authorImage 
-       console.log (authorImage)
 
-
+        const str = "http" || "https"
+        var authorImageTemplate;
+        if(authorImage.includes(str)){
+           authorImageTemplate = 
+           `<img src="${authorImage}" alt="" class="AuthorImage" id="authorProfilePicture">`
+        }
+             
+        else{
+            authorImageTemplate = 
+           ` <div class="authorImageCharts" id="authorImageCharts">
+           ${authorImage}
+           </div>`
+        }
+        
 
         const blogPost = document.getElementById("blogPost");
         
         const postTemplate = `
-                <div class="blogBoxes blogBox1">
+                <div class="blogBoxes blogBox1" id="postBox">
 
                     <div class="blogImage">
                         <img src="${image}" alt="" >
@@ -41,11 +51,7 @@ async function getAllPosts(){
                         <hr>
                         <div class="blogAuthor">
 
-                            <div class="authorImageCharts" id="authorImageCharts">
-                                ${authorImage}
-                            </div>
-
-                            <img src="${authorImage}" alt="" class="AuthorImage" id="authorProfilePicture">
+                            ${authorImageTemplate}
 
                             <small><a href="" class="AuthorName">${authorName}</a></small>
                             <small> / ${date}</small>
@@ -58,18 +64,6 @@ async function getAllPosts(){
                     </div>
                 </div>
         `
-        // const authorImage = localStorage.getItem("authorImage");
-        // const authorImageCharts = document.getElementById("authorImageCharts");
-        // const authorProfilePicture = document.getElementById("authorProfilePicture");
-
-        // console.log(authorImageCharts)
-        // if (authorImage.includes("http" || "https")){
-        //     authorImageCharts.style.display = "none"
-        // }
-
-        // else{
-        //     authorProfilePicture.style.display = "none" 
-        // }
 
         blogPost.innerHTML += postTemplate
     }

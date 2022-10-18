@@ -91,7 +91,7 @@ function replyMessage(){
     const sendData = {
         method: "PUT",
         body: JSON.stringify(data), 
-        headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token"))})
+        headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
 fetch("http://localhost:5000/contact/replyMessage/"+messageId, sendData)
@@ -103,7 +103,7 @@ fetch("http://localhost:5000/contact/replyMessage/"+messageId, sendData)
         confirmReplyMessage.style.color = "green"
         confirmReplyMessage.innerHTML = fetchedData.replyMessageSuccess
 
-        // setTimeout(()=>{location = "replyMessage.html"}, 4000)
+        setTimeout(()=>{location = "messages.html"}, 3000)
     }
 
     else{
