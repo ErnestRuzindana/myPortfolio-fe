@@ -185,8 +185,8 @@ h4 span{
     display: block;
   }
   .avatar_comment img{
-    height: 48px;
-    width: 48px;
+    height: 45px;
+    width: 45px;
   }
   .box_comment{
       display: block;
@@ -339,4 +339,24 @@ h4 span{
     padding-top: 50px;
     color: rgb(212, 19, 19);
     font-weight: 550;
+  }
+
+  div.comments{
+    display: grid;
+    grid-template-columns: 7% 90%;
+    padding: 50px 0px 50px 0px;
+  }
+
+  ul.col-md-12{
+    margin-top: 70px;
+  }
+
+  div.commentReplies{
+    display: grid;
+    grid-template-columns: 7% 90%;
+    padding: 15px 0px 15px 0px;
+  }
+
+  div.reply_avatar{
+    padding: 10px;
   }

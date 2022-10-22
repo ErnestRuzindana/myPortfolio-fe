@@ -493,11 +493,6 @@ div.blogAuthor{
     gap: 1vw;
 }
 
-img.AuthorImage{
-    width: 7%;
-    border-radius: 50%;
-}
-
 div.blogAuthor small{
     font-size: 10px;
     font-weight: bold;
@@ -545,15 +540,20 @@ a.readmore{
 div.authorImageCharts{
     background: black;
     color: #cba10a;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    line-height: 40px;
+    line-height: 50px;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 19px;
     cursor: pointer;
     text-align: center;
     padding-right: 2.5px;
+}
+
+img.AuthorImage{
+    width: 7%;
+    border-radius: 50%;
 }
 
 /* End of Blog section */
@@ -1132,10 +1132,6 @@ div.blogAuthor{
     gap: 1vw;
 }
 
-img.AuthorImage{
-    width: 7%;
-    border-radius: 50%;
-}
 
 div.blogAuthor small{
     font-size: 0.8vw;
@@ -1614,10 +1610,6 @@ div.blogAuthor{
     gap: 1vw;
 }
 
-img.AuthorImage{
-    width: 7%;
-    border-radius: 50%;
-}
 
 div.blogAuthor small{
     font-size: 0.8vw;

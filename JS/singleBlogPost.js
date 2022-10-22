@@ -114,12 +114,13 @@ async function getAllComments(){
     const countComments = document.getElementById("countComments")
     countComments.innerHTML = `<span>(${comments.length})</span>`
     
+    const PostId = localStorage.getItem("postId")
 
     for(let i=0; i<comments.length; i++){
-        const commentsArray = comments[i];
+        const commentsArray = comments[i];  
 
         const body = commentsArray.commentBody;
-        const post_id = commentsArray._id;
+        const comment_id = commentsArray._id;
         const date = commentsArray.dateCommented
         const commentorName = commentsArray.commentorName
         const commentorImage = commentsArray.commentorImage 
@@ -137,28 +138,32 @@ async function getAllComments(){
            ${commentorImage}
            </div>`
         }
-        
 
         const commentList = document.getElementById("list_comment");
         
         const commentTemplate = `
             <li class="box_result row">
-            <div class="avatar_comment col-md-1">
-                ${commentorImageTemplate}
-            </div>
-            <div class="result_comment col-md-11">
-                <h4>${commentorName} <span> &nbsp &nbsp/ ${date}</span></h4>
-                <p>${body}</p>
-                <div class="tools_comment">
-                    <a class="like">Like</a>
-                    <span aria-hidden="true"> · </span>
-                    <a class="replay">Reply</a>
-                    <span aria-hidden="true"> · </span>
-                    <i class="fa fa-thumbs-o-up"></i> <span class="count">0</span> 
-                    <span aria-hidden="true"> · </span>
-                    <span>26m</span>
+            <div class="comments">
+                <div class="avatar_comment col-md-1">
+                    ${commentorImageTemplate}
                 </div>
-                <ul class="child_replay"></ul>
+                <div class="result_comment col-md-11">
+                    <h4>${commentorName} <span> &nbsp &nbsp/ ${date}</span></h4>
+                    <p>${body}</p>
+                    <div class="tools_comment">
+                        <a class="like">Like</a>
+                        <span aria-hidden="true"> · </span>
+                        <a class="replay" id="${comment_id}" onclick="getSingleComment('${PostId}','${comment_id}')">Reply</a>
+                        <span aria-hidden="true"> · </span>
+                        <i class="fa fa-thumbs-o-up"></i> <span class="count">0</span> 
+                        <span aria-hidden="true"> · </span>
+                        <span>26m</span>
+                    </div>
+                    <ul class="child_replay">
+                    
+                    </ul>
+                </div>
+                
             </div>
         </li>
         `
@@ -215,28 +220,59 @@ $(document).ready(function() {
 		}
 	});
 	
-	$('#list_comment').on('click', '.replay', function (e) {
+	$('#list_comment').on('click', '.replay', async function (e) {
+
+        //LoggedIn user
+        const getData = {
+            method: "GET",
+            headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        }
+
+        let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
+        const fetchedData = await response.json()
+        console.log(fetchedData)
+
+
+        var commentorPicture
+        var commentorImageTemplate;
+
+        if(fetchedData.imageLink){
+            commentorPicture = `http://localhost:5000/images/${fetchedData.imageLink}`
+            commentorImageTemplate = 
+            `<img src="${commentorPicture}" alt="" class="AuthorImage" id="authorProfilePicture">`
+        }
+
+        else{
+            commentorPicture = fetchedData.firstName.charAt(0)+fetchedData.lastName.charAt(0)
+            commentorImageTemplate = 
+            ` <div class="authorImageCharts" id="authorImageCharts">
+            ${fetchedData.firstName.charAt(0)+fetchedData.lastName.charAt(0)}
+            </div>`
+        }
+
 		cancel_reply();
 		$current = $(this);
 		el = document.createElement('li');
 		el.className = "box_reply row";
 		el.innerHTML =
-			'<div class=\"col-md-12 reply_comment\">'+
-				'<div class=\"row\">'+
-					'<div class=\"avatar_comment col-md-1\">'+
-					  '<img src=\"https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg\" alt=\"avatar\"/>'+
-					'</div>'+
-					'<div class=\"box_comment col-md-10\">'+
-					  '<textarea class=\"comment_replay\" placeholder=\"Add a comment...\"></textarea>'+
-					  '<div class=\"box_post\">'+
-						'<div class=\"pull-right\">'+
-						  '<button class=\"cancel\" onclick=\"cancel_reply()\" type=\"button\">Cancel</button>'+
-						  '<button onclick=\"submit_reply()\" type=\"button\" value=\"1\">Reply</button>'+
-						'</div>'+
-					  '</div>'+
-					'</div>'+
-				'</div>'+
-			'</div>';
+        `
+			<div class="col-md-12 reply_comment">
+				<div class="row">
+					<div class="avatar_comment col-md-1\">
+					  ${commentorImageTemplate}
+					</div>
+					<div class="box_comment col-md-10">
+					  <textarea class="comment_replay" placeholder="Add a comment..."></textarea>
+					  <div class="box_post">
+						<div class="pull-right">
+						  <button class="cancel" onclick="cancel_reply()" type="button">Cancel</button>
+						  <button onclick="commentReply()" type="button" value="1">Reply</button>
+						</div>
+					  </div>
+					</div>
+				</div>
+			</div>
+        `
 		$current.closest('li').find('.child_replay').prepend(el);
 	});
 });
