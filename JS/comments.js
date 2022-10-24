@@ -238,20 +238,21 @@ async function commentReply(){
 
 
 
-//show all replies
+// show all replies
 
-// async function getSingleComment(){
-//     const getData = {
-//         method: "GET",
-//         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
-//     }
+async function getAllReplies(){
+    const getData = {
+        method: "GET",
+        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+    }
 
-//     let response = await fetch(`http://localhost:5000/getSingleComment/${post_id}/${commentId}`, getData)
-//     const fetchedData = await response.json()
+    let response = await fetch(`http://localhost:5000/getSingleComment/${post_id}/${commentId}`, getData)
+    const fetchedData = await response.json()
 
-//     const replies = fetchedData.fetchedComment[0].comments[0]
-//     console.log(replies)
-// }
+    const replies = fetchedData.fetchedComment[0].comments[0].commentReplies
 
-// getSingleComment()
+    console.log(replies)
+}
+
+getAllReplies()
 

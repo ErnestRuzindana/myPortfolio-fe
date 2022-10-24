@@ -109,7 +109,7 @@ async function getAllComments(){
     console.log(fetchedData)
 
     const comments = fetchedData.fetchedComments;
-    console.log(comments.length)
+    // console.log(comments[0].commentReplies)
     
     const countComments = document.getElementById("countComments")
     countComments.innerHTML = `<span>(${comments.length})</span>`
@@ -118,13 +118,12 @@ async function getAllComments(){
 
     for(let i=0; i<comments.length; i++){
         const commentsArray = comments[i];  
-
         const body = commentsArray.commentBody;
         const comment_id = commentsArray._id;
         const date = commentsArray.dateCommented
         const commentorName = commentsArray.commentorName
         const commentorImage = commentsArray.commentorImage 
-
+        
         const str = "http" || "https"
         var commentorImageTemplate;
         if(commentorImage.includes(str)){
@@ -137,6 +136,33 @@ async function getAllComments(){
            ` <div class="authorImageCharts" id="authorImageCharts">
            ${commentorImage}
            </div>`
+        }
+
+        //comment replies
+
+        const commentReplies = commentsArray.commentReplies;
+        var repliesTemplate;
+        var allCommentReplies
+        for(let j=0; j<commentReplies.length; j++){
+            const replies = commentReplies[j]
+            const replyBody = replies.replyBody
+            const date = replies.dateReplied
+            console.log(replies)
+
+        repliesTemplate = `
+        <li class="box_reply row">
+        <div class="commentReplies">
+          <div class="avatar_comment col-md-1">
+              ${commentorImageTemplate}
+          </div>
+          <div class="result_comment col-md-11">
+              <h4>${commentorName} <span> &nbsp &nbsp/ ${date}</span></h4>
+              <p>${replyBody}</p>
+          </div>
+        </div>
+      </li>
+      `
+      allCommentReplies += repliesTemplate
         }
 
         const commentList = document.getElementById("list_comment");
@@ -160,7 +186,7 @@ async function getAllComments(){
                         <span>26m</span>
                     </div>
                     <ul class="child_replay">
-                    
+                      ${allCommentReplies}
                     </ul>
                 </div>
                 

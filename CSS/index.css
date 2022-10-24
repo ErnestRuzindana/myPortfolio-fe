@@ -1261,6 +1261,15 @@ div.myFooterCopyRight{
     margin-bottom: -80px;
 }
 
+div.subscriptionMessage{
+    width: 100%;
+    margin: auto;
+    margin-bottom: -50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
 /* End of footer section */
 
 /* -------------------------------------------------------------------------------------------------------------------------- */
@@ -2819,6 +2828,7 @@ div.myFooterCopyRight{
     background-color: black;
     margin-bottom: -80px;
 }
+
 
 /* End of footer section */
 
