@@ -138,37 +138,11 @@ async function getAllComments(){
            </div>`
         }
 
-        //comment replies
-
-        const commentReplies = commentsArray.commentReplies;
-        var repliesTemplate;
-        var allCommentReplies
-        for(let j=0; j<commentReplies.length; j++){
-            const replies = commentReplies[j]
-            const replyBody = replies.replyBody
-            const date = replies.dateReplied
-            console.log(replies)
-
-        repliesTemplate = `
-        <li class="box_reply row">
-        <div class="commentReplies">
-          <div class="avatar_comment col-md-1">
-              ${commentorImageTemplate}
-          </div>
-          <div class="result_comment col-md-11">
-              <h4>${commentorName} <span> &nbsp &nbsp/ ${date}</span></h4>
-              <p>${replyBody}</p>
-          </div>
-        </div>
-      </li>
-      `
-      allCommentReplies += repliesTemplate
-        }
 
         const commentList = document.getElementById("list_comment");
         
         const commentTemplate = `
-            <li class="box_result row">
+            <li class="box_result row" id="${comment_id}">
             <div class="comments">
                 <div class="avatar_comment col-md-1">
                     ${commentorImageTemplate}
@@ -180,13 +154,14 @@ async function getAllComments(){
                         <a class="like">Like</a>
                         <span aria-hidden="true"> · </span>
                         <a class="replay" id="${comment_id}" onclick="getSingleComment('${PostId}','${comment_id}')">Reply</a>
+                        <a class="replayReplies" id="${comment_id}" onclick="getSingleComment('${PostId}','${comment_id}')">View replies</a>
                         <span aria-hidden="true"> · </span>
                         <i class="fa fa-thumbs-o-up"></i> <span class="count">0</span> 
                         <span aria-hidden="true"> · </span>
                         <span>26m</span>
                     </div>
-                    <ul class="child_replay">
-                      ${allCommentReplies}
+                    <ul class="child_replay" >
+                      
                     </ul>
                 </div>
                 
@@ -195,6 +170,7 @@ async function getAllComments(){
         `
 
         commentList.innerHTML += commentTemplate
+    
     }
 }
 
@@ -245,6 +221,22 @@ $(document).ready(function() {
 			$current.closest('div').find('.count').text(y - 1);
 		}
 	});
+
+    $('#list_comment').on('click', '.replayReplies', function (e) {
+        $current = $(this);
+ 
+		var x = $current.closest('div').find('.replayReplies').text().trim();
+		
+		if (x === "View replies") {
+			$current.closest('div').find('.replayReplies').text('Hide replies');
+
+			
+		} else{
+			$current.closest('div').find('.replayReplies').text('View replies')
+
+		}
+        
+    });
 	
 	$('#list_comment').on('click', '.replay', async function (e) {
 
@@ -299,6 +291,68 @@ $(document).ready(function() {
 				</div>
 			</div>
         `
+		$current.closest('li').find('.child_replay').append(el);
+	});
+
+    //View Replies
+
+    $('#list_comment').on('click', '.replayReplies', async function (e) {
+
+        const repliesGetData = {
+            method: "GET",
+            headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        }
+    
+        let repliesResponse = await fetch(`http://localhost:5000/getSingleComment/${postId}/${commentId}`, repliesGetData)
+        const repliesFetchedData = await repliesResponse.json()
+        console.log(repliesFetchedData.fetchedComment[0].comments[0].commentReplies)
+        const commentReplies = repliesFetchedData.fetchedComment[0].comments[0].commentReplies
+        console.log(commentReplies.length)
+        var repliesTemplate;
+        var allCommentReplies
+        for(let j=0; j<commentReplies.length; j++){
+            const replies = commentReplies[j]
+            const replyBody = replies.replyBody
+            const date = replies.dateReplied
+            const replierName = replies.replierName
+            const replierImage = replies.replierImage 
+        
+        const str = "http" || "https"
+        var replierImageTemplate;
+        if(replierImage.includes(str)){
+           replierImageTemplate = 
+           `<img src="${replierImage}" alt="" class="AuthorImage" id="authorProfilePicture">`
+        }
+             
+        else{
+            replierImageTemplate = 
+           ` <div class="authorImageCharts" id="authorImageCharts">
+           ${replierImage}
+           </div>`
+        }
+
+        repliesTemplate = `
+        <li class="box_reply row">
+        <div class="commentReplies">
+          <div class="avatar_comment col-md-1">
+              ${replierImageTemplate}
+          </div>
+          <div class="result_comment col-md-11">
+              <h4>${replierName} <span> &nbsp &nbsp/ ${date}</span></h4>
+              <p>${replyBody}</p>
+          </div>
+        </div>
+      </li>
+      `
+      allCommentReplies += repliesTemplate
+        }
+
+		cancel_reply();
+		$current = $(this);
+		el = document.createElement('li');
+		el.className = "box_reply row";
+		el.innerHTML = allCommentReplies
+        
 		$current.closest('li').find('.child_replay').prepend(el);
 	});
 });
@@ -330,4 +384,8 @@ function submit_reply(){
 
 function cancel_reply(){
 	$('.reply_comment').remove();
+}
+
+function hideReplies(){
+	$('.box_reply').hide();
 }

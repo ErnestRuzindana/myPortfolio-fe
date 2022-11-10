@@ -333,6 +333,11 @@ h4 span{
     flex-direction: column-reverse;
   }
 
+  .child_replay{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
   div.disableComment{
     text-align: center;
     margin-bottom: -50px;

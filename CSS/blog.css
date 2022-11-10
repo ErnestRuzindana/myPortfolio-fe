@@ -139,16 +139,15 @@ section.preNav{
 
 div.preNavLinks{
     display: grid;
-    grid-template-columns: 17% 28% 56%;
+    grid-template-columns: 18% 32% 50%;
     align-items: center;
     width: 100%;
-    margin-left: -50px;
 }
 
 div.preNavLogo{
     padding: 0 5% 0 70%;
     width: 100%;
-    margin-left: -20px;
+    margin-left: -50%;
 }
 
 div.preNavLogo a img{
@@ -167,6 +166,7 @@ div.preNavLogo a img:hover{
 /* dropdown */
 div.preNavDocumentation{
     width: 100%;
+    margin-left: -30%;
 }
 
 nav.dropDown{
@@ -241,6 +241,26 @@ nav.dropDown menuitem:hover > menu {
     height:100%;
  }
  
+ /* nav.dropDown > menu > menuitem > a + menu:after{
+    content: '';
+    position:absolute;
+    border:10px solid transparent;
+    border-top: 10px solid white;
+    left: 0.4vw;
+    top: -2vw;  
+ } */
+
+
+ /* nav.dropDown menuitem > menu > menuitem > a + menu:after{ 
+    content: '';
+    position:absolute;
+    border:10px solid transparent;
+    border-left: 10px solid white;
+    top: 20px;
+    left:-145px;
+    transition: opacity 0.6, transform 0s;
+ } */
+ 
  nav.dropDown > menu > menuitem > menu > menuitem{
     transition: transform 0.6s, opacity 0.6s;
     transform:translateY(0%);
@@ -294,38 +314,97 @@ div.preNavLogin h5 a{
     color: black;
     text-decoration: none;
     background-color: var(--myColor);
-    padding: 0.5vw 1.5vw;  
+    padding: 5px 20px 5px 20px;  
     border: 2px solid white;
     border-radius: 20px;
     transition: all 1s;
+    margin-left: -35%;
 }
 
 div.preNavLogin h5 a:hover{
+    text-decoration: none;
     color: var(--myColor);
-    background-color: white; 
+    background-color: white;
+    cursor: pointer;
+    padding: 5px 20px 5px 20px;  
+    border: 2px solid white;
+    border-radius: 20px;
 }
 
 div.preNavSocioMediaLogin{
+    position: relative;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 div.preNavSocioMedia ul{
     display: flex;
     list-style-type: none;
+    margin-left: -25%;
+}
+
+div.preNavSocioMedia ul li a img{
+    transition: 1s;
+}
+
+div.preNavSocioMedia ul li a img:hover{
+    background-color: white;
+    border-radius: 50%;
 }
 
 
 div.preNavLinks ul li a{
     font-size: 20px;
+    width: 20px;
     justify-content: center;
-    padding-right: 25px;
+    padding-right: 30px;
     color: var(--myBackground);
 }
 
-div.preNavLinks ul li a:hover{
+div.preNavLinks ul li a img{
+    width: 2vw;
+}
+
+/* div.preNavLinks ul li a img:hover{
+    opacity: 50%;
+} */
+
+div.profilePicture img{
+    width: 50px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+}
+
+div.profilePictureIn img{
+    width: 100px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+}
+
+div.userProfile{
+    position: fixed;
+    background-color:rgb(88, 86, 86);
+    width: 350px;
+    border-radius: 10px;
+    z-index: 3;
+    top: 70px;
+    right: 80px;
+    text-align: center;
+    padding-top: 20px;
     color: white;
 }
+
+a.ManageAccountLink{
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 7px;
+    border-radius: 10px;
+    color: white;
+}
+
+
+
 /* End of preNav Section */
 
 /* ------------------------------------------------------------------------------------------------------------------------------ */
@@ -786,6 +865,20 @@ a.northArrow{
     }
 }
 
+@media only screen and (max-width: 1205px) {
+    div.preNavLogin h5 a{
+   
+        font-size: 1vw;
+        color: black;
+        text-decoration: none;
+        background-color: var(--myColor);
+        padding: 5px 20px 5px 20px;  
+        border: 2px solid white;
+        border-radius: 20px;
+        transition: all 1s;
+        margin-left: -50%;
+    }
+}
 
 @media only screen and (max-width: 1108px) {
 

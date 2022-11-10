@@ -107,7 +107,7 @@ var comment = $('.commentar').val();
             <span aria-hidden="true"> · </span>
             <span>26m</span>
         </div>
-        <ul class="child_replay"></ul>
+        <ul class="child_replay" style="display: flex; flex-direction: column-reverse;"></ul>
     </div>
   </div>
 </li>
@@ -129,6 +129,7 @@ async function getSingleComment(postId, commentId){
 
     if (fetchedData){
         localStorage.setItem("commentId", fetchedData.fetchedComment[0].comments[0]._id)
+        
     }
 }
 
