@@ -48,337 +48,7 @@ body::-webkit-scrollbar-thumb {
 
 /* ------------------------------------------------------------------------------------------------------------------------------ */
 
-/* PreNav Section */
 
-section.preNav{
-    background-color: var(--myColor);
-    width: 100%;
-}
-
-div.preNavLinks{
-    display: grid;
-    grid-template-columns: 18% 32% 50%;
-    align-items: center;
-    width: 100%;
-}
-
-div.preNavLogo{
-    padding: 0 5% 0 70%;
-    width: 100%;
-}
-
-div.preNavLogo a img{
-    max-width: 120%;
-    transition: all 1s;
-}
-
-div.preNavLogo a img:hover{
-    transform: scale(1.2, 1.2);
-    opacity: 0.8;
-}
-
-
-/* ----------------------------------------------------------------------------------------------------  */
-
-/* dropdown */
-div.preNavDocumentation{
-    width: 100%;
-}
-
-nav.dropDown{
-    display: flex;
-    justify-content: space-around;
-}
-
-nav.dropDown > menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
- nav.dropDown menuitem {
-    position:relative;
-    display:block;
-    opacity:0;
-    cursor:pointer;
-    background: var(--myColor);
- }
-
- 
- nav.dropDown menuitem > menu {
-    position: absolute;
-    display:none;
-    z-index: 3;
-    top: 35px;
- }
-
- 
- nav.dropDown > menu > menuitem { 
-    opacity:1;
- }
- menu menuitem a { 
-    white-space:nowrap; 
-    display:block; 
-    
-}
-    
-nav.dropDown menuitem:hover > menu {
-    display:block;
- }
-
- menuitem:hover > menu > menuitem,
- menu:hover > menuitem{
-    opacity:1;
- }
- nav.dropDown > menu > menuitem menuitem menu {
-    transform:translateX(100%);
-    top: -10px; right: 32px;
- }
- 
- 
- nav.dropDown a {
-    background: var(--myColor);
-    color:black;
-    font-weight: bold;
-    transition: background 0.5s, color 0.5s, transform 0.5s;
-    padding: 1.5vw 2vw;
-    box-sizing:border-box;
-    border-radius:3px;
-    position:relative;
-    font-size: 1vw;
- }
- 
- nav.dropDown a:hover:before {
-    content: '';
-    top: 0;
-    left:0;
-    position:absolute;
-    width:103.5%;
-    height:100%;
- }
- 
- nav.dropDown > menu > menuitem > menu > menuitem{
-    transition: transform 0.6s, opacity 0.6s;
-    transform:translateY(0%);
-    opacity:0;
-    margin-bottom: 9px;
-    min-width:11rem;
-    border-radius: 10px;
- }
-
- nav.dropDown > menu > menuitem > menu > menuitem > menu > menuitem{
-    margin-bottom: 9px; 
-    min-width:11rem;
-    border-radius: 10px;
- }
-
- nav.dropDown > menu > menuitem > menu > menuitem > menu > menuitem > menu > menuitem{
-    margin-bottom: 9px; 
-    min-width:11rem;
-    border-radius: 10px; 
- }
-
- nav.dropDown > menu > menuitem > menu > menuitem a:hover{
-    opacity: 0.8;
- }
-
- nav.dropDown > menu > menuitem:hover > menu > menuitem,
- nav.dropDown > menu > menuitem.hover > menu > menuitem{
-    transform:translateY(0%);
-    opacity: 1;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
- }
- 
- menuitem > menu > menuitem > menu > menuitem{
-    transition: transform 0.6s, opacity 0.6s;
-    transform:translateX(195px) translateY(0%);
-    opacity: 0;
- } 
- menuitem > menu > menuitem:hover > menu > menuitem,  
- menuitem > menu > menuitem.hover > menu > menuitem{  
-    transform:translateX(0) translateY(0%);
-    opacity: 1;
- }
-
-
- /* dropdown */
-/* ------------------------------------------------------------------------------------------------------------ */
-
-div.preNavLogin h5 a{
-   
-    font-size: 1vw;
-    color: black;
-    text-decoration: none;
-    background-color: var(--myColor);
-    padding: 5px 20px 5px 20px;  
-    border: 2px solid white;
-    border-radius: 20px;
-    transition: all 1s;
-}
-
-div.preNavLogin h5 a:hover{
-    color: black;
-    text-decoration: none;
-    color: var(--myColor);
-    background-color: white;
-    padding: 5px 20px 5px 20px;  
-    border: 2px solid white;
-    border-radius: 20px;
-}
-
-div.preNavSocioMediaLogin{
-    display: flex;
-    justify-content: space-around;
-}
-
-div.preNavSocioMedia ul{
-    display: flex;
-    list-style-type: none;
-}
-
-
-div.preNavLinks ul li a{
-    font-size: 20px;
-    justify-content: center;
-    padding-right: 30px;
-    color: var(--myBackground);
-}
-
-div.preNavLinks ul li a:hover{
-    color: white;
-}
-/* End of preNav Section */
-
-/* ------------------------------------------------------------------------------------------------------------------------------ */
-
-
-/* Navigation bar */
-
-
-nav.menu-btn{
-    display: block;
-}
-
-section.nav{
-    position: sticky;
-    top: 0;
-    background-color: white;
-    width: 100%;
-    box-shadow: 0.1px 1px 2px grey;
-    z-index: 2;
-}
-
-div.navbar{
-    display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
-    width: 100%;
-}
-
-nav{
-    display: grid;
-    grid-template-columns: 75% 23%;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-.logo a{
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.5vw;
-    padding: 0;
-    color: var(--myBackground);
-}
-
-.logo {
-    text-align: center;
-    width: 100%;
-}
-
-.logo a:hover{
-    opacity: 0.5;
-}
-
-div.toggleButton{
-    display: none;
-}
-
-li.closeButton{
-    display: none;
-}
-
-.navlinks{
-    width: 70%;
-}
-
-.navlinks ul{
-    display: flex;
-    align-items: center;
-    gap: 3.5vw;
-}
-
-.navlinks ul li{
-    list-style-type: none;
-}
-
-.navlinks ul li a{
-    text-decoration: none;
-    color: var(--myBackground);
-    font-size: 1vw;
-    font-weight: bold;
-    transition: all 1s;
-}
-
-.navlinks ul li a:hover{
-    color: var(--myColor);
-    padding-top: 10px;
-    border-top: 3px solid var(--myColor);
-}
-
-ul li.active a{
-    color: var(--myColor);
-    padding-top: 10px;
-    border-top: 3px solid var(--myColor);
-}
-
-
-a.loginlinks{
-    text-decoration: none;
-    text-align: center;
-    color: var(--myBackground);
-    font-weight: bold;
-}
-
-ul li.loginlinksLi{
-    width: 25%;
-    border: 3px solid var(--myColor);
-    border-radius: 20px;
-    padding: 0.15vw 0.8vw;
-    margin-right: 3vw;
-    list-style-type: none;
-}
-
-ul li.loginlinksLi:hover{
-    color: white;
-    background-color: var(--myColor);
-}
-
-ul li.loginlinksLi a{
-  font-size: 1vw;
-}
-
-ul li.loginlinksLi a:hover{
-    color: white;
-}
-
-.pass a{
-    color: var(--myColor);
-    font-weight: 501;
-    font-size: 14px;
-}
-
-
-/* End of navigation bar */
 
 
 /* ------------------------------------------------------------------------------------------------------------------------------ */
@@ -398,17 +68,18 @@ div.myLogin{
   border-radius: 10px;
   padding: 1.5vw 0 4.5vw 0;
   box-shadow: 0px 0px 20px gray;
-  width: 30%;
+  width: 35%;
   margin: auto;
 }
 
 .center h1{
   text-align: center;
   padding: 1vw 0;
-  font-size: 1.3vw;
+  font-size: 1.5vw;
   color: var(--myBackground);
   font-weight: bold;
   border-bottom: 1px solid #a6a6a6;
+  font-family: Poppins,sans-serif;
 }
 .center form{
   padding: 0 2.5vw;
@@ -526,7 +197,7 @@ div.loginSocialMedia p{
 }
 
 div.loginS{
-    padding: 0 6vw;
+    padding: 0 7vw;
 }
 
 div.loginS a{
@@ -537,6 +208,7 @@ div.loginS a{
     border: 2px solid grey;
     width: 100%;
     border-radius: 5px;
+    font-size: 90%;
     margin-bottom: 10px;
     text-decoration: none;
     color: black;
@@ -548,7 +220,7 @@ div.loginS a:hover{
 }
 
 div.loginS a img{
-    width: 30px;   
+    width: 30px;
 }
 
 div.loginParag p{
@@ -749,45 +421,6 @@ a.northArrow{
 
 @media only screen and (max-width: 1108px) {
 
-/* PreNav Section */
-
-a.preNavExercises div h5{
-    font-size: 1.2vw;
-}
-
-div.preNavLogin h5 a{
-    font-size: 1.2vw;
-}
-
-nav.dropDown menuitem > menu {
-    top: 28px;
- }
-
-nav.dropDown a {
-    font-size: 1.2vw;
-}
-
-/* End of preNav Section */
-
-/* Navigation bar */
-
-.navlinks ul li a{
-    text-decoration: none;
-    color: var(--myBackground);
-    font-size: 1vw;
-    font-weight: bold;
-    transition: all 1s;
-}
-
-ul li.loginlinksLi a{
-  font-size: 1vw;
-}
-
-ul li.loginlinksLi{
-    padding: 0.1vw 1.5vw;
-}
-
-/* End of navigation bar */
       
  /* Login form */
 
@@ -797,7 +430,7 @@ div.myLogin{
 
 .center{
   padding: 1.5vw 0 4.5vw 0;
-  width: 35%;
+  width: 42%;
 }
 
 .center h1{
@@ -976,66 +609,6 @@ div.myFooterCopyRight{
 
 @media only screen and (max-width: 937px) {
 
-  /* prenav section */
-  div.preNavLogo{
-    padding: 0 33% 0 33%;
-    width: 100%;
-}
-    div.preNavLinks{
-        display: grid;
-        grid-template-columns: 15% 20% 65%;
-        align-items: center;
-        width: 100%;
-    }
-    
-    div.preNavDocumentation{
-        display: unset;
-    }
-    
-    a.preNavExercises div{
-        padding: 0;
-        font-size: 1rem;
-        color: var(--myBackground);
-        transition: all 1s;
-    }
-    
-    a.preNavExercises div:hover{
-        background-color: unset;
-    }
-    
-    div.preNavDocumentation a div h5{
-        transition: all 1s;
-  }
-
-  div.preNavDocumentation a div h5::before{
-    content: ">";
-    padding-right: 10px;
-    font-weight: bold;
-    color: black;
-}
-
-div.preNavDocumentation a div h5:hover{
-        transform: scale(1.1,1.1);
-}
-
-nav.dropDown menuitem > menu {
-    top: 20px;
- }
-
-nav.dropDown a {
-    font-size: 1.3vw;
-    padding: 1.5vw 1vw;
-}
-
-a.preNavExercises div h5{
-    font-size: 1.4vw;
-}
-
-div.preNavLogin h5 a{
-    font-size: 1.4vw;
-}
-
-    /* End of prenav section */
     
     /* Login form */
 
@@ -1045,7 +618,7 @@ div.myLogin{
 
 .center{
   padding: 1.5vw 0 4.5vw 0;
-  width: 40%;
+  width: 50%;
 }
 
 .center h1{
@@ -1092,82 +665,6 @@ label.checkbox{
 
 
 /* End of Login form */
-
-    /* Navigation Bar section */
-
-    nav{
-        display: grid;
-        grid-template-columns: 75% 23%;
-        align-items: center;
-        justify-content: unset;
-        gap: 2vw;
-        width: 100%;
-    }
-    .logo a{
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 2vw;
-        padding: 0;
-        color: var(--myBackground);
-    }
-    
-    .logo {
-        text-align: center;
-        width: 100%;
-    }
-    
-    .logo a:hover{
-        opacity: 0.5;
-    }
-    
-    div.toggleButton{
-        display: none;
-    }
-    
-    li.closeButton{
-        display: none;
-    }
-    
-    .navlinks ul li{
-        list-style-type: none;
-    }
-    
-    .navlinks ul li a{
-        text-decoration: none;
-        color: var(--myBackground);
-        font-size: 1.5vw;
-        font-weight: bold;
-        transition: all 1s;
-    }
-    
-    .navlinks ul li a:hover{
-        color: var(--myColor);
-        padding-top: 10px;
-        border-top: 3px solid var(--myColor);
-    }
-
-    ul li.active a{
-    color: var(--myColor);
-    padding-top: 10px;
-    border-top: 3px solid var(--myColor);
-}
-    
-ul li.loginlinksLi a{
-    font-size: 1.5vw;
-    }
-
-
-
-
-a.loginlinks{
-    text-decoration: none;
-    text-align: center;
-    color: var(--myBackground);
-    font-size: 1.5vw;
-    font-weight: bold;
-}
-
-/* End of navigation Bar section */
 
   
 
@@ -1316,136 +813,6 @@ body{
 
 @media only screen and (max-width: 730px) {
 
- /*navigation bar section */
-
- section.preNav {
-    display: none;
-}
-
-section.nav{
-    width: 100%;
-}
-
-div.navbar{
-    position: relative;
-    display: grid;
-    grid-template-columns: auto;
-    width: 100%;
-}
-
-div.toggleButton{
-    display: block;
-    cursor: pointer;
-    font-size: 100%;
-}
-
-li.closeButton{
-    display: block;
-    font-size: 30px;
-    padding-left: 200%;
-    color: rgb(156, 9, 9);
-    cursor: pointer;
-}
-
-nav{
-display: none;
-}
-
-div.navlinks ul{
-    position: absolute;
-    display: flex;
-    background-color: var(--myColor);
-    flex-direction: column;
-    top: -16px;
-    right: 0;
-    padding: 10px 70px;
-    gap: 30px;
-}
-
-a.loginlinks{
-    position: absolute;
-    display: flex;
-    background-color: var(--myColor);
-    flex-direction: column;
-    top: 387px;
-    right: 0;
-    padding: 27px 70px;
-    gap: 30px;
-    font-size: 13px;
-    border-radius: unset;
-    width: 198.5px;
-}
-
-a.loginlinks div{
-    transition: all 1s;
-}
-
-a.loginlinks div:hover{
-    color: white;
-    padding-top: 8px;
-    border-top: 3px solid white; 
-    margin-top: -8px; 
-}
-
-ul li.active a{
-    color: white;
-    padding-top: 10px;
-    border-top: 3px solid white;
-}
-
-ul li.active a.loginlinks{
-    border-top: unset;
-    padding-top: 25px;
-}
-
-.navlinks ul li a{
-    text-align: center;
-    font-size: 13px;
-}
-
-.navlinks ul li a:hover{
-    color: white;
-    padding-top: 8px;
-    border-top: 3px solid white;
-}
-
-div.logo{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center; 
-    padding: 2vw 5vw;
-    gap: 30%;       
-}
-
-.logo a{
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 100%;
-    color: var(--myBackground);
-}
-
-ul li.loginlinksLi{
-    all: unset;
-}
-
-ul li.loginlinksLi:hover{
-    color: white;
-    background-color: var(--myColor);
-}
-
-ul li.loginlinksLi a{
-  font-size: 13px;
-}
-
-ul li.loginlinksLi a:hover{
-    color: white;
-}
-
-
-/* End Navigation bar */
-
-
  /* Login form */
 
  div.myLogin{
@@ -1454,7 +821,7 @@ ul li.loginlinksLi a:hover{
 
 .center{
   padding: 1.5vw 0 4.5vw 0;
-  width: 45%;
+  width: 55%;
 }
 
 .center h1{
@@ -1652,7 +1019,7 @@ div.myFooterCopyRight{
 
 .center{
   padding: 1.5vw 0 4.5vw 0;
-  width: 50%;
+  width: 65%;
 }
 
 .center h1{

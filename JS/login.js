@@ -69,11 +69,9 @@ function login(){
         }
 
         else if (fetchedData.successMessage){
-            loginMessage.style.color = "green"
-            loginMessage.innerHTML = fetchedData.successMessage
 
             sessionStorage.setItem("token", JSON.stringify(fetchedData.Access_Token))
-            setTimeout(()=>{location = "blog.html"}, 500)
+            location = "index.html"
         }
 
         else{

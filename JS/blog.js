@@ -106,6 +106,3 @@ document.addEventListener('mouseover', function() {
    mousein = true
    reset()
 })
-
-
-

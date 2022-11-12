@@ -226,13 +226,13 @@ div.userProfilePageRight{
 
 div.userProfilePageRightInfo h3{
     border-bottom: 2px solid gray;
-    margin-right: 10vw;
+    margin-right: 5vw;
 }
 
 div.userProfilePageRightInfo form{
     display: flex;
     flex-direction: column;
-    padding-right: 10vw;
+    padding-right: 5vw;
 }
 
 div.userProfilePageRightInfo form input{
@@ -241,5 +241,48 @@ div.userProfilePageRightInfo form input{
 }
 
 input.updateChanges{
-    width: 20%;
+    width: 25%;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+    div.userProfilePage{
+        display: grid;
+        grid-template-columns: auto;
+        gap: 0vw;
+    }
+
+    div.userProfilePageLeft{
+        padding: 5vw;
+        background-color: rgb(224, 224, 224);
+        margin: 20px 40px;
+        border-radius: 10px;
+        text-align: justify;
+    }
+
+    div.userProfilePageRightInfo h3{
+        margin-right: 0vw;
+    }
+    
+    div.userProfilePageRightInfo form{
+        padding-right: 0vw;
+    }
+
+    
+ 
+}
+
+@media only screen and (max-width: 580px) {
+    .profile-pic:hover .-label {
+        width: 540px;
+    }
+
+    .profile-pic {
+        margin-left: 10vw;
+      }
+
+      input.updateChanges{
+        width: 35%;
+    }
 }

@@ -166,7 +166,7 @@ async function loggedInUser(){
                 </p>
           </div>
 
-          <div class="preNavLogin" style="border-top: 1px solid #cba10a;">
+          <div class="preNavLogout" style="border-top: 1px solid #cba10a;">
               <h5><a onClick="preNavLogoutUser()">Logout</a></h5>
           </div>
       </div>

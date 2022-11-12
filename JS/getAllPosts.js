@@ -2,7 +2,7 @@
 // All Posts with pagination
 
 var posts = []
-let pageSize = 1;
+let pageSize = 5;
 let currentPage = 1;
 
 async function renderPosts(page = 1){

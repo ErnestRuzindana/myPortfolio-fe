@@ -54,11 +54,58 @@ async function getAllLikes(){
     console.log(fetchedData)
 
     const likes = fetchedData.fetchedLikes;
-    console.log(likes.length)
     
     const countLikes = document.getElementById("countLikes")
-    countLikes.innerHTML = `<span>(${likes.length})</span>`
+    countLikes.innerHTML = `<span>${likes.length}</span>`
 
+
+    for(let i=0; i<=likes.length; i++){
+        const likedUser = likes[i].likingUser
+
+        //LoggedIn user
+    const getData = {
+        method: "GET",
+        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+    }
+
+    let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
+    const fetchedData = await response.json()
+    console.log(fetchedData)
+
+    if(likedUser == fetchedData._id){
+        postLike.addEventListener("click", (event) =>{
+            event.preventDefault(); 
+        
+            unlike();
+        });
+        
+        async function unlike(){
+        
+            const userLike = fetchedData._id
+        
+            const data = {
+                likingUser: userLike, 
+            }
+        
+            const sendData = {
+                method: "PUT",
+                body: JSON.stringify(data),
+                headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
+            }
+        
+            fetch("http://localhost:5000/unlikePost/"+post__id, sendData)
+        .then(response => response.json())
+        .then((fetchedData)=>{
+            console.log(fetchedData)
+        
+            
+        })
+        
+        }
+
+    }
+        
+    }
 }
 
 getAllLikes()

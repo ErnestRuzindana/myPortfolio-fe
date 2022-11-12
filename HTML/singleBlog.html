@@ -221,35 +221,37 @@
 
         <section class="nav">
             <div class="navbar">
-                <!-- <div class="logo">
+                <div class="logo">
                     <a href="index.html">Ernest RUZINDANA</a>
 
                     <div class="toggleButton" id="toggleButton">
                         <i class="fa-solid fa-bars"></i>
                     </div>
-                </div> -->
+                </div>
 
-            <nav class="menu-btn" id="menu">
+                <nav class="menu-btn" id="menu">
                     <div class="navlinks" id="navlinks">
-                        <ul >
+                        <ul>
                             <li class="closeButton" id="closeButton">
                                 <i class="fa-solid fa-xmark"></i>
                             </li>
-                            <li><a href="index.html#myProfile">Home</a></li>
-                            <li><a href="index.html#aboutme" data-rb-event-key="/#aboutme">About</a></li>
+                            <li class="active"><a href="index.html#myProfile">Home</a></li>
+                            <li><a href="index.html#aboutme">About</a></li>
                             <li><a href="index.html#Skills">My skills</a></li>
+                            <li><a href="index.html#Testimonials">Testimonials</a></li>
                             <li><a href="index.html#work">My work</a></li>
-                            <li class="active"><a href="blog.html">Blog</a></li>
+                            <li><a href="blog.html">Blog</a></li>
                             <li><a href="index.html#services">Services</a></li>
+                            <li class="loginlinksLi"><a href="index.html#contact" class="loginlinks active">
+                                <div>Contact</div>
+                            </a></li>
                         </ul>
                     </div>
                     <ul>
-                        <li class="loginlinksLi"><a href="index.html#contact" class="loginlinks active">
-                            <div>Contact</div>
-                        </a></li>
+                        
                     </ul>
-                
-                </nav>  
+                    
+                  </nav>   
             </div>
         </section>
 
@@ -293,9 +295,9 @@
 
                     <!-- Likes and comments -->
                     <div class="likesAndComments">
-                        <a id="postLike">
+                        <!-- <a id="postLike">
                             <p class="postLikes">
-                                <img class="postLikes" src="../images/like.png" alt=""><span id="countLikes"></span>
+                                <img class="postLikes" src="../images/like.png" alt=""><span></span>
                             </p>
                         </a>
                          
@@ -303,7 +305,15 @@
                             <p class="postLikes">
                                 <img class="postLikes" src="../images/dislike.png" alt=""><span id="countUnlikes"></span>
                             </p> 
-                        </a>
+                        </a> -->
+                        
+                        <ul id="listLikes" class="listLikes">
+                            <p class="tools_comment postLikes">
+                                <a class="like" id="postLike">Like</a>
+                                <span aria-hidden="true"> · </span>
+                                <i class="fa fa-thumbs-o-up"></i> <span class="count" id="countLikes"></span> 
+                            </p>
+                        </ul>
 
                         <a href="">
                             <p class="postComments">
@@ -332,71 +342,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <ul id="list_comment" class="col-md-12">
-                                                <!-- Start List Comment 1 -->
-                                                <!-- <li class="box_result row">
-                                                    <div class="avatar_comment col-md-1">
-                                                        <img src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg" alt="avatar"/>
-                                                    </div>
-                                                    <div class="result_comment col-md-11">
-                                                        <h4>Nath Ryuzaki</h4>
-                                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
-                                                        <div class="tools_comment">
-                                                            <a class="like" href="#">Like</a>
-                                                            <span aria-hidden="true"> · </span>
-                                                            <a class="replay" href="#">Reply</a>
-                                                            <span aria-hidden="true"> · </span>
-                                                            <i class="fa fa-thumbs-o-up"></i> <span class="count">1</span> 
-                                                            <span aria-hidden="true"> · </span>
-                                                            <span>26m</span>
-                                                        </div>
-                                                        <ul class="child_replay">
-                                                            <li class="box_reply row">
-                                                                <div class="avatar_comment col-md-1">
-                                                                    <img src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg" alt="avatar"/>
-                                                                </div>
-                                                                    <div class="result_comment col-md-11">
-                                                                    <h4>Sugito</h4>
-                                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
-                                                                    <div class="tools_comment">
-                                                                        <a class="like" href="#">Like</a>
-                                                                        <span aria-hidden="true"> · </span>
-                                                                        <a class="replay" href="#">Reply</a>
-                                                                        <span aria-hidden="true"> · </span>
-                                                                        <i class="fa fa-thumbs-o-up"></i> <span class="count">1</span> 
-                                                                        <span aria-hidden="true"> · </span>
-                                                                        <span>26m</span>
-                                                                    </div>
-                                                                    <ul class="child_replay"></ul>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </li> -->
-                                                
-                                                <!-- Start List Comment 2 -->
-                                                <!-- <li class="box_result row">
-                                                    <div class="avatar_comment col-md-1">
-                                                        <img src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg" alt="avatar"/>
-                                                    </div>
-                                                    <div class="result_comment col-md-11">
-                                                        <h4>Gung Wah</h4>
-                                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
-                                                        <div class="tools_comment">
-                                                            <a class="like" href="#">Like</a>
-                                                            <span aria-hidden="true"> · </span>
-                                                            <a class="replay" href="#">Reply</a>
-                                                            <span aria-hidden="true"> · </span>
-                                                            <i class="fa fa-thumbs-o-up"></i> <span class="count">1</span> 
-                                                            <span aria-hidden="true"> · </span>
-                                                            <span>26m</span>
-                                                        </div>
-                                                        <ul class="child_replay"></ul>
-                                                    </div>
-                                                </li> -->
-                                            </ul>
-                                        </div>
+                                        
+                                        <ul id="list_comment" class="col-md-12">
+                                           
+                                            
+                                        </ul> 
+                                        
                                     </div>
                                 </div>
                             </div>

@@ -122,8 +122,57 @@ async function getAllComments(){
         const comment_id = commentsArray._id;
         const date = commentsArray.dateCommented
         const commentorName = commentsArray.commentorName
-        const commentorImage = commentsArray.commentorImage 
-        
+        const commentorImage = commentsArray.commentorImage
+
+        // //replies
+        // const repliesGetData = {
+        //     method: "GET",
+        //     headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        // }
+    
+        // let repliesResponse = await fetch(`http://localhost:5000/getSingleComment/${postId}/${comment_id}`, repliesGetData)
+        // const repliesFetchedData = await repliesResponse.json()
+        // console.log(repliesFetchedData.fetchedComment[0].comments[0].commentReplies)
+        // const replies = repliesFetchedData.fetchedComment[0].comments[0].commentReplies
+
+        // // const replies = commentsArray.commentReplies
+        // console.log(replies)
+        // var replyTemplate
+        // for(let j=0; j<replies.length; j++){
+        //     const repliesArray = replies[j]
+        //     const replyBody = repliesArray.replyBody
+        //     const replierName = repliesArray.replierName
+        //     const replierImage = repliesArray.replierImage
+        //     const dateReplied = repliesArray.dateReplied
+        //     const string = "http" || "https"
+        //     var replierImageTemplate;
+        //     if(replierImage.includes(string)){
+        //     replierImageTemplate = 
+        //     `<img src="${replierImage}" alt="" class="AuthorImage" id="authorProfilePicture">`
+        //     }
+                
+        //     else{
+        //         replierImageTemplate = 
+        //     ` <div class="authorImageCharts" id="authorImageCharts">
+        //     ${replierImage}
+        //     </div>`
+        //     }
+
+        //     replyTemplate = `
+        //     <li class="box_reply row">
+        //     <div class="commentReplies">
+        //       <div class="avatar_comment col-md-1">
+        //           ${replierImageTemplate}
+        //       </div>
+        //       <div class="result_comment col-md-11">
+        //           <h4>${replierName} <span> &nbsp &nbsp/ ${dateReplied}</span></h4>
+        //           <p>${replyBody}</p>
+        //       </div>
+        //     </div>
+        //   </li>
+        //   `
+        // }
+     
         const str = "http" || "https"
         var commentorImageTemplate;
         if(commentorImage.includes(str)){
@@ -161,7 +210,7 @@ async function getAllComments(){
                         <span>26m</span>
                     </div>
                     <ul class="child_replay" >
-                      
+                     
                     </ul>
                 </div>
                 
@@ -170,6 +219,70 @@ async function getAllComments(){
         `
 
         commentList.innerHTML += commentTemplate
+       
+        $(document).ready(function() {
+
+        $('#list_comment').load('.child_replay', async function (e) {
+
+            const repliesGetData = {
+                method: "GET",
+                headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+            }
+        
+            let repliesResponse = await fetch(`http://localhost:5000/getSingleComment/${postId}/${comment_id}`, repliesGetData)
+            const repliesFetchedData = await repliesResponse.json()
+            console.log(repliesFetchedData.fetchedComment[0].comments[0].commentReplies)
+            const commentReplies = repliesFetchedData.fetchedComment[0].comments[0].commentReplies
+            console.log(commentReplies.length)
+            var repliesTemplate;
+            var allCommentReplies
+            for(let j=0; j<commentReplies.length; j++){
+                const replies = commentReplies[j]
+                const replyBody = replies.replyBody
+                const date = replies.dateReplied
+                const replierName = replies.replierName
+                const replierImage = replies.replierImage 
+            
+            const str = "http" || "https"
+            var replierImageTemplate;
+            if(replierImage.includes(str)){
+               replierImageTemplate = 
+               `<img src="${replierImage}" alt="" class="AuthorImage" id="authorProfilePicture">`
+            }
+                 
+            else{
+                replierImageTemplate = 
+               ` <div class="authorImageCharts" id="authorImageCharts">
+               ${replierImage}
+               </div>`
+            }
+    
+            repliesTemplate = `
+            <li class="box_reply row">
+            <div class="commentReplies">
+              <div class="avatar_comment col-md-1">
+                  ${replierImageTemplate}
+              </div>
+              <div class="result_comment col-md-11">
+                  <h4>${replierName} <span> &nbsp &nbsp/ ${date}</span></h4>
+                  <p>${replyBody}</p>
+              </div>
+            </div>
+          </li>
+          `
+          allCommentReplies += repliesTemplate
+            }
+    
+            cancel_reply();
+            $current = $(this);
+            el = document.createElement('li');
+            el.className = "box_reply row";
+            el.innerHTML = allCommentReplies
+            
+            $current.closest('li').find('.child_replay').prepend(el);
+        });
+
+    });
     
     }
 }
@@ -221,6 +334,34 @@ $(document).ready(function() {
 			$current.closest('div').find('.count').text(y - 1);
 		}
 	});
+
+    $('#listLikes').on('click', '.like', function (e) {
+		$current = $(this);
+		var x = $current.closest('div').find('.like').text().trim();
+		var y = parseInt($current.closest('div').find('.count').text().trim());
+        var likeUnlikeText = $('#postLike').html();
+		if (x === "Like") {
+			$current.closest('div').find('.like').text('Unlike');
+			$current.closest('div').find('.count').text(y + 1);
+            // $("#postLike").empty().append("Unlike");
+		} else if (x === "Unlike"){
+			$current.closest('div').find('.like').text('Like');
+			$current.closest('div').find('.count').text(y - 1);
+            // $("#postLike").empty().append("Like");
+		} else if(likeUnlikeText == "Like"){
+            $('#postLike').html('Unlike');
+        } 
+        
+        else if(likeUnlikeText == "Unlike"){
+            $('#postLike').html('Like');
+        }
+        
+        else {
+			var replay = $current.closest('div').find('.like').text('Like');
+			$current.closest('div').find('.count').text(y - 1);
+		}
+	});
+
 
     $('#list_comment').on('click', '.replayReplies', function (e) {
         $current = $(this);
@@ -296,65 +437,7 @@ $(document).ready(function() {
 
     //View Replies
 
-    $('#list_comment').on('click', '.replayReplies', async function (e) {
-
-        const repliesGetData = {
-            method: "GET",
-            headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
-        }
     
-        let repliesResponse = await fetch(`http://localhost:5000/getSingleComment/${postId}/${commentId}`, repliesGetData)
-        const repliesFetchedData = await repliesResponse.json()
-        console.log(repliesFetchedData.fetchedComment[0].comments[0].commentReplies)
-        const commentReplies = repliesFetchedData.fetchedComment[0].comments[0].commentReplies
-        console.log(commentReplies.length)
-        var repliesTemplate;
-        var allCommentReplies
-        for(let j=0; j<commentReplies.length; j++){
-            const replies = commentReplies[j]
-            const replyBody = replies.replyBody
-            const date = replies.dateReplied
-            const replierName = replies.replierName
-            const replierImage = replies.replierImage 
-        
-        const str = "http" || "https"
-        var replierImageTemplate;
-        if(replierImage.includes(str)){
-           replierImageTemplate = 
-           `<img src="${replierImage}" alt="" class="AuthorImage" id="authorProfilePicture">`
-        }
-             
-        else{
-            replierImageTemplate = 
-           ` <div class="authorImageCharts" id="authorImageCharts">
-           ${replierImage}
-           </div>`
-        }
-
-        repliesTemplate = `
-        <li class="box_reply row">
-        <div class="commentReplies">
-          <div class="avatar_comment col-md-1">
-              ${replierImageTemplate}
-          </div>
-          <div class="result_comment col-md-11">
-              <h4>${replierName} <span> &nbsp &nbsp/ ${date}</span></h4>
-              <p>${replyBody}</p>
-          </div>
-        </div>
-      </li>
-      `
-      allCommentReplies += repliesTemplate
-        }
-
-		cancel_reply();
-		$current = $(this);
-		el = document.createElement('li');
-		el.className = "box_reply row";
-		el.innerHTML = allCommentReplies
-        
-		$current.closest('li').find('.child_replay').prepend(el);
-	});
 });
 
 function submit_reply(){

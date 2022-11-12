@@ -245,6 +245,28 @@ div.preNavLogin h5 a:hover{
     border-radius: 20px;
 }
 
+div.preNavLogout h5 a{
+   
+    font-size: 1vw;
+    color: black;
+    text-decoration: none;
+    background-color: var(--myColor);
+    padding: 5px 1.5vw 5px 1.5vw;  
+    border: 2px solid white;
+    border-radius: 20px;
+    transition: all 1s;
+}
+
+div.preNavLogout h5 a:hover{
+    text-decoration: none;
+    color: var(--myColor);
+    background-color: white;
+    cursor: pointer;
+    padding: 5px 20px 5px 20px;  
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
 div.preNavSocioMediaLogin{
     position: relative;
     display: flex;

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/557e6c8ef8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../CSS/login.css">
+    <link rel="stylesheet" href="../CSS/index.css">
     
 
     <link rel="icon" href="../images/Logo.png" type="image/x-icon">
@@ -18,11 +19,11 @@
     <section class="preNav">
         <div class="preNavLinks">
             
-            <div class="preNavLogo">
-                <a href="index.html" id=""><img src="../images/Logo.png" alt="My Logo"></a>
+            <div class="preNavLogo" id="hideUserProfile">
+                <a href="" id=""><img src="../images/Logo.png" alt="My Logo"></a>
             </div>
 
-            <div class="preNavDocumentation">
+            <div class="preNavDocumentation" id="hideUserProfile">
                 <nav class="dropDown">
                     <menu>
                         <menuitem id="demo1">
@@ -166,19 +167,24 @@
             </div>
 
             <div class="preNavSocioMediaLogin">
-                <div class="preNavSocioMedia">
+                <div class="preNavSocioMedia" id="hideUserProfile">
                     <ul>
-                        <li><a href="https://web.facebook.com/ruzindana.elannoernest/" target="_blank" text-align: center; ><i class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="https://twitter.com/ruzindanaernes5" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                        <li><a href="https://www.instagram.com/elanno_official/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/ernest-ruzindana-7481b8183/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
-                        <li><a href="https://api.whatsapp.com/send/?phone=250783486141&text&app_absent=0" target="_bank"><i class="fa-brands fa-whatsapp"></i></a></li>
-                        <li><a href="https://github.com/ErnestRuzindana" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                        <li><a href="https://web.facebook.com/ruzindana.elannoernest/" target="_blank" text-align: center; ><img src="../images/facebook_black.png" alt=""></a></li>
+                        <li><a href="https://twitter.com/ruzindanaernes5" target="_blank"><img src="../images/twitter_black.png" alt=""></a></li>
+                        <li><a href="https://www.instagram.com/elanno_official/" target="_blank"><img src="../images/instagram_black.png" alt=""></a></li>
+                        <li><a href="https://www.linkedin.com/in/ernest-ruzindana-7481b8183/" target="_blank"><img src="../images/linkedin_black.png" alt=""></i></a></li>
+                        <li><a href="https://api.whatsapp.com/send/?phone=250783486141&text&app_absent=0" target="_bank"><img src="../images/whatsapp_black.png" alt=""></a></li>
+                        <li><a href="https://github.com/ErnestRuzindana" target="_blank"><img src="../images/github_black.png" alt=""></i></a></li>
                     </ul>
                 </div>
-                <div class="preNavLogin">
+                <div class="preNavLogin" id="preNavLogin">
                     <h5><a href="login.html">Login / Sign Up</a></h5>
                 </div>
+
+                <div class="addProfile" id="addProfile">
+
+                </div> 
+
             </div>
         </div>            
     </section>
@@ -193,27 +199,29 @@
                 </div>
             </div>
 
-           <nav class="menu-btn" id="menu">
+            <nav class="menu-btn" id="menu">
                 <div class="navlinks" id="navlinks">
-                    <ul >
+                    <ul>
                         <li class="closeButton" id="closeButton">
                             <i class="fa-solid fa-xmark"></i>
                         </li>
                         <li class="active"><a href="index.html#myProfile">Home</a></li>
-                        <li><a href="index.html#aboutme" data-rb-event-key="/#aboutme">About</a></li>
+                        <li><a href="index.html#aboutme">About</a></li>
                         <li><a href="index.html#Skills">My skills</a></li>
+                        <li><a href="index.html#Testimonials">Testimonials</a></li>
                         <li><a href="index.html#work">My work</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="index.html#services">Services</a></li>
+                        <li class="loginlinksLi"><a href="index.html#contact" class="loginlinks active">
+                            <div>Contact</div>
+                        </a></li>
                     </ul>
                 </div>
                 <ul>
-                    <li class="loginlinksLi"><a href="index.html#contact" class="loginlinks active">
-                        <div>Contact</div>
-                    </a></li>
+                    
                 </ul>
-            
-            </nav>  
+                
+              </nav>   
         </div>
     </section>
 
@@ -247,8 +255,6 @@
                 <div class="pass"> 
                     <a href="forgotPassword.html">Forgot Password?</a> 
                 </div>
-                    <input type="checkbox" class="checkMe">
-                    <label for="checkbox" class="checkbox">Remember me</label>
                     <input type="submit" id="submit" class="loginType" value="Login">
             </form>
 
@@ -383,6 +389,7 @@
 
     <!-- <script src="../JS/index.js"></script> -->
     <script src="../JS/login.js"></script>
+    <script src="../JS/index.js"></script>
     <script src="../JS/googleLogin.js"></script>
     <script src="../JS/facebookLogin.js"></script>
     <script src="../JS/githubLogin.js"></script>
