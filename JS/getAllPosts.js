@@ -12,8 +12,10 @@ const blogLoader = document.getElementById("blog_preloader")
       blogLoader.classList.remove("show")
   }
 
+
 async function renderPosts(page = 1){
     await getAllPosts()
+
 
     if (page == 1) {
         prevButton.style.display = "none";
@@ -53,6 +55,7 @@ async function renderPosts(page = 1){
            </div>`
         }
 
+         
         paginatedPost += `
         <div class="blogBoxes blogBox1" id="postBox">
 
@@ -72,7 +75,7 @@ async function renderPosts(page = 1){
                 <p class="ContentSection" style="font-family: calibri;">
                     ${post.postBody.slice(0, 600)+"..."}
                 </p>
-                <p class="blogLikesComments">15 Likes . &nbsp;  &nbsp; 8 Comments</p>
+                <p class="blogLikesComments"><span>15</span> Likes . &nbsp;  &nbsp; <span>8</span> Comments</p>
                 <a id="${post._id}" onclick="getSinglePost('${post._id}')" class="readmore" style="cursor: pointer;">Read more &rarr; </a>
             </div>
         </div>
@@ -81,6 +84,7 @@ async function renderPosts(page = 1){
 
     const blogPost = document.getElementById("blogPost");
     blogPost.innerHTML = paginatedPost;
+
 }
 renderPosts()
 
@@ -124,4 +128,4 @@ async function getAllPosts(){
 }
 
 
-
+ 

@@ -1,20 +1,4 @@
 
-async function getSinglePost(postId){
-    const getData = {
-        method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
-    }
-
-    let response = await fetch("http://localhost:5000/getSinglePost/"+postId, getData)
-    const fetchedData = await response.json()
-    console.log(fetchedData)
-
-
-    if (fetchedData.fetchedPost){
-        location = "singleBlog.html"
-        localStorage.setItem("postId", fetchedData.fetchedPost._id)
-    }
-}
 
 
 const postId = localStorage.getItem("postId")
@@ -103,6 +87,23 @@ async function postDetails(){
 }
 
 postDetails()
+
+async function getSinglePost(postId){
+    const getData = {
+        method: "GET",
+        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+    }
+
+    let response = await fetch("http://localhost:5000/getSinglePost/"+postId, getData)
+    const fetchedData = await response.json()
+    console.log(fetchedData)
+
+
+    if (fetchedData.fetchedPost){
+        location = "singleBlog.html"
+        localStorage.setItem("postId", fetchedData.fetchedPost._id)
+    }
+}
 
 
 //Fetch all comments

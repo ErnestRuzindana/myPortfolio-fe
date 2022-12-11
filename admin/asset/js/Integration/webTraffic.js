@@ -22,31 +22,18 @@ let postsResponse = await fetch("http://localhost:5000/getAllPosts", getData)
     countPosts.innerHTML = posts.length;
 
 
-    // Visits
+    // Subscribers
 var counterContainer = document.querySelector("#website-counter");
-var resetButton = document.querySelector("#reset");
-var visitCount = localStorage.getItem("page_view");
+let subscriptionResponse = await fetch("http://localhost:5000/getAllSubscriptions")
+    
+    const allResults = await subscriptionResponse.json(); 
+    const results = allResults.subscribers;
 
-// Check if page_view entry is present
-if (visitCount) {
-  visitCount = Number(visitCount) + 1;
-  localStorage.setItem("page_view", visitCount);
-} else {
-  visitCount = 1;
-  localStorage.setItem("page_view", 1);
-}
-counterContainer.innerHTML = visitCount;
-
-// Adding onClick event listener
-resetButton.addEventListener("click", () => {
-  visitCount = 1;
-  localStorage.setItem("page_view", 1);
-  counterContainer.innerHTML = visitCount;
-});
+counterContainer.innerHTML = results.length
 
 
 // Web Traffic
-const totalTraffic = users.length + posts.length + visitCount
+const totalTraffic = users.length + posts.length + results.length
 const countTraffic = document.getElementById("countTraffic")
 
 countTraffic.innerHTML = totalTraffic;
