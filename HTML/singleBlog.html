@@ -18,6 +18,8 @@
 </head>
 <body>
 
+
+
 <div class="myBlog">
 
     <div class="leftBlogSide">
@@ -46,6 +48,7 @@
     </div>
 
     <div class="rightBlogSide">
+        <div id="preloader"></div>
         <section class="preNav">
             <div class="preNavLinks">
                 
@@ -235,12 +238,12 @@
                             <li class="closeButton" id="closeButton">
                                 <i class="fa-solid fa-xmark"></i>
                             </li>
-                            <li class="active"><a href="index.html#myProfile">Home</a></li>
+                            <li ><a href="index.html#myProfile">Home</a></li>
                             <li><a href="index.html#aboutme">About</a></li>
                             <li><a href="index.html#Skills">My skills</a></li>
                             <li><a href="index.html#Testimonials">Testimonials</a></li>
                             <li><a href="index.html#work">My work</a></li>
-                            <li><a href="blog.html">Blog</a></li>
+                            <li class="active"><a href="blog.html">Blog</a></li>
                             <li><a href="index.html#services">Services</a></li>
                             <li class="loginlinksLi"><a href="index.html#contact" class="loginlinks active">
                                 <div>Contact</div>
@@ -294,6 +297,7 @@
 
 
                     <!-- Likes and comments -->
+                    <div class="likesMessage" id="likesMessage"></div>
                     <div class="likesAndComments">
                         <!-- <a id="postLike">
                             <p class="postLikes">
@@ -435,6 +439,8 @@
 
 </div>
 
+
+
     <script src="../JS/blog.js"></script>
     <script src="../JS/getAllPosts.js"></script>
     <script src="../JS/singleBlogPost.js"></script>
@@ -452,5 +458,7 @@
     <script src="../JS/logoutFooter.js"></script>
     <script src="../JS/socialMediaProfile.js"></script>
     <script src="../JS/socialMediaLogout.js"></script>
+
+
 </body>
 </html>

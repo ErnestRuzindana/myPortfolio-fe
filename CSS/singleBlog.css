@@ -6,6 +6,20 @@
   box-sizing: border-box;
 }
 
+#preloader{
+  background: white url(../images/preloader2.gif) no-repeat center center;
+  background-size: 13%;
+  height: 100vh;
+  width: 77%;
+  position: fixed;
+  z-index: 100;
+  display: none;
+}
+
+#preloader.show{
+  display: block;
+}
+
 div.mySingleBlog{
     display: flex;
     flex-direction: column;
@@ -92,10 +106,11 @@ div.singleBlogContent h4{
 
 div.likesAndComments{
     display: flex;
-    margin-top: 40px;
+   
     border-top: 2px solid gray;
     margin-bottom: 100px;
 }
+
 
 div.likesAndComments a{
     text-decoration: none;
@@ -162,6 +177,7 @@ h4 span{
   .pull-right{
     float:right;
   }
+  
   .pull-left{
     float:left;
   }
@@ -266,6 +282,7 @@ h4 span{
   .box_comment button:hover{
     background-color: rgb(190, 124, 3);
     border-color: rgb(190, 124, 3);
+    cursor: pointer;
   }
   .box_comment .cancel{
       margin-left:8px;
@@ -322,15 +339,12 @@ h4 span{
   .box_result .result_comment .tools_comment{
     font-size: 12px;
     line-height: 1.358;
-  }
-  .box_result .result_comment .tools_comment a{
-    color: rgb(190, 124, 3);
+    color: rgb(73, 73, 73);
     cursor: pointer;
     text-decoration: none;
+    font-weight: bold;
   }
-  .box_result .result_comment .tools_comment span{
-    color: #90949c;
-  }
+  
   .body_comment .show_more{
     background: rgb(190, 124, 3);
     border: none;
@@ -368,6 +382,17 @@ h4 span{
     padding-top: 50px;
     color: rgb(212, 19, 19);
     font-weight: 550;
+  }
+
+  div.disableCommentLikes{
+    color: rgb(212, 19, 19);
+    font-weight: 550;
+  }
+
+  div.likesMessage{
+    color: rgb(212, 19, 19) ;
+    font-weight: 550;
+    margin-top: -5px;
   }
 
   div.comments{

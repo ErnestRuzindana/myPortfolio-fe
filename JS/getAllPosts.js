@@ -4,6 +4,13 @@
 var posts = []
 let pageSize = 5;
 let currentPage = 1;
+const blogLoader = document.getElementById("blog_preloader")
+  function showBlogLoader(){
+      blogLoader.classList.add("show")
+  }
+  function hideBlogLoader(){
+      blogLoader.classList.remove("show")
+  }
 
 async function renderPosts(page = 1){
     await getAllPosts()
@@ -101,8 +108,9 @@ function previousPage() {
   prevButton.addEventListener('click', previousPage, false);
   nextButton.addEventListener('click', nextPage, false);
 
+ 
 async function getAllPosts(){
-
+    showBlogLoader()
     const getData = {
         method: "GET",
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
@@ -110,7 +118,7 @@ async function getAllPosts(){
 
     let response = await fetch("http://localhost:5000/getAllPosts", getData)
     const fetchedData = await response.json()
-
+    hideBlogLoader()
     posts = fetchedData.allAvailablePosts;
     
 }

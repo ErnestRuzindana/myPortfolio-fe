@@ -1,3 +1,4 @@
+
 async function getSinglePost(postId){
     const getData = {
         method: "GET",
@@ -17,8 +18,16 @@ async function getSinglePost(postId){
 
 
 const postId = localStorage.getItem("postId")
+const loader = document.getElementById("preloader")
+function showLoader(){
+    loader.classList.add("show")
+}
+function hideLoader(){
+    loader.classList.remove("show")
+}
 
 async function postDetails(){
+    showLoader()
     const getData = {
         method: "GET",
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
@@ -27,7 +36,7 @@ async function postDetails(){
     let response = await fetch("http://localhost:5000/getSinglePost/"+postId, getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
-
+    hideLoader()
     const singlePost = fetchedData.fetchedPost;
 
     const singleBlogTitle = document.getElementById("singleBlogTitle")
@@ -123,55 +132,6 @@ async function getAllComments(){
         const date = commentsArray.dateCommented
         const commentorName = commentsArray.commentorName
         const commentorImage = commentsArray.commentorImage
-
-        // //replies
-        // const repliesGetData = {
-        //     method: "GET",
-        //     headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
-        // }
-    
-        // let repliesResponse = await fetch(`http://localhost:5000/getSingleComment/${postId}/${comment_id}`, repliesGetData)
-        // const repliesFetchedData = await repliesResponse.json()
-        // console.log(repliesFetchedData.fetchedComment[0].comments[0].commentReplies)
-        // const replies = repliesFetchedData.fetchedComment[0].comments[0].commentReplies
-
-        // // const replies = commentsArray.commentReplies
-        // console.log(replies)
-        // var replyTemplate
-        // for(let j=0; j<replies.length; j++){
-        //     const repliesArray = replies[j]
-        //     const replyBody = repliesArray.replyBody
-        //     const replierName = repliesArray.replierName
-        //     const replierImage = repliesArray.replierImage
-        //     const dateReplied = repliesArray.dateReplied
-        //     const string = "http" || "https"
-        //     var replierImageTemplate;
-        //     if(replierImage.includes(string)){
-        //     replierImageTemplate = 
-        //     `<img src="${replierImage}" alt="" class="AuthorImage" id="authorProfilePicture">`
-        //     }
-                
-        //     else{
-        //         replierImageTemplate = 
-        //     ` <div class="authorImageCharts" id="authorImageCharts">
-        //     ${replierImage}
-        //     </div>`
-        //     }
-
-        //     replyTemplate = `
-        //     <li class="box_reply row">
-        //     <div class="commentReplies">
-        //       <div class="avatar_comment col-md-1">
-        //           ${replierImageTemplate}
-        //       </div>
-        //       <div class="result_comment col-md-11">
-        //           <h4>${replierName} <span> &nbsp &nbsp/ ${dateReplied}</span></h4>
-        //           <p>${replyBody}</p>
-        //       </div>
-        //     </div>
-        //   </li>
-        //   `
-        // }
      
         const str = "http" || "https"
         var commentorImageTemplate;
@@ -199,15 +159,13 @@ async function getAllComments(){
                 <div class="result_comment col-md-11">
                     <h4>${commentorName} <span> &nbsp &nbsp/ ${date}</span></h4>
                     <p>${body}</p>
+                    
                     <div class="tools_comment">
-                        <a class="like">Like</a>
+                        <a class="like" onclick="likeComment()">Like</a>
+                        <span aria-hidden="true"> · </span>
+                        <i class="fa fa-thumbs-o-up"></i> <span class="count" id="count">0</span> 
                         <span aria-hidden="true"> · </span>
                         <a class="replay" id="${comment_id}" onclick="getSingleComment('${PostId}','${comment_id}')">Reply</a>
-                        <a class="replayReplies" id="${comment_id}" onclick="getSingleComment('${PostId}','${comment_id}')">View replies</a>
-                        <span aria-hidden="true"> · </span>
-                        <i class="fa fa-thumbs-o-up"></i> <span class="count">0</span> 
-                        <span aria-hidden="true"> · </span>
-                        <span>26m</span>
                     </div>
                     <ul class="child_replay" >
                      
@@ -219,7 +177,7 @@ async function getAllComments(){
         `
 
         commentList.innerHTML += commentTemplate
-       
+        // <a class="replayReplies" id="${comment_id}" onclick="getSingleComment('${PostId}','${comment_id}')">View replies</a>
         $(document).ready(function() {
 
         $('#list_comment').load('.child_replay', async function (e) {
@@ -322,14 +280,18 @@ $(document).ready(function() {
 		$current = $(this);
 		var x = $current.closest('div').find('.like').text().trim();
 		var y = parseInt($current.closest('div').find('.count').text().trim());
-		
-		if (x === "Like") {
+        const checkToken = JSON.parse(sessionStorage.getItem("token"))
+        if (!checkToken){
+            $current.prop('disabled', true);
+           }
+		else if (x === "Like") {
 			$current.closest('div').find('.like').text('Unlike');
 			$current.closest('div').find('.count').text(y + 1);
 		} else if (x === "Unlike"){
 			$current.closest('div').find('.like').text('Like');
-			$current.closest('div').find('.count').text(y - 1);
-		} else {
+			$current.closest('div').find('.count').text(y - 1); 
+		} 
+        else {
 			var replay = $current.closest('div').find('.like').text('Like');
 			$current.closest('div').find('.count').text(y - 1);
 		}
@@ -339,23 +301,17 @@ $(document).ready(function() {
 		$current = $(this);
 		var x = $current.closest('div').find('.like').text().trim();
 		var y = parseInt($current.closest('div').find('.count').text().trim());
-        var likeUnlikeText = $('#postLike').html();
-		if (x === "Like") {
+        const checkToken = JSON.parse(sessionStorage.getItem("token"))
+        if (!checkToken){
+            $current.prop('disabled', true);
+           }
+		else if (x === "Like") {
 			$current.closest('div').find('.like').text('Unlike');
 			$current.closest('div').find('.count').text(y + 1);
-            // $("#postLike").empty().append("Unlike");
 		} else if (x === "Unlike"){
 			$current.closest('div').find('.like').text('Like');
-			$current.closest('div').find('.count').text(y - 1);
-            // $("#postLike").empty().append("Like");
-		} else if(likeUnlikeText == "Like"){
-            $('#postLike').html('Unlike');
-        } 
-        
-        else if(likeUnlikeText == "Unlike"){
-            $('#postLike').html('Like');
-        }
-        
+			$current.closest('div').find('.count').text(y - 1); 
+		} 
         else {
 			var replay = $current.closest('div').find('.like').text('Like');
 			$current.closest('div').find('.count').text(y - 1);
@@ -363,21 +319,21 @@ $(document).ready(function() {
 	});
 
 
-    $('#list_comment').on('click', '.replayReplies', function (e) {
-        $current = $(this);
+    // $('#list_comment').on('click', '.replayReplies', function (e) {
+    //     $current = $(this);
  
-		var x = $current.closest('div').find('.replayReplies').text().trim();
+	// 	var x = $current.closest('div').find('.replayReplies').text().trim();
 		
-		if (x === "View replies") {
-			$current.closest('div').find('.replayReplies').text('Hide replies');
+	// 	if (x === "View replies") {
+	// 		$current.closest('div').find('.replayReplies').text('Hide replies');
 
 			
-		} else{
-			$current.closest('div').find('.replayReplies').text('View replies')
+	// 	} else{
+	// 		$current.closest('div').find('.replayReplies').text('View replies')
 
-		}
+	// 	}
         
-    });
+    // });
 	
 	$('#list_comment').on('click', '.replay', async function (e) {
 

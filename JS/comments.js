@@ -13,7 +13,7 @@ async function comment(){
     const checkToken = JSON.parse(sessionStorage.getItem("token"))
 	if (!checkToken){
 		disableComment.style.display = "block";
-        disableComment.innerHTML = "Please Login to Comment!"
+        disableComment.innerHTML = `Please Login to Comment!`
 	   }
     const commentBody = document.getElementById("commentBody");
     
