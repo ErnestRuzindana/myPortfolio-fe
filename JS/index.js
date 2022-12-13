@@ -92,7 +92,7 @@ async function MediaLoginLogout(){
       headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
    }
 
-   let response = await fetch("https://cors-anywhere.herokuapp.com/https://myportfolio-be.netlify.app/socialMediaLoggedInUser", getData)
+   let response = await fetch("https://myportfolio-be.netlify.app/socialMediaLoggedInUser", getData)
    const fetchedData = await response.json()
 
    if (MyToken){
