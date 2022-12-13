@@ -118,7 +118,7 @@ nav.dropDown > menu {
  menu menuitem a { 
     white-space:nowrap; 
     display:block; 
-    
+    text-decoration: none;
 }
     
 nav.dropDown menuitem:hover > menu {
