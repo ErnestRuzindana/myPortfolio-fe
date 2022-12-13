@@ -5,7 +5,7 @@ async function update_delete_post(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("http://localhost:5000/getAllPosts", getData)
+    let response = await fetch("https://myportfolio-be.netlify.app/getAllPosts", getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 

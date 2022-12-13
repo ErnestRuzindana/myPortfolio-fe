@@ -26,7 +26,7 @@ function subscription(){
         headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-fetch("http://localhost:5000/Subscribe", sendData)
+fetch("https://myportfolio-be.netlify.app/Subscribe", sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)

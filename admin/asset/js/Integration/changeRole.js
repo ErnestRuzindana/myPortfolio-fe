@@ -14,7 +14,7 @@ let getSingleUser= async(userId) => {
 
 
 
-    let response = await fetch('http://localhost:5000/register/getSingleUser/'+userId, getOptions)
+    let response = await fetch('https://myportfolio-be.netlify.app/register/getSingleUser/'+userId, getOptions)
     const fetchSingleUser = await response.json();
     console.log(fetchSingleUser)
 
@@ -41,7 +41,7 @@ async function getUser() {
 
 
 
-    let response = await fetch('http://localhost:5000/register/getSingleUser/'+userId, getOptions)
+    let response = await fetch('https://myportfolio-be.netlify.app/register/getSingleUser/'+userId, getOptions)
     const fetchSingleUser = await response.json();
     console.log(fetchSingleUser)
 
@@ -86,7 +86,7 @@ function updateRole() {
         headers: new Headers({'Content-Type': 'application/json; charset=UTF-8', 'auth_token': JSON.parse(sessionStorage.getItem('token'))}),
      };
      
-fetch('http://localhost:5000/register/assignUserRole/'+userRoleId, UserRequestOptions,)
+fetch('https://myportfolio-be.netlify.app/register/assignUserRole/'+userRoleId, UserRequestOptions,)
 .then(response => response.json())
 .then((roleFetchedData)=>{
     console.log(roleFetchedData)

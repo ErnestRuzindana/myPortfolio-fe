@@ -23,7 +23,7 @@ async function comment(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
+    let response = await fetch("https://myportfolio-be.netlify.app/login/loggedInUser", getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 
@@ -33,7 +33,7 @@ async function comment(){
     var commentorImageTemplate;
 
     if(fetchedData.imageLink){
-        commentorPicture = `http://localhost:5000/images/${fetchedData.imageLink}`
+        commentorPicture = `https://myportfolio-be.netlify.app/images/${fetchedData.imageLink}`
         commentorImageTemplate = 
            `<img src="${commentorPicture}" alt="" class="AuthorImage" id="authorProfilePicture">`
     }
@@ -74,7 +74,7 @@ async function comment(){
         headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-    fetch("http://localhost:5000/createComment/"+post_id, sendData)
+    fetch("https://myportfolio-be.netlify.app/createComment/"+post_id, sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)
@@ -124,7 +124,7 @@ async function getSingleComment(postId, commentId){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch(`http://localhost:5000/getSingleComment/${postId}/${commentId}`, getData)
+    let response = await fetch(`https://myportfolio-be.netlify.app/getSingleComment/${postId}/${commentId}`, getData)
     const fetchedData = await response.json()
 
     if (fetchedData){
@@ -152,7 +152,7 @@ async function commentReply(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
+    let response = await fetch("https://myportfolio-be.netlify.app/login/loggedInUser", getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 
@@ -162,7 +162,7 @@ async function commentReply(){
     var commentorImageTemplate;
 
     if(fetchedData.imageLink){
-        commentorPicture = `http://localhost:5000/images/${fetchedData.imageLink}`
+        commentorPicture = `https://myportfolio-be.netlify.app/images/${fetchedData.imageLink}`
         commentorImageTemplate = 
            `<img src="${commentorPicture}" alt="" class="AuthorImage" id="authorProfilePicture">`
     }
@@ -203,7 +203,7 @@ async function commentReply(){
         headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-    fetch(`http://localhost:5000/commentReply/${post_id}/${commentId}`, sendData)
+    fetch(`https://myportfolio-be.netlify.app/commentReply/${post_id}/${commentId}`, sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)
@@ -247,7 +247,7 @@ async function getAllReplies(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch(`http://localhost:5000/getSingleComment/${post_id}/${commentId}`, getData)
+    let response = await fetch(`https://myportfolio-be.netlify.app/getSingleComment/${post_id}/${commentId}`, getData)
     const fetchedData = await response.json()
 
     const replies = fetchedData.fetchedComment[0].comments[0].commentReplies

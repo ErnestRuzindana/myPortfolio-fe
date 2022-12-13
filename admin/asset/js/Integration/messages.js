@@ -12,7 +12,7 @@ let deleteMessage= async(myKey) => {
        },
     }
 
-    let response = await fetch('http://localhost:5000/contact/deleteMessage/'+myKey, deleteOptions)
+    let response = await fetch('https://myportfolio-be.netlify.app/contact/deleteMessage/'+myKey, deleteOptions)
     const fetchDeletedPost = await response.json();
     console.log(fetchDeletedPost)
         if(fetchDeletedPost.deletedMessage){ 
@@ -27,7 +27,7 @@ let deleteMessage= async(myKey) => {
 
 async function fetchMessages(){
         
-    let response = await fetch("http://localhost:5000/contact/getAllMessages")
+    let response = await fetch("https://myportfolio-be.netlify.app/contact/getAllMessages")
     
     const allResults = await response.json(); 
     const results = allResults.clientMessages;

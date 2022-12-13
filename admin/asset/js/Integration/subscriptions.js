@@ -12,7 +12,7 @@ let deleteSubscriber= async(myKey) => {
        },
     }
 
-    let response = await fetch('http://localhost:5000/deleteSubscriber/'+myKey, deleteOptions)
+    let response = await fetch('https://myportfolio-be.netlify.app/deleteSubscriber/'+myKey, deleteOptions)
     const fetchDeletedPost = await response.json();
     console.log(fetchDeletedPost)
         if(fetchDeletedPost.removedMessage){ 
@@ -26,7 +26,7 @@ let deleteSubscriber= async(myKey) => {
 
 async function fetchSubscribers(){
         
-    let response = await fetch("http://localhost:5000/getAllSubscriptions")
+    let response = await fetch("https://myportfolio-be.netlify.app/getAllSubscriptions")
     
     const allResults = await response.json(); 
     const results = allResults.subscribers;

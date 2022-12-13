@@ -19,7 +19,7 @@ async function socialLoggedInUser(){
         headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-  let response = await fetch("http://localhost:5000/socialMediaLoggedInUser", getData)
+  let response = await fetch("https://myportfolio-be.netlify.app/socialMediaLoggedInUser", getData)
   const fetchedData = await response.json()
   console.log(fetchedData)
 
@@ -53,7 +53,7 @@ function login(){
         headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-    fetch("http://localhost:5000/login/loginUser", sendData)
+    fetch("https://myportfolio-be.netlify.app/login/loginUser", sendData)
     .then(response => response.json())
     .then((fetchedData)=>{
         console.log(fetchedData)

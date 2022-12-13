@@ -32,7 +32,7 @@ function forgotPassword(){
         headers: new Headers({'Content-Type': 'application/json; charset=UTF-8', "auth_token": JSON.parse(localStorage.getItem("token"))})
     }
 
-fetch("http://localhost:5000/login/newPassword", sendData)
+fetch("https://myportfolio-be.netlify.app/login/newPassword", sendData)
 .then(response => response.json())
 .then((newPasswordFetchedData)=>{
     console.log(newPasswordFetchedData)
