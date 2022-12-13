@@ -17,7 +17,7 @@ async function postDetails(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://myportfolio-be.netlify.app/getSinglePost/"+postId, getData)
+    let response = await fetch("https://cors-anywhere.herokuapp.com/https://myportfolio-be.netlify.app/getSinglePost/"+postId, getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
     hideLoader()
@@ -67,12 +67,12 @@ async function postDetails(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let userResponse = await fetch("https://myportfolio-be.netlify.app/login/loggedInUser", userGetData)
+    let userResponse = await fetch("https://cors-anywhere.herokuapp.com/https://myportfolio-be.netlify.app/login/loggedInUser", userGetData)
     const userFetchedData = await userResponse.json()
     console.log(userFetchedData)
 
     if(userFetchedData.imageLink){
-        const commentorPicture = `https://myportfolio-be.netlify.app/images/${userFetchedData.imageLink}`
+        const commentorPicture = `https://cors-anywhere.herokuapp.com/https://myportfolio-be.netlify.app/images/${userFetchedData.imageLink}`
         commentorAvatar.innerHTML = 
            `<img src="${commentorPicture}" alt="" class="AuthorImage" id="authorProfilePicture">`
     }
@@ -94,7 +94,7 @@ async function getSinglePost(postId){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://myportfolio-be.netlify.app/getSinglePost/"+postId, getData)
+    let response = await fetch("https://cors-anywhere.herokuapp.com/https://myportfolio-be.netlify.app/getSinglePost/"+postId, getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 
@@ -114,7 +114,7 @@ async function getAllComments(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://myportfolio-be.netlify.app/getAllComments/"+postId, getData)
+    let response = await fetch("https://cors-anywhere.herokuapp.com/https://myportfolio-be.netlify.app/getAllComments/"+postId, getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 
@@ -188,7 +188,7 @@ async function getAllComments(){
                 headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
             }
         
-            let repliesResponse = await fetch(`https://myportfolio-be.netlify.app/getSingleComment/${postId}/${comment_id}`, repliesGetData)
+            let repliesResponse = await fetch(`https://cors-anywhere.herokuapp.com/https://myportfolio-be.netlify.app/getSingleComment/${postId}/${comment_id}`, repliesGetData)
             const repliesFetchedData = await repliesResponse.json()
             console.log(repliesFetchedData.fetchedComment[0].comments[0].commentReplies)
             const commentReplies = repliesFetchedData.fetchedComment[0].comments[0].commentReplies
@@ -344,7 +344,7 @@ $(document).ready(function() {
             headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
         }
 
-        let response = await fetch("https://myportfolio-be.netlify.app/login/loggedInUser", getData)
+        let response = await fetch("https://cors-anywhere.herokuapp.com/https://myportfolio-be.netlify.app/login/loggedInUser", getData)
         const fetchedData = await response.json()
         console.log(fetchedData)
 
@@ -353,7 +353,7 @@ $(document).ready(function() {
         var commentorImageTemplate;
 
         if(fetchedData.imageLink){
-            commentorPicture = `https://myportfolio-be.netlify.app/images/${fetchedData.imageLink}`
+            commentorPicture = `https://cors-anywhere.herokuapp.com/https://myportfolio-be.netlify.app/images/${fetchedData.imageLink}`
             commentorImageTemplate = 
             `<img src="${commentorPicture}" alt="" class="AuthorImage" id="authorProfilePicture">`
         }
