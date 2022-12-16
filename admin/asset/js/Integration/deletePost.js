@@ -12,7 +12,7 @@ async function deletePost(post_id){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
     
-    let response = await fetch("https://myportfolio-be.netlify.app/deletePost/"+post_id, getData)
+    let response = await fetch("https://ernestruzindana-be.cyclic.app/deletePost/"+post_id, getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 

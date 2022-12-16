@@ -4,7 +4,7 @@ async function getSinglePost(post_id){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
     
-    let response = await fetch("https://myportfolio-be.netlify.app/getSinglePost/"+post_id, getData)
+    let response = await fetch("https://ernestruzindana-be.cyclic.app/getSinglePost/"+post_id, getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 
@@ -27,7 +27,7 @@ async function getPostDetails(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
     
-    let response = await fetch("https://myportfolio-be.netlify.app/getSinglePost/"+post_id, getData)
+    let response = await fetch("https://ernestruzindana-be.cyclic.app/getSinglePost/"+post_id, getData)
     console.log(response)
     const fetchedData = await response.json()
     console.log(fetchedData)
@@ -94,7 +94,7 @@ function UpdatePost(){
         headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token"))})
     }
 
-fetch("https://myportfolio-be.netlify.app/updatePost/"+post_id, sendData)
+fetch("https://ernestruzindana-be.cyclic.app/updatePost/"+post_id, sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)

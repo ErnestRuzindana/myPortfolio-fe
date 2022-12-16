@@ -14,7 +14,7 @@ let getSingleMessage= async(messageId) => {
 
 
 
-    let response = await fetch('https://myportfolio-be.netlify.app/contact/getMessageById/'+messageId, getOptions)
+    let response = await fetch('https://ernestruzindana-be.cyclic.app/contact/getMessageById/'+messageId, getOptions)
     const fetchSingleMessage = await response.json();
     console.log(fetchSingleMessage)
 
@@ -41,7 +41,7 @@ async function getMessage() {
 
 
 
-    let response = await fetch('https://myportfolio-be.netlify.app/contact/getMessageById/'+messageId, getOptions)
+    let response = await fetch('https://ernestruzindana-be.cyclic.app/contact/getMessageById/'+messageId, getOptions)
     const fetchSingleMessage = await response.json();
     console.log(fetchSingleMessage)
 
@@ -94,7 +94,7 @@ function replyMessage(){
         headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-fetch("https://myportfolio-be.netlify.app/contact/replyMessage/"+messageId, sendData)
+fetch("https://ernestruzindana-be.cyclic.app/contact/replyMessage/"+messageId, sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)

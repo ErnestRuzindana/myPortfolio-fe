@@ -4,7 +4,7 @@ async function loggedInUser(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-  let response = await fetch("https://myportfolio-be.netlify.app/login/loggedInUser", getData)
+  let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
   const fetchedData = await response.json()
   console.log(fetchedData)
 
@@ -174,14 +174,14 @@ async function loggedInUser(){
       <div class="profilePicture" id="profilePicture">
         ${fetchedData.firstName.charAt(0)}${fetchedData.lastName.charAt(0)}
       </div>
-      <img src="https://myportfolio-be.netlify.app/images/${fetchedData.imageLink}" class="topProfileImage" id="topProfileImage" alt="">
+      <img src="https://ernestruzindana-be.cyclic.app/images/${fetchedData.imageLink}" class="topProfileImage" id="topProfileImage" alt="">
 
           
       <div class="userProfile" id="userProfile">
           <div class="profilePictureIn" id="profilePictureIn">
           ${fetchedData.firstName.charAt(0)}${fetchedData.lastName.charAt(0)}
           </div>
-          <img src="https://myportfolio-be.netlify.app/images/${fetchedData.imageLink}" class="inProfileImage" id="inProfileImage" alt="">
+          <img src="https://ernestruzindana-be.cyclic.app/images/${fetchedData.imageLink}" class="inProfileImage" id="inProfileImage" alt="">
 
           <h3 style="margin-top: 40px;">${fetchedData.firstName} ${fetchedData.lastName}</h3>
           <p class="userFetchedEmail" style="font-weight: 500;">${fetchedData.email}</p>

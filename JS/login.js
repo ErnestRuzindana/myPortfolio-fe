@@ -19,7 +19,7 @@ async function socialLoggedInUser(){
         headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-  let response = await fetch("https://myportfolio-be.netlify.app/socialMediaLoggedInUser", getData)
+  let response = await fetch("https://ernestruzindana-be.cyclic.app/socialMediaLoggedInUser", getData)
   const fetchedData = await response.json()
   console.log(fetchedData)
 
@@ -53,7 +53,7 @@ function login(){
         headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-    fetch("https://myportfolio-be.netlify.app/login/loginUser", sendData)
+    fetch("https://ernestruzindana-be.cyclic.app/login/loginUser", sendData)
     .then(response => response.json())
     .then((fetchedData)=>{
         console.log(fetchedData)

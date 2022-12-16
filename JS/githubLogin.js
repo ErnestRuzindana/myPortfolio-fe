@@ -2,5 +2,5 @@ const loginGithubButton = document.getElementById("loginGithub");
 
 
 loginGithubButton.addEventListener("click", ()=>{
-    location = "https://myportfolio-be.netlify.app/github"
+    location = "https://ernestruzindana-be.cyclic.app/github"
 })

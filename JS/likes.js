@@ -22,7 +22,7 @@ async function like(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://myportfolio-be.netlify.app/login/loggedInUser", getData)
+    let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 
@@ -39,7 +39,7 @@ async function like(){
         headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-    fetch("https://myportfolio-be.netlify.app/likePost/"+post__id, sendData)
+    fetch("https://ernestruzindana-be.cyclic.app/likePost/"+post__id, sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)
@@ -57,7 +57,7 @@ async function getAllLikes(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://myportfolio-be.netlify.app/getAllLikes/"+post__id, getData)
+    let response = await fetch("https://ernestruzindana-be.cyclic.app/getAllLikes/"+post__id, getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 
@@ -76,7 +76,7 @@ async function getAllLikes(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://myportfolio-be.netlify.app/login/loggedInUser", getData)
+    let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
     const postLike = document.getElementById("postLike")
@@ -117,7 +117,7 @@ async function likeComment(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://myportfolio-be.netlify.app/login/loggedInUser", getData)
+    let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 
@@ -134,7 +134,7 @@ async function likeComment(){
         headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-    fetch("https://myportfolio-be.netlify.app/likeComment/"+post__id, sendData)
+    fetch("https://ernestruzindana-be.cyclic.app/likeComment/"+post__id, sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)
@@ -153,7 +153,7 @@ async function getAllCommentLikes(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://myportfolio-be.netlify.app/getAllCommentLikes/"+post__id, getData)
+    let response = await fetch("https://ernestruzindana-be.cyclic.app/getAllCommentLikes/"+post__id, getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 
@@ -172,7 +172,7 @@ async function getAllCommentLikes(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://myportfolio-be.netlify.app/login/loggedInUser", getData)
+    let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
     const postLike = document.getElementById("postLike")

@@ -4,7 +4,7 @@ async function UserProfile(){
           headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
       }
 
-    let response = await fetch("https://myportfolio-be.netlify.app/login/loggedInUser", getData)
+    let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
     const profileFetchedData = await response.json()
 
 
@@ -20,7 +20,7 @@ async function UserProfile(){
   ImageDiv.innerHTML = profileFetchedData.firstName.charAt(0) +""+ profileFetchedData.lastName.charAt(0)
 
   if (profileFetchedData.imageLink) {
-    profileImageLinkLeft.src = `https://myportfolio-be.netlify.app/images/${profileFetchedData.imageLink}`
+    profileImageLinkLeft.src = `https://ernestruzindana-be.cyclic.app/images/${profileFetchedData.imageLink}`
     ImageDiv.style.display = "none"
   }
 
@@ -89,7 +89,7 @@ async function UserProfile(){
   profilePicRight.innerHTML = profileFetchedData.firstName.charAt(0) +""+ profileFetchedData.lastName.charAt(0)
 
   if (profileFetchedData.imageLink) {
-    profileImageLink.src = `https://myportfolio-be.netlify.app/images/${profileFetchedData.imageLink}`
+    profileImageLink.src = `https://ernestruzindana-be.cyclic.app/images/${profileFetchedData.imageLink}`
     profilePicRight.style.display = "none"
   }
 
@@ -215,7 +215,7 @@ function UpdateUserProfile(){
         headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token"))})
     }
 
-fetch("https://myportfolio-be.netlify.app/login/updateUser", sendData)
+fetch("https://ernestruzindana-be.cyclic.app/login/updateUser", sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)

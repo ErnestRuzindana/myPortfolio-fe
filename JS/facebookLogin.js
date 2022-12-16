@@ -4,5 +4,5 @@ const loginFacebookButton = document.getElementById("loginFacebook");
 
 
 loginFacebookButton.addEventListener("click", ()=>{
-    location = "https://myportfolio-be.netlify.app/facebook"
+    location = "https://ernestruzindana-be.cyclic.app/facebook"
 })

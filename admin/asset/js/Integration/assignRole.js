@@ -4,7 +4,7 @@ async function registeredUsers(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-  let response = await fetch("https://myportfolio-be.netlify.app/register/getRegisteredUsers", getData)
+  let response = await fetch("https://ernestruzindana-be.cyclic.app/register/getRegisteredUsers", getData)
   const fetchedData = await response.json()
    
     const users = fetchedData.RegisteredUsers;
@@ -20,7 +20,7 @@ async function registeredUsers(){
             image = nameAbbreviation 
         }
         else{
-            image = `<img src="https://myportfolio-be.netlify.app/images/${usersArray.imageLink}" alt="" id="imagePicture" style="margin-top: -10px;">`
+            image = `<img src="https://ernestruzindana-be.cyclic.app/images/${usersArray.imageLink}" alt="" id="imagePicture" style="margin-top: -10px;">`
         }
 
         const name = usersArray.firstName +" "+usersArray.lastName;

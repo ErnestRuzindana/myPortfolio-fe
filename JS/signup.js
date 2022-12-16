@@ -36,7 +36,7 @@ function singup(){
         headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-fetch("https://myportfolio-be.netlify.app/register/createUser", sendData)
+fetch("https://ernestruzindana-be.cyclic.app/register/createUser", sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData.message)

@@ -37,7 +37,7 @@ async function createPost(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://myportfolio-be.netlify.app/login/loggedInUser", getData)
+    let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 
@@ -45,7 +45,7 @@ async function createPost(){
 
     var authorPicture
     if(fetchedData.imageLink){
-        authorPicture = `https://myportfolio-be.netlify.app/images/${fetchedData.imageLink}`
+        authorPicture = `https://ernestruzindana-be.cyclic.app/images/${fetchedData.imageLink}`
     }
 
     else{
@@ -84,7 +84,7 @@ async function createPost(){
         headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token"))})
     }
 
-fetch("https://myportfolio-be.netlify.app/createPost", sendData)
+fetch("https://ernestruzindana-be.cyclic.app/createPost", sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)

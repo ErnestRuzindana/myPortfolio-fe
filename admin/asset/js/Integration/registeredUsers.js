@@ -2,7 +2,7 @@
 
 async function fetchRegisteredUsers(){
         
-    let response = await fetch("https://myportfolio-be.netlify.app/register/getRegisteredUsers")
+    let response = await fetch("https://ernestruzindana-be.cyclic.app/register/getRegisteredUsers")
     
     const allUsers = await response.json(); 
     const users = allUsers.RegisteredUsers;
