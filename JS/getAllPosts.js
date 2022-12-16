@@ -120,7 +120,7 @@ async function getAllPosts(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://ernestruzindana-be.up.railway.app/getAllPosts", getData)
+    let response = await fetch("https://ernestruzindana-be.cyclic.app/getAllPosts", getData)
     const fetchedData = await response.json()
     hideBlogLoader()
     posts = fetchedData.allAvailablePosts;
