@@ -23,15 +23,6 @@ async function createPost(){
 
     console.log(postBody)
     
-    // //date
-    // var today = new Date();
-    // var dd = String(today.getDate()).padStart(2, '0');
-    // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    // var yyyy = today.getFullYear();
-
-    // today = mm + '/' + dd + '/' + yyyy;
-
-
     const getData = {
         method: "GET",
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
@@ -84,7 +75,7 @@ async function createPost(){
         headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token"))})
     }
 
-fetch("https://ernestruzindana-be.cyclic.app/createPost", sendData)
+await fetch("https://ernestruzindana-be.cyclic.app/createPost", sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)
