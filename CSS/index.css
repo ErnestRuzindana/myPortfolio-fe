@@ -3299,7 +3299,7 @@ div.contactform h2{
 
 div.contactform p{
     font-family: calibri;
-    font-size: 17px;
+    font-size: 16px;
     text-align: center;
 }
 
@@ -3446,7 +3446,7 @@ a.northArrow{
     border-radius: 5px;
     padding: 25px 10px 10px 10px;
     bottom: 20px;
-    left: 87.5%;
+    left: 89%;
     z-index: 2;
 }
 
@@ -3520,7 +3520,7 @@ div.skills_text h4{
 
 div.skills_text p{
     font-family: calibri;
-    font-size: 16.5px;
+    font-size: 16px;
 }
 
 div.skills_boxes{
@@ -3759,7 +3759,7 @@ div.FooterLogo a img:hover{
 
 div.myFooterCopyRight{
     text-align: center;
-    font-size: 15.5px;
+    font-size: 15px;
     padding-top: 15px;
     padding-bottom: 15px;
     background-color: black;
