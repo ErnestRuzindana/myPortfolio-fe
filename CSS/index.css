@@ -2879,9 +2879,9 @@ div.navlinks ul a{
 
 
 ul li.active a{
-    color: white;
+    color: var(--myColor);
     padding-top: 10px;
-    border-top: 3px solid white;
+    border-top: 3px solid var(--myColor);
 }
 
 ul li.active a.loginlinks{
