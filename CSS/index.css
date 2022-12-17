@@ -2839,10 +2839,6 @@ div.preNavLogo a img {
 
  
 
-section.nav{
-    width: 100%;
-}
-
 div.navbar{
     position: relative;
     display: grid;
@@ -2938,39 +2934,22 @@ div.logo{
 /* End Navigation bar */
 
 
-    /* Home section */
+     /* Home section */
+
+     div.intro p{
+        font-size: 5.1vw;
+    }
+
+    div.intro img{
+        width: 25%;
+    }
 
     .profile {
-        height: 475px;
-        width: 800px;
-    }
-    
-    div.intro {
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: space-around;
-        align-items: flex-start;
-        width: auto;
-        height: auto;
-        padding: 20px;
-        margin-top: -130px;
-        position: absolute;
-        top: 90px;
-        gap: 0vw;
-    }
-    
-    div.intro img{
-        width: 300px;
-        padding: 30px 0px 0px 70px;
-        margin-bottom: -70px;
+        height: 49vw;
     }
 
-    div.intro p{
-        font-size: 40px;
-    }
-    
 
-    /* End of Home section */
+/* End of home section */
 
 
 
@@ -3405,28 +3384,39 @@ div.myFooterCopyRight{
 
     /* ----------------------------------------------------------------------------------------- */
 
-    /* Home section */
+   /* Home section */
 
-    /* .profile {
-        height: 80vw;
-    }
+   .profile {
+    height: 470px;
+    width: 800px;
+}
 
-    div.intro {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 100%;
-        height: 50%;
-        padding: 2.5vw;
-        position: absolute;
-        top: 90px;
-        gap: 15vw;
-    }
+div.intro {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    margin-top: -130px;
+    position: absolute;
+    top: 90px;
+    gap: 0vw;
+}
 
-    div.intro img{
-        width: 36%;
-    } */
-    /* End of home section */
+div.intro img{
+    width: 290px;
+    padding: 35px 0px 0px 70px;
+    margin-bottom: -70px;
+}
+
+div.intro p{
+    font-size: 40px;
+}
+
+
+/* End of Home section */
 
     /* -------------------------------------------------------------------------------- */
 
@@ -3883,11 +3873,6 @@ div.myFooterCopyRight{
 
     /* -------------------------------------------------------------------------------- */
 
-@media only screen and (max-width: 313px) {
-    body{
-        overflow-x: hidden;
-    }
-}
 
     /* End of Responsive Designs */
 
