@@ -2974,7 +2974,7 @@ div.logo{
         }
     
         div.left p{
-            font-size: 18px;
+            font-size: 16px;
         }
     
         button.downloadCV{
@@ -3187,7 +3187,7 @@ h2.testimonialTitle{
 
 span.testimonialContainer p{
   font-family: calibri;
-  font-size: 18px;
+  font-size: 16.5px;
 }
 
 span.testimonialOwner{
@@ -3438,6 +3438,18 @@ div.myFooterCopyRight{
 
 /* End of footer section */
 
+a.northArrow{
+    --offset: 50px;
+    margin-top: calc(350vh + var(--offset));
+    position: sticky;
+    background-color: var(--myColor);
+    border-radius: 5px;
+    padding: 25px 10px 10px 10px;
+    bottom: 20px;
+    left: 87.5%;
+    z-index: 2;
+}
+
 }
 
 
@@ -3508,7 +3520,7 @@ div.skills_text h4{
 
 div.skills_text p{
     font-family: calibri;
-    font-size: 17px;
+    font-size: 16.5px;
 }
 
 div.skills_boxes{
@@ -3595,7 +3607,7 @@ div.myServicesBoxes h4{
 }
 
 div.myServicesBoxes p{
-    font-size: 18px;
+    font-size: 16.5px;
 }
 
 div.myServicesBoxes img{
@@ -3747,7 +3759,7 @@ div.FooterLogo a img:hover{
 
 div.myFooterCopyRight{
     text-align: center;
-    font-size: 10px;
+    font-size: 15.5px;
     padding-top: 15px;
     padding-bottom: 15px;
     background-color: black;
