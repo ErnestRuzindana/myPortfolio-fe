@@ -75,7 +75,7 @@ async function createPost(){
         headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token"))})
     }
 
-await fetch("https://ernestruzindana-be.cyclic.app/createPost", sendData)
+fetch("https://ernestruzindana-be.cyclic.app/createPost", sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)

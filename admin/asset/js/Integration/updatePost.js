@@ -83,10 +83,6 @@ function UpdatePost(){
         formData.append("headerImage", headerImage.files[0]);
         formData.append("title", postTitleDetails.value);
         formData.append("postBody", summernote.innerHTML);
-        // const data = {
-        //     postBody: summernote.innerHTML
-        // }
-
 
     const sendData = {
         method: "PUT",

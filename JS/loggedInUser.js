@@ -25,121 +25,6 @@ async function loggedInUser(){
   
       <title>Document</title>
 
-
-
-      <style>
-          
-        div.profilePicture img{
-            width: 50px; 
-            border-radius: 50%; 
-            cursor: pointer; 
-        }
-        
-        div.profilePictureIn img{
-            width: 100px; 
-            border-radius: 50%; 
-            cursor: pointer; 
-        }
-        
-        div.userProfile{
-            position: fixed;
-            background-color:rgb(88, 86, 86);
-            border-radius: 10px;
-            z-index: 3;
-            top: 83px;
-            right: 80px;
-            text-align: center;
-            padding-top: 20px;
-            color: white;
-            Height: auto;
-            border: 1px solid white;
-        }
-        
-        a.ManageAccountLink{
-            text-decoration: none;
-            border: 2px solid white;
-            padding: 7px;
-            border-radius: 10px;
-            color: white;
-            background: black;
-        }
-
-        a.ManageAccountLink:hover{
-            background: #cba10a;
-        }
-
-        div.profilePicture{
-            background: black;
-            color: #cba10a;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            line-height: 50px;
-            font-weight: bold;
-            font-size: 18px;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        img.topProfileImage{
-            border: 1px solid black;
-            width: 35px;
-            border-radius: 50%;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        img.inProfileImage{
-            border: 1px solid black;
-            width: 70px;
-            border-radius: 50%;
-            cursor: pointer;
-            text-align: center; 
-        }
-
-        div.profilePictureIn{
-            background: #cba10a;
-            color: black;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-left: 137px;
-            line-height: 80px;
-            font-weight: bold;
-            font-size: 30px;
-            cursor: pointer;
-        }
-
-        div.profilePictureIn:hover{
-            background: black;
-            color: #cba10a;
-        }
-
-        p.userFetchedEmail{
-            margin-top: -15px;
-            margin-bottom: 50px;
-        }
-
-        div.switchAccount{
-            border-top: 1px solid #cba10a;
-            padding-top: 20px;
-        }
-
-        p.switchAccountLink{
-            border: 1px solid white; 
-            padding: 5px; 
-            border-radius: 5px; 
-            cursor: pointer; 
-            background: grey;
-        }
-
-        p.switchAccountLink:hover{
-            background: white;
-            color: black;
-        }
-
-
-      </style>
   </head>
   <body>
       <div class="profilePicture" id="profilePicture">
@@ -156,18 +41,17 @@ async function loggedInUser(){
 
           <h3>${fetchedData.firstName} ${fetchedData.lastName}</h3>
           <p class="userFetchedEmail" style="font-weight: 500;">${fetchedData.email}</p>
-          <a href="userProfile.html" class="ManageAccountLink">Edit profile</a>
+          <a href="userProfile.html" class="ManageAccountLink"><i class="far fa-edit"></i> </nbsp>Edit profile</a>
           <br><br>
 
           <div class="switchAccount" style="font-weight: 500; padding: 20px;" id="adminPanel">
-                <p class="switchAccountLink"> 
-                <img style="width: 20px; margin-bottom: -5px;" src="../images/admin.jpg" alt="">
-                    Admin Panel
+                <p class="switchAccountLink">
+                <i class="fas fa-chalkboard-teacher"></i> </nbsp> Admin Panel
                 </p>
           </div>
 
           <div class="preNavLogout" style="border-top: 1px solid #cba10a;">
-              <h5><a onClick="preNavLogoutUser()">Logout</a></h5>
+              <h5><a onClick="preNavLogoutUser()"><i class="fa fa-sign-out"></i> </nbsp>Logout</a></h5>
           </div>
       </div>
       
