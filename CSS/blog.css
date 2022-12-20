@@ -24,9 +24,9 @@ html{
     display: none;
   }
   
-  #blog_preloader.show{
+  /* #blog_preloader.show{
     display: block;
-  }
+  } */
 
 
 body{
@@ -67,21 +67,21 @@ body::-webkit-scrollbar-thumb {
 div.leftBlogSide{
     display: flex;
     flex-direction: column;
-    padding: 1.5vw 0.5vw 0 0.5vw;
+    padding: 10px 7px;
     text-align: center;
-    gap: 1vw;
+    gap: 12px;
     position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
     background-color: rgb(88, 86, 86);
-    width:23%;
+    width: 23%;
     max-height: auto;
     /* box-shadow: 0px 0px 5px gray; */
 }
 
 div.leftBlogSide h3{
-    font-size: 1.8vw;
+    font-size: 25px;
     color: white;
 }
 
@@ -92,11 +92,11 @@ div.leftBlogSide img{
   margin-right: auto;
   margin-left: auto;
   vertical-align: middle;
-  padding: 0 3vw;
+  padding: 0 53px;
 }
 
 div.leftBlogSide p{
-    font-size: 1.1vw;
+    font-size: 16px;
     color: white;
     font-family: calibri;
 }
@@ -110,7 +110,7 @@ div.rightBlogSide{
 }
 
 div.blogSocioMedia{
-    padding-right: 37px;
+    padding-right: 39px;
 }
 
 div.blogSocioMedia ul{
@@ -122,13 +122,13 @@ div.blogSocioMedia ul{
 
 div.blogSocioMedia ul li{
     background-color: white;
-    padding: 0.4vw 0.8vw;
+    padding: 4px 9px;
     border-radius: 50%;
 }
 
 
 div.blogSocioMedia ul li a{
-    font-size: 1.2vw;
+    font-size: 15px;
     color: var(--myColor);
 }
 
@@ -145,439 +145,111 @@ p.siteRole{
 
 /* ---------------------------------------------------------------------------------- */
 
-/* PreNav Section */
 
-section.preNav{
-    background-color: var(--myColor);
-    width: 100%;
-}
-
-div.preNavLinks{
-    display: grid;
-    grid-template-columns: 18% 32% 50%;
-    align-items: center;
-    width: 100%;
+/* prenav section */
+div.userProfile{
+    margin: auto 20px auto auto;
 }
 
 div.preNavLogo{
-    padding: 0 5% 0 70%;
+    padding: 0 11% 0 50%;
     width: 100%;
-    margin-left: -50%;
+}
+div.preNavLinks{
+    display: grid;
+    grid-template-columns: 15% 60% 25%;
+    align-items: center;
+    width: 100%;
 }
 
-div.preNavLogo a img{
-    max-width: 120%;
+div.preNavDocumentation{
+    display: unset;
+}
+
+div.preNavSocioMedia{
+    margin-right: -100px;
+}
+
+a.preNavExercises div{
+    padding: 0;
+    font-size: 1rem;
+    color: var(--myBackground);
     transition: all 1s;
 }
 
-div.preNavLogo a img:hover{
-    transform: scale(1.2, 1.2);
-    opacity: 0.8;
+a.preNavExercises div:hover{
+    background-color: unset;
 }
 
-
-/* ----------------------------------------------------------------------------------------------------  */
-
-/* dropdown */
-div.preNavDocumentation{
-    width: 100%;
-    margin-left: -30%;
+div.preNavDocumentation a div h5{
+    transition: all 1s;
 }
 
-nav.dropDown{
-    display: flex;
-    justify-content: space-around;
+div.preNavDocumentation a div h5::before{
+content: ">";
+padding-right: 10px;
+font-weight: bold;
+color: black;
 }
 
-nav.dropDown > menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+div.preNavDocumentation a div h5:hover{
+        transform: scale(1.1,1.1);
 }
 
- nav.dropDown menuitem {
-    position:relative;
-    display:block;
-    opacity:0;
-    cursor:pointer;
-    background: var(--myColor);
- }
-
- 
- nav.dropDown menuitem > menu {
-    position: absolute;
-    display:none;
-    z-index: 3;
-    top: 35px;
- }
-
- 
- nav.dropDown > menu > menuitem { 
-    opacity:1;
- }
- menu menuitem a { 
-    white-space:nowrap; 
-    display:block; 
-    
+nav.dropDown menuitem > menu {
+    top: 30px;
 }
-    
-nav.dropDown menuitem:hover > menu {
-    display:block;
- }
 
- menuitem:hover > menu > menuitem,
- menu:hover > menuitem{
-    opacity:1;
- }
- nav.dropDown > menu > menuitem menuitem menu {
-    transform:translateX(100%);
-    top: -10px; right: 32px;
- }
- 
- 
- nav.dropDown a {
-    background: var(--myColor);
-    color:black;
-    font-weight: bold;
-    transition: background 0.5s, color 0.5s, transform 0.5s;
-    padding: 1.5vw 2vw;
-    box-sizing:border-box;
-    border-radius:3px;
-    position:relative;
-    font-size: 1vw;
- }
- 
- nav.dropDown a:hover:before {
-    content: '';
-    top: 0;
-    left:0;
-    position:absolute;
-    width:103.5%;
-    height:100%;
- }
- 
- /* nav.dropDown > menu > menuitem > a + menu:after{
-    content: '';
-    position:absolute;
-    border:10px solid transparent;
-    border-top: 10px solid white;
-    left: 0.4vw;
-    top: -2vw;  
- } */
+nav.dropDown a {
+    font-size: 1.7vw;
+    padding: 1.5vw 5vw;
+}
 
-
- /* nav.dropDown menuitem > menu > menuitem > a + menu:after{ 
-    content: '';
-    position:absolute;
-    border:10px solid transparent;
-    border-left: 10px solid white;
-    top: 20px;
-    left:-145px;
-    transition: opacity 0.6, transform 0s;
- } */
- 
- nav.dropDown > menu > menuitem > menu > menuitem{
-    transition: transform 0.6s, opacity 0.6s;
-    transform:translateY(0%);
-    opacity:0;
-    margin-bottom: 9px;
-    min-width:11rem;
-    border-radius: 10px;
- }
-
- nav.dropDown > menu > menuitem > menu > menuitem > menu > menuitem{
-    margin-bottom: 9px; 
-    min-width:11rem;
-    border-radius: 10px;
- }
-
- nav.dropDown > menu > menuitem > menu > menuitem > menu > menuitem > menu > menuitem{
-    margin-bottom: 9px; 
-    min-width:11rem;
-    border-radius: 10px; 
- }
-
- nav.dropDown > menu > menuitem > menu > menuitem a:hover{
-    opacity: 0.8;
- }
-
- nav.dropDown > menu > menuitem:hover > menu > menuitem,
- nav.dropDown > menu > menuitem.hover > menu > menuitem{
-    transform:translateY(0%);
-    opacity: 1;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
- }
- 
- menuitem > menu > menuitem > menu > menuitem{
-    transition: transform 0.6s, opacity 0.6s;
-    transform:translateX(195px) translateY(0%);
-    opacity: 0;
- } 
- menuitem > menu > menuitem:hover > menu > menuitem,  
- menuitem > menu > menuitem.hover > menu > menuitem{  
-    transform:translateX(0) translateY(0%);
-    opacity: 1;
- }
-
-
- /* dropdown */
-/* ------------------------------------------------------------------------------------------------------------ */
+a.preNavExercises div h5{
+    font-size: 1.4vw;
+}
 
 div.preNavLogin h5 a{
-   
-    font-size: 1vw;
-    color: black;
-    text-decoration: none;
-    background-color: var(--myColor);
-    padding: 5px 1.5vw 5px 1.5vw;  
-    border: 2px solid white;
-    border-radius: 20px;
-    transition: all 1s;
-    margin-left: -35%;
+    font-size: 1.6vw;
 }
 
-
-div.preNavLogin h5 a:hover{
-    text-decoration: none;
-    color: var(--myColor);
-    background-color: white;
-    cursor: pointer;
-    padding: 5px 20px 5px 20px;  
-    border: 2px solid white;
-    border-radius: 20px;
-}
-
-div.preNavLogout h5 a{
-   
-    font-size: 1vw;
-    color: black;
-    text-decoration: none;
-    background-color: var(--myColor);
-    padding: 5px 1.5vw 5px 1.5vw;  
-    border: 2px solid white;
-    border-radius: 20px;
-    transition: all 1s;
-}
-
-div.preNavLogout h5 a:hover{
-    text-decoration: none;
-    color: var(--myColor);
-    background-color: white;
-    cursor: pointer;
-    padding: 5px 20px 5px 20px;  
-    border: 2px solid white;
-    border-radius: 20px;
-}
-
-div.preNavSocioMediaLogin{
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-div.preNavSocioMedia ul{
-    display: flex;
-    list-style-type: none;
-    margin-left: -25%;
-}
-
-div.preNavSocioMedia ul li a img{
-    transition: 1s;
-}
-
-div.preNavSocioMedia ul li a img:hover{
-    background-color: white;
-    border-radius: 50%;
-}
+/* End of prenav section */
 
 
-div.preNavLinks ul li a{
-    font-size: 20px;
-    width: 20px;
-    justify-content: center;
-    padding-right: 30px;
-    color: var(--myBackground);
-}
+/* Navigation bar */    
 
-div.preNavLinks ul li a img{
-    width: 2vw;
-}
-
-/* div.preNavLinks ul li a img:hover{
-    opacity: 50%;
-} */
-
-div.profilePicture img{
-    width: 50px; 
-    border-radius: 50%; 
-    cursor: pointer; 
-}
-
-div.profilePictureIn img{
-    width: 100px; 
-    border-radius: 50%; 
-    cursor: pointer; 
-}
-
-div.userProfile{
-    position: fixed;
-    background-color:rgb(88, 86, 86);
-    width: 350px;
-    border-radius: 10px;
-    z-index: 3;
-    top: 70px;
-    right: 80px;
-    text-align: center;
-    padding-top: 20px;
-    color: white;
-}
-
-a.ManageAccountLink{
-    text-decoration: none;
-    border: 2px solid white;
-    padding: 7px;
-    border-radius: 10px;
-    color: white;
-}
-
-
-
-/* End of preNav Section */
-
-/* ------------------------------------------------------------------------------------------------------------------------------ */
-
-
-/* Navigation bar */
-
-
-nav.menu-btn{
-    display: block;
-}
-
-section.nav{
-    position: sticky;
-    top: 0;
-    background-color: white;
-    width: 100%;
-    box-shadow: 0.1px 1px 2px grey;
-    z-index: 2;
+div.logo{
+    display: none;
 }
 
 div.navbar{
-    display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
-    width: 100%;
-    justify-content: center;
+    grid-template-columns: auto;
+    padding: 0 10px 0 0px;
 }
-
-/* nav{
-    display: grid;
-    grid-template-columns: 75% 23%;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-} */
-.logo a{
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.5vw;
-    padding: 0;
-    color: var(--myBackground);
-}
-
-.logo {
-    text-align: center;
-    width: 100%;
-}
-
-.logo a{
-    display: none;
-}
-
-
-
-.logo a:hover{
-    opacity: 0.5;
-}
-
-div.toggleButton{
-    display: none;
-}
-
-li.closeButton{
-    display: none;
-}
-
 
 .navlinks ul{
     display: flex;
     align-items: center;
-    gap: 4.5vw;
-}
-
-.navlinks ul li{
-    list-style-type: none;
+    gap: 3.5vw;
 }
 
 .navlinks ul li a{
     text-decoration: none;
-    color: var(--myBackground);
-    font-size: 1vw;
+    font-size: 1.7vw;
     font-weight: bold;
     transition: all 1s;
 }
 
-.navlinks ul li a:hover{
-    color: var(--myColor);
-    padding-top: 10px;
-    border-top: 3px solid var(--myColor);
-}
-
-ul li.active a{
-    color: var(--myColor);
-    padding-top: 10px;
-    border-top: 3px solid var(--myColor);
-}
-
-
-a.loginlinks{
-    text-decoration: none;
-    text-align: center;
-    color: var(--myBackground);
-    font-weight: bold;
-}
-
-ul li.loginlinksLi{
-    border: 3px solid var(--myColor);
-    border-radius: 20px;
-    padding: 0.15vw 1.5vw;
-    margin-right: 3vw;
-    list-style-type: none;
-}
-
-ul li.loginlinksLi:hover{
-    color: white;
-    background-color: var(--myColor);
-}
-
 ul li.loginlinksLi a{
-  font-size: 1vw;
+font-size: 1.7vw;
 }
 
-ul li.loginlinksLi a:hover{
-    color: white;
-}
-
-.pass a{
-    color: var(--myColor);
-    font-weight: 501;
-    font-size: 14px;
-}
 
 
 /* End of navigation bar */
+
+
+
 
 
 /* ------------------------------------------------------------------------------------------------------------------------------ */
@@ -585,21 +257,21 @@ ul li.loginlinksLi a:hover{
  /*Blog section */
 
  section.Blog{
-    padding: 3vw 5vw;
+    /* padding: 0px 0px; */
  }
 
  div.myBlog{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    gap: 5vw;
+    gap: 0vw; */
  }
 
 div.blogBoxes{
     display: grid;
-    grid-template-columns: 30% 70%;
-    gap: 3vw;
+    grid-template-columns: 27% 70%;
+    gap: 3%;
     border-bottom: 1px solid rgb(131, 131, 131);
-    padding: 3vw;
+    padding: 40px;
 }
 
 div.blogImage{
@@ -614,11 +286,11 @@ div.blogImage img{
 div.blogAuthor{
     display: flex;
     align-items: center;
-    gap: 1vw;
+    gap: 13px;
 }
 
 div.blogAuthor small{
-    font-size: 0.80vw;
+    font-size: 12.5px;
     font-weight: bold;
     color: rgb(131, 131, 131);
 }
@@ -626,24 +298,20 @@ div.blogAuthor small{
 div.blogAuthor small a{
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.95vw;
+    font-size: 13.5px;
     font-family: poppins;
     color: rgb(131, 131, 131);
 }
 
-div.blogContent{
-    padding-right: 5vw;
-}
 
 p.ContentSection{
     text-align: justify;
     font-family: calibri;
-    font-size: 1.25vw;
 }
 div.blogContent h3 a{
     text-decoration: none;
     color: black;
-    font-size: 1.4vw;
+    font-size: 23px;
 }
 
 div.blogContent h3 a:hover{
@@ -660,25 +328,25 @@ a.readmore{
     color: var(--myColor);
     text-decoration: none;
     font-weight: bold;
-    font-size: 1vw;
+    font-size: 15px;
 }
 
 div.authorImageCharts{
     background: black;
     color: #cba10a;
-    width: 50px;
-    height: 50px;
+    width: 39px;
+    height: 39px;
     border-radius: 50%;
-    line-height: 50px;
+    line-height: 39px;
     font-weight: bold;
-    font-size: 19px;
+    font-size: 18.5px;
     cursor: pointer;
     text-align: center;
     padding-right: 2.5px;
 }
 
 img.AuthorImage{
-    width: 7%;
+    width: 38px;
     border-radius: 50%;
 }
 
@@ -690,26 +358,26 @@ img.AuthorImage{
 
 /* Pagination */
 
-div.myPagination{
+/* div.myPagination{
     margin-bottom: 4vw;
-}
+} */
 ul.pageLinks{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 20px;
-    padding: 0 15vw;
+    gap: 25px;
+    padding: 10px;
     list-style-type: none;
     align-items: center;
 }
 ul.pageLinks button{
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.9vw;
+    font-size: 13px;
     color: var(--myBackground);
     background-color: var(--myColor);
     border-radius: 5px;
-    padding: 0.3vw 1vw;
+    padding: 4px 15px;
 }
 
 ul.pageLinks button:hover{
@@ -726,172 +394,11 @@ ul.pageLinks button:hover{
 
 
 
-/* Footer section */
-div.myFooter p, div.myFooter h2, div.myFooter h3, div.myFooter h4, div.myFooter a{
-    color: white;
-}
 
-div.myFooterTopForm input[type="email"] {
-    padding: 0.8vw 10vw 0.8vw 0.8vw;
-    border-radius: 5px;
-}
-
-div.myFooterTopForm input[type="email"]::placeholder{
-    font-size: 1vw;
-}
-
-div.myFooterTopForm input[type="submit"] {
-    padding: 0.8vw;
-    font-size: 1vw;
-    background-color: var(--myColor);
-    border-radius: 5px;
-}
-
-div.myFooterTopForm input[type="submit"]:hover {
-    background-color: grey;
-    cursor: pointer;
-}
-
-div.myFooterTop{
-    display: grid;
-    grid-template-columns: 40% 40%;
-    align-items: center;
-    gap: 0 4vw;
-    padding-left: 5vw;
-    padding-top: 3vw;
-    background-color: rgb(39, 38, 38);
-
-}
-
-div.myFooterTopBeFirst h3, div.myFooterTopBeFirst p{
-    font-size: 1.25vw;
-}
-
-
-div.myFooterTop p.border{
-    border-top: 1px solid rgb(83, 81, 81);
-}
-
-
-div.myFooterBottom{
-    display: grid;
-    grid-template-columns: 40% 20% 20%;
-    justify-content: center;
-    gap: 5vw;
-    background-color: rgb(39, 38, 38);
-    padding-top: 1vw;
-    width: 100%;
-}
-
-div.myFooterAbout h4{
-    text-align: left;
-    font-size: 1.25vw;
-
-}
-
-div.myFooterAbout p{
-    text-align: justify;
-    font-size: 1.15vw;
-}
-
-div.myFooterLinks h4{
-    text-align: center;
-    font-size: 1.25vw;
-}
-
-div.myFooterLinks{
-    padding-right: 2vw;
-}
-
-div.myFooterLinks ul li{
-    list-style-type: none;
-    margin-left: 1vw;
-    transition: all 1s;
-}
-
-
-div.myFooterLinks ul li:hover{
-    margin-left: 2.5vw;
-}
-
-div.myFooterLinks ul li::before{
-    content: ">";
-    padding-right: 0.8vw;
-    font-weight: bold;
-    color: white;
-}
-
-div.myFooterLinks ul li a{
-    text-decoration: none;
-    font-size: 1vw;
-    line-height: 2vw;
-}
-
-div.myFooterLinks ul li a:hover{
-    font-weight: bold;
-}
-
-
-div.myFooterSocialMedia h4{
-    text-align: left;
-    padding-left: 3vw;
-    padding-bottom: 0.6vw;
-    font-size: 1.25vw;
-}
-
-div.myFooterSocialMedia ul{
-    display: flex;
-    list-style-type: none;
-    justify-content: space-between;
-}
-
-div.myFooterSocialMedia ul li a{
-    font-size: 1.5vw;
-    transition: all 1s;
-}
-
-div.myFooterSocialMedia ul li a:hover{
-    color: var(--myColor);
-    /* font-size: 2vw; */
-}
-
-div.FooterLogo{
-    padding: 0.8vw 13vw 3vw 10vw;
-}
-div.FooterLogo a img{
-    width: 40%;
-    transition: all 1s;
-}
-
-div.FooterLogo a img:hover{
-    transform: scale(1.2, 1.2);
-    opacity: 0.8;
-}
-
-div.myFooterCopyRight{
-    text-align: center;
-    font-size: 1vw;
-    padding-top: 1.5vw;
-    padding-bottom: 1.5vw;
-    background-color: black;
-    margin-bottom: -80px;
-}
-
-/* End of footer section */
 
 /* -------------------------------------------------------------------------------------------------------------------------- */
 
-/* NorthArrow */
-a.northArrow{
-    --offset: 50px;
-    margin-top: calc(350vh + var(--offset));
-    position: sticky;
-    background-color: var(--myColor);
-    border-radius: 5px;
-    padding: 15px;
-    bottom: 20px;
-    left: 96%;
-}
+
 
 /* End of northArrow direction */
 
@@ -902,7 +409,7 @@ a.northArrow{
 
 /* Responsive Designs */
 @media only screen and (max-width: 1300px) {
-    .homeboxesContainer a{
+    /* .homeboxesContainer a{
         display: block;
       }
 
@@ -915,54 +422,14 @@ a.northArrow{
     ul.pageLinks button{
         font-size: 1vw;
         padding: 0.3vw 1vw;
-    }
+    } */
 
 }
 
 @media only screen and (max-width: 1205px) {
-    div.preNavLogin h5 a{
    
-        font-size: 1vw;
-        color: black;
-        text-decoration: none;
-        background-color: var(--myColor);
-        padding: 5px 20px 5px 20px;  
-        border: 2px solid white;
-        border-radius: 20px;
-        transition: all 1s;
-        margin-left: -75%;
-    }
 
-    .navlinks ul{
-        gap: 4.3vw;
-    }
-
-    .navlinks ul li a{
-        font-size: 1.1vw;
-    }
-    ul.pageLinks button{
-        font-size: 1.1vw;
-        padding: 0.3vw 1vw;
-    }
-
-    div.blogAuthor small{
-        font-size: 0.85vw;
-    }
-    div.blogAuthor small a{
-        font-size: 1vw;
-    }
-    p.ContentSection{
-        font-size: 1.25vw;
-    }
-    div.blogContent h3 a{
-        font-size: 1.4vw;
-    }
-    p.blogLikesComments{
-        font-size: 0.85vw;
-    }
-    a.readmore{
-        font-size: 1.05vw;
-    }
+    
 }
 
 @media only screen and (max-width: 1108px) {
@@ -971,672 +438,56 @@ a.northArrow{
 
      div.leftBlogSide{
         display: grid;
-        padding: 0 0 1.5vw 0vw;
-        margin-bottom: -5vw;
         text-align: center;
         gap: unset;
         position: unset;
         left: unset;
         top: unset;
         bottom: unset;
-        background-color: rgb(88, 86, 86);
         width: 100%;
         max-height: auto;
-        /* box-shadow: 0px 0px 5px gray; */
-    }
-    
-    div.leftBlogSide h3{
-        font-size: 2.4vw;
-        color: white;
-    }
-    
-    div.leftBlogSide img{
-      max-width: 23%;
-      border-radius: 50%;
-      margin-right: auto;
-      margin-left: auto;
-      vertical-align: middle;
-      padding: 0 3vw;
-    }
-    
-    div.leftBlogSide p{
-        font-size: 1.8vw;
-        color: white;
-        font-family: calibri;
-        padding: 20px 15vw 20px 15vw;
-    }
-    
-    div.leftBlogSide p a{
-        color: var(--myColor);
     }
     
     div.rightBlogSide{
         margin-left: unset;
     }
-    
-    div.blogSocioMedia{
-        padding-right: unset;
-    }
-    
-    div.blogSocioMedia ul{
-        display: flex;
-        justify-content: center;
-        gap: 3vw;
-    }
-    
-    div.blogSocioMedia ul li{
-        background-color: white;
-        padding: 0.5vw 1vw;
-        border-radius: 50%;
-    }
-    
-    div.blogSocioMedia ul li a{
-        font-size: 2vw;
-        color: var(--myColor);
-    }
 
-    p.siteRole{
-        margin: 0 2vw;
-    }
+    div.leftBlogSide img{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto auto 12px auto;
+        vertical-align: middle;
+        padding: unset;
+      }
+    
+    
+   
     
     /* Parent container */
     
-    /*Blog section */
     
-    section.Blog{
-        padding: 3vw 5vw;
-     }
-    
-     div.myBlog{
-        display: grid;
-     }
-    
-    div.blogBoxes{
-        display: grid;
-        grid-template-columns: 30% 70%;
-        gap: 3vw;
-        border-bottom: 1px solid rgb(131, 131, 131);
-        padding: 3vw;
-    }
-    
-    div.blogImage img{
-        width: 100%;
-    }
-    
-    div.blogAuthor{
-        display: flex;
-        align-items: center;
-        gap: 1vw;
-    }
-    
-    
-    div.blogContent{
-        padding-right: 5vw;
-    }
-
-    div.blogContent h3 a:hover{
-        text-decoration: underline;
-    }
-    
-    p.blogLikesComments{
-        color: rgb(131, 131, 131);
-        font-weight: bold;
-        font-size: 0.8vw;
-    }
-    
-    ul.pageLinks button{
-        font-size: 1.3vw;
-        padding: 0.3vw 1vw;
-    }
-
-    div.blogAuthor small{
-        font-size: 1.045vw;
-    }
-    div.blogAuthor small a{
-        font-size: 1.2vw;
-    }
-    p.ContentSection{
-        font-size: 1.55vw;
-    }
-    div.blogContent h3 a{
-        font-size: 1.8vw;
-    }
-    p.blogLikesComments{
-        font-size: 1.045vw;
-    }
-    a.readmore{
-        font-size: 1.2vw;
-    }
-    
-    /* End of Blog section */
-    
-    
-/* PreNav Section */
-
-section.preNav{
-    background-color: var(--myColor);
-    width: 100%;
-}
-
-div.preNavLinks{
-    display: grid;
-    grid-template-columns: 18% 32% 50%;
-    align-items: center;
-    width: 100%;
-}
-
-div.preNavLogo{
-    padding: 0 5% 0 70%;
-    width: 100%;
-    margin-left: -50%;
-}
-
-div.preNavLogo a img{
-    max-width: 120%;
-    transition: all 1s;
-}
-
-div.preNavLogo a img:hover{
-    transform: scale(1.2, 1.2);
-    opacity: 0.8;
-}
-
-
-/* ----------------------------------------------------------------------------------------------------  */
-
-/* dropdown */
- 
- 
- nav.dropDown a {
-    background: var(--myColor);
-    color:black;
-    font-weight: bold;
-    transition: background 0.5s, color 0.5s, transform 0.5s;
-    padding: 1.5vw 2vw;
-    box-sizing:border-box;
-    border-radius:3px;
-    position:relative;
-    font-size: 1.3vw;
- }
- 
- nav.dropDown a:hover:before {
-    content: '';
-    top: 0;
-    left:0;
-    position:absolute;
-    width:103.5%;
-    height:100%;
- }
-
-
- /* dropdown */
-/* ------------------------------------------------------------------------------------------------------------ */
-
-div.preNavLogin h5 a{
-   
-    font-size: 1.3vw;
-    color: black;
-    text-decoration: none;
-    background-color: var(--myColor);
-    padding: 5px 2vw 5px 2vw;  
-    border: 2px solid white;
-    border-radius: 20px;
-    transition: all 1s;
-    margin-left: -35%;
-}
-
-
-div.preNavSocioMediaLogin{
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-div.preNavSocioMedia ul{
-    display: flex;
-    list-style-type: none;
-    margin-left: -25%;
-}
-
-div.preNavSocioMedia ul li a img{
-    transition: 1s;
-}
-
-div.preNavSocioMedia ul li a img:hover{
-    background-color: white;
-    border-radius: 50%;
-}
-
-
-div.preNavLinks ul li a{
-    font-size: 20px;
-    width: 20px;
-    justify-content: center;
-    padding-right: 30px;
-    color: var(--myBackground);
-}
-
-div.preNavLinks ul li a img{
-    width: 2.5vw;
-}
-
-
-div.profilePicture img{
-    width: 50px; 
-    border-radius: 50%; 
-    cursor: pointer; 
-}
-
-div.profilePictureIn img{
-    width: 100px; 
-    border-radius: 50%; 
-    cursor: pointer; 
-}
-
-div.userProfile{
-    position: fixed;
-    background-color:rgb(88, 86, 86);
-    width: 350px;
-    border-radius: 10px;
-    z-index: 3;
-    top: 70px;
-    right: 80px;
-    text-align: center;
-    padding-top: 20px;
-    color: white;
-}
-
-a.ManageAccountLink{
-    text-decoration: none;
-    border: 2px solid white;
-    padding: 7px;
-    border-radius: 10px;
-    color: white;
-}
-
-
-
-/* End of preNav Section */
-
-     /*navigation bar section */
-    
-     .logo a{
-        display: block;
-        margin-right: 1.5vw;
-        margin-left: 1.5vw;
-        font-size: 1.65vw;
-    }
-
-    .navlinks ul li a{
-        font-size: 1.2vw;
-    }
-    
-    
-    /* End Navigation bar */
-      
-
-
-/* Footer section */
-
-div.myFooterTopForm input[type="email"] {
-    padding: 0.8vw 10vw 0.8vw 0.8vw;
-}
-
-div.myFooterTopForm input[type="email"]::placeholder{
-    font-size: 1.2vw;
-}
-
-div.myFooterTopForm input[type="submit"] {
-    padding: 0.8vw;
-    font-size: 1.2vw;;
-}
-
-div.myFooterTop{
-    display: grid;
-    grid-template-columns: 40% 40%;
-    align-items: center;
-    gap: 0 4vw;
-    padding-left: 5vw;
-    padding-top: 3vw;
-    background-color: rgb(39, 38, 38);
-
-}
-
-div.myFooterTopBeFirst h3, div.myFooterTopBeFirst p{
-    font-size: 1.4vw;
-}
-
-div.myFooterBottom{
-    display: grid;
-    grid-template-columns: 40% 20% 20%;
-    justify-content: center;
-    gap: 5vw;
-    background-color: rgb(39, 38, 38);
-    padding-top: 1vw;
-    width: 100%;
-}
-
-div.myFooterAbout h4{
-    font-size: 1.4vw;
-}
-
-div.myFooterAbout p{
-    font-size: 1.3vw;
-}
-
-div.myFooterLinks h4{
-    font-size: 1.4vw;
-}
-
-div.myFooterLinks{
-    padding-right: 0;
-    width: 100%;
-}
-
-div.myFooterLinks ul li{
-    list-style-type: none;
-    margin-left: 2vw;
-    transition: all 1s;
-}
-
-
-div.myFooterLinks ul li:hover{
-    margin-left: 2.5vw;
-}
-
-div.myFooterLinks ul li::before{
-    content: ">";
-    padding-right: 0.8vw;
-    font-weight: bold;
-    color: white;
-}
-
-div.myFooterLinks ul li a{
-    text-decoration: none;
-    font-size: 1.22vw;
-    line-height: 2vw;
-}
-
-div.myFooterLinks ul li a:hover{
-    font-weight: bold;
-}
-
-
-div.myFooterSocialMedia h4{
-    text-align: left;
-    padding-left: 3vw;
-    padding-bottom: 0.5vw;
-    font-size: 1.25vw;
-}
-
-div.myFooterSocialMedia ul{
-    display: flex;
-    flex-direction: column;
-    gap: 1vw;
-    margin-left: 4vw;
-    list-style-type: none;
-    justify-content: space-between;
-}
-
-div.FooterLogo{
-    padding: 0.8vw 13vw 3vw 10vw;
-}
-div.FooterLogo a img{
-    width: 40%;
-    transition: all 1s;
-}
-
-div.FooterLogo a img:hover{
-    transform: scale(1.2, 1.2);
-    opacity: 0.8;
-}
-
-div.myFooterCopyRight{
-    text-align: center;
-    font-size: 1vw;
-    padding-top: 1.5vw;
-    padding-bottom: 1.5vw;
-    background-color: black;
-    margin-bottom: -80px;
-}
-
-/* End of footer section */
 
 
 }
 
 @media only screen and (max-width: 937px) {
 
-    div.preNavLogin h5 a{
    
-        font-size: 1.3vw;
-        color: black;
-        text-decoration: none;
-        background-color: var(--myColor);
-        padding: 5px 1.5vw 5px 1.5vw;  
-        border: 2px solid white;
-        border-radius: 20px;
-        transition: all 1s;
-        margin-left: -75%;
-    }
-
-    ul.pageLinks button{
-        font-size: 1.6vw;
-        padding: 0.3vw 1vw;
-    }
-
-    div.blogAuthor small{
-        font-size: 1.2vw;
-    }
-    div.blogAuthor small a{
-        font-size: 1.35vw;
-    }
-    p.ContentSection{
-        font-size: 1.8vw;
-    }
-    div.blogContent h3 a{
-        font-size: 2vw;
-    }
-    p.blogLikesComments{
-        font-size: 1.2vw;
-    }
-    a.readmore{
-        font-size: 1.45vw;
-    }
 
     
-    /* Login form */
+/* Blog section */
 
-div.myLogin{
-    padding: 5vw 0;
-}
-
-.center{
-  padding: 1.5vw 0 4.5vw 0;
-  width: 40%;
-}
-
-.center h1{
-  padding: 1vw 0;
-  font-size: 2.3vw;
-}
-.center form{
-  padding: 0 2.5vw;
-}
-
-.txt_field input{
-  font-size: 1.8vw;
-}
-
-.txt_field label{
-  font-size: 1.8vw;
-}
-
-.pass a{
-    font-size: 1.5vw;
-}
-
-input.loginType{
-  font-size: 1.9vw;
-  padding: 0.8vw 0;
-}
-
-label.checkbox{
-  font-size: 1.5vw;
-}
-
-.signup {
- text-align: center;
- font-size: 1.7vw;
-}
+    div.blogBoxes{
+        grid-template-columns: 30% 67%;
+        padding: 10px 25px 30px;
+    }
 
 
-.signup a{
-    color: var(--myColor);
-    font-weight: 501;
-    font-size: 1.6vw;
-}
+/* End of Blog section */
 
 
 
-/* End of Login form */
-
-
-/* Footer section */
-
-div.myFooterTopForm input[type="email"] {
-    padding: 0.8vw 10vw 0.8vw 0.8vw;
-}
-
-div.myFooterTopForm input[type="email"]::placeholder{
-    font-size: 1.4vw;
-}
-
-div.myFooterTopForm input[type="submit"] {
-    padding: 0.8vw;
-    font-size: 1.4vw;
-}
-
-div.myFooterTop{
-    display: grid;
-    grid-template-columns: auto;
-    gap: 2vw;
-    align-items: center;
-    padding-left: 5vw;
-    padding-top: 3vw;
-    background-color: rgb(39, 38, 38);
-}
-
-div.myFooterTopBeFirst h3, div.myFooterTopBeFirst p{
-    font-size: 1.7vw;
-}
-
-div.myFooterBottom{
-    display: grid;
-    grid-template-columns: 40% 40%;
-    justify-content: center;
-    background-color: rgb(39, 38, 38);
-    padding-top: 1vw;
-    width: 100%;
-    gap: 1vw;
-}
-
-div.myFooterAbout h4{
-    font-size: 1.7vw;
-}
-
-div.myFooterAbout p{
-    font-size: 1.55vw;
-}
-
-div.myFooterLinks h4{
-    font-size: 1.7vw;
-}
-
-div.myFooterLinks{
-    width: 100%;
-}
-
-div.myFooterLinks ul li{
-    list-style-type: none;
-    margin-left: 11vw;
-    transition: all 1s;
-}
-
-
-div.myFooterLinks ul li:hover{
-    margin-left: 11.5vw;
-}
-
-div.myFooterLinks ul li::before{
-    content: ">";
-    padding-right: 0.8vw;
-    font-weight: bold;
-    color: white;
-}
-
-div.myFooterLinks ul li a{
-    text-decoration: none;
-    font-size: 1.6vw;
-    line-height: 3.5vw;
-}
-
-div.myFooterLinks ul li a:hover{
-    font-weight: bold;
-}
-
-
-div.myFooterSocialMedia h4{
-    text-align: left;
-    padding-bottom: 0.5vw;
-    font-size: 1.7vw;
-    margin-left: -3vw;
-}
-
-div.myFooterSocialMedia ul{
-    display: flex;
-    flex-direction: unset;
-    list-style-type: none;
-    justify-content: space-between;
-    margin-left: 0.5vw;
-}
-
-div.myFooterSocialMedia ul li a{
-    font-size: 2vw;
-    transition: all 1s;
-}
-
-div.myFooterSocialMedia ul li a:hover{
-    color: var(--myColor);
-    font-size: 2.5vw;
-}
-
-div.FooterLogo{
-    padding: 0.8vw 13vw 3vw 10vw;
-}
-div.FooterLogo a img{
-    width: 40%;
-    transition: all 1s;
-}
-
-div.FooterLogo a img:hover{
-    transform: scale(1.2, 1.2);
-    opacity: 0.8;
-}
-
-div.myFooterCopyRight{
-    text-align: center;
-    font-size: 1.5vw;
-    padding-top: 1.5vw;
-    padding-bottom: 1.5vw;
-    background-color: black;
-    margin-bottom: -80px;
-}
-
-body{
-    overflow-x: hidden;
-}
 
 }
 
@@ -1644,415 +495,35 @@ body{
 
 @media only screen and (max-width: 801px) {
 
-    div.leftBlogSide h3{
-        font-size: 3.2vw;
-        color: white;
-    }
-div.leftBlogSide p{
-        font-size: 2.3vw;
-        color: white;
-        font-family: calibri;
-        padding: 20px 15vw 20px 15vw;
-    }
-
-    ul.pageLinks button{
-        font-size: 1.9vw;
-        padding: 0.3vw 1vw;
-    }
-
-    div.blogAuthor small{
-        font-size: 1.4vw;
-    }
-    div.blogAuthor small a{
-        font-size: 1.6vw;
-    }
-    p.ContentSection{
-        font-size: 2vw;
-    }
-    div.blogContent h3 a{
-        font-size: 2.6vw;
-    }
-    p.blogLikesComments{
-        font-size: 1.4vw;
-    }
-    a.readmore{
-        font-size: 1.65vw;
-    }
-    /*navigation bar section */
-
- section.preNav {
-    display: none;
-}
-
-section.nav{
-    width: 100%;
-}
-
-div.navbar{
-    position: relative;
-    display: grid;
-    grid-template-columns: auto;
-    width: 100%;
-    justify-content: unset;
-}
+    
 
 
-div.intro img{
-    width: 30%;
-}
-
-div.toggleButton{
-    display: block;
-    cursor: pointer;
-    font-size: 100%;
-}
-
-li.closeButton{
-    display: block;
-    font-size: 30px;
-    padding-left: 200%;
-    color: rgb(156, 9, 9);
-    cursor: pointer;
-}
-
-nav{
-display: none;
-}
-
-div.navlinks ul{
-    position: absolute;
-    display: flex;
-    background-color: var(--myColor);
-    flex-direction: column;
-    top: -16px;
-    right: 0;
-    padding: 10px 70px 25px;
-    gap: 30px;
-}
-
-
-ul li.active a{
-    color: white;
-    padding-top: 10px;
-    border-top: 3px solid white;
-}
-
-ul li.active a.loginlinks{
-    border-top: unset;
-    padding-top: 25px;
-}
-
-.navlinks ul li a{
-    text-align: center;
-    font-size: 13px;
-}
-
-.navlinks ul li a:hover{
-    color: white;
-    padding-top: 8px;
-    border-top: 3px solid white;
-}
-
-div.logo{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center; 
-    padding: 2vw 5vw;
-    gap: 30%;       
-}
-
-.logo a{
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 100%;
-    color: var(--myBackground);
-    font-size: 2.5vw;
-}
-
-
-/* End Navigation bar */
+    
+   
 }
 
 
 @media only screen and (max-width: 730px) {
 
-    div.leftBlogSide h3{
-        font-size: 3.7vw;
-        color: white;
-    }
-div.leftBlogSide p{
-        font-size: 2.5vw;
-        color: white;
-        font-family: calibri;
-        padding: 20px 15vw 20px 15vw;
-    }
-    ul.pageLinks button{
-        font-size: 2.2vw;
-        padding: 0.3vw 1vw;
-    }
-.logo a{
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 100%;
-    color: var(--myBackground);
-    font-size: 2.7vw;
-}
+    
 
 /*Blog section */
 
-section.Blog{
-    padding: 3vw 5vw;
- }
-
- div.myBlog{
-    display: grid;
- }
-
 div.blogBoxes{
-    display: grid;
-    grid-template-columns: 30% 70%;
-    gap: 3vw;
+    grid-template-columns: auto;
+    gap: 0%;
     border-bottom: 1px solid rgb(131, 131, 131);
-    padding: 3vw;
+    padding: 30px 20px;
 }
-
-div.blogImage img{
-    width: 100%;
-}
-
-div.blogAuthor{
-    display: flex;
-    align-items: center;
-    gap: 1vw;
-}
-
-
-div.blogAuthor small{
-    font-size: 1.7vw;
-}
-div.blogAuthor small a{
-    font-size: 1.9vw;
-}
-p.ContentSection{
-    font-size: 2.3vw;
-}
-div.blogContent h3 a{
-    font-size: 2.9vw;
-}
-p.blogLikesComments{
-    font-size: 1.7vw;
-}
-a.readmore{
-    font-size: 1.95vw;
-}
-
-div.blogContent{
-    padding-right: 5vw;
-}
-
-div.blogContent h3 a{
-    text-decoration: none;
-    color: black;
-}
-
-div.blogContent h3 a:hover{
-    text-decoration: underline;
-}
-
 
 
 /* End of Blog section */
 
- /* Login form */
-
- div.myLogin{
-    padding: 8vw 0;
-}
-
-.center{
-  padding: 1.5vw 0 4.5vw 0;
-  width: 45%;
-}
-
-.center h1{
-  padding: 1vw 0;
-  font-size: 2.7vw;
-}
-.center form{
-  padding: 0 2.5vw;
-}
-
-.txt_field input{
-  font-size: 1.9vw;
-}
-
-.txt_field label{
-  font-size: 2.05vw;
-}
-
-.pass a{
-    font-size: 1.8vw;
-}
-
-input.loginType{
-  font-size: 2.3vw;
-  padding: 0.8vw 0;
-}
-
-label.checkbox{
-  font-size: 1.8vw;
-}
-
-.signup {
- text-align: center;
- font-size: 2vw;
-}
-
-
-.signup a{
-    color: var(--myColor);
-    font-weight: 501;
-    font-size: 1.9vw;
-}
+ 
 
 
 
-/* End of Login form */
 
-
-
-/* Footer section */
-
-div.myFooterTopForm input[type="email"] {
-    padding: 0.8vw 10vw 0.8vw 0.8vw;
-}
-
-div.myFooterTopForm input[type="email"]::placeholder{
-    font-size: 1.8vw;
-}
-
-div.myFooterTopForm input[type="submit"] {
-    padding: 0.8vw;
-    font-size: 1.8vw;
-}
-
-div.myFooterTop{
-    display: grid;
-    grid-template-columns: auto;
-    gap: 2vw;
-    align-items: center;
-    padding-left: 5vw;
-    padding-top: 3vw;
-    background-color: rgb(39, 38, 38);
-}
-
-div.myFooterTopBeFirst h3, div.myFooterTopBeFirst p{
-    font-size: 2vw;
-}
-
-div.myFooterBottom{
-    display: grid;
-    grid-template-columns: 40% 40%;
-    justify-content: center;
-    background-color: rgb(39, 38, 38);
-    padding-top: 1vw;
-    width: 100%;
-    gap: 1vw;
-}
-
-div.myFooterAbout h4{
-    font-size: 2.3vw;
-}
-
-div.myFooterAbout p{
-    font-size: 1.8vw;
-}
-
-div.myFooterLinks h4{
-    font-size: 2.3vw;
-}
-
-div.myFooterLinks{
-    width: 100%;
-}
-
-div.myFooterLinks ul li{
-    list-style-type: none;
-    margin-left: 11vw;
-    transition: all 1s;
-}
-
-
-div.myFooterLinks ul li:hover{
-    margin-left: 11.5vw;
-}
-
-div.myFooterLinks ul li::before{
-    content: ">";
-    padding-right: 0.8vw;
-    font-weight: bold;
-    color: white;
-}
-
-div.myFooterLinks ul li a{
-    text-decoration: none;
-    font-size: 1.9vw;
-    line-height: 3.5vw;
-}
-
-div.myFooterLinks ul li a:hover{
-    font-weight: bold;
-}
-
-
-div.myFooterSocialMedia h4{
-    text-align: left;
-    padding-bottom: 0.5vw;
-    font-size: 2.3vw;
-}
-
-div.myFooterSocialMedia ul{
-    display: flex;
-    flex-direction: unset;
-    list-style-type: none;
-    justify-content: space-between;
-    margin-left: 1vw;
-}
-
-div.myFooterSocialMedia ul li a{
-    font-size: 2.3vw;
-    transition: all 1s;
-}
-
-div.myFooterSocialMedia ul li a:hover{
-    color: var(--myColor);
-    font-size: 2.8vw;
-}
-
-div.FooterLogo{
-    padding: 0.8vw 13vw 3vw 10vw;
-}
-div.FooterLogo a img{
-    width: 50%;
-    transition: all 1s;
-}
-
-div.FooterLogo a img:hover{
-    transform: scale(1.2, 1.2);
-    opacity: 0.8;
-}
-
-div.myFooterCopyRight{
-    text-align: center;
-    font-size: 1.5vw;
-    padding-top: 1.5vw;
-    padding-bottom: 1.5vw;
-    background-color: black;
-    margin-bottom: -80px;
-}
-
-/* End of footer section */
 
 }
 
@@ -2062,205 +533,7 @@ div.myFooterCopyRight{
 
     /* -------------------------------------------------------------------------------- */
 
-    /* Login form */
-
- div.myLogin{
-    padding: 8vw 0;
-}
-
-.center{
-  padding: 1.5vw 0 4.5vw 0;
-  width: 50%;
-}
-
-.center h1{
-  padding: 1vw 0;
-  font-size: 3vw;
-}
-.center form{
-  padding: 0 2.5vw;
-}
-
-.txt_field input{
-  font-size: 2.2vw;
-}
-
-.txt_field label{
-  font-size: 2.35vw;
-  transform: translateY(-25%);
-}
-
-.pass a{
-    font-size: 2vw;
-}
-
-input.loginType{
-  font-size: 2.3vw;
-  padding: 0.8vw 0;
-}
-
-label.checkbox{
-  font-size: 2.2vw;
-}
-
-.signup {
- text-align: center;
- font-size: 2.3vw;
-}
-
-
-.signup a{
-    color: var(--myColor);
-    font-weight: 501;
-    font-size: 2.2vw;
-    display: block;
-}
-
-
-
-/* End of Login form */
-
-    /* Footer section */
-
-div.myFooterTopForm input[type="email"] {
-    padding: 1vw 10vw 1vw 1vw;
-}
-
-div.myFooterTopForm input[type="email"]::placeholder{
-    font-size: 2.5vw;
-}
-
-div.myFooterTopForm input[type="submit"] {
-    padding: 1vw;
-    font-size: 2.5vw;
-}
-
-div.myFooterTop{
-    display: grid;
-    grid-template-columns: auto;
-    gap: 2vw;
-    align-items: center;
-    padding-left: 5vw;
-    padding-top: 3vw;
-    background-color: rgb(39, 38, 38);
-}
-
-div.myFooterTopBeFirst h3, div.myFooterTopBeFirst p{
-    font-size: 2.7vw;
-}
-
-div.myFooterBottom{
-    display: grid;
-    grid-template-columns: 100%;
-    justify-content: center;
-    background-color: rgb(39, 38, 38);
-    padding: 5vw;
-    width: 100%;
-    gap: 1vw;
-}
-
-div.myFooterAbout h4{
-    font-size: 2.7vw;
-}
-
-div.myFooterAbout p{
-    font-size:2.5vw;
-}
-
-div.myFooterLinks h4{
-    font-size: 2.3vw;
-    margin-left: -50vw;
-}
-
-div.myFooterLinks{
-    width: 100%;
-    margin-left: -10vw;
-    padding-right: 0;
-}
-
-div.myFooterLinks ul{
-  display: grid;
-  grid-template-columns: auto auto auto;
-  align-items: center;
-}
-
-div.myFooterLinks ul li{
-    list-style-type: none;
-    transition: all 1s;
-}
-
-
-div.myFooterLinks ul li:hover{
-    margin-left: 10vw;
-}
-
-div.myFooterLinks ul li::before{
-    content: ">";
-    padding-right: 1vw;
-    font-size: 3vw;
-    font-weight: bold;
-    color: white;
-}
-
-div.myFooterLinks ul li a{
-    text-decoration: none;
-    font-size: 2.3vw;
-    line-height: 3.5vw;
-}
-
-div.myFooterLinks ul li a:hover{
-    font-weight: bold;
-}
-
-
-div.myFooterSocialMedia h4{
-    text-align: left;
-    padding-bottom: 0.5vw;
-    font-size: 2.7vw;
-}
-
-div.myFooterSocialMedia ul{
-    display: flex;
-    flex-direction: unset;
-    list-style-type: none;
-    justify-content: space-between;
-    margin-left: 1vw;
-    padding: 0 15vw 0 7vw;
-}
-
-div.myFooterSocialMedia ul li a{
-    font-size: 3vw;
-    transition: all 1s;
-}
-
-div.myFooterSocialMedia ul li a:hover{
-    color: var(--myColor);
-    font-size: 3.5vw;
-}
-
-div.FooterLogo{
-    padding: 0.8vw 13vw 3vw 10vw;
-}
-div.FooterLogo a img{
-    width: 15%;
-    transition: all 1s;
-}
-
-div.FooterLogo a img:hover{
-    transform: scale(1.2, 1.2);
-    opacity: 0.8;
-}
-
-div.myFooterCopyRight{
-    text-align: center;
-    font-size: 2.5vw;
-    padding-top: 1.5vw;
-    padding-bottom: 1.5vw;
-    background-color: black;
-    margin-bottom: -80px;
-}
-
-/* End of footer section */
+   
 
 
 

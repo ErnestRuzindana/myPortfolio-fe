@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/557e6c8ef8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../CSS/blog.css">
+    <link rel="stylesheet" href="../CSS/index.css">
     
 
     <link rel="icon" href="../images/Logo.png" type="image/x-icon">
@@ -14,11 +15,11 @@
     </title>
 
 </head>
-<body>
+<body >
 
 <div class="myBlog">
 
-    <div class="leftBlogSide">
+    <div class="leftBlogSide" id="hideUserProfile">
         <h3>Ernest's Blog</h3>
         <img src="../images/Ruzindana.jpg" alt="Ernest Ruzindana">
         <p>
@@ -199,9 +200,8 @@
                         <ul>
                             <li><a href="https://web.facebook.com/ruzindana.elannoernest/" target="_blank" text-align: center; ><img src="../images/facebook_black.png" alt=""></a></li>
                             <li><a href="https://twitter.com/ruzindanaernes5" target="_blank"><img src="../images/twitter_black.png" alt=""></a></li>
-                            <li><a href="https://www.instagram.com/elanno_official/" target="_blank"><img src="../images/instagram_black.png" alt=""></a></li>
+                            
                             <li><a href="https://www.linkedin.com/in/ernest-ruzindana-7481b8183/" target="_blank"><img src="../images/linkedin_black.png" alt=""></i></a></li>
-                            <li><a href="https://api.whatsapp.com/send/?phone=250783486141&text&app_absent=0" target="_bank"><img src="../images/whatsapp_black.png" alt=""></a></li>
                             <li><a href="https://github.com/ErnestRuzindana" target="_blank"><img src="../images/github_black.png" alt=""></i></a></li>
                         </ul>
                     </div>
@@ -218,7 +218,7 @@
             </div>            
         </section>
 
-        <section class="nav">
+        <section class="nav" id="hideUserProfile">
             <div class="navbar">
                 <div class="logo">
                     <a href="index.html">Ernest RUZINDANA</a>
@@ -261,7 +261,7 @@
 
       
 
-    <section class="Blog">
+    <section class="Blog" id="hideUserProfile">
         <div class="myBlogContent">
             
 
@@ -274,7 +274,7 @@
 
     <!-- End of blog section -->
 
-    <section class="pagination">
+    <section class="pagination" id="pagination">
         <div aria-label="Page navigation example" class="myPagination">
             <ul class="pageLinks">
               <li class="page-item">
@@ -337,8 +337,6 @@
                             <li><a href="index.html#contact">Contact</a></li>
                             <li id="loginLogout" style="cursor: pointer;"><a href="login.html">Login/Signup</a></li>
                             <li id="logoutUser" style="cursor: pointer;"><a onclick="allLoginLogout()">Logout</a></li>
-                            <li><a href="#">GIS Exercises</a></li>
-                            <li><a href="#">GIS Videos</a></li>
                         </ul>
                     </div>
                     <div class="myFooterSocialMedia">

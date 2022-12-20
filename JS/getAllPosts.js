@@ -29,6 +29,7 @@ async function renderPosts(page = 1){
         nextButton.style.display = "block";
       }
 
+
     var paginatedPost = ""
     console.log(posts)
 
@@ -68,14 +69,15 @@ async function renderPosts(page = 1){
                 <div class="blogAuthor">
 
                     ${authorImageTemplate}
-
-                    <small><a href="" class="AuthorName">${post.authorName}</a></small>
-                    <small> / ${post.dateCreated}</small>
+                    <div>
+                      <small><a href="" class="AuthorName">${post.authorName}</a></small>
+                      <small> / ${post.dateCreated}</small>
+                    </div>
+                    
                 </div>
                 <p class="ContentSection" style="font-family: calibri;">
                     ${post.postBody.slice(0, 600)+"..."}
                 </p>
-                <p class="blogLikesComments"><span>15</span> Likes . &nbsp;  &nbsp; <span>8</span> Comments</p>
                 <a id="${post._id}" onclick="getSinglePost('${post._id}')" class="readmore" style="cursor: pointer;">Read more &rarr; </a>
             </div>
         </div>
@@ -129,3 +131,5 @@ async function getAllPosts(){
 
 
  
+
+{/* <p class="blogLikesComments"><span>15</span> Likes . &nbsp;  &nbsp; <span>8</span> Comments</p> */}

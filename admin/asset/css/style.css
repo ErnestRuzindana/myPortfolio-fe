@@ -6942,104 +6942,180 @@ a.palette-item {
 
 /* ------------------------------------------------------------------------------------------------------------------------------ */
 
- /*Blog section */
 
- section.Blog{
-  padding: 3vw 5vw;
-}
 
-div.myBlog{
-  display: flex;
-  flex-direction: column;
-  gap: 5vw;
-}
+/* Blog Section */
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ */
+
+
 
 div.blogBoxes{
-  display: grid;
-  grid-template-columns: 30% 70%;
-  gap: 3vw;
-  border-bottom: 1px solid rgb(131, 131, 131);
-  padding: 3vw;
+    display: grid;
+    grid-template-columns: 27% 70%;
+    gap: 3%;
+    border-bottom: 1px solid rgb(131, 131, 131);
+    padding: 40px;
 }
 
 div.blogImage{
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 div.blogImage img{
-  width: 100%;
+    width: 100%;
 }
 
 div.blogAuthor{
-  display: flex;
-  align-items: center;
-  gap: 1vw;
-}
-
-img.AuthorImage{
-  width: 7%;
-  border-radius: 50%;
+    display: flex;
+    align-items: center;
+    gap: 13px;
 }
 
 div.blogAuthor small{
-  font-size: 10px;
-  font-weight: bold;
-  color: rgb(131, 131, 131);
+    font-size: 12.5px;
+    font-weight: bold;
+    color: rgb(131, 131, 131);
 }
 
 div.blogAuthor small a{
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 12px;
-  font-family: poppins;
-  color: rgb(131, 131, 131);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13.5px;
+    font-family: poppins;
+    color: rgb(131, 131, 131);
 }
 
-div.blogContent{
-  padding-right: 5vw;
-}
 
 p.ContentSection{
-  text-align: justify;
-  font-family: calibri;
+    text-align: justify;
+    font-family: calibri;
 }
 div.blogContent h3 a{
-  text-decoration: none;
-  color: black;
+    text-decoration: none;
+    color: black;
+    font-size: 23px;
 }
 
 div.blogContent h3 a:hover{
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 p.blogLikesComments{
-  color: rgb(131, 131, 131);
-  font-weight: bold;
-  font-size: 10px;
+    color: rgb(131, 131, 131);
+    font-weight: bold;
+    font-size: 0.80vw;
 }
 
 a.readmore{
-  color: var(--myColor);
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 0.9vw;
+    color: var(--myColor);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 div.authorImageCharts{
-  background: black;
-  color: #cba10a;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  line-height: 30px;
-  font-weight: bold;
-  font-size: 14px;
-  cursor: pointer;
-  text-align: center;
+    background: black;
+    color: #cba10a;
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    line-height: 39px;
+    font-weight: bold;
+    font-size: 18.5px;
+    cursor: pointer;
+    text-align: center;
+    padding-right: 2.5px;
+}
+
+img.AuthorImage{
+    width: 38px;
+    border-radius: 50%;
 }
 
 /* End of Blog section */
+
+
+
+
+
+/* Pagination */
+
+
+ul.pageLinks{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+    padding: 10px;
+    list-style-type: none;
+    align-items: center;
+}
+ul.pageLinks button{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    color: var(--myBackground);
+    background-color: var(--myColor);
+    border-radius: 5px;
+    padding: 4px 15px;
+}
+
+ul.pageLinks button:hover{
+    background-color: var(--myBackground);
+    color: var(--myColor);
+    cursor: pointer;
+}
+
+
+/* End of pagination */
+
+
+
+/* -------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+@media only screen and (max-width: 937px) {
+
+    
+
+/*Blog section */
+
+div.blogBoxes{
+    grid-template-columns: auto;
+    gap: 0%;
+    border-bottom: 1px solid rgb(131, 131, 131);
+    padding: 30px 20px;
+}
+
+div.blogImage img{
+  width: 50%;
+}
+
+
+/* End of Blog section */
+
+
+
+
+}
+
+@media only screen and (max-width: 730px){
+  div.blogImage img{
+    width: 80%;
+  }
+
+  div.blogAuthor{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+}
+
 
 
 /* hover property on delete message */
