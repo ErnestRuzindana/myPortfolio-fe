@@ -38,7 +38,7 @@ async function registeredUsers(){
             style="
             background: black;
             color: white;
-            width: 240px;
+            width: 100%;
             height: 166px;
             line-height: 165px;
             font-weight: bold;

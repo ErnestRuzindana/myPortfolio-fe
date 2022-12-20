@@ -1,6 +1,7 @@
 /*!
  * (c) Mimin Admin Page v1.0
  */
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;800&display=swap');
 
 body {
   font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -167,6 +168,145 @@ p.quote{
  .bg-dark-grey        {background-color: #616161 !important;}
  .bg-dark-blue-grey   {background-color: #455a64 !important;}
 /*end background*/
+
+/* Logged In user dropdown */
+
+div.userProfile{
+  font-family: Poppins,sans-serif;
+  position: fixed;
+  background-image: url(../../../images/sabyinyo.jpg);
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+  box-shadow: 0px 0px 20px gray;
+  border-radius: 10px;
+  z-index: 3;
+  top: 40px;
+  right: 60px;
+  margin: 10px auto auto auto;
+  text-align: center;
+  padding-top: 20px;
+  color: white;
+  height: 450px;
+  width: 350px;
+}
+
+a.ManageAccountLink{
+  text-decoration: none;
+  padding: 5px 38px 5px 38px;
+  border-radius: 5px; 
+  color: white;
+  background-image: url(../../../images/sabyinyo.jpg);
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+  box-shadow: 0px 0px 20px gray;
+}
+
+a.ManageAccountLink:hover{
+  background-attachment: unset;
+}
+
+div.profilePicture{
+  background: black;
+  color: #cba10a;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  line-height: 40px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  margin: 5px 25px 20px 20px;
+}
+
+img.topProfileImage{
+  border: 1px solid black;
+  width: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+  margin: 8px 25px 20px 20px;
+}
+
+img.inProfileImage{
+  border: 1px solid black;
+  width: 70px;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center; 
+}
+
+div.profilePictureIn{
+  background: #cba10a;
+  color: black;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-left: 137px;
+  line-height: 80px;
+  font-weight: bold;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+div.profilePictureIn:hover{
+  background: black;
+  color: #cba10a;
+}
+
+p.userFetchedEmail{
+  margin-top: -5px;
+  margin-bottom: 50px;
+  font-size: 1.25em;
+}
+
+div.switchAccount{
+  border-top: 1px solid #cba10a;
+  padding-top: 20px;
+}
+
+h3.adminNames{
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+p.switchAccountLink{ 
+  padding: 7px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  background-image: url(../../../images/sabyinyo.jpg);
+  background-repeat: no-repeat;
+  background-size:cover;
+  font-size: 1.2em;
+}
+
+p.switchAccountLink:hover{
+  background: white;
+  color: black;
+}
+
+
+div.preNavLogout h5 a{
+   
+  font-size: 15px;
+  color: black;
+  text-decoration: none;
+  background-color: #cba10a;
+  padding: 5px 18px 5px 18px;  
+  border-radius: 5px;
+  transition: all 1s;
+}
+
+div.preNavLogout h5 a:hover{
+  text-decoration: none;
+  background-color: #616161;
+  cursor: pointer;  
+}
+
+/* Logged In user dropdown */
 
 /*start: Mega Menu*/
 
@@ -1791,7 +1931,7 @@ ul li a:focus {
 
   .navbar .navbar-brand {
     text-shadow: 0px 1px 5px #918C8C;
-    padding: 15px;
+    padding: 18px 15px 0px ;
     margin-left: 20px;
     font-size: 2.3em;
     color: #FFFFFF !important;
@@ -2031,7 +2171,7 @@ ul li a:focus {
 #left-menu .sub-left-menu .time p {
   margin-top: -20px;
   text-align: center;
-  font-size: 12px;
+  font-size: 13px;
   color: #918C8C;
 }
 
@@ -2707,6 +2847,11 @@ ul li a:focus {
   padding-left: 230px;
   width: 100%;
   color: #918C8C;
+  font-size: 15px;
+}
+
+div.positionPanelBody{
+  margin-left: -230px; 
 }
 
 
@@ -3031,11 +3176,11 @@ ul li a:focus {
   -ms-transition: height .25s ease, width .25s ease;
   -o-transition: height .25s ease, width .25s ease;
   transition: height .25s ease, width .25s ease;
-  -webkit-transform: transform: translate(-50%, -50%);
-  -moz-transform: transform: translate(-50%, -50%);
-  -ms-transform: transform: translate(-50%, -50%);
-  -o-transform: transform: translate(-50%, -50%);
-  transform: transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -5642,7 +5787,7 @@ ul li a:focus {
   bottom: 20px;
   outline: none !important;
   z-index: 9999999;
-  display: none
+  display: none;
 }
 
 #mimin-mobile a{
@@ -5664,6 +5809,8 @@ ul li a:focus {
   font-weight: 100;
   overflow: auto;
   font-size: 1.7em;
+  background-image: url(../../../images/sabyinyo.jpg);
+  background-position: center;
 }
 
 .sub-mimin-mobile-menu-list .fa{margin-right: 10px;}
@@ -6491,10 +6638,45 @@ ul li a:focus {
 
   }
 
+#postSubmitData{
+  width: 50%;
+}
+
+  div.positionPanelBody{
+    margin-left: 0px; 
+  }
+
   li.time{
     display: none;
   }
 
+  div.profilePicture{
+    background: black;
+    color: #cba10a;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    margin: 5px 0px 0px 0px;
+  }
+  
+  img.topProfileImage{
+    border: 1px solid black;
+    width: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    margin: 5px 0px 0px 0px;
+  }
+
+  div.userProfile {
+    width: 300px;
+    margin: 11px -49px auto auto;
+}
   
 
   
@@ -6668,6 +6850,7 @@ a{
   overflow: auto;
   padding: 1em;
   margin-top: 20px;
+  margin-bottom: 20px;
   resize: vertical;
   outline: none;
 }
