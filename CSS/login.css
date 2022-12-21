@@ -176,6 +176,10 @@ input.loginType:hover{
     font-size: 17px;
 }
 
+div#forgotPasswordMessage{
+    text-align: center;
+}
+
 
 
 

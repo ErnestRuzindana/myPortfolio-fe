@@ -273,16 +273,23 @@ input.updateChanges{
  
 }
 
+@media only screen and (max-width: 730px) {
+    div.userProfilePageLeft{
+        margin: 20px 15px;
+    }
+
+    input.updateChanges{
+        width: 50%;
+    }
+}
+
 @media only screen and (max-width: 580px) {
     .profile-pic:hover .-label {
         width: 540px;
     }
 
     .profile-pic {
-        margin-left: 10vw;
+        margin-left: 35px;
       }
 
-      input.updateChanges{
-        width: 35%;
-    }
 }

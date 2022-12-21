@@ -176,6 +176,10 @@ input.signupType:hover{
     font-size: 17px;
 }
 
+div#signupMessage{
+    text-align: center;
+}
+
 
 
 
