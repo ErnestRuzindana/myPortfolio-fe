@@ -28,6 +28,7 @@ async function postDetails(){
 
     const singleBlogContentParagraph = document.getElementById("singleBlogContentParagraph")
     singleBlogContentParagraph.innerHTML = singlePost.postBody
+    console.log(singlePost.postBody)
 
     const headerPictureSource = document.getElementById("headerPictureSource")
     headerPictureSource.src = singlePost.headerImage
@@ -429,3 +430,5 @@ function cancel_reply(){
 function hideReplies(){
 	$('.box_reply').hide();
 }
+
+

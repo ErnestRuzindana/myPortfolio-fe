@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+img{
+  width: 10%;
+}
+
 #preloader{
   background: white url(../images/preloader2.gif) no-repeat center center;
   background-size: 13%;
@@ -16,9 +20,9 @@
   display: none;
 }
 
-#preloader.show{
+/* #preloader.show{
   display: block;
-}
+} */
 
 div.mySingleBlog{
     display: flex;
@@ -49,6 +53,12 @@ div.singleBlogAuthor{
     border-top: 2px solid gray;
 
 }
+
+#singleBlogContentParagraph{
+  font-size: 15px;
+}
+
+
 
 img.authorImageSingleBlog{
     width: 50px;
