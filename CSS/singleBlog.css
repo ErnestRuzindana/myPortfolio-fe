@@ -6,10 +6,6 @@
   box-sizing: border-box;
 }
 
-img{
-  width: 10%;
-}
-
 #preloader{
   background: white url(../images/preloader2.gif) no-repeat center center;
   background-size: 13%;
@@ -29,13 +25,15 @@ div.mySingleBlog{
     flex-direction: column;
 }
 
+
+
 div.headerPicture{
     display: flex;
     justify-content: center;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 div.headerPicture img{
-    width: 83%;
+    width: 85%;
 }
 
 div.singleBlogContainer{
@@ -48,14 +46,16 @@ div.singleBlogAuthor{
     display: flex;
     align-items: center;
     padding-top: 10px;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 30px;
     border-top: 2px solid gray;
 
 }
 
+
+
 #singleBlogContentParagraph{
-  font-size: 15px;
+  font-size: 17.5px;
 }
 
 
@@ -68,16 +68,19 @@ img.authorImageSingleBlog{
 }
 
 p.authorNameSingleBlog{
-    color: rgb(26, 79, 125);
+    text-decoration: none;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 15px;
+    font-family: poppins;
+    color: rgb(131, 131, 131);
     padding: 0 10px;
 }
 
+
 p.dateCreatedSingleBlog{
-    color: rgb(68, 68, 68);
-    font-weight: bold;
-    font-size: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  color: rgb(131, 131, 131);
 }
 
 div.singleBlogTitle{
@@ -379,6 +382,7 @@ h4 span{
   #list_comment{
     display: flex;
     flex-direction: column-reverse;
+    padding-inline-start: 0px;
   }
 
   .child_replay{
@@ -408,7 +412,7 @@ h4 span{
   div.comments{
     display: grid;
     grid-template-columns: 7% 90%;
-    padding: 50px 0px 50px 0px;
+    padding: 43px 0px 43px 0px;
   }
 
   ul.col-md-12{
@@ -423,4 +427,56 @@ h4 span{
 
   div.reply_avatar{
     padding: 10px;
+  }
+
+
+  @media only screen and (max-width: 937px) {
+    div.comments{
+      display: grid;
+      grid-template-columns: 9% 90%;
+      padding: 43px 0px 43px 0px;
+    }
+  }
+ 
+
+  @media only screen and (max-width: 730px) {
+    div.singleBlogContainer {
+      display: flex;
+      flex-direction: column;
+      padding: 0 20px;
+  }
+
+    div.comments{
+      display: grid;
+      grid-template-columns: auto;
+      padding: 43px 0px 43px 0px;
+    }
+
+    div.authorImageChartsSingleBlog{
+      margin-bottom: 5px;
+  }
+
+  div.headerPicture img{
+    width: 90%;
+}
+
+div.singleBlogAuthor{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+  .dateCreatedSingleBlog{
+    display: none;
+  }
+
+  .box_comment{
+    margin-top: -5px;
+  }
+
+  }
+
+  @media only screen and (max-width: 325px) {
+    .box_result .result_comment h4 span{
+      display: none;
+    }
   }

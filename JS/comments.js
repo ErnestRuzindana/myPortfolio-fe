@@ -41,7 +41,7 @@ async function comment(){
     else{
         commentorPicture = fetchedData.firstName.charAt(0)+fetchedData.lastName.charAt(0)
         commentorImageTemplate = 
-        ` <div class="authorImageCharts" id="authorImageCharts">
+        ` <div class="authorImageChartsSingleBlog" id="authorImageCharts">
         ${fetchedData.firstName.charAt(0)+fetchedData.lastName.charAt(0)}
         </div>`
     }
@@ -99,13 +99,11 @@ var comment = $('.commentar').val();
         <h4>${commentorNames} <span> &nbsp &nbsp/ ${today}</span></h4>
         <p>${comment}</p>
         <div class="tools_comment">
-            <a class="like">Like</a>
+            <a class="like" onclick="likeComment()">Like</a>
+            <span aria-hidden="true"> · </span>
+            <i class="fa fa-thumbs-o-up"></i> <span class="count" id="count">0</span> 
             <span aria-hidden="true"> · </span>
             <a class="replay">Reply</a>
-            <span aria-hidden="true"> · </span>
-            <i class="fa fa-thumbs-o-up"></i> <span class="count">0</span> 
-            <span aria-hidden="true"> · </span>
-            <span>26m</span>
         </div>
         <ul class="child_replay" style="display: flex; flex-direction: column-reverse;"></ul>
     </div>
@@ -170,7 +168,7 @@ async function commentReply(){
     else{
         commentorPicture = fetchedData.firstName.charAt(0)+fetchedData.lastName.charAt(0)
         commentorImageTemplate = 
-        ` <div class="authorImageCharts" id="authorImageCharts">
+        ` <div class="authorImageChartsSingleBlog" id="authorImageCharts">
         ${fetchedData.firstName.charAt(0)+fetchedData.lastName.charAt(0)}
         </div>`
     }

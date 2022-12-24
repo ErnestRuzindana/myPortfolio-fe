@@ -344,6 +344,19 @@ div.authorImageCharts{
     text-align: center;
     padding-right: 2.5px;
 }
+div.authorImageChartsSingleBlog{
+    background: black;
+    color: #cba10a;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    line-height: 45px;
+    font-weight: bold;
+    font-size: 18.5px;
+    cursor: pointer;
+    text-align: center;
+    padding-right: 2.5px;
+}
 
 img.AuthorImage{
     width: 38px;

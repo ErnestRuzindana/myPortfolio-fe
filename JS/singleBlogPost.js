@@ -46,12 +46,12 @@ async function postDetails(){
 
         if(authorImage.includes(str)){
             singleBlogImageTemplate.innerHTML = 
-           `<img src="${authorImage}" alt="" class="authorImageSingleBlog" id="authorImageSingleBlog">`
+           `<img src="${authorImage}" alt="" class="AuthorImage" id="authorImageSingleBlog">`
         }
              
         else{
             singleBlogImageTemplate.innerHTML = 
-           ` <div class="authorImageCharts" id="authorImageCharts">
+           ` <div class="authorImageChartsSingleBlog" id="authorImageCharts">
            ${authorImage}
            </div>`
         }
@@ -80,7 +80,7 @@ async function postDetails(){
 
     else{
         commentorAvatar.innerHTML = 
-        ` <div class="authorImageCharts" id="authorImageCharts">
+        ` <div class="authorImageChartsSingleBlog" id="authorImageCharts">
         ${userFetchedData.firstName.charAt(0)+userFetchedData.lastName.charAt(0)}
         </div>`
     }
@@ -144,7 +144,7 @@ async function getAllComments(){
              
         else{
             commentorImageTemplate = 
-           ` <div class="authorImageCharts" id="authorImageCharts">
+           ` <div class="authorImageChartsSingleBlog" id="authorImageCharts">
            ${commentorImage}
            </div>`
         }
@@ -212,7 +212,7 @@ async function getAllComments(){
                  
             else{
                 replierImageTemplate = 
-               ` <div class="authorImageCharts" id="authorImageCharts">
+               ` <div class="authorImageChartsSingleBlog" id="authorImageCharts">
                ${replierImage}
                </div>`
             }
@@ -362,7 +362,7 @@ $(document).ready(function() {
         else{
             commentorPicture = fetchedData.firstName.charAt(0)+fetchedData.lastName.charAt(0)
             commentorImageTemplate = 
-            ` <div class="authorImageCharts" id="authorImageCharts">
+            ` <div class="authorImageChartsSingleBlog" id="authorImageCharts">
             ${fetchedData.firstName.charAt(0)+fetchedData.lastName.charAt(0)}
             </div>`
         }
