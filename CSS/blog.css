@@ -532,7 +532,17 @@ div.blogBoxes{
 
 /* End of Blog section */
 
- 
+a.northArrow{
+    --offset: 50px;
+    margin-top: calc(350vh + var(--offset));
+    position: sticky;
+    background-color: var(--myColor);
+    border-radius: 5px;
+    padding: 10px 10px 10px 10px;
+    bottom: 20px;
+    left: 89%;
+    z-index: 2;
+}
 
 
 
