@@ -16,6 +16,10 @@
   display: none;
 }
 
+.img-responsive{
+  width: 10%;
+}
+
 /* #preloader.show{
   display: block;
 } */
@@ -39,7 +43,7 @@ div.headerPicture img{
 div.singleBlogContainer{
     display: flex;
     flex-direction: column;
-    padding: 0 50px;
+    padding: 0 45px;
 }
 
 div.singleBlogAuthor{
@@ -431,6 +435,12 @@ h4 span{
 
 
   @media only screen and (max-width: 937px) {
+    div.singleBlogContainer {
+      display: flex;
+      flex-direction: column;
+      padding: 0 35px;
+  }
+
     div.comments{
       display: grid;
       grid-template-columns: 9% 90%;

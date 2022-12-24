@@ -233,21 +233,69 @@
 
 
     <div class="grid-row reverse video-gallery">
-        <input type="radio" value="1" name="video-list" id="video-1" checked="checked" /><label for="video-1">ArcGIS Desktop</label>
-        <input type="radio" value="2" name="video-list" id="video-2" /><label for="video-2">ArcGIS Pro</label>
-        <input type="radio" value="3" name="video-list" id="video-3" /><label for="video-3">Python Libraries</label>
-        <input type="radio" value="4" name="video-list" id="video-4" /><label for="video-4">Arc Catalog</label>
-        <input type="radio" value="5" name="video-list" id="video-5" /><label for="video-5">Arc Map</label>
-        <input type="radio" value="6" name="video-list" id="video-6" /><label for="video-6">Data Analysis</label>
+        <input type="radio" value="1" name="video-list" class="videoGalleryRadioButton" id="video-1" checked="checked" /><label for="video-1">ArcGIS Desktop</label>
+        <input type="radio" value="2" name="video-list" class="videoGalleryRadioButton" id="video-2" /><label for="video-2">ArcGIS Pro</label>
+        <input type="radio" value="3" name="video-list" class="videoGalleryRadioButton" id="video-3" /><label for="video-3">Python Libraries</label>
+        <input type="radio" value="4" name="video-list" class="videoGalleryRadioButton" id="video-4" /><label for="video-4">Arc Catalog</label>
+        <input type="radio" value="5" name="video-list" class="videoGalleryRadioButton" id="video-5" /><label for="video-5">Arc Map</label>
+        <input type="radio" value="6" name="video-list" class="videoGalleryRadioButton" id="video-6" /><label for="video-6">Data Analysis</label>
         <!-- videos -->
         <div class="video video-1">
-            <div class="exercise1">
-                
-            </div>
+            <ul class="quiz">
+                <h2>ArchGIS Desktop Multiple Question Exercises</h2>
+                <li>
+                  <h4>Q1. How many letters are there in "JS"?</h4>
+                  <ul class="choices">
+                    <li><label><input type="radio" name="question0" value="A"><span>2 letters</span></label></li>
+                    <li><label><input type="radio" name="question0" value="B"><span>1 letters</span></label></li>
+                    <li><label><input type="radio" name="question0" value="C"><span>3 letters</span></label></li>
+                    <li><label><input type="radio" name="question0" value="D"><span>4 letters</span></label></li>
+                  </ul>
+                </li>
+                <li>
+                  <h4>Q2. The computer word size is a multiple of?</h4>
+                  <ul class="choices">
+                    <li><label><input type="radio" name="question1" value="A"><span>16 bits</span></label></li>
+                    <li><label><input type="radio" name="question1" value="B"><span>4 bits</span></label></li>
+                    <li><label><input type="radio" name="question1" value="C"><span>1024 bits</span></label></li>
+                    <li><label><input type="radio" name="question1" value="D"><span>10 bits</span></label></li>
+                  </ul>
+                </li>
+                <li>
+                  <h4>Q3. In computer terminology, OCR stands for?</h4>
+                  <ul class="choices">
+                    <li><label><input type="radio" name="question2" value="A"><span>Optical Card Reader</span></label></li>
+                    <li><label><input type="radio" name="question2" value="B"><span>Online Computer Retrieval</span></label></li>
+                    <li><label><input type="radio" name="question2" value="C"><span>Optical Character Reader</span></label></li>
+                    <li><label><input type="radio" name="question2" value="D"><span>Office Cash Reciever</span></label></li>
+                  </ul>
+                </li>
+                <li>
+                  <h4>Q4. In information technology, processed form of data is called?</h4>
+                  <ul class="choices">
+                    <li><label><input type="radio" name="question3" value="A"><span>Data processing</span></label></li>
+                    <li><label><input type="radio" name="question3" value="B"><span>System</span></label></li>
+                    <li><label><input type="radio" name="question3" value="C"><span>Information</span></label></li>
+                    <li><label><input type="radio" name="question3" value="D"><span>Instruction</span></label></li>
+                  </ul>
+                </li>
+                <li>
+                  <h4>Q5. The world has become a global village because of?</h4>
+                  <ul class="choices">
+                    <li><label><input type="radio" name="question4" value="A"><span>Chatting</span></label></li>
+                    <li><label><input type="radio" name="question4" value="B"><span>Information Technology</span></label></li>
+                    <li><label><input type="radio" name="question4" value="C"><span>Networking</span></label></li>
+                    <li><label><input type="radio" name="question4" value="D"><span>Transferring information</span></label></li>
+                  </ul>
+                </li>
+              </ul>
+              
+              <button class="view-results" onclick="returnScore()">View Results</button>
+              <span id="myresults" class="my-results">My results will appear here</span>
         </div>
        
         <div class="video video-2">
-         <iframe width="560" height="315" src="https://www.youtube.com/embed/9iGoDNlKY-g" frameborder="0" allowfullscreen></iframe>
+         <ul>Some Exercises</ul>
         </div>
        
         <div class="video video-3">
@@ -351,5 +399,6 @@
     <script src="../JS/googleLogin.js"></script>
     <script src="../JS/facebookLogin.js"></script>
     <script src="../JS/githubLogin.js"></script>
+    <script src="../JS/exercises.js"></script>
 </body>
 </html>
