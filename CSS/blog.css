@@ -16,17 +16,17 @@ html{
 
 #blog_preloader{
     background: white url(../images/preloader2.gif) no-repeat center center;
-    background-size: 13%;
+    background-size: 90px;
     height: 100vh;
-    width: 77%;
+    width: 100%;
     position: fixed;
     z-index: 100;
     display: none;
   }
   
-  /* #blog_preloader.show{
+  #blog_preloader.show{
     display: block;
-  } */
+  }
 
 
 body{
