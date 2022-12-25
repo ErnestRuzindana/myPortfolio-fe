@@ -488,6 +488,8 @@ div.navbar{
     opacity: 0.5;
 }
 
+
+
 div.toggleButton{
     display: none;
 }
@@ -505,6 +507,10 @@ li.closeButton{
 
 .navlinks ul li{
     list-style-type: none;
+}
+
+.navlinks ul li.videoExercises{
+    display: none;
 }
 
 .navlinks ul li a{
@@ -2843,7 +2849,9 @@ div.navbar{
     width: 100%;
 }
 
-
+.navlinks ul li.videoExercises{
+    display: block;
+}
 
 div.toggleButton{
     display: block;
@@ -2854,7 +2862,7 @@ div.toggleButton{
 li.closeButton{
     display: block;
     font-size: 30px;
-    padding-left: 150%;
+    padding-left: 120%;
     color: rgb(156, 9, 9);
     cursor: pointer;
 }
@@ -2880,7 +2888,7 @@ div.navlinks ul{
     flex-direction: column;
     top: -16px;
     right: 0;
-    padding: 10px 70px 25px;
+    padding: 10px 50px 25px;
     gap: 30px;
 }
 

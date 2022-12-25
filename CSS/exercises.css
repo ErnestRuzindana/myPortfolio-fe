@@ -1,21 +1,17 @@
 @charset "UTF-8";
-/* * {
-  box-sizing: border-box; 
-}
-
-html {
-  height: 100%;
-  overflow: hidden;
-  width: 100%; 
-} */
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 16px;
   height: auto;
   line-height: 1;
   overflow-x: hidden;
-  width: 100%; }
+  width: 100%;
+  background-image: url(../images/sabyinyo.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+ }
 
 .video {
   position: relative;
@@ -23,6 +19,7 @@ body {
   padding-bottom: 51.95%;
   height: auto;
   overflow: auto;
+
  }
 
   .video {
@@ -65,7 +62,7 @@ body {
     grid-column-start: 1;
     grid-row-start: 1; }
   .video-gallery label {
-    color: rgb(40, 40, 40);
+    color: white;
     text-align: justify;
     font-size: 1.1em;
     font-weight: bold;
@@ -77,8 +74,7 @@ body {
     .video-gallery label:hover{
         cursor: pointer;
     }
-    .video-gallery label:last-of-type {
-      border: 0 none; }
+    
   .video-gallery input[type="radio"]:checked + label {
     color: #cba10a !important; }
     .video-gallery input[type="radio"]:checked + label:before {
@@ -203,7 +199,7 @@ body {
     grid-template-columns: 65% 35% ;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     width: 100%;
-    padding: 50px;
+    padding: 50px ;
  }
     .grid-row label {
       left: auto;
@@ -214,20 +210,6 @@ body {
 
 
       /* Quiz */
-
-      /* html {
-        box-sizing: border-box;
-      }
-      *,
-      *:before,
-      *:after {
-        box-sizing: inherit;
-      } */
-      
-      /* body {
-        font-family: sans-serif;
-        padding: 1rem;
-      } */
       
       .quiz,
       .choices {
@@ -238,6 +220,10 @@ body {
 
       .quiz{
         padding: 0px 10px;
+        
+      }
+      .quiz label{
+       border: none;
         
       }
       .quiz h2{
@@ -307,10 +293,18 @@ body {
        .quiz h2{
         padding: 0 10px 30px;
        }
+
+       .view-results {
+        border: unset;
+      }
   
       }
 
 @media (max-width: 730px) {
+  .video {
+    height: 0px;
+    
+   }
   .grid-row {
     align-items: start;
     display: grid;
@@ -318,12 +312,16 @@ body {
     grid-row-gap: 0;
     grid-template-columns: 70% 30% ;
     width: 100%;
-    padding: 15px 0px;
+    padding: 15px 0px 0px;
  }
 
  .quiz li{
   margin-left: 20px;
 }
+
+.quiz h2{
+  padding: 0 5px 30px;
+ }
 
 .choices li {
   margin-bottom: 5px;
@@ -331,19 +329,12 @@ body {
 }
 
  .view-results {
-  padding: 1rem;
-  cursor: pointer;
-  font-size: inherit;
-  color: white;
-  background: #cba10a;
-  border-radius: 8px;
-  margin-right: 5px;
-  margin: 10px 5px 10px 94px;
+  margin: 10px 5px 10px 34px;
 }
 
  .my-results{
   display: block;
-  width: 50%;
+  width: 80%;
   margin: auto;
  }
  
@@ -353,7 +344,8 @@ body {
  }
 
 .video-gallery input[type="radio"] + label{
-  text-align: center;
+  text-align: justify;
+  padding-left: 30%;
 }
 
 .video-gallery label{
