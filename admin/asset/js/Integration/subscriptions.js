@@ -24,6 +24,15 @@ let deleteSubscriber= async(myKey) => {
 
 // Get subscribers
 
+const subscriptions_preloader = document.getElementById("subscriptions_preloader")
+function showSubscriptionsLoader(){
+    subscriptions_preloader.classList.add("show")
+}
+function hideSubscriptionsLoader(){
+    subscriptions_preloader.classList.remove("show")
+}
+showSubscriptionsLoader()  
+
 async function fetchSubscribers(){
         
     let response = await fetch("https://ernestruzindana-be.cyclic.app/getAllSubscriptions")
@@ -31,7 +40,7 @@ async function fetchSubscribers(){
     const allResults = await response.json(); 
     const results = allResults.subscribers;
     console.log(results);
-   
+    hideSubscriptionsLoader()
     for(let i=0;i<results.length;i++){
         let resultsContainer = document.getElementById("subscriptionsContainer");
 

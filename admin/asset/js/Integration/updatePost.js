@@ -19,6 +19,15 @@ async function getSinglePost(post_id){
 
 // Getting a post
 
+const updatePost_preloader = document.getElementById("updatePost_preloader")
+function showupdatePostLoader(){
+    updatePost_preloader.classList.add("show")
+}
+function hideupdatePostLoader(){
+    updatePost_preloader.classList.remove("show")
+}
+showupdatePostLoader()
+
 const post_id = localStorage.getItem("post_id")
 
 async function getPostDetails(){
@@ -31,7 +40,7 @@ async function getPostDetails(){
     console.log(response)
     const fetchedData = await response.json()
     console.log(fetchedData)
-
+    hideupdatePostLoader()
 
     const singlePost = fetchedData.fetchedPost
 

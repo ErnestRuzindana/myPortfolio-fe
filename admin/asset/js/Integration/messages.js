@@ -23,7 +23,14 @@ let deleteMessage= async(myKey) => {
 
 
 // Get messages
-
+const messages_preloader = document.getElementById("messages_preloader")
+function showMessagesLoader(){
+    messages_preloader.classList.add("show")
+}
+function hideMessagesLoader(){
+    messages_preloader.classList.remove("show")
+}
+showMessagesLoader()  
 
 async function fetchMessages(){
         
@@ -32,7 +39,7 @@ async function fetchMessages(){
     const allResults = await response.json(); 
     const results = allResults.clientMessages;
     console.log(results);
-
+    hideMessagesLoader()
     //random ids
     const replyMessageBoxId = Math.floor(Math.random() * 1000)
    
@@ -61,8 +68,7 @@ async function fetchMessages(){
                <span style="text-decoration: underline;">Email</span>: ${email} </br> 
                <span style="text-decoration: underline;">Phone Number</span>: ${phoneNumber} </br>
                </div>
-               <div style="font-size: 16px; text-align: center; color: #cba10a; text-decoration: underline; font-weight: bold; 
-               ;
+               <div style="font-size: 16px; text-align: center; color: #cba10a; text-decoration: underline; font-weight: bold;
                ">Sender Message</div>
 
             <div class="panel-body text-center" style=" font-size: 15px; margin-top: -30px; padding-bottom: 20px;">

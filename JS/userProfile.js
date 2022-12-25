@@ -1,3 +1,13 @@
+const userProfile_preloader = document.getElementById("userProfile_preloader")
+function showUserProfileLoader(){
+  userProfile_preloader.classList.add("show")
+}
+showUserProfileLoader()
+
+function hideUserProfileLoader(){
+  userProfile_preloader.classList.remove("show")
+}
+
 async function UserProfile(){
       const getData = {
           method: "GET",
@@ -6,7 +16,7 @@ async function UserProfile(){
 
     let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
     const profileFetchedData = await response.json()
-
+    hideUserProfileLoader()
 
 
   const userProfileNames = document.getElementById("userProfileNames");

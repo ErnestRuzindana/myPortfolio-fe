@@ -1,4 +1,11 @@
-
+const viewAllPosts_preloader = document.getElementById("viewAllPosts_preloader")
+function showviewAllPostsLoader(){
+    viewAllPosts_preloader.classList.add("show")
+}
+function hideviewAllPostsLoader(){
+    viewAllPosts_preloader.classList.remove("show")
+}
+showviewAllPostsLoader()
 async function update_delete_post(){
     const getData = {
         method: "GET",
@@ -8,7 +15,7 @@ async function update_delete_post(){
     let response = await fetch("https://ernestruzindana-be.cyclic.app/getAllPosts", getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
-
+    hideviewAllPostsLoader()
     const posts = fetchedData.allAvailablePosts;
 
     for(let i=0; i<posts.length; i++){

@@ -8,6 +8,7 @@ const blogLoader = document.getElementById("blog_preloader")
   function showBlogLoader(){
       blogLoader.classList.add("show")
   }
+  showBlogLoader()
   function hideBlogLoader(){
       blogLoader.classList.remove("show")
   }
@@ -116,7 +117,6 @@ function previousPage() {
 
  
 async function getAllPosts(){
-    showBlogLoader()
     const getData = {
         method: "GET",
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}

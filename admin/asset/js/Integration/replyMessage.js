@@ -24,7 +24,14 @@ let getSingleMessage= async(messageId) => {
         }
 }
 
-
+const replyMessages_preloader = document.getElementById("replyMessages_preloader")
+function showreplyMessagesLoader(){
+    replyMessages_preloader.classList.add("show")
+}
+function hidereplyMessagesLoader(){
+    replyMessages_preloader.classList.remove("show")
+}
+showreplyMessagesLoader()
 const messageId = localStorage.getItem("messageId")
 
 async function getMessage() {
@@ -44,7 +51,7 @@ async function getMessage() {
     let response = await fetch('https://ernestruzindana-be.cyclic.app/contact/getMessageById/'+messageId, getOptions)
     const fetchSingleMessage = await response.json();
     console.log(fetchSingleMessage)
-
+    hidereplyMessagesLoader()
     const singleMessage = fetchSingleMessage.clientMessage
 
     const senderNames = document.getElementById("senderNames")

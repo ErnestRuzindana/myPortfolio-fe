@@ -1,4 +1,5 @@
-async function loggedInUser(){
+
+async function loggedInUser(){   
     const getData = {
         method: "GET",
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
@@ -7,11 +8,6 @@ async function loggedInUser(){
   let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
   const fetchedData = await response.json()
   console.log(fetchedData)
-
-
-   
-
-
 
 
   const addProfile = document.getElementById("addProfile");

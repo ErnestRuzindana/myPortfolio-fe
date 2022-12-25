@@ -24,7 +24,14 @@ let getSingleUser= async(userId) => {
         }
 }
 
-
+const changeRole_preloader = document.getElementById("changeRole_preloader")
+function showChangeRoleLoader(){
+    changeRole_preloader.classList.add("show")
+}
+function hideChangeRoleLoader(){
+    changeRole_preloader.classList.remove("show")
+}
+showChangeRoleLoader() 
 const userId = localStorage.getItem("userId")
 
 async function getUser() {
@@ -44,7 +51,7 @@ async function getUser() {
     let response = await fetch('https://ernestruzindana-be.cyclic.app/register/getSingleUser/'+userId, getOptions)
     const fetchSingleUser = await response.json();
     console.log(fetchSingleUser)
-
+    hideChangeRoleLoader()
     const singleUser = fetchSingleUser.fetchedUser
 
     const roleCategory = document.getElementById("roleCategory")

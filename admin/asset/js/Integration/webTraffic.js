@@ -1,3 +1,11 @@
+const dashboard_preloader = document.getElementById("dashboard_preloader")
+function showDashboardLoader(){
+    dashboard_preloader.classList.add("show")
+}
+function hideDashboardLoader(){
+    dashboard_preloader.classList.remove("show")
+}
+showDashboardLoader()
 async function users(){
     const getData = {
         method: "GET",
@@ -28,7 +36,7 @@ let subscriptionResponse = await fetch("https://ernestruzindana-be.cyclic.app/ge
     
     const allResults = await subscriptionResponse.json(); 
     const results = allResults.subscribers;
-
+    hideDashboardLoader()
 counterContainer.innerHTML = results.length
 
 

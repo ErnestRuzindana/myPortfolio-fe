@@ -3,6 +3,20 @@ html{
     scroll-behavior: smooth;
 }
 
+#userProfile_preloader{
+    background: white url(../images/preloader3.gif) no-repeat center center;
+    background-size: 80px;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+    display: none;
+  }
+  
+#userProfile_preloader.show{
+    display: block;
+  }
+
 section.profilePage{
     overflow: hidden;
 }

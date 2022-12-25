@@ -1,3 +1,11 @@
+const assignRole_preloader = document.getElementById("assignRole_preloader")
+function showAssignRoleLoader(){
+    assignRole_preloader.classList.add("show")
+}
+function hideAssignRoleLoader(){
+    assignRole_preloader.classList.remove("show")
+}
+showAssignRoleLoader()
 async function registeredUsers(){
     const getData = {
         method: "GET",
@@ -6,7 +14,7 @@ async function registeredUsers(){
 
   let response = await fetch("https://ernestruzindana-be.cyclic.app/register/getRegisteredUsers", getData)
   const fetchedData = await response.json()
-   
+  hideAssignRoleLoader()
     const users = fetchedData.RegisteredUsers;
     console.log(users);
    

@@ -11,6 +11,29 @@ body {
   color: #58666e !important;
 }
 
+/* preloaders */
+
+#dashboard_preloader, #registeredUsers_preloader, #assignRole_preloader,
+#viewAllPosts_preloader, #updatePost_preloader, #messages_preloader,
+#replyMessages_preloader, #subscriptions_preloader, #changeRole_preloader
+{
+  background: white url(../../../images/preloader3.gif) no-repeat center center;
+  background-size: 80px;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  display: none;
+}
+
+#dashboard_preloader.show, #registeredUsers_preloader.show, #assignRole_preloader.show,
+#viewAllPosts_preloader.show, #updatePost_preloader.show, #messages_preloader.show,
+#replyMessages_preloader.show, #subscriptions_preloader.show, #changeRole_preloader.show
+{
+  display: block;
+}
+
+
 a,
 a:hover {
   -webkit-text-decoration: none;

@@ -9,9 +9,8 @@ function showLoader(){
 function hideLoader(){
     loader.classList.remove("show")
 }
-
-async function postDetails(){
-    showLoader()
+showLoader()
+async function postDetails(){  
     const getData = {
         method: "GET",
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
