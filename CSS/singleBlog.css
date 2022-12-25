@@ -7,22 +7,22 @@
 }
 
 #preloader{
-  background: white url(../images/preloader2.gif) no-repeat center center;
-  background-size: 13%;
-  height: 100vh;
-  width: 77%;
-  position: fixed;
-  z-index: 100;
-  display: none;
+  background: white url(../images/preloader3.gif) no-repeat center center;
+    background-size: 80px;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    display: none;
 }
 
 .img-responsive{
   width: 10%;
 }
 
-/* #preloader.show{
+#preloader.show{
   display: block;
-} */
+}
 
 div.mySingleBlog{
     display: flex;

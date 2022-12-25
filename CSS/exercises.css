@@ -22,6 +22,10 @@ body {
 
  }
 
+ .toggleButton{
+  color: black;
+ }
+
   .video {
     -ms-overflow-style: none;
     scrollbar-width: none;
