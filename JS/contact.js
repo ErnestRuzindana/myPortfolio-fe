@@ -5,6 +5,7 @@ const visitorTel = document.getElementById("visitorTel");
 const visitorMessage = document.getElementById("visitorMessage");
 const messageSubmit = document.getElementById("messageSubmit");
 const contactMessage = document.getElementById("contactMessage");
+const popupBox = document.getElementById("popupBox")
 
 
 contactMessage.style.display = "none"
@@ -44,10 +45,13 @@ function contact(){
         }
 
         else if (fetchedData.successMessage){
-            contactMessage.style.color = "green"
-            contactMessage.innerHTML = fetchedData.successMessage
+            // contactMessage.style.color = "green"
+            // contactMessage.innerHTML = fetchedData.successMessage
 
-            setTimeout(()=>{location = "index.html#contact"}, 500)
+            // setTimeout(()=>{location = "index.html#contact"}, 500)
+            contactMessage.style.display = "none"
+            popupBox.classList.add("open-popup")
+            
         }
 
         else {
@@ -55,4 +59,9 @@ function contact(){
             contactMessage.innerHTML = fetchedData.errorMessage
         }
     })
+}
+
+function closePopup(){
+    popupBox.classList.remove("open-popup")
+    location = "index.html"
 }
