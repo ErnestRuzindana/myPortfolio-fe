@@ -33,6 +33,83 @@ body {
   display: block;
 }
 
+/* popup box */
+
+.popupBox{
+  width: 400px;
+  background: white;
+  border-radius: 6px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #333;
+  z-index: 999;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup{
+  visibility: visible;
+  top: 57%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+
+.popupBox img{
+  width: 150px;
+  margin-top: -70px;
+}
+.popupBox h2{
+  font-size: 38px;
+  font-weight: 500;
+  margin: 10px 0 10px;
+}
+.popupBox p{
+  font-size: 17px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: lighter;
+}
+
+.popupBox div.buttons{
+  display: flex;
+  justify-content: space-around;
+}
+
+.popupBox button.deletePost{
+  width: 40%;
+  margin-top: 30px;
+  padding: 7px 0;
+  background: #ff6b6b;
+  border-color: #ff6b6b;
+  color: white;
+   font-weight: bold;
+  border: 0;
+  outline: none;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popupBox button.cancel{
+  width: 30%;
+  margin-top: 30px;
+  padding: 7px 0;
+  background: #cba10a;
+  color: white;
+  font-weight: bold;
+  border: 0;
+  outline: none;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
 
 a,
 a:hover {
@@ -6518,16 +6595,6 @@ div.positionPanelBody{
 
 
 
-@media (min-width : 992px) {
-
-}
-
-
-
-@media (min-width : 768px) and (max-width: 991px) {
-
-
-}
 
 @media only screen and (max-width: 800px) {
   .profile-v1 .profile-v1-wrapper{padding: 0px !important;}
@@ -6639,6 +6706,27 @@ div.positionPanelBody{
 
 
 @media only screen and (max-width: 479px) { 
+
+  
+  .popupBox{
+    width: 340px;
+    left: 50% !important;
+  }
+  
+  .popupBox div.buttons{
+    justify-content: space-between;
+  }
+
+  .popupBox button.deletePost{
+    width: 45%;
+  }
+
+  .popupBox button.cancel{
+    width: 35%;
+  }
+
+
+
   .mail-right-tool li{padding: 5px !important;}
   .fc-right{display: none;}
   .fc-left{margin-bottom: 20px;float: right !important;}
@@ -6701,6 +6789,10 @@ div.positionPanelBody{
     margin: 11px -49px auto auto;
 }
   
+
+/* popup */
+
+
 
   
   .user-nav{margin-right: 10px;}
@@ -7122,7 +7214,9 @@ div.blogImage img{
 
 /* End of Blog section */
 
-
+.popupBox{
+  left: 65%;
+}
 
 
 }
@@ -7145,4 +7239,11 @@ div.blogImage img{
 
 .deleteMessage:hover{
   cursor: pointer;
+}
+
+
+@media only screen and (max-width: 340px){
+  .popupBox{
+    width: 300px;
+  }
 }

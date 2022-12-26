@@ -1,30 +1,30 @@
-async function deletePost(post_id){
-    const deletePostMessage = document.getElementById("deletePostMessage");
-    deletePostMessage.style.display = "none"
-
-    deletePostMessage.style.display = "block"
-
-    deletePostMessage.innerHTML = `<img src="../images/Spinner.gif" alt="Loading..." width="50px" height="50px">`
-
+const postIdDeletion = localStorage.getItem("postIdDeletion")
+async function deletePost(){
 
     const getData = {
         method: "DELETE",
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
     
-    let response = await fetch("https://ernestruzindana-be.cyclic.app/deletePost/"+post_id, getData)
+    let response = await fetch("https://ernestruzindana-be.cyclic.app/deletePost/"+postIdDeletion, getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 
     if (fetchedData.deletedPost){
-
-        deletePostMessage.style.color = "green"
-        
-        deletePostMessage.innerHTML = fetchedData.deletedPost
-
-        setTimeout(()=>{location = "viewAllPosts.html"}, 3000)
-
-        
+      location = "viewAllPosts.html"   
     }
+}
+
+
+
+//popup
+const popupBox = document.getElementById("popupBox")
+
+function openPopup(post_id){
+    popupBox.classList.add("open-popup")
+    localStorage.setItem("postIdDeletion", post_id)
+}
+function closePopup(){
+    popupBox.classList.remove("open-popup")
 }
 

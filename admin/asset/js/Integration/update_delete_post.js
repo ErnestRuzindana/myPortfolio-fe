@@ -63,9 +63,11 @@ async function update_delete_post(){
                         <p class="ContentSection" style="font-family: calibri;">
                             ${body}
                         </p>
+
+                        
                         
                         <button id="${post_id}" onclick="getSinglePost('${post_id}')" style="background: #cba10a; border-color: #cba10a; color: white; font-weight: bold;">Update post</button> &nbsp;
-                        <button id="${post_id}" onclick="deletePost('${post_id}')" style="background: #ff6b6b; border-color: #ff6b6b; color: white; font-weight: bold;">Delete post</button>
+                        <button  style="background: #ff6b6b; border-color: #ff6b6b; color: white; font-weight: bold;" onclick="openPopup('${post_id}')">Delete post</button>
                     </div>
                 </div>
         `
@@ -76,3 +78,8 @@ async function update_delete_post(){
 
 
 update_delete_post()
+
+
+
+
+
