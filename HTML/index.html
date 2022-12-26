@@ -737,7 +737,7 @@
     <div class="popupBox" id="popupBox">
         <img src="../images/successLogo.png" alt="">
         <h2>Thank you!</h2>
-        <p>Message received successfully! I'll get in touch soon!</p>
+        <p>Message received successfully! I will get in touch soon!</p>
         <button type="submit" class="cancel" onclick="closePopup()">Ok</button>
     </div>
 
@@ -747,6 +747,14 @@
 
    
     <!-- Footer section -->
+    <!-- popup box -->
+    <div class="popupBox" id="popupBoxSubscription">
+        <img src="../images/successLogo.png" alt="">
+        <h2>Done!</h2>
+        <p>Thank you for subscribing on this site! I need to know that this is really your email, a verification message was sent to this email address!</p>
+        <button type="submit" class="cancel" onclick="closePopupSubscripiton()">Ok</button>
+    </div>
+
     <section class="footer">
         <div class="myFooter" id="hideUserProfile">
             <div id="subscriptionMessage" class="subscriptionMessage"></div>
@@ -755,9 +763,12 @@
                     <h3>Be the first to know</h3>
                     <p>Please subscribe to this platform with your email to know more about what I do and stay connected</p>
                 </div>
-                <div class="myFooterTopForm" autocomplete="on">
-                    <input type="email" placeholder="Email address" id="subscriberEmail">
-                    <input type="submit" value="Subscribe" id="submitSubscription">
+                <div class="myFooterTopForm">
+                    <form action="" id="subscriberForm">
+                        <input type="email" placeholder="Email address" id="subscriberEmail">
+                        <input type="submit" value="Subscribe" id="submitSubscription">
+                    </form>
+                    
                 </div>
                 <p class="border"></p>
             </div>

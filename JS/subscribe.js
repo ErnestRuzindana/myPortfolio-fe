@@ -1,6 +1,8 @@
 
 const submitSubscription = document.getElementById("submitSubscription");
-
+const subscriberEmail = document.getElementById("subscriberEmail");
+const subscriberForm = document.getElementById("subscriberForm");
+const popupBoxSubscription = document.getElementById("popupBoxSubscription")
 const subscriptionMessage = document.getElementById("subscriptionMessage");
 subscriptionMessage.style.display = "none";
 
@@ -13,8 +15,7 @@ submitSubscription.addEventListener("click", (event) =>{
 });
 
 
-function subscription(){
-    const subscriberEmail = document.getElementById("subscriberEmail");
+function subscription(){   
 
     const data = {
         subscriberEmail: subscriberEmail.value, 
@@ -32,10 +33,8 @@ fetch("https://ernestruzindana-be.cyclic.app/Subscribe", sendData)
     console.log(fetchedData)
 
     if (fetchedData.successMessage){
-        subscriptionMessage.style.color = "green"
-        subscriptionMessage.innerHTML = fetchedData.successMessage
-        subscriberEmail.reset();
-        // setTimeout(()=>{location = "login.html"}, 4000)
+        subscriptionMessage.style.display = "none";
+        popupBoxSubscription.classList.add("open-popup")
     }
 
     else if (fetchedData.validationError){
@@ -49,4 +48,10 @@ fetch("https://ernestruzindana-be.cyclic.app/Subscribe", sendData)
     }
 })
 
+}
+
+
+function closePopupSubscripiton(){
+    popupBoxSubscription.classList.remove("open-popup")
+    subscriberForm.reset();
 }

@@ -6709,7 +6709,7 @@ div.positionPanelBody{
 
   
   .popupBox{
-    width: 340px;
+    width: 330px;
     left: 50% !important;
   }
   
@@ -7242,7 +7242,7 @@ div.blogImage img{
 }
 
 
-@media only screen and (max-width: 340px){
+@media only screen and (max-width: 335px){
   .popupBox{
     width: 300px;
   }

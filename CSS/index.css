@@ -102,6 +102,24 @@ body::-webkit-scrollbar-thumb {
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   }
 
+  /* Loading Dots */
+
+  .loadingDotsReadmore{
+    visibility: hidden;
+  }
+
+  .loadingDotsReadmore.showLoadingDotsReadmore{
+    visibility: visible;
+  } 
+
+  .loadingDotsPostTitle{
+    visibility: hidden;
+  }
+
+  .loadingDotsPostTitle.showLoadingDotsReadmore{
+   visibility: visible;
+  }
+
 /* ------------------------------------------------------------------------------------------------------------------------------ */
 /* Logged In user dropdown */
 
@@ -1731,7 +1749,7 @@ div.myFooterCopyRight{
 div.subscriptionMessage{
     width: 100%;
     margin: auto;
-    margin-bottom: -50px;
+    margin-bottom: -70px;
     text-align: center;
     font-weight: bold;
 }
@@ -3912,7 +3930,7 @@ div.myFooterCopyRight{
 }
 
 
-@media only screen and (max-width: 340px){
+@media only screen and (max-width: 335px){
     .popupBox{
       width: 300px;
     }

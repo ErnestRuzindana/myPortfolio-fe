@@ -89,6 +89,9 @@ async function postDetails(){
 postDetails()
 
 async function getSinglePost(postId){
+    const readMore = document.getElementById(postId)
+    readMore.classList.add("showLoadingDotsReadmore")
+console.log(readMore)
     const getData = {
         method: "GET",
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
@@ -104,6 +107,28 @@ async function getSinglePost(postId){
         localStorage.setItem("postId", fetchedData.fetchedPost._id)
     }
 }
+
+async function getSinglePostTitle(postId, postTitle){
+    const readMore = document.getElementById(postTitle)
+    readMore.classList.add("showLoadingDotsReadmore")
+console.log(readMore)
+    const getData = {
+        method: "GET",
+        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+    }
+
+    let response = await fetch("https://ernestruzindana-be.cyclic.app/getSinglePost/"+postId, getData)
+    const fetchedData = await response.json()
+    console.log(fetchedData)
+
+
+    if (fetchedData.fetchedPost){
+        location = "singleBlog.html"
+        localStorage.setItem("postId", fetchedData.fetchedPost._id)
+    }
+}
+
+
 
 
 //Fetch all comments

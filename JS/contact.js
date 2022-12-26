@@ -45,10 +45,6 @@ function contact(){
         }
 
         else if (fetchedData.successMessage){
-            // contactMessage.style.color = "green"
-            // contactMessage.innerHTML = fetchedData.successMessage
-
-            // setTimeout(()=>{location = "index.html#contact"}, 500)
             contactMessage.style.display = "none"
             popupBox.classList.add("open-popup")
             
@@ -63,5 +59,5 @@ function contact(){
 
 function closePopup(){
     popupBox.classList.remove("open-popup")
-    location = "index.html"
+    contactForm.reset();
 }
