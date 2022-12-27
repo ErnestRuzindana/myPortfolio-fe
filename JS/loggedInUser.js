@@ -1,5 +1,10 @@
 
-async function loggedInUser(){   
+async function loggedInUser(){
+    const preNavLogin = document.getElementById("preNavLogin");
+    const preNavToken = sessionStorage.getItem("token")
+    if(preNavToken){
+        preNavLogin.innerHTML = `<img src="../images/Spinner.gif" alt="" width="40px">`
+    }
     const getData = {
         method: "GET",
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
@@ -8,8 +13,9 @@ async function loggedInUser(){
   let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
   const fetchedData = await response.json()
   console.log(fetchedData)
-
-
+ 
+  preNavLogin.style.display = "none"
+  
   const addProfile = document.getElementById("addProfile");
   addProfile.innerHTML = `
   <!DOCTYPE html>
@@ -100,12 +106,6 @@ async function loggedInUser(){
             inProfileImage.style.display = "none"
         }
 
-
-
-        const preNavLogin = document.getElementById("preNavLogin");
-        preNavLogin.style.display = "none"
-
-        
 
         UserProfile.style.display = "none";
 

@@ -1,4 +1,10 @@
 async function loggedInUser(){
+    const preNavLogin = document.getElementById("preNavLogin");
+    const preNavToken = sessionStorage.getItem("token")
+    if(preNavToken){
+        preNavLogin.innerHTML = `<img src="../../../images/spinner.gif" alt="" width="40px">`
+    }
+
     const getData = {
         method: "GET",
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
@@ -8,11 +14,7 @@ async function loggedInUser(){
   const fetchedData = await response.json()
   console.log(fetchedData)
 
-
-   
-
-
-
+  preNavLogin.style.display = "none"
 
   const addProfile = document.getElementById("addProfile");
   addProfile.innerHTML = `
@@ -107,14 +109,6 @@ async function loggedInUser(){
       topProfileImage.style.display = "none"
       inProfileImage.style.display = "none"
   }
-
-
-
-  const preNavLogin = document.getElementById("preNavLogin");
-  console.log(preNavLogin)
-  preNavLogin.style.display = "none"
-
-  
 
   UserProfile.style.display = "none";
 

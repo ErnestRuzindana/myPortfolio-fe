@@ -1,6 +1,6 @@
 // Delete Results
-
-let deleteMessage= async(myKey) => {
+const messageIdDeletion = localStorage.getItem("messageIdDeletion")
+let deleteMessage= async() => {
 
     const deleteOptions = {
     
@@ -12,13 +12,24 @@ let deleteMessage= async(myKey) => {
        },
     }
 
-    let response = await fetch('https://ernestruzindana-be.cyclic.app/contact/deleteMessage/'+myKey, deleteOptions)
+    let response = await fetch('https://ernestruzindana-be.cyclic.app/contact/deleteMessage/'+messageIdDeletion, deleteOptions)
     const fetchDeletedPost = await response.json();
     console.log(fetchDeletedPost)
         if(fetchDeletedPost.deletedMessage){ 
             location="messages.html"
         }
     
+}
+
+//popup
+const popupBoxClientMessages = document.getElementById("popupBoxClientMessages")
+
+function openPopupClientMessages(message_id){
+    popupBoxClientMessages.classList.add("open-popup")
+    localStorage.setItem("messageIdDeletion", message_id)
+}
+function closePopupClientMessages(){
+    popupBoxClientMessages.classList.remove("open-popup")
 }
 
 
@@ -58,7 +69,7 @@ async function fetchMessages(){
 
         let postTemplate = `
     
-        <div class="col-md-6" id="${resultId}">
+        <div class="col-md-6">
             <div class="panel box-v1">
             <div style="font-size: 16px; text-align: center; color: #cba10a; text-decoration: underline; font-weight: bold; 
             padding-top: 15px;
@@ -74,7 +85,7 @@ async function fetchMessages(){
             <div class="panel-body text-center" style=" font-size: 15px; margin-top: -30px; padding-bottom: 20px;">
              ${message}
             </div>   
-                <div class="deleteMessage" style="font-size: 20px; margin-right: 20px; text-align: center; width: 40px; height: 40px; background: #ff6b6b; color: white; border-radius: 50%;  padding: 5px 5px;" id= '${resultId}' onclick="deleteMessage('${resultId}')">
+                <div class="deleteMessage" style="font-size: 20px; margin-right: 20px; text-align: center; width: 40px; height: 40px; background: #ff6b6b; color: white; border-radius: 50%;  padding: 5px 5px;"  onclick="openPopupClientMessages('${resultId}')">
                 <i class="fa fa-trash" aria-hidden="true"></i>
                 </div>
 
@@ -86,12 +97,12 @@ async function fetchMessages(){
                 <button id="postSubmitData" class="add-btn " style="
                 border: none;
                 background: #cba10a;
-                width: 40%;
+                width: 60%;
                 position: relative;
                 margin: auto;
-                padding: 5px 20px; color: white;"
+                padding: 5px 0px; color: white;"
                 onclick="getSingleMessage('${resultId}')"
-                ><span class="fa fa-envelope-o"></span> Reply </button>
+                > <span id="${resultId}" class="loadingDotsMessages"><img src="../images/loading.gif" alt="loading..." width="45px"></span> &nbsp; <span class="fa fa-envelope-o"></span> Reply</button>
                 </div>
             </div>
         </div>

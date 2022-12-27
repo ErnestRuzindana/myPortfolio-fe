@@ -31,6 +31,17 @@
 
  <body id="mimin" class="dashboard">
   <div id="subscriptions_preloader"></div>
+
+  <div class="popupBox" id="popupBoxSubscriptions">
+    <img src="../images/attention.png" alt="">
+    <h2>Confirm!</h2>
+    <p>Are you sure you want to remove this subscriber? This process is irreversible!</p>
+    <div class="buttons">
+        <button type="submit" class="cancel" onclick="closePopupSubscriptions()">Cancel</button>
+        <button onclick="deleteSubscriber()"  class="deletePost">Delete</button>
+    </div>
+  </div>
+
        <!-- start: Header -->
        <nav class="navbar navbar-default header navbar-fixed-top" style="background-color: #414A4C;">
         <div class="col-md-12 nav-wrapper">

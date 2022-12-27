@@ -2895,6 +2895,10 @@ div.preNavLogo a img {
         margin: -10px -47px auto auto;
     }
 
+    div.profilePictureIn{
+        margin-left: 112px;
+    }
+
     img.topProfileImage{
         width: 40px;
         height: 40px;

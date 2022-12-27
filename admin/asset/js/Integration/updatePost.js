@@ -1,4 +1,6 @@
 async function getSinglePost(post_id){
+    const readMore = document.getElementById(post_id)
+    readMore.classList.add("showLoadingDotsReadmore")
     const getData = {
         method: "GET",
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}

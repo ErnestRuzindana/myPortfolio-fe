@@ -2,6 +2,10 @@
 
 let getSingleMessage= async(messageId) => {
 
+    const clientMessage = document.getElementById(messageId)
+    clientMessage.classList.add("showLoadingDotsMessages")
+    console.log(clientMessage)
+
     const getOptions = {
     
         method: 'GET',
@@ -20,9 +24,10 @@ let getSingleMessage= async(messageId) => {
 
         if(fetchSingleMessage.clientMessageSuccess){ 
             localStorage.setItem("messageId", fetchSingleMessage.clientMessage._id)
-           location="replyMessage.html"
+            location="replyMessage.html"
         }
 }
+
 
 const replyMessages_preloader = document.getElementById("replyMessages_preloader")
 function showreplyMessagesLoader(){

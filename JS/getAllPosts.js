@@ -65,7 +65,7 @@ async function renderPosts(page = 1){
                 <img src="${post.postImage}" alt="" >
             </div>
             <div class="blogContent">
-                <h3> <a onclick="getSinglePostTitle('${post._id}', '${post.title}')" style="display: flex; align-items: center; cursor: pointer; font-family: poppins;">${post.title} <span id="${post.title}" class="loadingDotsPostTitle"><img src="../images/loading2.gif" alt="" width="45px" style="margin-left: 10px;"></span></a> </h3>
+                <h3> <a onclick="getSinglePostTitle('${post._id}', '${post.title}')" style="display: flex; align-items: center; cursor: pointer; font-family: poppins;">${post.title} <span id="${post.title}" class="loadingDotsPostTitle"><img src="../images/loading.gif" alt="" width="45px" style="margin-left: 10px;"></span></a> </h3>
                 <hr>
                 <div class="blogAuthor">
 
@@ -79,7 +79,7 @@ async function renderPosts(page = 1){
                 <p class="ContentSection" style="font-family: calibri;">
                     ${post.postBody.slice(0, 600)+"..."}
                 </p>
-                <a onclick="getSinglePost('${post._id}')" class="readmore" style="cursor: pointer; display: flex; align-items: center;">Read more &rarr; &nbsp;<span id="${post._id}" class="loadingDotsReadmore"><img src="../images/loading2.gif" alt="" width="45px"></span></a>
+                <a onclick="getSinglePost('${post._id}')" class="readmore" style="cursor: pointer; display: flex; align-items: center;">Read more &rarr; &nbsp;<span id="${post._id}" class="loadingDotsReadmore"><img src="../images/loading.gif" alt="" width="45px"></span></a>
             </div>
         </div>
 `

@@ -110,6 +110,24 @@ body {
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Loading Dots */
+
+.loadingDotsReadmore{
+  display: none;
+}
+
+.loadingDotsReadmore.showLoadingDotsReadmore{
+  display: inline-block;
+}
+
+.loadingDotsMessages{
+  display: none;
+}
+
+.loadingDotsMessages.showLoadingDotsMessages{
+  display: inline-block;
+}
+
 
 a,
 a:hover {
@@ -4763,6 +4781,11 @@ div.positionPanelBody{
 }
 
 @media (max-width: 767px) {
+
+  div.profilePicture {
+    margin: 2px 25px 0px 20px !important;
+}
+
   ul.timeline:before {
     left: 40px;
   }
@@ -5369,16 +5392,7 @@ div.positionPanelBody{
   -ms-transform: scaleX(0);
   -o-transform: scaleX(0);
   transform: scaleX(0);
-  -webkit-transition: -webkit-transform 0.2s ease-in;
-  -moz-transition: -webkit-transform 0.2s ease-in;
-  -ms-transition: -webkit-transform 0.2s ease-in;
-  -o-transition: -webkit-transform 0.2s ease-in;
-  transition: -webkit-transform 0.2s ease-in;
-  -webkit-transition: transform: 0.2s ease-in;
-  -moz-transition: transform: 0.2s ease-in;
-  -ms-transition: transform: 0.2s ease-in;
-  -o-transition: transform: 0.2s ease-in;
-  transition: transform: 0.2s ease-in;
+  transition: 0.2s ease-in;
 }
 
 .nav-tabs.nav-tabs-v1 li a:focus {
@@ -5899,7 +5913,7 @@ div.positionPanelBody{
 }
 #mimin-mobile .tree{
   padding-left: 10px;
-  background: #ef5949;
+  background: #cba10a;
 }
 .sub-mimin-mobile-menu-list {
   display: none;
@@ -6597,6 +6611,11 @@ div.positionPanelBody{
 
 
 @media only screen and (max-width: 800px) {
+
+  div.profilePicture {
+    margin: 10px 25px 20px 20px;
+}
+
   .profile-v1 .profile-v1-wrapper{padding: 0px !important;}
   .responsive-table table, 
   .responsive-table thead, 
@@ -6705,7 +6724,7 @@ div.positionPanelBody{
 }
 
 
-@media only screen and (max-width: 479px) { 
+@media only screen and (max-width: 495px) { 
 
   
   .popupBox{
@@ -6762,17 +6781,7 @@ div.positionPanelBody{
   }
 
   div.profilePicture{
-    background: black;
-    color: #cba10a;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    line-height: 40px;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    text-align: center;
-    margin: 5px 0px 0px 0px;
+    margin: 2.5px 0px 0px 0px !important;
   }
   
   img.topProfileImage{
@@ -6787,6 +6796,10 @@ div.positionPanelBody{
   div.userProfile {
     width: 300px;
     margin: 11px -49px auto auto;
+}
+
+div.profilePictureIn{
+  margin-left: 112px;
 }
   
 

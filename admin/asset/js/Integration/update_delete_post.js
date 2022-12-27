@@ -53,7 +53,7 @@ async function update_delete_post(){
                         <img src="${image}" alt="" >
                     </div>
                     <div class="blogContent">
-                        <h3> <a id="${post_id}" onclick="getSinglePost('${post_id}')" style="cursor: pointer; font-family: poppins;">${title}</a> </h3>
+                        <h3> <a style="cursor: pointer; font-family: poppins;">${title}</a> </h3>
                         <hr>
                         <div class="blogAuthor">
                             ${authorImageTemplate}
@@ -66,8 +66,8 @@ async function update_delete_post(){
 
                         
                         
-                        <button id="${post_id}" onclick="getSinglePost('${post_id}')" style="background: #cba10a; border-color: #cba10a; color: white; font-weight: bold;">Update post</button> &nbsp;
-                        <button  style="background: #ff6b6b; border-color: #ff6b6b; color: white; font-weight: bold;" onclick="openPopup('${post_id}')">Delete post</button>
+                        <button onclick="getSinglePost('${post_id}')" style="background: #cba10a; border-color: #cba10a; color: white; font-weight: bold;">Update post &nbsp;<span id="${post_id}" class="loadingDotsReadmore"><img src="../images/loading.gif" alt="" width="45px"></span></button> &nbsp;
+                        <button  style="background: #ff6b6b;  border-color: #ff6b6b; color: white; font-weight: bold;" onclick="openPopup('${post_id}')">Delete post</button>
                     </div>
                 </div>
         `
