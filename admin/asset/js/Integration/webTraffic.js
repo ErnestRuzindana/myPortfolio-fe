@@ -36,15 +36,18 @@ let subscriptionResponse = await fetch("https://ernestruzindana-be.cyclic.app/ge
     
     const allResults = await subscriptionResponse.json(); 
     const results = allResults.subscribers;
-    hideDashboardLoader()
 counterContainer.innerHTML = results.length
 
 
-// Web Traffic
-const totalTraffic = users.length + posts.length + results.length
-const countTraffic = document.getElementById("countTraffic")
-
-countTraffic.innerHTML = totalTraffic;
+// Client Messages
+    let responseMessages = await fetch("https://ernestruzindana-be.cyclic.app/contact/getAllMessages")
+    
+    const allResultsMessages = await responseMessages.json(); 
+    const resultsMessages = allResultsMessages.clientMessages.length;
+    const countTraffic = document.getElementById("countTraffic")
+    countTraffic.innerHTML = resultsMessages;
+    hideDashboardLoader()
+    
 }
 
 

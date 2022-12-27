@@ -382,13 +382,26 @@ ul.pageLinks button{
 }
 
 ul.pageLinks button:hover{
-    background-color: var(--myBackground);
-    color: var(--myColor);
+    opacity: 0.9;
     cursor: pointer;
 }
 
 
 /* End of pagination */
+
+div.myFooterSocialMedia ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    margin-left: 4vw;
+    list-style-type: none;
+    justify-content: space-between;
+}
+
+div.FooterLogo a img {
+    width: 70px !important;
+    transition: all 1s;
+}
 
 
 /* ------------------------------------------------------------------------------------------------------------------------------ */

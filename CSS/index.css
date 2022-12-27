@@ -120,6 +120,22 @@ body::-webkit-scrollbar-thumb {
    visibility: visible;
   }
 
+  .loadingDotsPrev{
+    display: none;
+  }
+
+  .loadingDotsPrev.showLoadingDotsReadmore{
+   display: block;
+  }
+
+  .loadingDotsNext{
+    display: none;
+  }
+
+  .loadingDotsNext.showLoadingDotsReadmore{
+   display: block;
+  }
+
 /* ------------------------------------------------------------------------------------------------------------------------------ */
 /* Logged In user dropdown */
 
@@ -1739,7 +1755,7 @@ div.FooterLogo a img:hover{
 
 div.myFooterCopyRight{
     text-align: center;
-    font-size: 1vw;
+    font-size: 14.5px;
     padding-top: 1.5vw;
     padding-bottom: 1.5vw;
     background-color: black;
@@ -2584,13 +2600,13 @@ span.testimonialOwnerIdentity{
 }
 
 span.testimonialOwnerIdentity strong{
-    font-size: 1.7vw;
+    font-size: 1.8vw;
 }
 
 
 span.testimonialOwnerIdentity small{
    line-height: 0.7vw; 
-   font-size: 1.6vw;
+   font-size: 1.7vw;
    font-family: calibri;
 }
 
@@ -2655,10 +2671,10 @@ div.myServicesTitle{
 }
 
 div.myServicesTitle h3{
-    font-size: 2.5vw;
+    font-size: 2.8vw;
 }
 div.myServicesTitle p{
-    font-size: 1.8vw;
+    font-size: 2.1vw;
 }
 
 div.myServicesBoxes{
@@ -2667,11 +2683,11 @@ div.myServicesBoxes{
 }
 
 div.myServicesBoxes h4{
-    font-size: 2.1vw;
+    font-size: 2.3vw;
 }
 
 div.myServicesBoxes p{
-    font-size: 2vw;
+    font-size: 2.2vw;
 }
 
 div.myServicesBoxes img{
@@ -2716,9 +2732,13 @@ div.contactpicture{
     width: 100%;
 }
 
+div.contactpicture img{
+    width: 160%;
+}
+
 div.contactform p{
     font-family: calibri;
-    font-size: 2vw;
+    font-size: 2.2vw;
     text-align: center;
 }
 
@@ -2727,16 +2747,20 @@ div.contactform p{
 /* Footer section */
 
 div.myFooterTopForm input[type="email"] {
-    padding: 0.8vw 10vw 0.8vw 0.8vw;
+    padding: 1vw 10vw 1vw 1vw;
 }
 
 div.myFooterTopForm input[type="email"]::placeholder{
-    font-size: 1.4vw;
+    font-size: 1.7vw;
 }
 
 div.myFooterTopForm input[type="submit"] {
     padding: 0.8vw;
-    font-size: 1.4vw;
+    font-size: 1.9vw;
+}
+
+div.subscriptionMessage{
+    margin-bottom: -60px;
 }
 
 div.myFooterTop{
@@ -2858,6 +2882,10 @@ div.myFooterCopyRight{
 
 
 /* End of footer section */
+
+a.northArrow {
+    left: 93%;
+}
 
 }
 
@@ -3537,7 +3565,7 @@ a.northArrow{
     border-radius: 5px;
     padding: 25px 10px 10px 10px;
     bottom: 20px;
-    left: 89%;
+    left: 88.5%;
     z-index: 2;
 }
 
@@ -3606,7 +3634,7 @@ div.mySkills{
 }
 
 div.skills_text h4{
-    font-size: 17px;
+    font-size: 17.5px;
 }
 
 div.skills_text p{
@@ -3734,6 +3762,13 @@ div.myFooterTopForm input[type="submit"] {
     font-size: 13px;
 }
 
+div.subscriptionMessage {
+    margin-bottom: -35px !important;
+}
+div.subscriptionMessage img {
+    margin-bottom: -15px !important;
+}
+
 div.myFooterTop{
     display: grid;
     grid-template-columns: auto;
@@ -3850,7 +3885,7 @@ div.FooterLogo a img:hover{
 
 div.myFooterCopyRight{
     text-align: center;
-    font-size: 15px;
+    font-size: 14px;
     padding-top: 15px;
     padding-bottom: 15px;
     background-color: black;

@@ -47,8 +47,11 @@ async function loggedInUser(){
           <br><br>
 
           <div class="switchAccount" style="font-weight: 500; padding: 20px;" id="adminPanel">
-                <p class="switchAccountLink">
+                <p class="switchAccountLink" id="dashboard">
                 <i class="fas fa-chalkboard-teacher"></i> </nbsp> Admin Panel
+                </p>
+                <p class="switchAccountLink" id="contactUs">
+                <i class="far fa-envelope-open"></i> </nbsp> Contact Me
                 </p>
           </div>
 
@@ -69,16 +72,25 @@ async function loggedInUser(){
         const myFooterCopyRight = document.getElementById ("myFooterCopyRight");
         const profilePictureIn = document.getElementById("profilePictureIn");
         const adminPanel = document.getElementById("adminPanel");
+        const dashboard = document.getElementById("dashboard");
+        const contactUs = document.getElementById("contactUs");
         
 
         //show or hide admin panel
         if(fetchedData.role == "user"){
-            adminPanel.style.display = "none"
+            dashboard.style.display = "none"
+        }
+        else{
+            contactUs.style.display = "none"
         }
     
         //Go to admin panel
-        adminPanel.addEventListener("click", ()=>{
+        dashboard.addEventListener("click", ()=>{
             location = "../admin/dashboard.html"
+        })
+        contactUs.addEventListener("click", ()=>{
+            location = "../HTML/index.html#contact"
+            UserProfile.style.display = "none"
         })
 
         const topProfileImage = document.getElementById("topProfileImage");

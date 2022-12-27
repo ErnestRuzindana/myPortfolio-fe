@@ -79,7 +79,7 @@ async function renderPosts(page = 1){
                 <p class="ContentSection" style="font-family: calibri;">
                     ${post.postBody.slice(0, 600)+"..."}
                 </p>
-                <a onclick="getSinglePost('${post._id}')" class="readmore" style="cursor: pointer; display: flex; align-items: center;">Read more &rarr; &nbsp;<span id="${post._id}" class="loadingDotsReadmore"><img src="../images/loading.gif" alt="" width="45px"></span></a>
+                <a onclick="getSinglePost('${post._id}')" class="readmore" style="cursor: pointer; display: flex; align-items: center;">Read more &rarr; &nbsp;<span id="${post._id}" class="loadingDotsReadmore" style="margin-top: -3px;"><img src="../images/loading.gif" alt="" width="40px"></span></a>
             </div>
         </div>
 `
@@ -90,6 +90,8 @@ async function renderPosts(page = 1){
 
 }
 renderPosts()
+const prevButton = document.getElementById("prevButton");
+const nextButton = document.getElementById("nextButton");
 
 function previousPage() {
     if (currentPage > 1) {
@@ -109,8 +111,7 @@ function previousPage() {
     return Math.ceil(posts.length / pageSize);
   }
 
-  const prevButton = document.getElementById("prevButton");
-  const nextButton = document.getElementById("nextButton");
+  
 
   prevButton.addEventListener('click', previousPage, false);
   nextButton.addEventListener('click', nextPage, false);

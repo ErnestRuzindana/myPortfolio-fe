@@ -307,15 +307,18 @@
     
         <!-- Footer section -->
         <section class="footer">
-            <div class="myFooter">
+            <div class="myFooter" id="hideUserProfile">
                 <div class="myFooterTop">
                     <div class="myFooterTopBeFirst">
                         <h3>Be the first to know</h3>
                         <p>Please subscribe to this platform with your email to know more about what I do and stay connected</p>
                     </div>
-                    <div class="myFooterTopForm" autocomplete="on">
-                        <input type="email" placeholder="Email address">
-                        <input type="submit" value="Subscribe">
+                    <div class="myFooterTopForm">
+                        <form action="" id="subscriberForm">
+                            <input type="email" placeholder="Email address" id="subscriberEmail">
+                            <input type="submit" value="Subscribe" id="submitSubscription">
+                        </form>
+                        
                     </div>
                     <p class="border"></p>
                 </div>
@@ -335,13 +338,13 @@
                     <div class="myFooterLinks">
                         <h4>Quick Links</h4>
                         <ul>
-                            <li><a href="index.html#myProfile">Home</a></li>
-                            <li><a href="index.html#aboutme">About</a></li>
-                            <li><a href="index.html#Skills">My skills</a></li>
-                            <li><a href="index.html#work">My work</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="index.html#services">Services</a></li>
-                            <li><a href="index.html#contact">Contact</a></li>
+                            <li><a href="#myProfile">Home</a></li>
+                            <li><a href="#aboutme">About</a></li>
+                            <li><a href="#Skills">My skills</a></li>
+                            <li><a href="#work">My work</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#contact">Contact</a></li>
                             <li id="loginLogout" style="cursor: pointer;"><a href="login.html">Login/Signup</a></li>
                             <li id="logoutUser" style="cursor: pointer;"><a onclick="allLoginLogout()">Logout</a></li>
                         </ul>
@@ -349,29 +352,29 @@
                     <div class="myFooterSocialMedia">
                         <h4>Social Media</h4>
                         <ul>
-                            <li><a href="https://web.facebook.com/ruzindana.elannoernest/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href="https://twitter.com/ruzindanaernes5" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                            <li><a href="https://www.instagram.com/elanno_official/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/ernest-ruzindana-7481b8183/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
-                            <li><a href="https://api.whatsapp.com/send/?phone=250783486141&text&app_absent=0" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
-                            <li><a href="https://github.com/ErnestRuzindana" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                            <li><a href="https://web.facebook.com/ruzindana.elannoernest/" target="_blank" text-align: center; ><img src="../images/facebook white-01.png" alt=""></a></li>
+                            <li><a href="https://twitter.com/ruzindanaernes5" target="_blank"><img src="../images/twitter white-01.png" alt=""></a></li>
+                            <li><a href="https://www.instagram.com/elanno_official/" target="_blank"><img src="../images/instagram white-01.png" alt=""></a></li>
+                            <li><a href="https://www.linkedin.com/in/ernest-ruzindana-7481b8183/" target="_blank"><img src="../images/linkedin white-01.png" alt=""></i></a></li>
+                            <li><a href="https://api.whatsapp.com/send/?phone=250783486141&text&app_absent=0" target="_bank"><img src="../images/whatsapp white-01.png" alt=""></a></li>
+                            <li><a href="https://github.com/ErnestRuzindana" target="_blank"><img src="../images/github white-01.png" alt=""></i></a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="myFooterCopyRight">
+                <div class="myFooterCopyRight" id="myFooterCopyRight">
                     <p>Copyright 2022 | All Rights Reserved by Ernest Ruzindana</p>
                 </div>
             </div>
         </section>
-        <!-- To North-->
-
-
-        <a href="#" class="northArrow">
-            <i class="fa-solid fa-arrow-up-long"></i>
-        </a>
+       
  </div>
 
 </div>
+
+<!-- To North-->
+    <a href="#" class="northArrow">
+        <img src="../images/UpArrow.png" alt="">
+    </a>
 
     <script src="../JS/blog.js"></script>
     <script src="../JS/getAllPosts.js"></script>
