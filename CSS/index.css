@@ -2041,8 +2041,9 @@ span.testimonialOwnerIdentity small{
 }
 
 span.testimonialOwner img{
-    width: 40%;
-    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    /* border-radius: 50%; */
     margin-left: 1.5vw;
 }
 
@@ -2278,7 +2279,7 @@ div.myFooterCopyRight{
 
 }
 
-@media only screen and (max-width: 1107px) {
+@media only screen and (max-width: 992px) {
 
   /* prenav section */
     div.userProfile{
