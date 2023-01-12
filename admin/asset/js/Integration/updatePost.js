@@ -87,21 +87,33 @@ function UpdatePost(){
     const headerImage = document.getElementById("headerImage");
     const postTitleDetails = document.getElementById("postTitleDetails");
     const summernote = document.getElementById("updatePost");
+    
 
+    const reader =  new FileReader();
+     reader.readAsDataURL(postImage.files[0])
+     reader.addEventListener("load",()=>{
+        const finalPostImage = reader.result
 
-    const formData = new FormData();
-        formData.append("postImage", postImage.files[0]);
-        formData.append("headerImage", headerImage.files[0]);
-        formData.append("title", postTitleDetails.value);
-        formData.append("postBody", summernote.innerHTML);
+    const reader2 =  new FileReader();
+     reader2.readAsDataURL(headerImage.files[0])
+     reader2.addEventListener("load",()=>{
+        const finalHeaderImage = reader2.result
 
-    const sendData = {
+    const data = {
+        title: postTitleDetails.value, 
+        postBody: summernote.innerHTML,
+        postImage: finalPostImage,
+        headerImage: finalHeaderImage,
+    }
+        
+
+    const sendData = {  
         method: "PUT",
-        body: formData, 
-        headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token"))})
+        body: JSON.stringify(data),
+        headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-fetch("https://ernestruzindana-be.cyclic.app/updatePost/"+post_id, sendData)
+fetch("http://localhost:5300/updatePost/"+post_id, sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)
@@ -129,7 +141,10 @@ fetch("https://ernestruzindana-be.cyclic.app/updatePost/"+post_id, sendData)
         blogMessage.style.color = "red"
         blogMessage.innerHTML = fetchedData.message 
     }
-})
+  
+      })
+    })
+  })
 }
 
 

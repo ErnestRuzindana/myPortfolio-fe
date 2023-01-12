@@ -207,25 +207,53 @@ function UpdateUserProfile(){
     const file = document.getElementById("file");
 
 
-    const formData = new FormData();
-        formData.append("firstName", profileFirstName.value);
-        formData.append("lastName", profileLastName.value);
-        formData.append("email", profileEmail.value);
-        formData.append("profileFacebook", UserProfileFacebook.value);
-        formData.append("profileTwitter", UserProfileTwitter.value);
-        formData.append("profileLinkedin", UserProfileLinkedin.value);
-        formData.append("profileInstagram", UserProfileInstagram.value);  
-        formData.append("bio", profileBio.value);
-        formData.append("profileImage", file.files[0]);
+    // const formData = new FormData();
+    //     formData.append("firstName", profileFirstName.value);
+    //     formData.append("lastName", profileLastName.value);
+    //     formData.append("email", profileEmail.value);
+    //     formData.append("profileFacebook", UserProfileFacebook.value);
+    //     formData.append("profileTwitter", UserProfileTwitter.value);
+    //     formData.append("profileLinkedin", UserProfileLinkedin.value);
+    //     formData.append("profileInstagram", UserProfileInstagram.value);  
+    //     formData.append("bio", profileBio.value);
+    //     formData.append("profileImage", file.files[0]);
 
 
-    const sendData = {
-        method: "PUT",
-        body: formData,
-        headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token"))})
+    // const sendData = {
+    //     method: "PUT",
+    //     body: formData,
+    //     headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token"))})
+    // }
+
+    const reader =  new FileReader();
+     reader.readAsDataURL(file.files[0])
+     reader.addEventListener("load",()=>{
+    const finalUserImage = reader.result
+
+    console.log(finalUserImage)
+
+    const data = {
+      firstName: profileFirstName.value,
+      lastName: profileLastName.value,
+      email: profileEmail.value,
+      profileFacebook: UserProfileFacebook.value,
+      profileTwitter: UserProfileTwitter.value,
+      profileLinkedin: UserProfileLinkedin.value,
+      profileInstagram: UserProfileInstagram.value,  
+      bio: profileBio.value,
+      profileImage: finalUserImage
     }
 
-fetch("https://ernestruzindana-be.cyclic.app/login/updateUser", sendData)
+    console.log(data)
+        
+
+    const sendData = {  
+        method: "PUT",
+        body: JSON.stringify(data),
+        headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
+    }
+
+fetch("http://localhost:5300/login/updateUser", sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)
@@ -236,4 +264,7 @@ fetch("https://ernestruzindana-be.cyclic.app/login/updateUser", sendData)
         location = "userProfile.html"
     }
 })
+
+   })
+
 }

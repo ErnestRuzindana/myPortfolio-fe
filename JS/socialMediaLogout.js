@@ -9,7 +9,7 @@ async function socialMediaLogoutUser(){
   console.log(fetchedData)
 
   if (fetchedData.message){
-        location = "index.html"
+        location = "../index.html"
   }
 }
 
@@ -25,7 +25,7 @@ const fetchedData = await response.json()
 console.log(fetchedData)
 
 if (fetchedData.message){
-      location = "index.html"
+      location = "../index.html"
 }
 }
 
@@ -33,14 +33,14 @@ if (fetchedData.message){
 
 function preNavLogoutUser(){
   sessionStorage.removeItem("token")
-  location = "index.html"
+  location = "../index.html"
 }
 
 
 
 function footerLogoutUser(){
   sessionStorage.removeItem("token")
-  location = "index.html"
+  location = "../index.html"
 }
 
 

@@ -43,7 +43,7 @@ async function loggedInUser(){
 
           <h3>${fetchedData.firstName} ${fetchedData.lastName}</h3>
           <p class="userFetchedEmail" style="font-weight: 500;">${fetchedData.email}</p>
-          <a href="userProfile.html" class="ManageAccountLink"><i class="far fa-edit"></i> </nbsp>Edit profile</a>
+          <a href="./HTML/userProfile.html" class="ManageAccountLink"><i class="far fa-edit"></i> </nbsp>Edit profile</a>
           <br><br>
 
           <div class="switchAccount" style="font-weight: 500; padding: 20px;" id="adminPanel">
@@ -89,7 +89,7 @@ async function loggedInUser(){
             location = "../admin/dashboard.html"
         })
         contactUs.addEventListener("click", ()=>{
-            location = "../HTML/index.html#contact"
+            location = "../index.html#contact"
             UserProfile.style.display = "none"
         })
 

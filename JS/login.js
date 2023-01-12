@@ -9,7 +9,7 @@ loginMessage.style.display = "none"
 
 const MyToken = JSON.parse(sessionStorage.getItem("token"))
 if (MyToken){
-    location = "index.html"
+    location = "../index.html"
 }
 
 
@@ -24,7 +24,7 @@ async function socialLoggedInUser(){
   console.log(fetchedData)
 
   if (!fetchedData.message){
-    location = "index.html"
+    location = "../index.html"
   }
 }
 
@@ -71,7 +71,7 @@ function login(){
         else if (fetchedData.successMessage){
 
             sessionStorage.setItem("token", JSON.stringify(fetchedData.Access_Token))
-            location = "index.html"
+            location = "../index.html"
         }
 
         else{

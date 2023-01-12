@@ -146,7 +146,7 @@ loggedInUser()
 
 function preNavLogoutUser(){
     sessionStorage.removeItem("token")
-    location = "../HTML/index.html"
+    location = "../index.html"
   }
 
 const token = sessionStorage.getItem("token")
