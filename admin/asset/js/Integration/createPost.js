@@ -57,22 +57,21 @@ async function createPost(){
 
     today = month + ' ' + dd + ', ' + yyyy;
 
-    
-    const formData = new FormData();
-        formData.append("postImage", postImage.files[0]);
-        formData.append("headerImage", headerImage.files[0]);
-        formData.append("title", postTitle.value);
-        formData.append("postBody", postBody.value);
-        formData.append("authorName", authorNames)
-        formData.append("authorImage", authorPicture)
-        formData.append("dateCreated", today)
+    const data = {
+        title: postTitle.value, 
+        postBody: postBody.value,
+        authorName: authorNames,
+        authorImage: authorPicture,
+        postImage: postImage.files[0],
+        headerImage: headerImage.files[0]
+    }
         
-       console.log(postImage.files[0])
+    console.log(postImage.files[0])
 
-    const sendData = {
+    const sendData = {  
         method: "POST",
-        body: formData,
-        headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token"))})
+        body: JSON.stringify(data),
+        headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
 fetch("https://ernestruzindana-be.cyclic.app/createPost", sendData)
