@@ -62,13 +62,11 @@ async function createPost(){
      reader.readAsDataURL(postImage.files[0])
      reader.addEventListener("load",()=>{
         const finalPostImage = reader.result
-        console.log(finalPostImage)
 
     const reader2 =  new FileReader();
      reader2.readAsDataURL(headerImage.files[0])
      reader2.addEventListener("load",()=>{
         const finalHeaderImage = reader2.result
-        console.log(finalHeaderImage)
 
     const data = {
         title: postTitle.value, 
@@ -76,10 +74,10 @@ async function createPost(){
         authorName: authorNames,
         authorImage: authorPicture,
         postImage: finalPostImage,
-        headerImage: finalHeaderImage
+        headerImage: finalHeaderImage,
+        dateCreated: today
     }
         
-    console.log(postImage.files[0])
 
     const sendData = {  
         method: "POST",
@@ -95,7 +93,7 @@ fetch("https://ernestruzindana-be.cyclic.app/createPost", sendData)
     if (fetchedData.successMessage){
         postMessages.style.color = "green"
         postMessages.innerHTML = fetchedData.successMessage
-        // location = "viewAllPosts.html"
+        location = "viewAllPosts.html"
     }
 
     else if (fetchedData.validationError){
