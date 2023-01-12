@@ -57,13 +57,26 @@ async function createPost(){
 
     today = month + ' ' + dd + ', ' + yyyy;
 
+
+    const reader =  new FileReader();
+     reader.readAsDataURL(postImage.files[0])
+     reader.addEventListener("load",()=>{
+        const finalPostImage = reader.result
+        console.log(finalPostImage)
+
+    const reader2 =  new FileReader();
+     reader2.readAsDataURL(headerImage.files[0])
+     reader2.addEventListener("load",()=>{
+        const finalHeaderImage = reader2.result
+        console.log(finalHeaderImage)
+
     const data = {
         title: postTitle.value, 
         postBody: postBody.value,
         authorName: authorNames,
         authorImage: authorPicture,
-        postImage: postImage.files[0],
-        headerImage: headerImage.files[0]
+        postImage: finalPostImage,
+        headerImage: finalHeaderImage
     }
         
     console.log(postImage.files[0])
@@ -82,7 +95,7 @@ fetch("https://ernestruzindana-be.cyclic.app/createPost", sendData)
     if (fetchedData.successMessage){
         postMessages.style.color = "green"
         postMessages.innerHTML = fetchedData.successMessage
-        location = "viewAllPosts.html"
+        // location = "viewAllPosts.html"
     }
 
     else if (fetchedData.validationError){
@@ -95,4 +108,7 @@ fetch("https://ernestruzindana-be.cyclic.app/createPost", sendData)
         postMessages.innerHTML = fetchedData.message
     }
 })
+
+     })
+    })
 }
