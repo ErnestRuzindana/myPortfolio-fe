@@ -59,15 +59,15 @@ async function createPost(){
 
     
     const formData = new FormData();
-        formData.append("image", postImage.files[0]);
-        formData.append("image", headerImage.files[0]);
+        formData.append("postImage", postImage.files[0]);
+        formData.append("headerImage", headerImage.files[0]);
         formData.append("title", postTitle.value);
         formData.append("postBody", postBody.value);
         formData.append("authorName", authorNames)
         formData.append("authorImage", authorPicture)
         formData.append("dateCreated", today)
         
-
+       console.log(postImage.files[0])
 
     const sendData = {
         method: "POST",
