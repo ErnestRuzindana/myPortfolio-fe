@@ -43,7 +43,7 @@ async function loggedInUser(){
 
           <h3>${fetchedData.firstName} ${fetchedData.lastName}</h3>
           <p class="userFetchedEmail" style="font-weight: 500;">${fetchedData.email}</p>
-          <a href="./HTML/userProfile.html" class="ManageAccountLink"><i class="far fa-edit"></i> </nbsp>Edit profile</a>
+          <a href="userProfile.html" class="ManageAccountLink"><i class="far fa-edit"></i> </nbsp>Edit profile</a>
           <br><br>
 
           <div class="switchAccount" style="font-weight: 500; padding: 20px;" id="adminPanel">
