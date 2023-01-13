@@ -29,7 +29,7 @@ async function update_delete_post(){
         const authorName = postArray.authorName
         const authorImage = postArray.authorImage 
 
-        const str = "http" || "https"
+        const str = "data:image" || "base64"
         var authorImageTemplate;
         if(authorImage.includes(str)){
            authorImageTemplate = 
