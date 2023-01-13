@@ -72,7 +72,7 @@ async function postDetails(){
     console.log(userFetchedData)
 
     if(userFetchedData.imageLink){
-        const commentorPicture = `https://ernestruzindana-be.cyclic.app/images/${userFetchedData.imageLink}`
+        const commentorPicture = userFetchedData.imageLink
         commentorAvatar.innerHTML = 
            `<img src="${commentorPicture}" alt="" class="AuthorImage" id="authorProfilePicture">`
     }
@@ -378,7 +378,7 @@ $(document).ready(function() {
         var commentorImageTemplate;
 
         if(fetchedData.imageLink){
-            commentorPicture = `https://ernestruzindana-be.cyclic.app/images/${fetchedData.imageLink}`
+            commentorPicture = fetchedData.imageLink
             commentorImageTemplate = 
             `<img src="${commentorPicture}" alt="" class="AuthorImage" id="authorProfilePicture">`
         }

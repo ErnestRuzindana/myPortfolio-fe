@@ -33,7 +33,7 @@ async function comment(){
     var commentorImageTemplate;
 
     if(fetchedData.imageLink){
-        commentorPicture = `https://ernestruzindana-be.cyclic.app/images/${fetchedData.imageLink}`
+        commentorPicture = fetchedData.imageLink
         commentorImageTemplate = 
            `<img src="${commentorPicture}" alt="" class="AuthorImage" id="authorProfilePicture">`
     }
@@ -160,7 +160,7 @@ async function commentReply(){
     var commentorImageTemplate;
 
     if(fetchedData.imageLink){
-        commentorPicture = `https://ernestruzindana-be.cyclic.app/images/${fetchedData.imageLink}`
+        commentorPicture = fetchedData.imageLink
         commentorImageTemplate = 
            `<img src="${commentorPicture}" alt="" class="AuthorImage" id="authorProfilePicture">`
     }

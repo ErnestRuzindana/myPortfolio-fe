@@ -35,14 +35,14 @@ async function loggedInUser(){
       <div class="profilePicture" id="profilePicture">
         ${fetchedData.firstName.charAt(0)}${fetchedData.lastName.charAt(0)}
       </div>
-      <img src="https://ernestruzindana-be.cyclic.app/images/${fetchedData.imageLink}" class="topProfileImage" id="topProfileImage" alt="">
+      <img src="${fetchedData.imageLink}" class="topProfileImage" id="topProfileImage" alt="">
 
           
       <div class="userProfile" id="userProfile">
           <div class="profilePictureIn" id="profilePictureIn">
           ${fetchedData.firstName.charAt(0)}${fetchedData.lastName.charAt(0)}
           </div>
-          <img src="https://ernestruzindana-be.cyclic.app/images/${fetchedData.imageLink}" class="inProfileImage" id="inProfileImage" alt="">
+          <img src="${fetchedData.imageLink}" class="inProfileImage" id="inProfileImage" alt="">
 
           <h3 class="adminNames">${fetchedData.firstName} ${fetchedData.lastName}</h3>
           <p class="userFetchedEmail" style="font-weight: 500;">${fetchedData.email}</p>

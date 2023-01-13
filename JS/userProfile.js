@@ -30,7 +30,7 @@ async function UserProfile(){
   ImageDiv.innerHTML = profileFetchedData.firstName.charAt(0) +""+ profileFetchedData.lastName.charAt(0)
 
   if (profileFetchedData.imageLink) {
-    profileImageLinkLeft.src = `https://ernestruzindana-be.cyclic.app/images/${profileFetchedData.imageLink}`
+    profileImageLinkLeft.src = profileFetchedData.imageLink
     ImageDiv.style.display = "none"
   }
 
@@ -99,7 +99,7 @@ async function UserProfile(){
   profilePicRight.innerHTML = profileFetchedData.firstName.charAt(0) +""+ profileFetchedData.lastName.charAt(0)
 
   if (profileFetchedData.imageLink) {
-    profileImageLink.src = `https://ernestruzindana-be.cyclic.app/images/${profileFetchedData.imageLink}`
+    profileImageLink.src = profileFetchedData.imageLink
     profilePicRight.style.display = "none"
   }
 
@@ -241,7 +241,7 @@ function UpdateUserProfile(){
       profileLinkedin: UserProfileLinkedin.value,
       profileInstagram: UserProfileInstagram.value,  
       bio: profileBio.value,
-      profileImage: finalUserImage
+      imageLink: finalUserImage
     }
 
     console.log(data)
@@ -253,7 +253,7 @@ function UpdateUserProfile(){
         headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-fetch("http://localhost:5300/login/updateUser", sendData)
+fetch("https://ernestruzindana-be.cyclic.app/login/updateUser", sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)

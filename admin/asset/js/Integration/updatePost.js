@@ -113,7 +113,7 @@ function UpdatePost(){
         headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-fetch("http://localhost:5300/updatePost/"+post_id, sendData)
+fetch("https://ernestruzindana-be.cyclic.app/updatePost/"+post_id, sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)

@@ -28,7 +28,7 @@ async function registeredUsers(){
             image = nameAbbreviation 
         }
         else{
-            image = `<img src="https://ernestruzindana-be.cyclic.app/images/${usersArray.imageLink}" alt="" id="imagePicture" style="margin-top: -10px;">`
+            image = `<img src="${usersArray.imageLink}" alt="" id="imagePicture" style="margin-top: -10px;">`
         }
 
         const name = usersArray.firstName +" "+usersArray.lastName;

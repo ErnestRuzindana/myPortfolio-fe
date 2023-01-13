@@ -36,7 +36,7 @@ async function createPost(){
 
     var authorPicture
     if(fetchedData.imageLink){
-        authorPicture = `https://ernestruzindana-be.cyclic.app/images/${fetchedData.imageLink}`
+        authorPicture = fetchedData.imageLink
     }
 
     else{
