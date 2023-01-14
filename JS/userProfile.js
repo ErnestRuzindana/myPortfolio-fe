@@ -261,7 +261,7 @@ fetch("https://ernestruzindana-be.cyclic.app/login/updateUser", sendData)
     if (fetchedData.message){
         profileMessage.style.color = "green"
         profileMessage.innerHTML = fetchedData.message
-        // location = "userProfile.html"
+        location = "userProfile.html"
     }
 })
 
