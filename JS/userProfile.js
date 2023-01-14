@@ -253,7 +253,7 @@ function UpdateUserProfile(){
         headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-fetch("http://localhost:5000/login/updateUser", sendData)
+fetch("https://ernestruzindana-be.cyclic.app/login/updateUser", sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)
