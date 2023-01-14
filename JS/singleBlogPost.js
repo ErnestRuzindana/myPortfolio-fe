@@ -39,7 +39,7 @@ async function postDetails(){
 
     const singleBlogImageTemplate = document.getElementById("singleBlogImageTemplate")
 
-    const str = "data:image" || "base64"
+    const str = "https" || "http"
     const authorImage = singlePost.authorImage
 
         if(authorImage.includes(str)){
@@ -160,7 +160,7 @@ async function getAllComments(){
 
         console.log(commentsArray.commentReplies)
      
-        const str = "data:image" || "base64"
+        const str = "https" || "http"
         var commentorImageTemplate;
         if(commentorImage.includes(str)){
            commentorImageTemplate = 
@@ -179,7 +179,7 @@ async function getAllComments(){
 
         function myFunction(eachReply) {
 
-            const string2 = "data:image" || "base64"
+            const string2 = "https" || "http"
             var replierImageTemplate;
             if(eachReply.replierImage.includes(string2)){
                replierImageTemplate = 

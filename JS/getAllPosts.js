@@ -43,7 +43,7 @@ async function renderPosts(page = 1){
         
         const authorImage = post.authorImage 
 
-        const str = "data:image" || "base64"
+        const str = "https" || "http"
         var authorImageTemplate;
         if(authorImage.includes(str)){
            authorImageTemplate = 
