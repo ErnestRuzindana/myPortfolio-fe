@@ -230,7 +230,7 @@ async function commentReply(){
   </div>
 </li>
 `
-    $current.closest('li').find('.child_replay').prepend(el);
+    $current.closest('li').find('.child_replay').append(el);
     $('.comment_replay').val('');
     cancel_reply();
 }

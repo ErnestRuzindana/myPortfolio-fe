@@ -27,7 +27,6 @@ async function postDetails(){
 
     const singleBlogContentParagraph = document.getElementById("singleBlogContentParagraph")
     singleBlogContentParagraph.innerHTML = singlePost.postBody
-    console.log(singlePost.postBody)
 
     const headerPictureSource = document.getElementById("headerPictureSource")
     headerPictureSource.src = singlePost.headerImage
@@ -158,6 +157,8 @@ async function getAllComments(){
         const date = commentsArray.dateCommented
         const commentorName = commentsArray.commentorName
         const commentorImage = commentsArray.commentorImage
+
+        console.log(commentsArray.commentReplies)
      
         const str = "data:image" || "base64"
         var commentorImageTemplate;
@@ -174,10 +175,47 @@ async function getAllComments(){
         }
 
 
+        const replyTemplate = commentsArray.commentReplies.map(myFunction);
+
+        function myFunction(eachReply) {
+
+            const string2 = "data:image" || "base64"
+            var replierImageTemplate;
+            if(eachReply.replierImage.includes(string2)){
+               replierImageTemplate = 
+               `<img src="${eachReply.replierImage}" alt="" class="AuthorImage" id="authorProfilePicture">`
+            }
+                 
+            else{
+                replierImageTemplate = 
+               ` <div class="authorImageChartsSingleBlog" id="authorImageCharts">
+               ${eachReply.replierImage}
+               </div>`
+            }
+
+        return `
+		<li class="box_result row" id="">
+            <div class="replies">
+                <div class="avatar_comment col-md-1">
+                  ${replierImageTemplate}
+                </div>
+                
+                <div class="result_comment col-md-11">
+                    <h4>${eachReply.replierName} <span> &nbsp &nbsp/ ${eachReply.dateReplied}</span></h4>
+                    <p>${eachReply.replyBody}</p>
+                </div>
+                
+            </div>
+        </li>
+        `
+        }
+
+
+
         const commentList = document.getElementById("list_comment");
         
         const commentTemplate = `
-            <li class="box_result row" id="${comment_id}">
+        <li class="box_result row" id="${comment_id}">
             <div class="comments">
                 <div class="avatar_comment col-md-1">
                     ${commentorImageTemplate}
@@ -194,7 +232,7 @@ async function getAllComments(){
                         <a class="replay" id="${comment_id}" onclick="getSingleComment('${PostId}','${comment_id}')">Reply</a>
                     </div>
                     <ul class="child_replay" >
-                     
+                      ${replyTemplate}
                     </ul>
                 </div>
                 
@@ -203,71 +241,7 @@ async function getAllComments(){
         `
 
         commentList.innerHTML += commentTemplate
-        // <a class="replayReplies" id="${comment_id}" onclick="getSingleComment('${PostId}','${comment_id}')">View replies</a>
-        $(document).ready(function() {
 
-        $('#list_comment').load('.child_replay', async function (e) {
-
-            const repliesGetData = {
-                method: "GET",
-                headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
-            }
-        
-            let repliesResponse = await fetch(`https://ernestruzindana-be.cyclic.app/getSingleComment/${postId}/${comment_id}`, repliesGetData)
-            const repliesFetchedData = await repliesResponse.json()
-            console.log(repliesFetchedData.fetchedComment[0].comments[0].commentReplies)
-            const commentReplies = repliesFetchedData.fetchedComment[0].comments[0].commentReplies
-            console.log(commentReplies.length)
-            var repliesTemplate;
-            var allCommentReplies
-            for(let j=0; j<commentReplies.length; j++){
-                const replies = commentReplies[j]
-                const replyBody = replies.replyBody
-                const date = replies.dateReplied
-                const replierName = replies.replierName
-                const replierImage = replies.replierImage 
-            
-            const str = "data:image" || "base64"
-            var replierImageTemplate;
-            if(replierImage.includes(str)){
-               replierImageTemplate = 
-               `<img src="${replierImage}" alt="" class="AuthorImage" id="authorProfilePicture">`
-            }
-                 
-            else{
-                replierImageTemplate = 
-               ` <div class="authorImageChartsSingleBlog" id="authorImageCharts">
-               ${replierImage}
-               </div>`
-            }
-    
-            repliesTemplate = `
-            <li class="box_reply row">
-            <div class="commentReplies">
-              <div class="avatar_comment col-md-1">
-                  ${replierImageTemplate}
-              </div>
-              <div class="result_comment col-md-11">
-                  <h4>${replierName} <span> &nbsp &nbsp/ ${date}</span></h4>
-                  <p>${replyBody}</p>
-              </div>
-            </div>
-          </li>
-          `
-          allCommentReplies += repliesTemplate
-            }
-    
-            cancel_reply();
-            $current = $(this);
-            el = document.createElement('li');
-            el.className = "box_reply row";
-            el.innerHTML = allCommentReplies
-            
-            $current.closest('li').find('.child_replay').prepend(el);
-        });
-
-    });
-    
     }
 }
 

@@ -57,7 +57,7 @@ async function renderPosts(page = 1){
            </div>`
         }
 
-         
+         console.log(post.postImage)
         paginatedPost += `
         <div class="blogBoxes blogBox1" id="postBox">
 

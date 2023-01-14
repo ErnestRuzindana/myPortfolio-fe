@@ -344,7 +344,7 @@ h4 span{
       border-left: 1px dotted #d3d6db;
       margin-top: 12px;
       list-style: none;
-      padding:0 0 0 8px
+      padding:30px 0 0 8px
   }
   .reply_comment{
       margin:12px 0;
@@ -418,6 +418,18 @@ h4 span{
     grid-template-columns: 7% 90%;
     padding: 43px 0px 43px 0px;
   }
+
+  div.replies{
+    display: grid;
+    grid-template-columns: 7% 90%;
+  }
+
+  .child_replay {
+    border-left: 1px dotted #d3d6db;
+    margin-top: 12px;
+    list-style: none;
+    padding: 0px 0 0 12px;
+}
 
   ul.col-md-12{
     margin-top: 70px;
