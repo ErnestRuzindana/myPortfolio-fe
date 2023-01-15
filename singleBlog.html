@@ -19,6 +19,62 @@
 </head>
 <body>
 
+    <!-- popup boxes -->
+    
+    <div class="popupBox" id="popupBoxLikes">
+        <img src="../images/attention.png" alt="">
+        <p>Please Login to like a post!</p>
+        <div class="buttons">
+            <button onclick="closePopupSingleBlog()"  class="deletePost">Close</button>
+            <button type="submit" class="cancel login" onclick="goToLogin()">Login</button>        
+        </div>
+      </div>
+
+    <div class="popupBox" id="popupBoxCommentLikes">
+        <img src="../images/attention.png" alt="">
+        <p>Please Login to like a comment!</p>
+        <div class="buttons">
+            <button onclick="closePopupCommentLikes()"  class="deletePost">Close</button>
+            <button type="submit" class="cancel login" onclick="goToLogin()">Login</button>        
+        </div>
+      </div>
+
+    <div class="popupBox" id="popupBoxComments">
+        <img src="../images/attention.png" alt="">
+        <p>Please Login to add comment!</p>
+        <div class="buttons">
+            <button onclick="closePopupComments()"  class="deletePost">Close</button>
+            <button type="submit" class="cancel login" onclick="goToLogin()">Login</button>        
+        </div>
+    </div>
+
+    <div class="popupBox" id="popupBoxCommentsReplies">
+        <img src="../images/attention.png" alt="">
+        <p>Please Login to add a reply!</p>
+        <div class="buttons">
+            <button onclick="closePopupCommentsReplies()"  class="deletePost">Close</button>
+            <button type="submit" class="cancel login" onclick="goToLogin()">Login</button>        
+        </div>
+    </div>
+
+    <div class="popupBox" id="popupBoxCommentsValidation">
+        <img src="../images/attention.png" alt="">
+        <p>You can't send an empty comment!</p>
+        <div class="buttons">
+            <button type="submit" class="cancel login" onclick="closePopupCommentsValidation()">Ok</button>        
+        </div>
+    </div>
+
+    <div class="popupBox" id="popupBoxCommentsRepliesValidation">
+        <img src="../images/attention.png" alt="">
+        <p>You can't send an empty reply!</p>
+        <div class="buttons">
+            <button type="submit" class="cancel login" onclick="closePopupCommentsRepliesValidation()">Ok</button>        
+        </div>
+    </div>
+
+<!--  End of popup boxes -->
+
 <div id="preloader"></div>
 
     <div class="myBlog">
@@ -299,7 +355,6 @@
 
 
                     <!-- Likes and comments -->
-                    <div class="likesMessage" id="likesMessage"></div>
                     <div class="likesAndComments">
                         
                         <ul id="listLikes" class="listLikes">
@@ -319,7 +374,6 @@
 
 
                     <section class="comments">
-                        <div id="disableComment" class="disableComment"></div>
                             <div class="container">
                                 <div class="col-md-12" id="fbcomment">
                         
@@ -352,10 +406,6 @@
             </div>
             
         </section>
-
-
-
-
 
 
 

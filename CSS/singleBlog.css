@@ -352,6 +352,8 @@ h4 span{
   .box_result .result_comment p{
     margin: 4px 0;
     text-align:justify;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 13.5px;
   }
   .box_result .result_comment .tools_comment{
     font-size: 12px;
@@ -420,8 +422,7 @@ h4 span{
   }
 
   div.replies{
-    display: grid;
-    grid-template-columns: 7% 90%;
+    padding: 70px 0px 0px 0px !important; 
   }
 
   .child_replay {
@@ -429,6 +430,60 @@ h4 span{
     margin-top: 12px;
     list-style: none;
     padding: 0px 0 0 12px;
+}
+
+
+.popupBox img{
+  width: 150px;
+  margin-top: -70px;
+}
+.popupBox h2{
+  font-size: 38px;
+  font-weight: 500;
+  margin: 10px 0 10px;
+}
+.popupBox p{
+  font-size: 17px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.popupBox div.buttons{
+  display: flex;
+  justify-content: space-around;
+}
+
+.popupBox button.deletePost{
+  width: 30%;
+  margin-top: 30px;
+  padding: 7px 0;
+  background: #ff6b6b;
+  border-color: #ff6b6b;
+  color: white;
+   font-weight: bold;
+  border: 0;
+  outline: none;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popupBox button.login{
+  width: 35% !important;
+}
+
+.popupBox button.cancel{
+  margin-top: 30px;
+  padding: 7px 0;
+  background: #cba10a;
+  color: white;
+  font-weight: bold;
+  border: 0;
+  outline: none;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
   ul.col-md-12{
@@ -472,6 +527,10 @@ h4 span{
       display: grid;
       grid-template-columns: auto;
       padding: 43px 0px 43px 0px;
+    }
+
+    .child_replay{
+      margin-left: 20px;
     }
 
     div.authorImageChartsSingleBlog{

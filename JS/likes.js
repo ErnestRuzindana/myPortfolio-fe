@@ -1,5 +1,7 @@
 // Post Likes
 const postLike = document.getElementById("postLike");
+const popupBoxLikes = document.getElementById("popupBoxLikes")
+const popupBoxCommentLikes = document.getElementById("popupBoxCommentLikes")
 
 postLike.addEventListener("click", (event) =>{
     event.preventDefault(); 
@@ -7,14 +9,25 @@ postLike.addEventListener("click", (event) =>{
     like();
 });
 
+function closePopupSingleBlog(){
+    popupBoxLikes.classList.remove("open-popup")
+}
+
+function closePopupCommentLikes(){
+    popupBoxCommentLikes.classList.remove("open-popup")
+}
+
+function goToLogin(){
+    location = "login.html"
+}
+
 const post__id = localStorage.getItem("postId")
-const likesMessage = document.getElementById("likesMessage")
-likesMessage.style.display = "none";
+const checkTokenLikes = JSON.parse(sessionStorage.getItem("token"))
+
 async function like(){
-    const checkToken = JSON.parse(sessionStorage.getItem("token"))
-	if (!checkToken){
-		likesMessage.style.display = "block";
-        likesMessage.innerHTML = `Please Login to Like a Post!`
+    
+	if (!checkTokenLikes){
+        popupBoxLikes.classList.add("open-popup")
 	   }
     //LoggedIn user
     const getData = {
@@ -97,6 +110,9 @@ getAllLikes()
 
 async function likeComment(comment__id){
 
+    if (!checkTokenLikes){
+        popupBoxCommentLikes.classList.add("open-popup")
+	   }
     //LoggedIn user
     const getData = {
         method: "GET",
@@ -170,3 +186,4 @@ async function getAllCommentLikes(){
 }
 
 getAllCommentLikes()
+

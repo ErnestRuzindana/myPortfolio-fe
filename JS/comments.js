@@ -1,6 +1,8 @@
 const submitComment = document.getElementById("submitComment");
-const disableComment = document.getElementById("disableComment")
-disableComment.style.display = "none";
+const popupBoxComments = document.getElementById("popupBoxComments")
+const popupBoxCommentsValidation = document.getElementById("popupBoxCommentsValidation")
+const popupBoxCommentsReplies = document.getElementById("popupBoxCommentsReplies")
+const popupBoxCommentsRepliesValidation = document.getElementById("popupBoxCommentsRepliesValidation")
 
 submitComment.addEventListener("click", (event) =>{
     event.preventDefault(); 
@@ -8,12 +10,33 @@ submitComment.addEventListener("click", (event) =>{
     comment();
 });
 
+function goToLogin(){
+    location = "login.html"
+}
+
+function closePopupComments(){
+    popupBoxComments.classList.remove("open-popup")
+}
+
+function closePopupCommentsValidation(){
+    popupBoxCommentsValidation.classList.remove("open-popup")
+}
+
+function closePopupCommentsReplies(){
+    popupBoxCommentsReplies.classList.remove("open-popup")
+}
+
+function closePopupCommentsRepliesValidation(){
+    popupBoxCommentsRepliesValidation.classList.remove("open-popup")
+}
+
 const post_id = localStorage.getItem("postId")
+const checkToken = JSON.parse(sessionStorage.getItem("token"))
+
 async function comment(){
-    const checkToken = JSON.parse(sessionStorage.getItem("token"))
+    
 	if (!checkToken){
-		disableComment.style.display = "block";
-        disableComment.innerHTML = `Please Login to Comment!`
+		popupBoxComments.classList.add("open-popup")
 	   }
     const commentBody = document.getElementById("commentBody");
     
@@ -79,7 +102,6 @@ async function comment(){
 .then((fetchedData)=>{
     console.log(fetchedData)
 
-    
 })
 
 
@@ -110,8 +132,17 @@ var comment = $('.commentar').val();
   </div>
 </li>
 `
-	document.getElementById('list_comment').append(el);
-	$('.commentar').val('');
+    if(comment == ""){
+        popupBoxCommentsValidation.classList.add("open-popup")
+        document.getElementById('list_comment').disabled = true
+    }
+
+    else{
+        document.getElementById('list_comment').append(el);
+        $('.commentar').val('');
+    }
+
+	
 }
 
 function refreshPage(){
@@ -122,6 +153,11 @@ function refreshPage(){
 let commentId;
 // Get Single Comment
 async function getSingleComment(postId, comment_Id){
+
+    if (!checkToken){
+		popupBoxCommentsReplies.classList.add("open-popup")
+	   }
+
     const getData = {
         method: "GET",
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
@@ -140,11 +176,7 @@ async function getSingleComment(postId, comment_Id){
 //Reply on comments
 
 async function commentReply(){
-    // const checkToken = JSON.parse(sessionStorage.getItem("token"))
-	// if (!checkToken){
-	// 	disableComment.style.display = "block";
-    //     disableComment.innerHTML = "Please Login to Comment!"
-	//    }
+
     var comment_replay = $('.comment_replay').val();
     
     //LoggedIn user
@@ -189,7 +221,37 @@ async function commentReply(){
     today = month + ' ' + dd + ', ' + yyyy;
 
 
-    //picture template
+    // Highlight Comment
+
+    el = document.createElement('li');
+    el.className = "box_reply row";
+    el.innerHTML =
+    `
+    <li class="box_reply row">
+    <div class="commentReplies">
+        <div class="avatar_comment col-md-1">
+            ${commentorImageTemplate}
+        </div>
+        <div class="result_comment col-md-11">
+            <h4>${commentorNames} <span> &nbsp &nbsp/ ${today}</span></h4>
+            <p>${comment_replay}</p>
+        </div>
+    </div>
+    </li>
+    `
+
+    if(comment_replay == ""){
+        popupBoxCommentsRepliesValidation.classList.add("open-popup")
+        $current.closest('li').find('.child_replay').disabled = true
+    }
+
+    else{
+        $current.closest('li').find('.child_replay').append(el);
+        $('.comment_replay').val('');
+        cancel_reply();
+    }
+
+        
 
     const data = {
         replyBody: comment_replay, 
@@ -209,34 +271,9 @@ async function commentReply(){
 .then((fetchedData)=>{
     console.log(fetchedData)
 
-    // if(fetchedData){
-    //     setTimeout(()=>{ history.go(0) }, 1000)
-    // }
 })
 
-
-// Highlight Comment
-
-  el = document.createElement('li');
-  el.className = "box_reply row";
-  el.innerHTML =
-  `
-  <li class="box_reply row">
-  <div class="commentReplies">
-    <div class="avatar_comment col-md-1">
-        ${commentorImageTemplate}
-    </div>
-    <div class="result_comment col-md-11">
-        <h4>${commentorNames} <span> &nbsp &nbsp/ ${today}</span></h4>
-        <p>${comment_replay}</p>
-    </div>
-  </div>
-</li>
-`
-    $current.closest('li').find('.child_replay').append(el);
-    $('.comment_replay').val('');
-    cancel_reply();
-}
+    }
 
 
 

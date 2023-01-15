@@ -1,6 +1,3 @@
-
-
-
 const postId = localStorage.getItem("postId")
 const loader = document.getElementById("preloader")
 function showLoader(){
@@ -195,7 +192,7 @@ async function getAllComments(){
 
         return `
 		<li class="box_result row" id="">
-            <div class="replies">
+            <div class="replies comments">
                 <div class="avatar_comment col-md-1">
                   ${replierImageTemplate}
                 </div>
@@ -209,6 +206,12 @@ async function getAllComments(){
         </li>
         `
         }
+        
+        let likeText
+
+        const likeToken = JSON.parse(sessionStorage.getItem("token"))
+        
+        if(likeToken){
 
         //LoggedIn user
         const getData = {
@@ -216,21 +219,29 @@ async function getAllComments(){
             headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
         }
 
+        
+
         let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
-        const fetchedData = await response.json()
-        console.log(fetchedData)
+        
+        
+            const fetchedData = await response.json()
+            console.log(fetchedData)
+    
+            const userLike = fetchedData._id
 
-        const userLike = fetchedData._id
+            if(commentsArray.comment_likes.includes(userLike)){
+                likeText = "Unlike"
+               }
+    
+               else{
+                likeText = "Like"
+               }
+        }
 
-        let likeText
-
-        if(commentsArray.comment_likes.includes(userLike)){
-            likeText = "Unlike"
-           }
-
-           else{
+        else{
             likeText = "Like"
-           }
+        }
+        
     
 
         const commentList = document.getElementById("list_comment");
@@ -270,31 +281,6 @@ async function getAllComments(){
 getAllComments()
 
 
-//Comments
-
-function submit_comment(){
-  var comment = $('.commentar').val();
-  el = document.createElement('li');
-  el.className = "box_result row";
-  el.innerHTML =
-		'<div class=\"avatar_comment col-md-1\">'+
-		  '<img src=\"https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg\" alt=\"avatar\"/>'+
-		'</div>'+
-		'<div class=\"result_comment col-md-11\">'+
-		'<h4>Anonimous</h4>'+ '<p>/ September, 27 2020</p>'+
-		'<p>'+ comment +'</p>'+
-		'<div class=\"tools_comment\">'+
-		'<a class=\"like\" >Like</a><span aria-hidden=\"true\"> · </span>'+
-		'<i class=\"fa fa-thumbs-o-up\"></i> <span class=\"count\">0</span>'+
-		'<span aria-hidden=\"true\"> · </span>'+
-		'<a class=\"replay\" >Reply</a><span aria-hidden=\"true\"> · </span>'+
-			'<span>1m</span>'+
-		'</div>'+
-		'<ul class="child_replay"></ul>'+
-		'</div>';
-	document.getElementById('list_comment').prepend(el);
-	$('.commentar').val('');
-}
 
 $(document).ready(function() {
 	$('#list_comment').on('click', '.like', function (e) {
@@ -339,22 +325,6 @@ $(document).ready(function() {
 		}
 	});
 
-
-    // $('#list_comment').on('click', '.replayReplies', function (e) {
-    //     $current = $(this);
- 
-	// 	var x = $current.closest('div').find('.replayReplies').text().trim();
-		
-	// 	if (x === "View replies") {
-	// 		$current.closest('div').find('.replayReplies').text('Hide replies');
-
-			
-	// 	} else{
-	// 		$current.closest('div').find('.replayReplies').text('View replies')
-
-	// 	}
-        
-    // });
 	
 	$('#list_comment').on('click', '.replay', async function (e) {
 
@@ -417,30 +387,6 @@ $(document).ready(function() {
     
 });
 
-function submit_reply(){
-  var comment_replay = $('.comment_replay').val();
-  el = document.createElement('li');
-  el.className = "box_reply row";
-  el.innerHTML =
-		'<div class=\"avatar_comment col-md-1\">'+
-		  '<img src=\"https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg\" alt=\"avatar\"/>'+
-		'</div>'+
-		'<div class=\"result_comment col-md-11\">'+
-		'<h4>Anonimous</h4>'+ '<p>/ September, 27 2020</p>'+
-		'<p>'+ comment_replay +'</p>'+
-		'<div class=\"tools_comment\">'+
-		'<a class=\"like\">Like</a><span aria-hidden=\"true\"> · </span>'+
-		'<i class=\"fa fa-thumbs-o-up\"></i> <span class=\"count\">0</span>'+
-		'<span aria-hidden=\"true\"> · </span>'+
-		'<a class=\"replay\" >Reply</a><span aria-hidden=\"true\"> · </span>'+
-			'<span>1m</span>'+
-		'</div>'+
-		'<ul class="child_replay"></ul>'+
-		'</div>';
-	$current.closest('li').find('.child_replay').prepend(el);
-	$('.comment_replay').val('');
-	cancel_reply();
-}
 
 function cancel_reply(){
 	$('.reply_comment').remove();
