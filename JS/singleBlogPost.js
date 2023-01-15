@@ -157,8 +157,8 @@ async function getAllComments(){
         const date = commentsArray.dateCommented
         const commentorName = commentsArray.commentorName
         const commentorImage = commentsArray.commentorImage
+        const commentLikes = commentsArray.comment_likes.length;
 
-        console.log(commentsArray.commentReplies)
      
         const str = "https" || "http"
         var commentorImageTemplate;
@@ -210,7 +210,28 @@ async function getAllComments(){
         `
         }
 
+        //LoggedIn user
+        const getData = {
+            method: "GET",
+            headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        }
 
+        let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
+        const fetchedData = await response.json()
+        console.log(fetchedData)
+
+        const userLike = fetchedData._id
+
+        let likeText
+
+        if(commentsArray.comment_likes.includes(userLike)){
+            likeText = "Unlike"
+           }
+
+           else{
+            likeText = "Like"
+           }
+    
 
         const commentList = document.getElementById("list_comment");
         
@@ -225,9 +246,9 @@ async function getAllComments(){
                     <p>${body}</p>
                     
                     <div class="tools_comment">
-                        <a class="like" onclick="likeComment('${comment_id}')">Like</a>
+                        <a class="like" onclick="likeComment('${comment_id}')">${likeText}</a>
                         <span aria-hidden="true"> · </span>
-                        <i class="fa fa-thumbs-o-up"></i> <span class="count" id="count">0</span> 
+                        <i class="fa fa-thumbs-o-up"></i> <span class="count" id="count">${commentLikes}</span> 
                         <span aria-hidden="true"> · </span>
                         <a class="replay" id="${comment_id}" onclick="getSingleComment('${PostId}','${comment_id}')">Reply</a>
                     </div>
