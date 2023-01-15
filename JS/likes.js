@@ -95,22 +95,8 @@ getAllLikes()
 
 // Comment Likes
 
-// function commentLikes(commentLikesButton){
-//     commentLikesButton.addEventListener("click", (event) =>{
-//         event.preventDefault(); 
-    
-//         likeComment();
-//     });
-// }
+async function likeComment(comment__id){
 
-// const likesMessage = document.getElementById("likesMessage")
-// likesMessage.style.display = "none";
-async function likeComment(){
-    // const checkToken = JSON.parse(sessionStorage.getItem("token"))
-	// if (!checkToken){
-	// 	likesMessage.style.display = "block";
-    //     likesMessage.innerHTML = `Please <a href="login.html" style=" color: rgb(212, 19, 19); font-weight: bold;">Login</a> to Like a Post!`
-	//    }
     //LoggedIn user
     const getData = {
         method: "GET",
@@ -124,7 +110,6 @@ async function likeComment(){
     const userLike = fetchedData._id
 
     const data = {
-        blog_id: post__id,
         user_id: userLike 
     }
 
@@ -134,7 +119,7 @@ async function likeComment(){
         headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-    fetch("https://ernestruzindana-be.cyclic.app/likeComment/"+post__id, sendData)
+    fetch(`https://ernestruzindana-be.cyclic.app/likeComment/${post__id}/${comment__id}`, sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)

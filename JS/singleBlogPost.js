@@ -225,7 +225,7 @@ async function getAllComments(){
                     <p>${body}</p>
                     
                     <div class="tools_comment">
-                        <a class="like" onclick="likeComment()">Like</a>
+                        <a class="like" onclick="likeComment('${comment_id}')">Like</a>
                         <span aria-hidden="true"> · </span>
                         <i class="fa fa-thumbs-o-up"></i> <span class="count" id="count">0</span> 
                         <span aria-hidden="true"> · </span>
