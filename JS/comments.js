@@ -99,11 +99,11 @@ var comment = $('.commentar').val();
         <h4>${commentorNames} <span> &nbsp &nbsp/ ${today}</span></h4>
         <p>${comment}</p>
         <div class="tools_comment">
-            <a class="like" onclick="likeComment()">Like</a>
+            <a class="" onclick="refreshPage()">Like</a>
             <span aria-hidden="true"> · </span>
             <i class="fa fa-thumbs-o-up"></i> <span class="count" id="count">0</span> 
             <span aria-hidden="true"> · </span>
-            <a class="replay">Reply</a>
+            <a class="replay" onclick="refreshPage()">Reply</a>
         </div>
         <ul class="child_replay" style="display: flex; flex-direction: column-reverse;"></ul>
     </div>
@@ -114,28 +114,31 @@ var comment = $('.commentar').val();
 	$('.commentar').val('');
 }
 
+function refreshPage(){
+    history.go(0)
+}
 
+
+let commentId;
 // Get Single Comment
-async function getSingleComment(postId, commentId){
+async function getSingleComment(postId, comment_Id){
     const getData = {
         method: "GET",
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch(`https://ernestruzindana-be.cyclic.app/getSingleComment/${postId}/${commentId}`, getData)
+    let response = await fetch(`https://ernestruzindana-be.cyclic.app/getSingleComment/${postId}/${comment_Id}`, getData)
     const fetchedData = await response.json()
 
     if (fetchedData){
         localStorage.setItem("commentId", fetchedData.fetchedComment[0].comments[0]._id)
-        
+        commentId = localStorage.getItem("commentId")
     }
 }
 
 
-
-
 //Reply on comments
-const commentId = localStorage.getItem("commentId")
+
 async function commentReply(){
     // const checkToken = JSON.parse(sessionStorage.getItem("token"))
 	// if (!checkToken){
