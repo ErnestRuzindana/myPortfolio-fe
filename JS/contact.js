@@ -14,9 +14,8 @@ contactMessage.style.display = "none"
 messageSubmit.addEventListener("click", (event)=>{
     event.preventDefault();
     contactMessage.style.display = "block";
-
     contactMessage.innerHTML = `<img src="../images/Spinner.gif" alt="Loading..." width="50px" height="50px">`
-
+    document.title = "Loading..."
     contact();
 });
 
@@ -42,17 +41,19 @@ function contact(){
         if (fetchedData.validationError){
             contactMessage.style.color = "red"
             contactMessage.innerHTML = fetchedData.validationError
+            document.title = "Ernest Ruzindana"
         }
 
         else if (fetchedData.successMessage){
             contactMessage.style.display = "none"
             popupBox.classList.add("open-popup")
-            
+            document.title = "Ernest Ruzindana"
         }
 
         else {
             contactMessage.style.color = 'red'
             contactMessage.innerHTML = fetchedData.errorMessage
+            document.title = "Ernest Ruzindana"
         }
     })
 }

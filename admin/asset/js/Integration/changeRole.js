@@ -1,7 +1,7 @@
 // Get Single User
 
 let getSingleUser= async(userId) => {
-
+    document.title = "Loading..."
     const getOptions = {
     
         method: 'GET',
@@ -24,14 +24,11 @@ let getSingleUser= async(userId) => {
         }
 }
 
-const changeRole_preloader = document.getElementById("changeRole_preloader")
-function showChangeRoleLoader(){
-    changeRole_preloader.classList.add("show")
-}
+
 function hideChangeRoleLoader(){
     changeRole_preloader.classList.remove("show")
 }
-showChangeRoleLoader() 
+
 const userId = localStorage.getItem("userId")
 
 async function getUser() {
@@ -50,8 +47,8 @@ async function getUser() {
 
     let response = await fetch('https://ernestruzindana-be.cyclic.app/register/getSingleUser/'+userId, getOptions)
     const fetchSingleUser = await response.json();
-    console.log(fetchSingleUser)
     hideChangeRoleLoader()
+    document.title = "Ernest Ruzindana | Dashboard"
     const singleUser = fetchSingleUser.fetchedUser
 
     const roleCategory = document.getElementById("roleCategory")
@@ -73,7 +70,7 @@ roleSubmitData.addEventListener("click", (event) =>{
     event.preventDefault();
     roleMessage.style.display = "block";   
     roleMessage.innerHTML = `<img src="../images/Spinner.gif" alt="Loading..." width="50px" height="50px">`
-
+    document.title = "Loading..."
     updateRole();
 });
 
@@ -101,6 +98,7 @@ fetch('https://ernestruzindana-be.cyclic.app/register/assignUserRole/'+userRoleI
     if (roleFetchedData.successMessage){
         roleMessage.style.color = "green"
         roleMessage.innerHTML = roleFetchedData.successMessage
+        document.title = "Ernest Ruzindana | Dashboard"
         setTimeout(()=>{location = "assignRole.html"}, 2000)
         
     }
@@ -108,18 +106,20 @@ fetch('https://ernestruzindana-be.cyclic.app/register/assignUserRole/'+userRoleI
     else if (roleFetchedData.message){
         roleMessage.style.color = "red"
         roleMessage.innerHTML = roleFetchedData.message
-        
+        document.title = "Ernest Ruzindana | Dashboard"
     }
 
     else if (roleFetchedData.unauthorisedError){
         roleMessage.style.color = "red"
         roleMessage.innerHTML = roleFetchedData.unauthorisedError
+        document.title = "Ernest Ruzindana | Dashboard"
         setTimeout(()=>{location = "assignRole.html"}, 3000)
     }
 
     else {
         postMessage.style.color = "red"
         postMessage.innerHTML = roleFetchedData.message
+        document.title = "Ernest Ruzindana | Dashboard"
     }
 })
         

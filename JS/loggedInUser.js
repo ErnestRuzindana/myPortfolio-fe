@@ -4,6 +4,7 @@ async function loggedInUser(){
     const preNavToken = sessionStorage.getItem("token")
     if(preNavToken){
         preNavLogin.innerHTML = `<img src="../images/Spinner.gif" alt="" width="40px">`
+        document.title = "Loading..."
     }
     const getData = {
         method: "GET",
@@ -13,8 +14,8 @@ async function loggedInUser(){
   let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
   const fetchedData = await response.json()
   console.log(fetchedData)
- 
   preNavLogin.style.display = "none"
+  document.title = "Ernest Ruzindana"
   
   const addProfile = document.getElementById("addProfile");
   addProfile.innerHTML = `

@@ -1,42 +1,10 @@
-//Go to reply message page
-
-let getSingleMessage= async(messageId) => {
-
-    const clientMessage = document.getElementById(messageId)
-    clientMessage.classList.add("showLoadingDotsMessages")
-    console.log(clientMessage)
-
-    const getOptions = {
-    
-        method: 'GET',
-        headers: {
-        
-         'auth-token': JSON.parse(sessionStorage.getItem('token'))
-     
-       },
-    }
 
 
 
-    let response = await fetch('https://ernestruzindana-be.cyclic.app/contact/getMessageById/'+messageId, getOptions)
-    const fetchSingleMessage = await response.json();
-    console.log(fetchSingleMessage)
-
-        if(fetchSingleMessage.clientMessageSuccess){ 
-            localStorage.setItem("messageId", fetchSingleMessage.clientMessage._id)
-            location="replyMessage.html"
-        }
-}
-
-
-const replyMessages_preloader = document.getElementById("replyMessages_preloader")
-function showreplyMessagesLoader(){
-    replyMessages_preloader.classList.add("show")
-}
 function hidereplyMessagesLoader(){
     replyMessages_preloader.classList.remove("show")
 }
-showreplyMessagesLoader()
+
 const messageId = localStorage.getItem("messageId")
 
 async function getMessage() {
@@ -55,8 +23,9 @@ async function getMessage() {
 
     let response = await fetch('https://ernestruzindana-be.cyclic.app/contact/getMessageById/'+messageId, getOptions)
     const fetchSingleMessage = await response.json();
-    console.log(fetchSingleMessage)
     hidereplyMessagesLoader()
+    document.title = "Ernest Ruzindana | Dashboard"
+
     const singleMessage = fetchSingleMessage.clientMessage
 
     const senderNames = document.getElementById("senderNames")
@@ -87,7 +56,7 @@ submitReplyMessage.addEventListener("click", (event) =>{
     event.preventDefault();
     confirmReplyMessage.style.display = "block"
     confirmReplyMessage.innerHTML = `<img src="../images/Spinner.gif" alt="Loading..." width="50px" height="50px">`
-
+    document.title = "Loading..."
     replyMessage()
 });
 
@@ -113,14 +82,17 @@ fetch("https://ernestruzindana-be.cyclic.app/contact/replyMessage/"+messageId, s
 
     if (fetchedData.replyMessageSuccess){
         confirmReplyMessage.style.color = "green"
+        confirmReplyMessage.style.fontWeight = "bold"
         confirmReplyMessage.innerHTML = fetchedData.replyMessageSuccess
-
+        document.title = "Ernest Ruzindana | Dashboard"
         setTimeout(()=>{location = "messages.html"}, 3000)
     }
 
     else{
         confirmReplyMessage.style.color = "red"
+        confirmReplyMessage.style.fontWeight = "bold"
         confirmReplyMessage.innerHTML = fetchedData.message 
+        document.title = "Ernest Ruzindana | Dashboard"
     }
 })
 }

@@ -1,12 +1,9 @@
 const postId = localStorage.getItem("postId")
-const loader = document.getElementById("preloader")
-function showLoader(){
-    loader.classList.add("show")
-}
+
 function hideLoader(){
     loader.classList.remove("show")
 }
-showLoader()
+
 async function postDetails(){  
     const getData = {
         method: "GET",
@@ -15,8 +12,9 @@ async function postDetails(){
 
     let response = await fetch("https://ernestruzindana-be.cyclic.app/getSinglePost/"+postId, getData)
     const fetchedData = await response.json()
-    console.log(fetchedData)
     hideLoader()
+    document.title = "Ernest Ruzindana"
+    
     const singlePost = fetchedData.fetchedPost;
 
     const singleBlogTitle = document.getElementById("singleBlogTitle")
@@ -85,9 +83,7 @@ async function postDetails(){
 postDetails()
 
 async function getSinglePost(postId){
-    const readMore = document.getElementById(postId)
-    readMore.classList.add("showLoadingDotsReadmore")
-console.log(readMore)
+    document.title = "Loading..."
     const getData = {
         method: "GET",
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
@@ -104,25 +100,7 @@ console.log(readMore)
     }
 }
 
-async function getSinglePostTitle(postId, postTitle){
-    const readMore = document.getElementById(postTitle)
-    readMore.classList.add("showLoadingDotsReadmore")
-console.log(readMore)
-    const getData = {
-        method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
-    }
 
-    let response = await fetch("https://ernestruzindana-be.cyclic.app/getSinglePost/"+postId, getData)
-    const fetchedData = await response.json()
-    console.log(fetchedData)
-
-
-    if (fetchedData.fetchedPost){
-        location = "singleBlog.html"
-        localStorage.setItem("postId", fetchedData.fetchedPost._id)
-    }
-}
 
 
 
@@ -172,7 +150,7 @@ async function getAllComments(){
         }
 
 
-        const replyTemplate = commentsArray.commentReplies.map(myFunction);
+        const replyTemplate = commentsArray.commentReplies.map(myFunction).join(' ');
 
         function myFunction(eachReply) {
 
@@ -380,6 +358,7 @@ $(document).ready(function() {
 			</div>
         `
 		$current.closest('li').find('.child_replay').append(el);
+        document.title = "Ernest Ruzindana"
 	});
 
     //View Replies

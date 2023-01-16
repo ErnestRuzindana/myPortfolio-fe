@@ -1,6 +1,5 @@
 async function getSinglePost(post_id){
-    const readMore = document.getElementById(post_id)
-    readMore.classList.add("showLoadingDotsReadmore")
+    document.title = "Loading..."
     const getData = {
         method: "GET",
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
@@ -21,14 +20,10 @@ async function getSinglePost(post_id){
 
 // Getting a post
 
-const updatePost_preloader = document.getElementById("updatePost_preloader")
-function showupdatePostLoader(){
-    updatePost_preloader.classList.add("show")
-}
 function hideupdatePostLoader(){
     updatePost_preloader.classList.remove("show")
 }
-showupdatePostLoader()
+
 
 const post_id = localStorage.getItem("post_id")
 
@@ -41,8 +36,8 @@ async function getPostDetails(){
     let response = await fetch("https://ernestruzindana-be.cyclic.app/getSinglePost/"+post_id, getData)
     console.log(response)
     const fetchedData = await response.json()
-    console.log(fetchedData)
     hideupdatePostLoader()
+    document.title = "Ernest Ruzindana | Dashboard"
 
     const singlePost = fetchedData.fetchedPost
 

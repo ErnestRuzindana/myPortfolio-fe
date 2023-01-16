@@ -10,7 +10,7 @@ submitSubscription.addEventListener("click", (event) =>{
     event.preventDefault();
     subscriptionMessage.style.display = "block";   
     subscriptionMessage.innerHTML = `<img src="../images/Spinner.gif" alt="Loading..." width="50px" height="50px">`
-
+    document.title = "Loading..."
     subscription();
 });
 
@@ -35,16 +35,19 @@ fetch("https://ernestruzindana-be.cyclic.app/Subscribe", sendData)
     if (fetchedData.successMessage){
         subscriptionMessage.style.display = "none";
         popupBoxSubscription.classList.add("open-popup")
+        document.title = "Ernest Ruzindana"
     }
 
     else if (fetchedData.validationError){
         subscriptionMessage.style.color = "red"
         subscriptionMessage.innerHTML = fetchedData.validationError
+        document.title = "Ernest Ruzindana"
     }
 
     else {
         subscriptionMessage.style.color = "red"
         subscriptionMessage.innerHTML = fetchedData.errorMessage
+        document.title = "Ernest Ruzindana"
     }
 })
 

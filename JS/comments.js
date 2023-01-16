@@ -34,7 +34,7 @@ const post_id = localStorage.getItem("postId")
 const checkToken = JSON.parse(sessionStorage.getItem("token"))
 
 async function comment(){
-    
+    document.title = "Loading..."
 	if (!checkToken){
 		popupBoxComments.classList.add("open-popup")
 	   }
@@ -135,11 +135,13 @@ var comment = $('.commentar').val();
     if(comment == ""){
         popupBoxCommentsValidation.classList.add("open-popup")
         document.getElementById('list_comment').disabled = true
+        document.title = "Ernest Ruzindana"
     }
 
     else{
         document.getElementById('list_comment').append(el);
         $('.commentar').val('');
+        document.title = "Ernest Ruzindana"
     }
 
 	
@@ -153,7 +155,7 @@ function refreshPage(){
 let commentId;
 // Get Single Comment
 async function getSingleComment(postId, comment_Id){
-
+    document.title = "Loading..."
     if (!checkToken){
 		popupBoxCommentsReplies.classList.add("open-popup")
 	   }
@@ -176,7 +178,7 @@ async function getSingleComment(postId, comment_Id){
 //Reply on comments
 
 async function commentReply(){
-
+    document.title = "Loading..."
     var comment_replay = $('.comment_replay').val();
     
     //LoggedIn user
@@ -243,11 +245,13 @@ async function commentReply(){
     if(comment_replay == ""){
         popupBoxCommentsRepliesValidation.classList.add("open-popup")
         $current.closest('li').find('.child_replay').disabled = true
+        document.title = "Ernest Ruzindana"
     }
 
     else{
         $current.closest('li').find('.child_replay').append(el);
         $('.comment_replay').val('');
+        document.title = "Ernest Ruzindana"
         cancel_reply();
     }
 

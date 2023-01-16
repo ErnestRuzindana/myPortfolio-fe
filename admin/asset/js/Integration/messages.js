@@ -1,7 +1,21 @@
-// Delete Results
-const messageIdDeletion = localStorage.getItem("messageIdDeletion")
-let deleteMessage= async() => {
 
+//popup
+const popupBoxClientMessages = document.getElementById("popupBoxClientMessages")
+let messageIdDeletion;
+
+function openPopupClientMessages(message_id){
+    popupBoxClientMessages.classList.add("open-popup")
+    localStorage.setItem("messageIdDeletion", message_id)
+    messageIdDeletion = localStorage.getItem("messageIdDeletion")
+}
+function closePopupClientMessages(){
+    popupBoxClientMessages.classList.remove("open-popup")
+}
+
+// Delete Results
+
+let deleteMessage= async() => {
+    document.title = "Loading..."
     const deleteOptions = {
     
         method: 'DELETE',
@@ -21,27 +35,15 @@ let deleteMessage= async() => {
     
 }
 
-//popup
-const popupBoxClientMessages = document.getElementById("popupBoxClientMessages")
 
-function openPopupClientMessages(message_id){
-    popupBoxClientMessages.classList.add("open-popup")
-    localStorage.setItem("messageIdDeletion", message_id)
-}
-function closePopupClientMessages(){
-    popupBoxClientMessages.classList.remove("open-popup")
-}
 
 
 // Get messages
-const messages_preloader = document.getElementById("messages_preloader")
-function showMessagesLoader(){
-    messages_preloader.classList.add("show")
-}
+
 function hideMessagesLoader(){
     messages_preloader.classList.remove("show")
 }
-showMessagesLoader()  
+ 
 
 async function fetchMessages(){
         
@@ -49,10 +51,8 @@ async function fetchMessages(){
     
     const allResults = await response.json(); 
     const results = allResults.clientMessages;
-    console.log(results);
     hideMessagesLoader()
-    //random ids
-    const replyMessageBoxId = Math.floor(Math.random() * 1000)
+    document.title = "Ernest Ruzindana | Dashboard"
    
     for(let i=0;i<results.length;i++){
         let resultsContainer = document.getElementById("messagesContainer");
@@ -102,7 +102,7 @@ async function fetchMessages(){
                 margin: auto;
                 padding: 5px 0px; color: white;"
                 onclick="getSingleMessage('${resultId}')"
-                > <span id="${resultId}" class="loadingDotsMessages"><img src="../images/loading.gif" alt="loading..." width="45px"></span> &nbsp; <span class="fa fa-envelope-o"></span> Reply</button>
+                >  <span class="fa fa-envelope-o"></span> Reply</button>
                 </div>
             </div>
         </div>
@@ -118,4 +118,33 @@ async function fetchMessages(){
     }
 
 fetchMessages();
+
+
+
+//Go to reply message page
+
+let getSingleMessage= async(messageId) => {
+    document.title = "Loading..."
+
+    const getOptions = {
+    
+        method: 'GET',
+        headers: {
+        
+         'auth-token': JSON.parse(sessionStorage.getItem('token'))
+     
+       },
+    }
+
+
+
+    let response = await fetch('https://ernestruzindana-be.cyclic.app/contact/getMessageById/'+messageId, getOptions)
+    const fetchSingleMessage = await response.json();
+    console.log(fetchSingleMessage)
+
+        if(fetchSingleMessage.clientMessageSuccess){ 
+            localStorage.setItem("messageId", fetchSingleMessage.clientMessage._id)
+            location="replyMessage.html"
+        }
+}
 

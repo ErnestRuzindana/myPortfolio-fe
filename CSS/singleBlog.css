@@ -31,6 +31,7 @@ div.mySingleBlog{
 
 
 
+
 div.headerPicture{
     display: flex;
     justify-content: center;
@@ -422,14 +423,19 @@ h4 span{
   }
 
   div.replies{
-    padding: 70px 0px 0px 0px !important; 
+    margin-top: -50px;
+    margin-bottom: -35px;
   }
 
   .child_replay {
     border-left: 1px dotted #d3d6db;
-    margin-top: 12px;
+    margin-top: 20px;
     list-style: none;
-    padding: 0px 0 0 12px;
+    padding: 0px 0 0px 12px;
+}
+
+.child_replay .removeBorder{
+  border-left: none;
 }
 
 
@@ -513,6 +519,12 @@ h4 span{
       grid-template-columns: 9% 90%;
       padding: 43px 0px 43px 0px;
     }
+
+    div.commentReplies{
+      display: grid;
+      grid-template-columns: 9% 90%;
+      padding: 15px 0px 15px 0px;
+    }
   }
  
 
@@ -527,6 +539,12 @@ h4 span{
       display: grid;
       grid-template-columns: auto;
       padding: 43px 0px 43px 0px;
+    }
+
+    div.commentReplies{
+      display: grid;
+      grid-template-columns: auto;
+      padding: 15px 0px 15px 0px;
     }
 
     .child_replay{

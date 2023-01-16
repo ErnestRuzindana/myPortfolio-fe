@@ -4,19 +4,16 @@
 var posts = []
 let pageSize = 5;
 let currentPage = 1;
-const blogLoader = document.getElementById("blog_preloader")
-  function showBlogLoader(){
-      blogLoader.classList.add("show")
-  }
-  showBlogLoader()
-  function hideBlogLoader(){
+
+
+function hideBlogLoader(){
       blogLoader.classList.remove("show")
   }
 
 
 async function renderPosts(page = 1){
     await getAllPosts()
-
+    document.title = "Ernest Ruzindana"
 
     if (page == 1) {
         prevButton.style.display = "none";
@@ -65,7 +62,7 @@ async function renderPosts(page = 1){
                 <img src="${post.postImage}" alt="" >
             </div>
             <div class="blogContent">
-                <h3> <a onclick="getSinglePostTitle('${post._id}', '${post.title}')" style="display: flex; align-items: center; cursor: pointer; font-family: poppins;">${post.title} <span id="${post.title}" class="loadingDotsPostTitle"><img src="../images/loading.gif" alt="" width="45px" style="margin-left: 10px;"></span></a> </h3>
+                <h3> <a onclick="getSinglePost('${post._id}')" style="display: flex; align-items: center; cursor: pointer; font-family: poppins;">${post.title}</a> </h3>
                 <hr>
                 <div class="blogAuthor">
 
@@ -79,7 +76,7 @@ async function renderPosts(page = 1){
                 <p class="ContentSection" style="font-family: calibri;">
                     ${post.postBody.slice(0, 600)+"..."}
                 </p>
-                <a onclick="getSinglePost('${post._id}')" class="readmore" style="cursor: pointer; display: flex; align-items: center;">Read more &rarr; &nbsp;<span id="${post._id}" class="loadingDotsReadmore" style="margin-top: -3px;"><img src="../images/loading.gif" alt="" width="40px"></span></a>
+                <a onclick="getSinglePost('${post._id}')" class="readmore" style="cursor: pointer; display: flex; align-items: center;">Read more &rarr;</a>
             </div>
         </div>
 `
@@ -90,10 +87,12 @@ async function renderPosts(page = 1){
 
 }
 renderPosts()
+
 const prevButton = document.getElementById("prevButton");
 const nextButton = document.getElementById("nextButton");
 
 function previousPage() {
+  document.title = "Loading..."
     if (currentPage > 1) {
       currentPage--;
       renderPosts(currentPage);
@@ -101,6 +100,7 @@ function previousPage() {
   }
   
   function nextPage() {
+    document.title = "Loading..."
     if ((currentPage * pageSize) < posts.length) {
       currentPage++;
       renderPosts(currentPage);
@@ -115,7 +115,7 @@ function previousPage() {
 
   prevButton.addEventListener('click', previousPage, false);
   nextButton.addEventListener('click', nextPage, false);
-
+  
  
 async function getAllPosts(){
     const getData = {

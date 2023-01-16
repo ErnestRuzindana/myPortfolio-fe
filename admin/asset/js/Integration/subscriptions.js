@@ -1,7 +1,23 @@
-// Delete Results
-const subscriberIdDeletion = localStorage.getItem("subscriberIdDeletion")
-let deleteSubscriber= async() => {
 
+//popup
+const popupBoxSubscriptions = document.getElementById("popupBoxSubscriptions")
+let subscriberIdDeletion;
+
+function openPopupSubscriptions(subscriber_id){
+    popupBoxSubscriptions.classList.add("open-popup")
+    localStorage.setItem("subscriberIdDeletion", subscriber_id)
+    subscriberIdDeletion = localStorage.getItem("subscriberIdDeletion")
+}
+
+function closePopupSubscriptions(){
+    popupBoxSubscriptions.classList.remove("open-popup")
+}
+
+
+// Delete Results
+subscriberIdDeletion = localStorage.getItem("subscriberIdDeletion")
+let deleteSubscriber= async() => {
+    document.title = "Loading..."
     const deleteOptions = {
     
         method: 'DELETE',
@@ -21,28 +37,16 @@ let deleteSubscriber= async() => {
     
 }
 
-//popup
-const popupBoxSubscriptions = document.getElementById("popupBoxSubscriptions")
 
-function openPopupSubscriptions(subscriber_id){
-    popupBoxSubscriptions.classList.add("open-popup")
-    localStorage.setItem("subscriberIdDeletion", subscriber_id)
-}
-function closePopupSubscriptions(){
-    popupBoxSubscriptions.classList.remove("open-popup")
-}
 
 
 // Get subscribers
 
-const subscriptions_preloader = document.getElementById("subscriptions_preloader")
-function showSubscriptionsLoader(){
-    subscriptions_preloader.classList.add("show")
-}
+
 function hideSubscriptionsLoader(){
     subscriptions_preloader.classList.remove("show")
 }
-showSubscriptionsLoader()  
+  
 
 async function fetchSubscribers(){
         
@@ -50,8 +54,8 @@ async function fetchSubscribers(){
     
     const allResults = await response.json(); 
     const results = allResults.subscribers;
-    console.log(results);
     hideSubscriptionsLoader()
+    document.title = "Ernest Ruzindana | Dashboard"
     for(let i=0;i<results.length;i++){
         let resultsContainer = document.getElementById("subscriptionsContainer");
 
@@ -115,11 +119,11 @@ fetchSubscribers();
 const copyContent = async (email) => {
     try {
       await navigator.clipboard.writeText(email);
-      console.log(email)
       console.log('Content copied to clipboard');
     } catch (err) {
       console.error('Failed to copy: ', err);
     }
+    
   }
 
 

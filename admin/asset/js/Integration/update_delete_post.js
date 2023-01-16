@@ -1,11 +1,8 @@
-const viewAllPosts_preloader = document.getElementById("viewAllPosts_preloader")
-function showviewAllPostsLoader(){
-    viewAllPosts_preloader.classList.add("show")
-}
+
 function hideviewAllPostsLoader(){
     viewAllPosts_preloader.classList.remove("show")
 }
-showviewAllPostsLoader()
+
 async function update_delete_post(){
     const getData = {
         method: "GET",
@@ -14,8 +11,8 @@ async function update_delete_post(){
 
     let response = await fetch("https://ernestruzindana-be.cyclic.app/getAllPosts", getData)
     const fetchedData = await response.json()
-    console.log(fetchedData)
     hideviewAllPostsLoader()
+    document.title = "Ernest Ruzindana | Dashboard"
     const posts = fetchedData.allAvailablePosts;
 
     for(let i=0; i<posts.length; i++){
@@ -66,7 +63,7 @@ async function update_delete_post(){
 
                         
                         
-                        <button onclick="getSinglePost('${post_id}')" style="background: #cba10a; border-color: #cba10a; color: white; font-weight: bold;">Update post &nbsp;<span id="${post_id}" class="loadingDotsReadmore"><img src="../images/loading.gif" alt="" width="45px"></span></button> &nbsp;
+                        <button onclick="getSinglePost('${post_id}')" style="background: #cba10a; border-color: #cba10a; color: white; font-weight: bold;">Update post</button> &nbsp;
                         <button  style="background: #ff6b6b;  border-color: #ff6b6b; color: white; font-weight: bold;" onclick="openPopup('${post_id}')">Delete post</button>
                     </div>
                 </div>

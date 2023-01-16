@@ -1,12 +1,15 @@
-const dashboard_preloader = document.getElementById("dashboard_preloader")
-function showDashboardLoader(){
-    dashboard_preloader.classList.add("show")
-}
-function hideDashboardLoader(){
-    dashboard_preloader.classList.remove("show")
-}
-showDashboardLoader()
+
+const countUsers = document.getElementById("countUsers")
+const countPosts = document.getElementById("countPosts")
+var counterContainer = document.querySelector("#website-counter");
+const countTraffic = document.getElementById("countTraffic")
+
 async function users(){
+    document.title = "Loading..."
+    countUsers.innerHTML = `<img src="../../../images/spinner.gif" alt="" width="40px">`
+    countPosts.innerHTML = `<img src="../../../images/spinner.gif" alt="" width="40px">`
+    counterContainer.innerHTML = `<img src="../../../images/spinner.gif" alt="" width="40px">`
+    countTraffic.innerHTML = `<img src="../../../images/spinner.gif" alt="" width="40px">`
     const getData = {
         method: "GET",
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
@@ -16,8 +19,7 @@ async function users(){
   const fetchedData = await response.json()
    
     const users = fetchedData.RegisteredUsers;
-    
-    const countUsers = document.getElementById("countUsers")
+
     countUsers.innerHTML = users.length;
 
 // Number of posts
@@ -26,12 +28,12 @@ let postsResponse = await fetch("https://ernestruzindana-be.cyclic.app/getAllPos
 
     const posts = postsFetchedData.allAvailablePosts;
 
-    const countPosts = document.getElementById("countPosts")
+    
     countPosts.innerHTML = posts.length;
 
 
     // Subscribers
-var counterContainer = document.querySelector("#website-counter");
+
 let subscriptionResponse = await fetch("https://ernestruzindana-be.cyclic.app/getAllSubscriptions")
     
     const allResults = await subscriptionResponse.json(); 
@@ -43,10 +45,10 @@ counterContainer.innerHTML = results.length
     let responseMessages = await fetch("https://ernestruzindana-be.cyclic.app/contact/getAllMessages")
     
     const allResultsMessages = await responseMessages.json(); 
+    document.title = "Ernest Ruzindana | Dashboard"
     const resultsMessages = allResultsMessages.clientMessages.length;
-    const countTraffic = document.getElementById("countTraffic")
+    
     countTraffic.innerHTML = resultsMessages;
-    hideDashboardLoader()
     
 }
 
