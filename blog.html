@@ -270,8 +270,15 @@
     <section class="Blog" id="hideUserProfile">
         <div class="myBlogContent">
             
-
-            <div id="blogPost" style="display: flex; flex-direction:column-reverse; font-family: calibri; text-align: justify;" data-current-page="1" aria-live="polite"></div>
+            <div class="wrap">
+                <div class="search">
+                   <input type="text" class="searchTerm" id="searchTerm" placeholder="Search for a post...">
+                   <button type="submit" class="searchButton" id="searchButton">
+                     <i class="fa fa-search"></i>
+                  </button>
+                </div>
+             </div>
+            <div id="blogPost" style=" font-family: calibri; text-align: justify;" data-current-page="1" aria-live="polite"></div>
         
         </div>
     </section>

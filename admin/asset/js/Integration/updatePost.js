@@ -84,6 +84,18 @@ function UpdatePost(){
     const summernote = document.getElementById("updatePost");
     
 
+    if (!postImage.files[0]) {
+        blogMessage.style.color = "red"
+        blogMessage.innerHTML = "Please add a new post image or confirm the previous one to be able to edit a post!"
+        return;
+      }
+
+      if (!headerImage.files[0]) {
+        blogMessage.style.color = "red"
+        blogMessage.innerHTML = "Please add a new header image or confirm the previous one to be able to edit a post!"
+        return;
+    }
+
     const reader =  new FileReader();
      reader.readAsDataURL(postImage.files[0])
      reader.addEventListener("load",()=>{

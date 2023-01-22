@@ -1,4 +1,6 @@
 const userProfile_preloader = document.getElementById("userProfile_preloader")
+const popupUserProfile = document.getElementById("popupUserProfile")
+
 function showUserProfileLoader(){
   userProfile_preloader.classList.add("show")
 }
@@ -194,6 +196,14 @@ updateChanges.addEventListener("click", (event) =>{
     UpdateUserProfile();
 });
 
+const showUploadMessage = document.getElementById("showUploadMessage");
+const file = document.getElementById("file");
+showUploadMessage.style.display = "none"
+
+file.addEventListener("change", () =>{
+  showUploadMessage.style.display = "block"
+  showUploadMessage.innerHTML = `Picture uploaded successfully! </br> After changing your other desired fields, Click Update Changes down below to save your changes.`
+})
 
 function UpdateUserProfile(){
     const profileFirstName = document.getElementById("profileFirstName");
@@ -204,26 +214,14 @@ function UpdateUserProfile(){
     const UserProfileLinkedin = document.getElementById("UserProfileLinkedin");
     const UserProfileInstagram = document.getElementById("UserProfileInstagram");
     const profileBio = document.getElementById("profileBio");
-    const file = document.getElementById("file");
+    
+    
 
+    if (!file.files[0]) {
+      popupUserProfile.classList.add("open-popup")
+      return;
+    }
 
-    // const formData = new FormData();
-    //     formData.append("firstName", profileFirstName.value);
-    //     formData.append("lastName", profileLastName.value);
-    //     formData.append("email", profileEmail.value);
-    //     formData.append("profileFacebook", UserProfileFacebook.value);
-    //     formData.append("profileTwitter", UserProfileTwitter.value);
-    //     formData.append("profileLinkedin", UserProfileLinkedin.value);
-    //     formData.append("profileInstagram", UserProfileInstagram.value);  
-    //     formData.append("bio", profileBio.value);
-    //     formData.append("profileImage", file.files[0]);
-
-
-    // const sendData = {
-    //     method: "PUT",
-    //     body: formData,
-    //     headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token"))})
-    // }
 
     const reader =  new FileReader();
      reader.readAsDataURL(file.files[0])
@@ -260,6 +258,7 @@ fetch("https://ernestruzindana-be.cyclic.app/login/updateUser", sendData)
 
     if (fetchedData.message){
         profileMessage.style.color = "green"
+        profileMessage.style.fontWeight = "bold"
         profileMessage.innerHTML = fetchedData.message
         location = "userProfile.html"
     }
@@ -267,4 +266,9 @@ fetch("https://ernestruzindana-be.cyclic.app/login/updateUser", sendData)
 
    })
 
+}
+
+function closePopupUserProfile(){
+  popupUserProfile.classList.remove("open-popup")
+  profileMessage.style.display = "none"
 }

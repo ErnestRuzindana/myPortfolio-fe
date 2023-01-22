@@ -110,6 +110,18 @@ body {
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
+.noPostsDivAdmin{
+  padding: 91px 100px 50px 100px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: black !important;
+  background-color: blue !important;
+}
+
 /* Loading Dots */
 
 .loadingDotsReadmore{

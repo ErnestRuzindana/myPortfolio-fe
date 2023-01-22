@@ -4,6 +4,9 @@
 var posts = []
 let pageSize = 5;
 let currentPage = 1;
+const searchTerm = document.getElementById("searchTerm")
+const searchButton = document.getElementById("searchButton")
+let keyword = ''
 
 
 function hideBlogLoader(){
@@ -12,7 +15,8 @@ function hideBlogLoader(){
 
 
 async function renderPosts(page = 1){
-    await getAllPosts()
+
+    await getAllPosts(keyword)
     document.title = "Ernest Ruzindana"
 
     if (page == 1) {
@@ -29,7 +33,21 @@ async function renderPosts(page = 1){
 
 
     var paginatedPost = ""
-    console.log(posts)
+    console.log(posts.length)
+
+    if(posts.length == 0){
+      paginatedPost = `
+      <div class="noPostsDiv">
+         No such post found
+      </div>
+`
+   setTimeout(() => {history.go(0)}, 2500)
+    }
+
+    if(posts.length <= 5){
+      prevButton.style.display = "none";
+      nextButton.style.display = "none";
+    }
 
     posts.filter((row, index) => {
        let start = (currentPage - 1) * pageSize
@@ -37,7 +55,7 @@ async function renderPosts(page = 1){
 
        if(index >= start && index < end) return true;
     }).forEach(post => {
-        
+  
         const authorImage = post.authorImage 
 
         const str = "https" || "http"
@@ -107,6 +125,13 @@ function previousPage() {
     }
   }
 
+  function searchedPost() {
+    document.title = "Loading..."
+      keyword = searchTerm.value
+      renderPosts(keyword);
+    }
+  
+
   function numPages() {
     return Math.ceil(posts.length / pageSize);
   }
@@ -115,22 +140,20 @@ function previousPage() {
 
   prevButton.addEventListener('click', previousPage, false);
   nextButton.addEventListener('click', nextPage, false);
+  searchButton.addEventListener('click', searchedPost, false);
   
- 
-async function getAllPosts(){
+
+async function getAllPosts(searchKeyword){
+
     const getData = {
         method: "GET",
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://ernestruzindana-be.cyclic.app/getAllPosts", getData)
+    let response = await fetch("https://ernestruzindana-be.cyclic.app/getAllPosts?keyword=" + searchKeyword, getData)
     const fetchedData = await response.json()
     hideBlogLoader()
     posts = fetchedData.allAvailablePosts;
+
     
 }
-
-
- 
-
-{/* <p class="blogLikesComments"><span>15</span> Likes . &nbsp;  &nbsp; <span>8</span> Comments</p> */}

@@ -64,6 +64,17 @@ body::-webkit-scrollbar-thumb {
 
 /* Parent container */
 
+.noPostsDiv{
+    padding: 91px 100px 50px 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: grey;
+}
+
 div.leftBlogSide{
     display: flex;
     flex-direction: column;
@@ -407,8 +418,48 @@ div.FooterLogo a img {
 
 /* ------------------------------------------------------------------------------------------------------------------------------ */
 
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+  padding: 40px 40px 0px 40px;
+}
 
+.searchTerm {
+  width: 100%;
+  border: 3px solid #cba10a;
+  border-right: none;
+  padding: 15px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
 
+.searchTerm:focus{
+  color: black;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #cba10a;
+  background: #cba10a;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+/* .wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+} */
 
 
 /* -------------------------------------------------------------------------------------------------------------------------- */
@@ -476,6 +527,13 @@ div.FooterLogo a img {
         padding: 10px 25px 30px;
     }
 
+    .search {
+        width: 100%;
+        position: relative;
+        display: flex;
+        padding: 40px 25px 20px 25px;
+      }
+
 
 /* End of Blog section */
 
@@ -509,6 +567,15 @@ div.blogBoxes{
     padding: 30px 20px;
 }
 
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+    padding: 40px 20px 20px 20px;
+  }
+
+
+
 
 /* End of Blog section */
 
@@ -541,5 +608,8 @@ div.blogBoxes{
     /* End of Responsive Designs */
   
 }
+
+
+
 
 

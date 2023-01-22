@@ -21,7 +21,17 @@ async function createPost(){
     const postTitle = document.getElementById("postTitle");
     const postBody = document.getElementById("summernote");
 
-    console.log(postBody)
+    if (!postImage.files[0]) {
+        postMessages.style.color = "red"
+        postMessages.innerHTML = "Please add a post image!"
+        return;
+      }
+
+      if (!headerImage.files[0]) {
+        postMessages.style.color = "red"
+        postMessages.innerHTML = "Please add a header image!"
+        return;
+    }
     
     const getData = {
         method: "GET",
@@ -57,11 +67,11 @@ async function createPost(){
 
     today = month + ' ' + dd + ', ' + yyyy;
 
-
+    
     const reader =  new FileReader();
      reader.readAsDataURL(postImage.files[0])
      reader.addEventListener("load",()=>{
-        const finalPostImage = reader.result
+    const finalPostImage = reader.result
 
     const reader2 =  new FileReader();
      reader2.readAsDataURL(headerImage.files[0])

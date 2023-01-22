@@ -279,13 +279,14 @@
                          Edit Image
                         </span>
                         </label>
-                        <input id="file" type="file" onchange="UpdateUserProfile()" name="profileImage"/>
+                        <input id="file" type="file" name="profileImage"/>
                         
                         <div class="profile-picRight" id="profilePicRight">
                         
                         </div>
                         <img src="" id="profileImageLink" width="200"/>
                     </div>
+                    <div id="showUploadMessage" style="color: green; font-weight: bold;"></div>
 
 
                     <form action="">
@@ -334,7 +335,12 @@
 
 
 
-
+<!-- popup box -->
+<div class="popupBox" id="popupUserProfile">
+    <img src="images/attention.png" alt="">
+    <p>Please update your profile picture or confirm the previous one to be able to edit your profile!</p>
+    <button type="submit" class="cancel" onclick="closePopupUserProfile()">Ok</button>
+</div>
 
 
     <!-- Footer section -->

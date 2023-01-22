@@ -85,7 +85,7 @@ async function fetchMessages(){
             <div class="panel-body text-center" style=" font-size: 15px; margin-top: -30px; padding-bottom: 20px;">
              ${message}
             </div>   
-                <div class="deleteMessage" style="font-size: 20px; margin-right: 20px; text-align: center; width: 40px; height: 40px; background: #ff6b6b; color: white; border-radius: 50%;  padding: 5px 5px;"  onclick="openPopupClientMessages('${resultId}')">
+                <div class="deleteMessage" style="font-size: 20px; margin-left: 20px; text-align: center; width: 40px; height: 40px; background: #ff6b6b; color: white; border-radius: 50%;  padding: 5px 5px;"  onclick="openPopupClientMessages('${resultId}')">
                 <i class="fa fa-trash" aria-hidden="true"></i>
                 </div>
 

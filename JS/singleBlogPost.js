@@ -303,6 +303,18 @@ $(document).ready(function() {
 		}
 	});
 
+    $('#submitComment').on('click', '.postComments', function (e) {
+		$current = $(this);
+	
+		var y = parseInt($current.closest('div').find('.countComments').text().trim());
+        const checkToken = JSON.parse(sessionStorage.getItem("token"))
+        if (!checkToken){
+            $current.prop('disabled', true);
+           }
+		$current.closest('div').find('.countComments').text(y + 1);
+
+	});
+
 	
 	$('#list_comment').on('click', '.replay', async function (e) {
 
