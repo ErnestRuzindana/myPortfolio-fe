@@ -19,8 +19,8 @@ body {
   padding-bottom: 51.95%;
   height: auto;
   overflow: auto;
-
  }
+
 
  .toggleButton{
   color: black;
@@ -40,7 +40,8 @@ body {
     left: 0;
     height: 100%;
     width: 100%;
-    min-height: 0; }
+    min-height: 0; 
+  }
 
 .video-gallery {
   position: relative;
@@ -54,7 +55,8 @@ body {
     grid-row-end: 7;
     max-height: 19.5em;
     opacity: 0;
-    transition: all 300ms ease; }
+    transition: all 300ms ease; 
+  }
   .videoGalleryRadioButton {
     font-size: 0;
     height: 0;
@@ -67,7 +69,7 @@ body {
     grid-row-start: 1; }
   .video-gallery label {
     color: white;
-    text-align: justify;
+    text-align: center;
     font-size: 1.1em;
     font-weight: bold;
     grid-column-start: 2;
@@ -110,7 +112,9 @@ body {
   animation: 1200ms fadeIn ease;
   animation-fill-mode: both;
   opacity: 1;
-  width: 50%; }
+  width: 50%; 
+
+}
 
 @keyframes fadeOut {
   0% {
@@ -279,7 +283,7 @@ body {
       }
       
       
-      @media (max-width: 935px) {
+      @media (max-width: 992px) {
         .grid-row {
           align-items: start;
           display: grid;
@@ -287,7 +291,7 @@ body {
           grid-row-gap: 0;
           grid-template-columns: 70% 30% ;
           width: 100%;
-          padding: 50px 0px;
+          padding: 50px 50px 50px 10px;
        }
 
        .quiz{
@@ -348,8 +352,7 @@ body {
  }
 
 .video-gallery input[type="radio"] + label{
-  text-align: justify;
-  padding-left: 30%;
+  text-align: center;
 }
 
 .video-gallery label{
@@ -357,7 +360,7 @@ body {
 }
 
 .video-gallery input[type="radio"]:checked + label:before{
-  left: 20%;
+  left: 2%;
 }
 
     }
