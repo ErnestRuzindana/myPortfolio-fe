@@ -14,8 +14,6 @@ img {
   max-width: 100%;
 }
 
-
-
 #preloader{
   background: white url(../images/preloader3.gif) no-repeat center center;
     background-size: 70px;
@@ -543,6 +541,16 @@ h4 span{
       display: flex;
       flex-direction: column;
       padding: 0 20px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto !important;
+  }
+  
+  .note-video-clip {
+    max-width: 100%;
+    height: auto;
   }
 
  
