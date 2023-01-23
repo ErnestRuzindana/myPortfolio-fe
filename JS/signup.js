@@ -50,7 +50,7 @@ fetch("https://ernestruzindana-be.cyclic.app/register/createUser", sendData)
         signupMessage.style.color = "green"
         signupMessage.innerHTML = fetchedData.successMessage
         signupForm.reset()
-        setTimeout(()=>{location = "login.html"}, 4000)
+        setTimeout(()=>{location = "login"}, 4000)
     }
 
     else if (fetchedData.validationError){

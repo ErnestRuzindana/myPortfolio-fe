@@ -11,7 +11,7 @@ submitComment.addEventListener("click", (event) =>{
 });
 
 function goToLogin(){
-    location = "login.html"
+    location = "login"
 }
 
 function closePopupComments(){

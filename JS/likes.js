@@ -18,7 +18,7 @@ function closePopupCommentLikes(){
 }
 
 function goToLogin(){
-    location = "login.html"
+    location = "login"
 }
 
 const post__id = localStorage.getItem("postId")

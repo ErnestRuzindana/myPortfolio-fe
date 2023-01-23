@@ -48,7 +48,7 @@ fetch("https://ernestruzindana-be.cyclic.app/login/newPassword", sendData)
 
         resetPasswordForm.reset()
 
-        setTimeout(()=>{location="login.html"}, 2000)
+        setTimeout(()=>{location="login"}, 2000)
     }
 
     else if(newPasswordFetchedData.validationError){
