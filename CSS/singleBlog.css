@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 #preloader{
   background: white url(../images/preloader3.gif) no-repeat center center;
     background-size: 70px;
@@ -535,10 +540,7 @@ h4 span{
       padding: 0 20px;
   }
 
-  img {
-    max-width: 100%;
-    height: auto;
-  }
+ 
     div.comments{
       display: grid;
       grid-template-columns: auto;

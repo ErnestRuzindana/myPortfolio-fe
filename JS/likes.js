@@ -126,7 +126,8 @@ async function likeComment(comment__id){
     const userLike = fetchedData._id
 
     const data = {
-        user_id: userLike 
+        user_id: userLike,
+        comment_id: comment__id  
     }
 
     const sendData = {
