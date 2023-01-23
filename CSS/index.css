@@ -3205,7 +3205,7 @@ div.myWorkDesign{
 .section-eight .container-pe-quote .li-quote-3 {
     height: 51px;
     width: 51px;
-    left: 18px;
+    left: 200px;
     top: 200px;
     animation-duration: 6s;
     transition-delay: 0.2s;
@@ -3215,7 +3215,7 @@ div.myWorkDesign{
     height: 55px;
     width: 55px;
     right: 20px;
-    top: 160px;
+    top: 210px;
     animation-duration: 5s;
     transition-delay: 0.7s;
     opacity: 1;
@@ -3334,8 +3334,8 @@ span.testimonialOwnerIdentity small{
 }
 
 span.testimonialOwner img{
-width: 65px;
-height: 90px;
+width: 60px;
+height: 85px;
   border-radius: 50%;
   margin-left: 15px;
 }

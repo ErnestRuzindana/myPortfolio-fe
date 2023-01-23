@@ -8,8 +8,13 @@
 
 img {
   max-width: 100%;
-  height: auto;
 }
+
+.note-video-clip {
+  max-width: 100%;
+}
+
+
 
 #preloader{
   background: white url(../images/preloader3.gif) no-repeat center center;
