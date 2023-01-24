@@ -1,10 +1,7 @@
-const userProfile_preloader = document.getElementById("userProfile_preloader")
+
 const popupUserProfile = document.getElementById("popupUserProfile")
 
-function showUserProfileLoader(){
-  userProfile_preloader.classList.add("show")
-}
-showUserProfileLoader()
+
 
 function hideUserProfileLoader(){
   userProfile_preloader.classList.remove("show")
