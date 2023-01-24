@@ -1,18 +1,18 @@
 //Phone Navigation Bar
 
-const toggleButtons = document.getElementById ("toggleButton");
-const closeButtons = document.getElementById("closeButton");
-const navs = document.getElementById('menu')
-navs.classList.remove('menu-btn');
+const toggleButton = document.getElementById ("toggleButton");
+const closeButton = document.getElementById("closeButton");
+const nav = document.getElementById('menu')
+nav.classList.remove('menu-btn');
 
 
-toggleButtons.addEventListener ("click", function(){
+toggleButton.addEventListener ("click", function(){
     nav.classList.add('menu-btn');
 })
 
 
 
-navs.addEventListener("click", function(){
+nav.addEventListener("click", function(){
     nav.classList.remove('menu-btn');
 })
 
