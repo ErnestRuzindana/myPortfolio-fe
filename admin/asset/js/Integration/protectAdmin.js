@@ -1,6 +1,6 @@
 const checkToken = JSON.parse(sessionStorage.getItem("token"))
 	if (!checkToken){
-		location = "../index.html"
+		location = "../index"
 	   }
 
 	async function checkLoggedInUser(){
@@ -14,7 +14,7 @@ const checkToken = JSON.parse(sessionStorage.getItem("token"))
 	console.log(fetchedData)
 
 	if(fetchedData.role !== "admin"){
-		location = "../index.html"
+		location = "../index"
 	}
 
 }

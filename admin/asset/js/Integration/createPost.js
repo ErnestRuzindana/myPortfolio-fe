@@ -103,7 +103,7 @@ fetch("https://ernestruzindana-be.cyclic.app/createPost", sendData)
     if (fetchedData.successMessage){
         postMessages.style.color = "green"
         postMessages.innerHTML = fetchedData.successMessage
-        location = "viewAllPosts.html"
+        location = "viewAllPosts"
     }
 
     else if (fetchedData.validationError){

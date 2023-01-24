@@ -19,7 +19,7 @@ let getSingleUser= async(userId) => {
     console.log(fetchSingleUser)
 
         if(fetchSingleUser.fetchedUser){ 
-           location="changeRole.html"
+           location="changeRole"
            localStorage.setItem("userId", fetchSingleUser.fetchedUser._id)
         }
 }
@@ -99,7 +99,7 @@ fetch('https://ernestruzindana-be.cyclic.app/register/assignUserRole/'+userRoleI
         roleMessage.style.color = "green"
         roleMessage.innerHTML = roleFetchedData.successMessage
         document.title = "Ernest Ruzindana | Dashboard"
-        setTimeout(()=>{location = "assignRole.html"}, 2000)
+        setTimeout(()=>{location = "assignRole"}, 2000)
         
     }
 
@@ -113,7 +113,7 @@ fetch('https://ernestruzindana-be.cyclic.app/register/assignUserRole/'+userRoleI
         roleMessage.style.color = "red"
         roleMessage.innerHTML = roleFetchedData.unauthorisedError
         document.title = "Ernest Ruzindana | Dashboard"
-        setTimeout(()=>{location = "assignRole.html"}, 3000)
+        setTimeout(()=>{location = "assignRole"}, 3000)
     }
 
     else {

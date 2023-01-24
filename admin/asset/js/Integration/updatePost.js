@@ -12,7 +12,7 @@ async function getSinglePost(post_id){
     if (fetchedData.fetchedPost){
         localStorage.setItem("post_id", fetchedData.fetchedPost._id)
         localStorage.setItem("postBody", fetchedData.fetchedPost.postBody)
-        location = "updatePost.html"
+        location = "updatePost"
     }
 }
 
@@ -136,7 +136,7 @@ fetch("https://ernestruzindana-be.cyclic.app/updatePost/"+post_id, sendData)
         const updateHeaderImage = document.getElementById("updateHeaderImage");
         updateHeaderImage.src = fetchedData.updatedPost.headerImage
 
-        setTimeout(()=>{location = "viewAllPosts.html"}, 2000)
+        setTimeout(()=>{location = "viewAllPosts"}, 2000)
     }
 
     else if(fetchedData.postUpdateError){

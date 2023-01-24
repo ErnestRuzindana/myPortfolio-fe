@@ -30,7 +30,7 @@ let deleteMessage= async() => {
     const fetchDeletedPost = await response.json();
     console.log(fetchDeletedPost)
         if(fetchDeletedPost.deletedMessage){ 
-            location="messages.html"
+            location="messages"
         }
     
 }
@@ -144,7 +144,7 @@ let getSingleMessage= async(messageId) => {
 
         if(fetchSingleMessage.clientMessageSuccess){ 
             localStorage.setItem("messageId", fetchSingleMessage.clientMessage._id)
-            location="replyMessage.html"
+            location="replyMessage"
         }
 }
 

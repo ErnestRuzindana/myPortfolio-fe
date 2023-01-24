@@ -85,7 +85,7 @@ fetch("https://ernestruzindana-be.cyclic.app/contact/replyMessage/"+messageId, s
         confirmReplyMessage.style.fontWeight = "bold"
         confirmReplyMessage.innerHTML = fetchedData.replyMessageSuccess
         document.title = "Ernest Ruzindana | Dashboard"
-        setTimeout(()=>{location = "messages.html"}, 3000)
+        setTimeout(()=>{location = "messages"}, 3000)
     }
 
     else{

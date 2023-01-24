@@ -46,7 +46,7 @@ async function loggedInUser(){
 
           <h3 class="adminNames">${fetchedData.firstName} ${fetchedData.lastName}</h3>
           <p class="userFetchedEmail" style="font-weight: 500;">${fetchedData.email}</p>
-          <a href="../userProfile.html" class="ManageAccountLink"><i class="far fa-edit"></i> </nbsp>Edit profile</a>
+          <a href="../userProfile" class="ManageAccountLink"><i class="far fa-edit"></i> </nbsp>Edit profile</a>
           <br><br>
 
           <div class="switchAccount" style="font-weight: 500; padding: 35px 20px 20px; " id="adminPanel">
@@ -80,7 +80,7 @@ async function loggedInUser(){
 
   //Go to admin panel
   adminPanel.addEventListener("click", ()=>{
-    location = "dashboard.html"
+    location = "dashboard"
 })
 
 
@@ -146,7 +146,7 @@ loggedInUser()
 
 function preNavLogoutUser(){
     sessionStorage.removeItem("token")
-    location = "../index.html"
+    location = "../index"
   }
 
 const token = sessionStorage.getItem("token")

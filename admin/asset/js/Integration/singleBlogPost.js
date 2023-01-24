@@ -10,7 +10,7 @@ async function getSinglePost(postId){
 
 
     if (fetchedData.fetchedPost){
-        location = "singleBlog.html"
+        location = "singleBlog"
         localStorage.setItem("postId", fetchedData.fetchedPost._id)
     }
 }

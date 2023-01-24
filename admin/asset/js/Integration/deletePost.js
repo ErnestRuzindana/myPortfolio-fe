@@ -25,7 +25,7 @@ async function deletePost(){
     console.log(fetchedData)
 
     if (fetchedData.deletedPost){
-      location = "viewAllPosts.html"   
+      location = "viewAllPosts"   
     }
 }
 
