@@ -271,7 +271,7 @@ div.blogBoxes{
     grid-template-columns: 27% 70%;
     gap: 3%;
     border-bottom: 1px solid rgb(131, 131, 131);
-    padding: 40px;
+    padding: 40px 70px;
 }
 
 div.blogImage{
@@ -525,7 +525,7 @@ div.FooterLogo a img {
 
     div.blogBoxes{
         grid-template-columns: 30% 67%;
-        padding: 10px 25px 30px;
+        padding: 10px 60px 30px;
     }
 
     .search {
@@ -565,7 +565,7 @@ div.blogBoxes{
     grid-template-columns: auto;
     gap: 0%;
     border-bottom: 1px solid rgb(131, 131, 131);
-    padding: 30px 20px;
+    padding: 30px 25px;
 }
 
 .search {

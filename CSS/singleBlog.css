@@ -52,7 +52,7 @@ div.headerPicture img{
 div.singleBlogContainer{
     display: flex;
     flex-direction: column;
-    padding: 0 45px;
+    padding: 0 67px;
 }
 
 div.singleBlogAuthor{
@@ -519,7 +519,7 @@ h4 span{
     div.singleBlogContainer {
       display: flex;
       flex-direction: column;
-      padding: 0 35px;
+      padding: 0 50px;
   }
 
     div.comments{
@@ -540,7 +540,7 @@ h4 span{
     div.singleBlogContainer {
       display: flex;
       flex-direction: column;
-      padding: 0 20px;
+      padding: 0 25px;
   }
 
   img {

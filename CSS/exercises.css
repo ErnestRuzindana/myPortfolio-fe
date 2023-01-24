@@ -66,7 +66,9 @@ body {
     width: 0; }
   .video-gallery input {
     grid-column-start: 1;
-    grid-row-start: 1; }
+    grid-row-start: 1; 
+  }
+ 
   .video-gallery label {
     color: white;
     text-align: center;
@@ -313,6 +315,11 @@ body {
     height: 0px;
     
    }
+
+   .video-1{
+    background-color: rgb(81, 81, 81);
+  }
+
   .grid-row {
     align-items: start;
     display: grid;
