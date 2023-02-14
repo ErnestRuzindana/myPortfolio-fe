@@ -17,11 +17,11 @@ html{
 
 body{
 
-    font-family: Poppins,sans-serif;
+    font-family: Poppins,sans-serif !important;
     margin: auto;
     width: 100%;
     overflow-x: hidden;
-    overflow: overlay;
+    overflow: overlay !important;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------------------ */
@@ -2985,7 +2985,7 @@ ul li.loginlinksLi{
 }
 
 nav{
-display: none;
+display: none !important;
 }
 
 div.navlinks ul{
