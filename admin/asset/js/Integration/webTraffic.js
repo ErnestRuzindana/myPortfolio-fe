@@ -15,7 +15,7 @@ async function users(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 // Registered Users
-  let response = await fetch("https://ernestruzindana-be.cyclic.app/register/getRegisteredUsers", getData)
+  let response = await fetch("http://localhost:5000/register/getRegisteredUsers", getData)
   const fetchedData = await response.json()
    
     const users = fetchedData.RegisteredUsers;
@@ -23,7 +23,7 @@ async function users(){
     countUsers.innerHTML = users.length;
 
 // Number of posts
-let postsResponse = await fetch("https://ernestruzindana-be.cyclic.app/getAllPosts", getData)
+let postsResponse = await fetch("http://localhost:5000/getAllPosts", getData)
     const postsFetchedData = await postsResponse.json()
 
     const posts = postsFetchedData.allAvailablePosts;
@@ -34,7 +34,7 @@ let postsResponse = await fetch("https://ernestruzindana-be.cyclic.app/getAllPos
 
     // Subscribers
 
-let subscriptionResponse = await fetch("https://ernestruzindana-be.cyclic.app/getAllSubscriptions")
+let subscriptionResponse = await fetch("http://localhost:5000/getAllSubscriptions")
     
     const allResults = await subscriptionResponse.json(); 
     const results = allResults.subscribers;
@@ -42,7 +42,7 @@ counterContainer.innerHTML = results.length
 
 
 // Client Messages
-    let responseMessages = await fetch("https://ernestruzindana-be.cyclic.app/contact/getAllMessages")
+    let responseMessages = await fetch("http://localhost:5000/contact/getAllMessages")
     
     const allResultsMessages = await responseMessages.json(); 
     document.title = "Ernest Ruzindana | Dashboard"

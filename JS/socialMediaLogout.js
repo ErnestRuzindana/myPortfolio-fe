@@ -4,7 +4,7 @@ async function socialMediaLogoutUser(){
         headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-  let response = await fetch("https://ernestruzindana-be.cyclic.app/socialMediaLogoutUser", getData)
+  let response = await fetch("http://localhost:5000/socialMediaLogoutUser", getData)
   const fetchedData = await response.json()
   console.log(fetchedData)
 
@@ -20,7 +20,7 @@ async function footerSocialMediaLogoutUser(){
       headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
   }
 
-let response = await fetch("https://ernestruzindana-be.cyclic.app/socialMediaLogoutUser", getData)
+let response = await fetch("http://localhost:5000/socialMediaLogoutUser", getData)
 const fetchedData = await response.json()
 console.log(fetchedData)
 

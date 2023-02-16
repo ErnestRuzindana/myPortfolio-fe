@@ -35,7 +35,7 @@ async function like(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
+    let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 
@@ -52,7 +52,7 @@ async function like(){
         headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-    fetch("https://ernestruzindana-be.cyclic.app/likePost/"+post__id, sendData)
+    fetch("http://localhost:5000/likePost/"+post__id, sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)
@@ -70,7 +70,7 @@ async function getAllLikes(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://ernestruzindana-be.cyclic.app/getAllLikes/"+post__id, getData)
+    let response = await fetch("http://localhost:5000/getAllLikes/"+post__id, getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 
@@ -89,7 +89,7 @@ async function getAllLikes(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
+    let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
     const postLike = document.getElementById("postLike")
@@ -119,7 +119,7 @@ async function likeComment(comment__id){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
+    let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 
@@ -136,7 +136,7 @@ async function likeComment(comment__id){
         headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-    fetch(`https://ernestruzindana-be.cyclic.app/likeComment/${post__id}/${comment__id}`, sendData)
+    fetch(`http://localhost:5000/likeComment/${post__id}/${comment__id}`, sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)
@@ -155,7 +155,7 @@ async function getAllCommentLikes(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://ernestruzindana-be.cyclic.app/getAllCommentLikes/"+post__id, getData)
+    let response = await fetch("http://localhost:5000/getAllCommentLikes/"+post__id, getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 
@@ -174,7 +174,7 @@ async function getAllCommentLikes(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
+    let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
     const postLike = document.getElementById("postLike")

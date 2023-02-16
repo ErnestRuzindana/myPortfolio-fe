@@ -33,7 +33,7 @@ function contact(){
         headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-    fetch("https://ernestruzindana-be.cyclic.app/contact/sendMessage", sendData)
+    fetch("http://localhost:5000/contact/sendMessage", sendData)
     .then(response => response.json())
     .then((fetchedData)=>{
         console.log(fetchedData)

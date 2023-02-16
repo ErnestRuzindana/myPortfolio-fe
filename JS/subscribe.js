@@ -27,7 +27,7 @@ function subscription(){
         headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-fetch("https://ernestruzindana-be.cyclic.app/Subscribe", sendData)
+fetch("http://localhost:5000/Subscribe", sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)

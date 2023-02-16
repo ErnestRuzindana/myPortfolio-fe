@@ -20,7 +20,7 @@ async function deletePost(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
     
-    let response = await fetch("https://ernestruzindana-be.cyclic.app/deletePost/"+postIdDeletion, getData)
+    let response = await fetch("http://localhost:5000/deletePost/"+postIdDeletion, getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 

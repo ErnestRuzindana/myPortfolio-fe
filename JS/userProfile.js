@@ -13,7 +13,7 @@ async function UserProfile(){
           headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
       }
 
-    let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
+    let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
     const profileFetchedData = await response.json()
     hideUserProfileLoader()
 
@@ -248,7 +248,7 @@ function UpdateUserProfile(){
         headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-fetch("https://ernestruzindana-be.cyclic.app/login/updateUser", sendData)
+fetch("http://localhost:5000/login/updateUser", sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)

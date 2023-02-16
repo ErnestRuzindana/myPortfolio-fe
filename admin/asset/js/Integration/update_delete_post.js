@@ -9,7 +9,7 @@ async function update_delete_post(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://ernestruzindana-be.cyclic.app/getAllPosts", getData)
+    let response = await fetch("http://localhost:5000/getAllPosts", getData)
     const fetchedData = await response.json()
     hideviewAllPostsLoader()
     document.title = "Ernest Ruzindana | Dashboard"

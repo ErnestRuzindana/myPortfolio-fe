@@ -5,7 +5,7 @@ async function getSinglePost(post_id){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
     
-    let response = await fetch("https://ernestruzindana-be.cyclic.app/getSinglePost/"+post_id, getData)
+    let response = await fetch("http://localhost:5000/getSinglePost/"+post_id, getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 
@@ -33,7 +33,7 @@ async function getPostDetails(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
     
-    let response = await fetch("https://ernestruzindana-be.cyclic.app/getSinglePost/"+post_id, getData)
+    let response = await fetch("http://localhost:5000/getSinglePost/"+post_id, getData)
     console.log(response)
     const fetchedData = await response.json()
     hideupdatePostLoader()
@@ -120,7 +120,7 @@ function UpdatePost(){
         headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-fetch("https://ernestruzindana-be.cyclic.app/updatePost/"+post_id, sendData)
+fetch("http://localhost:5000/updatePost/"+post_id, sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)

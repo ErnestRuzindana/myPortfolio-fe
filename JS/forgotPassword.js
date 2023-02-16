@@ -29,7 +29,7 @@ function forgotPassword(){
         headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-fetch("https://ernestruzindana-be.cyclic.app/login/forgotPassword", sendData)
+fetch("http://localhost:5000/login/forgotPassword", sendData)
 .then(response => response.json())
 .then((forgotPasswordFetchedData)=>{
     console.log(forgotPasswordFetchedData)

@@ -28,7 +28,7 @@ let deleteSubscriber= async() => {
        },
     }
 
-    let response = await fetch('https://ernestruzindana-be.cyclic.app/deleteSubscriber/'+subscriberIdDeletion, deleteOptions)
+    let response = await fetch('http://localhost:5000/deleteSubscriber/'+subscriberIdDeletion, deleteOptions)
     const fetchDeletedPost = await response.json();
     console.log(fetchDeletedPost)
         if(fetchDeletedPost.removedMessage){ 
@@ -50,7 +50,7 @@ function hideSubscriptionsLoader(){
 
 async function fetchSubscribers(){
         
-    let response = await fetch("https://ernestruzindana-be.cyclic.app/getAllSubscriptions")
+    let response = await fetch("http://localhost:5000/getAllSubscriptions")
     
     const allResults = await response.json(); 
     const results = allResults.subscribers;

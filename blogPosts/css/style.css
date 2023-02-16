@@ -1075,8 +1075,7 @@ section#mt_blog .blog_post_sec.fullwidth{width: 80%; margin: 0 auto;}
     background: #fff;
     overflow: hidden;
     height: inherit;
-    box-shadow: 0 0 15px #cccccc30;
-    border: 5px solid #fff;
+    box-shadow: 0 0 15px #a19f9f30;
 }
 
 .home-1 #mt_blog .blog-post_wrapper h2{max-height: 3em;}
@@ -1101,12 +1100,11 @@ section#mt_blog .blog_post_sec.fullwidth{width: 80%; margin: 0 auto;}
 
 .widget {
     background: #ffffff;
-    border: 5px solid #fff;
     border-radius: 0 26px 0 26px;
     position: relative;
     overflow: hidden;
     margin-bottom: 30px;
-    box-shadow: 0 0 15px #cccccc30;
+    box-shadow: 0 0 15px #a19f9f30;
 }
 
 .widget:last-child{margin-bottom: 0;}
@@ -1284,6 +1282,10 @@ h5.bg-orange {
 
   div.blogAuthor{
     justify-content: center;
+  }
+
+  .search {
+    padding: 50px 20px 0px 20px;
   }
 
   #blog_main_sec .author_box{

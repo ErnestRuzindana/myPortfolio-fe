@@ -4,5 +4,5 @@ const loginFacebookButton = document.getElementById("loginFacebook");
 
 
 loginFacebookButton.addEventListener("click", ()=>{
-    location = "https://ernestruzindana-be.cyclic.app/facebook"
+    location = "http://localhost:5000/facebook"
 })

@@ -11,7 +11,7 @@ async function loggedInUser(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-  let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
+  let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
   const fetchedData = await response.json()
   console.log(fetchedData)
   preNavLogin.style.display = "none"

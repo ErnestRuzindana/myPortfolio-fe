@@ -1,24 +1,4 @@
 
-/*------------------------------------------------------------------
-* Project:        Suchana
-* Author:         CN-InfoTech
-* URL:            hthttps://themeforest.net/user/cn-infotech
-* Created:        10/15/2019
--------------------------------------------------------------------
-
-- // TABLE OF CONTENTS // -
-
-========================================================================
- 
-
- # Landing Page
- ===============================================
- 1) Default CSS
-
-*/
-/* ========================================= */
-/*          Default CSS        */
-/* ========================================= */
 
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 @import url('https://fonts.googleapis.com/css?family=Poppins:700&amp;display=swap');
@@ -227,6 +207,43 @@ a:hover {
   text-decoration: none !important;
   background-size: 100% 2px;
   transition: all ease-in-out 0.5s;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+  padding: 50px 80px 0px 80px;
+  margin-bottom: -15px;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 2px solid #cba10a !important;
+  border-right: none;
+  padding: 15px;
+  height: 20px;
+  border-radius: 0 0px 0 10px !important;
+  outline: none;
+  color: #9DBFAF;
+  box-shadow: 0 0 15px #a19f9f30 !important;
+}
+
+.searchTerm:focus{
+  color: #333a65;
+}
+
+.searchButton {
+  width: 40px;
+  height: 42px;
+  border: 1px solid #cba10a;
+  background: #cba10a;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 10px 0 0px !important;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 0 15px #a19f9f30 !important;
 }
 
 div.logo a{

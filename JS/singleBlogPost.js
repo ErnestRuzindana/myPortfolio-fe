@@ -10,7 +10,7 @@ async function postDetails(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://ernestruzindana-be.cyclic.app/getSinglePost/"+postId, getData)
+    let response = await fetch("http://localhost:5000/getSinglePost/"+postId, getData)
     const fetchedData = await response.json()
     hideLoader()
     document.title = "Ernest Ruzindana"
@@ -61,7 +61,7 @@ async function postDetails(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let userResponse = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", userGetData)
+    let userResponse = await fetch("http://localhost:5000/login/loggedInUser", userGetData)
     const userFetchedData = await userResponse.json()
     console.log(userFetchedData)
 
@@ -89,7 +89,7 @@ async function getSinglePost(postId){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://ernestruzindana-be.cyclic.app/getSinglePost/"+postId, getData)
+    let response = await fetch("http://localhost:5000/getSinglePost/"+postId, getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 
@@ -113,7 +113,7 @@ async function getAllComments(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://ernestruzindana-be.cyclic.app/getAllComments/"+postId, getData)
+    let response = await fetch("http://localhost:5000/getAllComments/"+postId, getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 
@@ -199,7 +199,7 @@ async function getAllComments(){
 
         
 
-        let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
+        let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
         
         
             const fetchedData = await response.json()
@@ -324,7 +324,7 @@ $(document).ready(function() {
             headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
         }
 
-        let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
+        let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
         const fetchedData = await response.json()
         console.log(fetchedData)
 

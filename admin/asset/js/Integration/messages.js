@@ -26,7 +26,7 @@ let deleteMessage= async() => {
        },
     }
 
-    let response = await fetch('https://ernestruzindana-be.cyclic.app/contact/deleteMessage/'+messageIdDeletion, deleteOptions)
+    let response = await fetch('http://localhost:5000/contact/deleteMessage/'+messageIdDeletion, deleteOptions)
     const fetchDeletedPost = await response.json();
     console.log(fetchDeletedPost)
         if(fetchDeletedPost.deletedMessage){ 
@@ -47,7 +47,7 @@ function hideMessagesLoader(){
 
 async function fetchMessages(){
         
-    let response = await fetch("https://ernestruzindana-be.cyclic.app/contact/getAllMessages")
+    let response = await fetch("http://localhost:5000/contact/getAllMessages")
     
     const allResults = await response.json(); 
     const results = allResults.clientMessages;
@@ -138,7 +138,7 @@ let getSingleMessage= async(messageId) => {
 
 
 
-    let response = await fetch('https://ernestruzindana-be.cyclic.app/contact/getMessageById/'+messageId, getOptions)
+    let response = await fetch('http://localhost:5000/contact/getMessageById/'+messageId, getOptions)
     const fetchSingleMessage = await response.json();
     console.log(fetchSingleMessage)
 

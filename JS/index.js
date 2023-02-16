@@ -94,7 +94,7 @@ async function MediaLoginLogout(){
       headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
    }
 
-   let response = await fetch("https://ernestruzindana-be.cyclic.app/socialMediaLoggedInUser", getData)
+   let response = await fetch("http://localhost:5000/socialMediaLoggedInUser", getData)
    const fetchedData = await response.json()
 
    if (MyToken){

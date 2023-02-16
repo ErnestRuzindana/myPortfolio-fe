@@ -150,7 +150,7 @@ async function getAllPosts(searchKeyword){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-    let response = await fetch("https://ernestruzindana-be.cyclic.app/getAllPosts?keyword=" + searchKeyword, getData)
+    let response = await fetch("http://localhost:5000/getAllPosts?keyword=" + searchKeyword, getData)
     const fetchedData = await response.json()
     hideBlogLoader()
     posts = fetchedData.allAvailablePosts;

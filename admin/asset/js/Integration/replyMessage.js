@@ -21,7 +21,7 @@ async function getMessage() {
 
 
 
-    let response = await fetch('https://ernestruzindana-be.cyclic.app/contact/getMessageById/'+messageId, getOptions)
+    let response = await fetch('http://localhost:5000/contact/getMessageById/'+messageId, getOptions)
     const fetchSingleMessage = await response.json();
     hidereplyMessagesLoader()
     document.title = "Ernest Ruzindana | Dashboard"
@@ -75,7 +75,7 @@ function replyMessage(){
         headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-fetch("https://ernestruzindana-be.cyclic.app/contact/replyMessage/"+messageId, sendData)
+fetch("http://localhost:5000/contact/replyMessage/"+messageId, sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)
