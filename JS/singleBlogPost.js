@@ -7,7 +7,7 @@ function hideLoader(){
 async function postDetails(){  
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
     let response = await fetch("http://localhost:5000/getSinglePost/"+postId, getData)
@@ -50,7 +50,7 @@ async function postDetails(){
         }
 
 	const commentorAvatar = document.getElementById("commentorAvatar")
-	const Token = JSON.parse(sessionStorage.getItem("token"))
+	const Token = JSON.parse(localStorage.getItem("token"))
 	if (!Token){
 		commentorAvatar.innerHTML = `<img src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg" alt="avatar"/>`
 	   }
@@ -58,7 +58,7 @@ async function postDetails(){
 	//LoggedIn user
     const userGetData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
     let userResponse = await fetch("http://localhost:5000/login/loggedInUser", userGetData)
@@ -86,7 +86,7 @@ async function getSinglePost(postId){
     document.title = "Loading..."
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
     let response = await fetch("http://localhost:5000/getSinglePost/"+postId, getData)
@@ -110,7 +110,7 @@ async function getAllComments(){
 
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
     let response = await fetch("http://localhost:5000/getAllComments/"+postId, getData)
@@ -187,14 +187,14 @@ async function getAllComments(){
         
         let likeText
 
-        const likeToken = JSON.parse(sessionStorage.getItem("token"))
+        const likeToken = JSON.parse(localStorage.getItem("token"))
         
         if(likeToken){
 
         //LoggedIn user
         const getData = {
             method: "GET",
-            headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+            headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
         }
 
         
@@ -265,7 +265,7 @@ $(document).ready(function() {
 		$current = $(this);
 		var x = $current.closest('div').find('.like').text().trim();
 		var y = parseInt($current.closest('div').find('.count').text().trim());
-        const checkToken = JSON.parse(sessionStorage.getItem("token"))
+        const checkToken = JSON.parse(localStorage.getItem("token"))
         if (!checkToken){
             $current.prop('disabled', true);
            }
@@ -286,7 +286,7 @@ $(document).ready(function() {
 		$current = $(this);
 		var x = $current.closest('div').find('.like').text().trim();
 		var y = parseInt($current.closest('div').find('.count').text().trim());
-        const checkToken = JSON.parse(sessionStorage.getItem("token"))
+        const checkToken = JSON.parse(localStorage.getItem("token"))
         if (!checkToken){
             $current.prop('disabled', true);
            }
@@ -307,7 +307,7 @@ $(document).ready(function() {
 		$current = $(this);
 	
 		var y = parseInt($current.closest('div').find('.countComments').text().trim());
-        const checkToken = JSON.parse(sessionStorage.getItem("token"))
+        const checkToken = JSON.parse(localStorage.getItem("token"))
         if (!checkToken){
             $current.prop('disabled', true);
            }
@@ -321,7 +321,7 @@ $(document).ready(function() {
         //LoggedIn user
         const getData = {
             method: "GET",
-            headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+            headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
         }
 
         let response = await fetch("http://localhost:5000/login/loggedInUser", getData)

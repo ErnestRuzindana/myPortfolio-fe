@@ -23,7 +23,7 @@ let deleteSubscriber= async() => {
         method: 'DELETE',
         headers: {
         
-         'auth-token': JSON.parse(sessionStorage.getItem('token'))
+         'auth-token': JSON.parse(localStorage.getItem('token'))
      
        },
     }

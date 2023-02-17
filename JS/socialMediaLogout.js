@@ -32,14 +32,14 @@ if (fetchedData.message){
 
 
 function preNavLogoutUser(){
-  sessionStorage.removeItem("token")
+  localStorage.removeItem("token")
   location = "../index"
 }
 
 
 
 function footerLogoutUser(){
-  sessionStorage.removeItem("token")
+  localStorage.removeItem("token")
   location = "../index"
 }
 

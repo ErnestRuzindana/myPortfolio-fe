@@ -1,18 +1,18 @@
 async function loggedInUser(){
     const preNavLogin = document.getElementById("preNavLogin");
-    const preNavToken = sessionStorage.getItem("token")
+    const preNavToken = localStorage.getItem("token")
     if(preNavToken){
         preNavLogin.innerHTML = `<img src="../../../images/spinner.gif" alt="" width="40px">`
     }
 
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
   let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
-  const fetchedData = await response.json()
-  console.log(fetchedData)
+  const serverData = await response.json()
+  fetchedData = serverData.loggedInUser;
 
   preNavLogin.style.display = "none"
 
@@ -145,11 +145,11 @@ loggedInUser()
 
 
 function preNavLogoutUser(){
-    sessionStorage.removeItem("token")
+    localStorage.removeItem("token")
     location = "../index"
   }
 
-const token = sessionStorage.getItem("token")
+const token = localStorage.getItem("token")
 if(!token){
 const topRightLogin = document.getElementById("addProfile")
     topRightLogin.style.display = "none"

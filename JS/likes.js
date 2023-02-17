@@ -22,7 +22,7 @@ function goToLogin(){
 }
 
 const post__id = localStorage.getItem("postId")
-const checkTokenLikes = JSON.parse(sessionStorage.getItem("token"))
+const checkTokenLikes = JSON.parse(localStorage.getItem("token"))
 
 async function like(){
     
@@ -32,7 +32,7 @@ async function like(){
     //LoggedIn user
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
     let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
@@ -49,7 +49,7 @@ async function like(){
     const sendData = {
         method: "POST",
         body: JSON.stringify(data),
-        headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
+        headers: new Headers({"auth_token": JSON.parse(localStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
     fetch("http://localhost:5000/likePost/"+post__id, sendData)
@@ -67,7 +67,7 @@ async function getAllLikes(){
 
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
     let response = await fetch("http://localhost:5000/getAllLikes/"+post__id, getData)
@@ -86,7 +86,7 @@ async function getAllLikes(){
         //LoggedIn user
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
     let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
@@ -116,7 +116,7 @@ async function likeComment(comment__id){
     //LoggedIn user
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
     let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
@@ -133,7 +133,7 @@ async function likeComment(comment__id){
     const sendData = {
         method: "POST",
         body: JSON.stringify(data),
-        headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
+        headers: new Headers({"auth_token": JSON.parse(localStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
     fetch(`http://localhost:5000/likeComment/${post__id}/${comment__id}`, sendData)
@@ -152,7 +152,7 @@ async function getAllCommentLikes(){
 
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
     let response = await fetch("http://localhost:5000/getAllCommentLikes/"+post__id, getData)
@@ -171,7 +171,7 @@ async function getAllCommentLikes(){
         //LoggedIn user
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
     let response = await fetch("http://localhost:5000/login/loggedInUser", getData)

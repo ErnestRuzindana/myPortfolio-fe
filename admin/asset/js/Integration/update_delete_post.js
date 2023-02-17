@@ -6,7 +6,7 @@ function hideviewAllPostsLoader(){
 async function update_delete_post(){
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
     let response = await fetch("http://localhost:5000/getAllPosts", getData)

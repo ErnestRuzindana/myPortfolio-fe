@@ -7,7 +7,7 @@ const loginMessage = document.getElementById("loginMessage");
 
 loginMessage.style.display = "none"
 
-const MyToken = JSON.parse(sessionStorage.getItem("token"))
+const MyToken = JSON.parse(localStorage.getItem("token"))
 if (MyToken){
     location = "../index"
 }
@@ -70,7 +70,7 @@ function login(){
 
         else if (fetchedData.successMessage){
 
-            sessionStorage.setItem("token", JSON.stringify(fetchedData.Access_Token))
+            localStorage.setItem("token", JSON.stringify(fetchedData.Access_Token))
             location = "../index"
         }
 

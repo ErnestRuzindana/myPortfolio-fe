@@ -1,7 +1,7 @@
 async function getSinglePost(postId){
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
     let response = await fetch("http://localhost:5000/getSinglePost/"+postId, getData)
@@ -21,7 +21,7 @@ const postId = localStorage.getItem("postId")
 async function postDetails(){
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
     let response = await fetch("http://localhost:5000/getSinglePost/"+postId, getData)

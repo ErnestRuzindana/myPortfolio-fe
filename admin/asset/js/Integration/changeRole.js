@@ -7,7 +7,7 @@ let getSingleUser= async(userId) => {
         method: 'GET',
         headers: {
         
-         'auth-token': JSON.parse(sessionStorage.getItem('token'))
+         'auth-token': JSON.parse(localStorage.getItem('token'))
      
        },
     }
@@ -38,7 +38,7 @@ async function getUser() {
         method: 'GET',
         headers: {
         
-         'auth-token': JSON.parse(sessionStorage.getItem('token'))
+         'auth-token': JSON.parse(localStorage.getItem('token'))
      
        },
     }
@@ -87,7 +87,7 @@ function updateRole() {
     const UserRequestOptions = {
         method: 'PUT',
         body: JSON.stringify(data),
-        headers: new Headers({'Content-Type': 'application/json; charset=UTF-8', 'auth_token': JSON.parse(sessionStorage.getItem('token'))}),
+        headers: new Headers({'Content-Type': 'application/json; charset=UTF-8', 'auth_token': JSON.parse(localStorage.getItem('token'))}),
      };
      
 fetch('http://localhost:5000/register/assignUserRole/'+userRoleId, UserRequestOptions,)

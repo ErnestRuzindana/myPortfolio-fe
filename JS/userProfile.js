@@ -10,7 +10,7 @@ function hideUserProfileLoader(){
 async function UserProfile(){
       const getData = {
           method: "GET",
-          headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+          headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
       }
 
     let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
@@ -245,7 +245,7 @@ function UpdateUserProfile(){
     const sendData = {  
         method: "PUT",
         body: JSON.stringify(data),
-        headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
+        headers: new Headers({"auth_token": JSON.parse(localStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
 fetch("http://localhost:5000/login/updateUser", sendData)

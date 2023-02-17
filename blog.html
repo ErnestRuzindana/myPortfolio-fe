@@ -253,73 +253,8 @@
     <!-- Slider -->
     <section id="mt_banner">
         <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="slide-inner" style="background-image:url(blogPosts/images/slider/bg2.jpg)"></div>
-                    <div class="banner_caption_text">
-                        <div class="post-category">
-                            <ul>
-                                <li class="cat-yellow"><a href="#" class="white">Machine Learning & AI</a></li>
-                            </ul>
-                        </div>
-                        <h1><a href="#">Every Next Level of Your Life Will Demand a Different You</a></h1>
-                        <div class="item-meta">
-                            <div class="blogAuthor blogAuthorAdvert">
+            <div class="swiper-wrapper" id="postAdvertContainer">
 
-                                <img src="images/Ruzindana.jpg" alt="">
-                                <div>
-                                  <small><a href="authorPosts.html" class="AuthorName">Ernest Ruzindana</a></small>
-                                  <small> / 15th August 2019</small>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="slide-inner" style="background-image:url(blogPosts/images/slider/bg1.jpg)"></div>
-                    <div class="banner_caption_text">
-                        <div class="post-category">
-                            <ul>
-                                <li class="cat-blue"><a href="#" class="white">Infographic Design</a></li>
-                            </ul>
-                        </div>
-                        <h1><a href="#">The creation of beauty is art to break rules, regulations and barriers</a></h1>
-                        <div class="item-meta">
-                            <div class="blogAuthor blogAuthorAdvert">
-
-                                <img src="images/Ruzindana.jpg" alt="">
-                                <div>
-                                  <small><a href="authorPosts.html" class="AuthorName">Ernest Ruzindana</a></small>
-                                  <small> / 15th August 2019</small>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="slide-inner" style="background-image:url(blogPosts/images/slider/bg3.jpg)"></div>
-                    <div class="banner_caption_text">
-                        <div class="post-category">
-                            <ul>
-                                <li class="cat-yellow"><a href="#" class="white">Web Design & Development</a></li>
-                            </ul>
-                        </div>
-                        <h1><a href="#">Get Scary With This Vegan Spooky Spider Crackle Cake!</a></h1>
-                        <div class="item-meta">
-                            <div class="blogAuthor blogAuthorAdvert">
-
-                                <img src="images/Ruzindana.jpg" alt="">
-                                <div>
-                                  <small><a href="authorPosts.html" class="AuthorName">Ernest Ruzindana</a></small>
-                                  <small> / 15th August 2019</small>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="swiper-button-next swiper-button-white"></div>
             <div class="swiper-button-prev swiper-button-white"></div>
@@ -327,9 +262,19 @@
     </section>
     <!-- End Slider -->
 
-    <div class="search">
-        <input type="text" class="searchTerm" id="searchTerm" placeholder="Search for a post...">
-        <button type="submit" class="searchButton" id="searchButton">
+    <div class="search" id="top">
+        <div class="dropdown">
+            <button id="dropdownBtnSort">Sort By <i class="fa fa-sort-up"></i></button>
+            <div id="dropdownSortOptions" class="dropdownSortOptions">
+              <a href="#" class="sortOption">Default <span>Newest</span></a>
+              <a href="#" class="sortOption">Date <span>Oldest</span></a>
+              <a href="#" class="sortOption">Ascending <span>A - Z</span></a>
+              <a href="#" class="sortOption">Descending <span>Z - A</span></a>
+              <a href="#" class="sortOption">Most Liked <span>DESC</span></a>
+            </div>
+          </div>
+        <input type="text" class="searchTerm" id="searchField" placeholder="Search for a post...">
+        <button type="submit" class="searchButton" id="submitSearchRequest">
           <i class="fa fa-search"></i>
        </button>
      </div>
@@ -339,208 +284,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9 col-sm-12 width70">
-                    <div class="blog_post_sec">
-                        <div class="blog-post_wrapper">
-                            <div class="blog-post-image">
-                                <img src="blogPosts/images/blog-listing/blog_01.jpg" alt="image" class="img-responsive center-block post_img" />
-                            </div>
-                            <div class="post-content">
-                                <div class="post-category">
-                                    <ul>
-                                        <li class="cat-yellow"><a href="#" class="white">Land Use Planning</a></li>
-                                    </ul>
-                                </div>
-                                <div class="post-date">
-                                    <p><span>2</span> <i class="fa fa-thumbs-up"></i></p>
-                                    <p><span>2</span> <i class="fa fa-comments"></i></p>
-                                </div>
-                                <h2 class="entry-title">
-                                    <a href="blogDetails.html" class="">I'm passionate about food, the tradition of it, cooking it, sharing it</a>
-                                </h2>
-                                <div class="item-meta">
-                                    <div class="blogAuthor">
-
-                                        <img src="images/Ruzindana.jpg" alt="">
-                                        <div>
-                                          <small><a href="authorPosts.html" class="AuthorName">Ernest Ruzindana</a></small>
-                                          <small> / 15th August 2019</small>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="blog-post_wrapper">
-                            <div class="blog-post-image">
-                                <img src="blogPosts/images/blog-listing/blog_03.jpg" alt="image" class="img-responsive center-block post_img" />
-                            </div>
-                            <div class="post-content">
-                                <div class="post-category">
-                                    <ul>
-                                        <li class="cat-yellow"><a href="#" class="white">Geographic Information System</a></li>
-                                    </ul>
-                                </div>
-                                <div class="post-date">
-                                    <p><span>2</span> <i class="fa fa-thumbs-up"></i></p>
-                                    <p><span>2</span> <i class="fa fa-comments"></i></p>
-                                </div>
-                                <h2 class="entry-title">
-                                    <a href="blogDetails.html" class="">I'm passionate about food, the tradition of it, cooking it, sharing it</a>
-                                </h2>
-                                <div class="item-meta">
-                                    <div class="blogAuthor">
-
-                                        <img src="images/Ruzindana.jpg" alt="">
-                                        <div>
-                                          <small><a href="authorPosts.html" class="AuthorName">Ernest Ruzindana</a></small>
-                                          <small> / 15th August 2019</small>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="blog-post_wrapper">
-                            <div class="blog-post-image">
-                                <img src="blogPosts/images/blog-listing/blog_04.jpg" alt="image" class="img-responsive center-block post_img" />
-                            </div>
-                            <div class="post-content">
-                                <div class="post-category">
-                                    <ul>
-                                        <li class="cat-green"><a href="#" class="white">Other</a></li>
-                                    </ul>
-                                </div>
-                                <div class="post-date">
-                                    <p><span>2</span> <i class="fa fa-thumbs-up"></i></p>
-                                    <p><span>2</span> <i class="fa fa-comments"></i></p>
-                                </div>
-                                <h2 class="entry-title">
-                                    <a href="blogDetails.html" class="">Look at life with the eyes of a child</a>
-                                </h2>
-                                <div class="item-meta">
-                                    <div class="blogAuthor">
-
-                                        <img src="images/Ruzindana.jpg" alt="">
-                                        <div>
-                                          <small><a href="authorPosts.html" class="AuthorName">Ernest Ruzindana</a></small>
-                                          <small> / 15th August 2019</small>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="blog-post_wrapper">
-                            <div class="blog-post-image">
-                                <img src="blogPosts/images/blog-listing/blog_01.jpg" alt="image" class="img-responsive center-block post_img" />
-                            </div>
-                            <div class="post-content">
-                                <div class="post-category">
-                                    <ul>
-                                        <li class="cat-yellow"><a href="#" class="white">Land Use Planning</a></li>
-                                    </ul>
-                                </div>
-                                <div class="post-date">
-                                    <p><span>2</span> <i class="fa fa-thumbs-up"></i></p>
-                                    <p><span>2</span> <i class="fa fa-comments"></i></p>
-                                </div>
-                                <h2 class="entry-title">
-                                    <a href="blogDetails.html" class="">I'm passionate about food, the tradition of it, cooking it, sharing it</a>
-                                </h2>
-                                <div class="item-meta">
-                                    <div class="blogAuthor">
-
-                                        <img src="images/Ruzindana.jpg" alt="">
-                                        <div>
-                                          <small><a href="authorPosts.html" class="AuthorName">Ernest Ruzindana</a></small>
-                                          <small> / 15th August 2019</small>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="blog-post_wrapper">
-                            <div class="blog-post-image">
-                                <img src="blogPosts/images/blog-listing/blog_03.jpg" alt="image" class="img-responsive center-block post_img" />
-                            </div>
-                            <div class="post-content">
-                                <div class="post-category">
-                                    <ul>
-                                        <li class="cat-yellow"><a href="#" class="white">Geographic Information System</a></li>
-                                    </ul>
-                                </div>
-                                <div class="post-date">
-                                    <p><span>2</span> <i class="fa fa-thumbs-up"></i></p>
-                                    <p><span>2</span> <i class="fa fa-comments"></i></p>
-                                </div>
-                                <h2 class="entry-title">
-                                    <a href="blogDetails.html" class="">I'm passionate about food, the tradition of it, cooking it, sharing it</a>
-                                </h2>
-                                <div class="item-meta">
-                                    <div class="blogAuthor">
-
-                                        <img src="images/Ruzindana.jpg" alt="">
-                                        <div>
-                                          <small><a href="authorPosts.html" class="AuthorName">Ernest Ruzindana</a></small>
-                                          <small> / 15th August 2019</small>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="blog-post_wrapper">
-                            <div class="blog-post-image">
-                                <img src="blogPosts/images/blog-listing/blog_04.jpg" alt="image" class="img-responsive center-block post_img" />
-                            </div>
-                            <div class="post-content">
-                                <div class="post-category">
-                                    <ul>
-                                        <li class="cat-green"><a href="#" class="white">Other</a></li>
-                                    </ul>
-                                </div>
-                                <div class="post-date">
-                                    <p><span>2</span> <i class="fa fa-thumbs-up"></i></p>
-                                    <p><span>2</span> <i class="fa fa-comments"></i></p>
-                                </div>
-                                <h2 class="entry-title">
-                                    <a href="blogDetails.html" class="">Look at life with the eyes of a child</a>
-                                </h2>
-                                <div class="item-meta">
-                                    <div class="blogAuthor">
-
-                                        <img src="images/Ruzindana.jpg" alt="">
-                                        <div>
-                                          <small><a href="authorPosts.html" class="AuthorName">Ernest Ruzindana</a></small>
-                                          <small> / 15th August 2019</small>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="pagination__wrapper">
-                          <ul class="pagination">
-                            <li><button class="prev" title="previous page">&#10094;</button></li>
-                            <li><button title="first page - page 1">1</button></li>
-                            <li><button class="active" title="current page">2</button></li>
-                            <li><button>3</button></li>
-                            <li><button class="next" title="next page">&#10095;</button></li>
-                          </ul>
-                        </div>  
+                    <div class="blog_post_sec" id="postsContainer">
+    
                     </div>
+                    <div class="pagination__wrapper">
+                        <ul class="pagination" id="blogPagination">
+
+                        </ul>
+                    </div> 
                 </div>
                 <div class="col-md-3 col-sm-12 width30">
                     <div class="sidebar">
@@ -687,9 +438,12 @@
     <!-- Plugin Jquery --><script src="blogPosts/js/plugin.js"></script>
     <!-- custom nav jquery --><script src="blogPosts/js/custom-nav.js"></script>
     <!-- main default Jquery --><script src="blogPosts/js/main.js"></script>
+    <!-- main default Jquery --><script src="blogPosts/js/sort.js"></script>
 
 
+    <script src="JS/getAllPosts.js"></script>
     <script src="../JS/loggedInUser.js"></script>
+    <script src="JS/index.js"></script>
     <script src="../JS/socialMediaLogout.js"></script>
     <script src="../JS/subscribe.js"></script>
 </body>

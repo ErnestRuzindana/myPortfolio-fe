@@ -178,6 +178,7 @@ input.signupType:hover{
 
 div#signupMessage{
     text-align: center;
+    font-weight: bold;
 }
 
 

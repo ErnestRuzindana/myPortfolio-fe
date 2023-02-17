@@ -2,7 +2,7 @@ async function getSinglePost(post_id){
     document.title = "Loading..."
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
     
     let response = await fetch("http://localhost:5000/getSinglePost/"+post_id, getData)
@@ -30,7 +30,7 @@ const post_id = localStorage.getItem("post_id")
 async function getPostDetails(){
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
     
     let response = await fetch("http://localhost:5000/getSinglePost/"+post_id, getData)
@@ -117,7 +117,7 @@ function UpdatePost(){
     const sendData = {  
         method: "PUT",
         body: JSON.stringify(data),
-        headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
+        headers: new Headers({"auth_token": JSON.parse(localStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
 fetch("http://localhost:5000/updatePost/"+post_id, sendData)

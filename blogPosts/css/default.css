@@ -250,6 +250,98 @@ div.logo a{
   display: none;
 }
 
+.dropdown {
+  width: 200px;
+  position: relative;
+  z-index: 5;
+  margin-right: 15px;
+  margin-top: -2px;
+}
+#dropdownBtnSort{
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  border: 2px solid white;
+  cursor: pointer;
+  border-radius: 0px 10px 0px 10px;
+  background-color: #cba10a;
+  color: white;
+  position: relative;
+  --active-col: #cba10a;
+}
+#dropdownBtnSort i{
+  float: right;
+  margin-top: 7px;
+  transform: rotate(0deg);
+}
+
+#dropdownBtnSort::before {
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: calc(100% - 20px);
+  background-color: var(--active-sort-col);
+  left: 10px;
+  top: 2px;
+}
+
+
+#dropdownSortOptions {
+  display: none;
+  background-color: #cba10a;
+  flex-direction: column;
+  border-radius: 0px 10px 0px 10px;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  margin-top: 3px;
+}
+
+#dropdownSortOptions a{
+  color: white;
+}
+
+.sortOption{
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+}
+.sortOption span{
+ float: right;
+}
+
+.sortOption:hover{
+  background-color: #6E6E6E;
+}
+
+.selected {
+  position: relative;
+  color: #F5B32F;
+}
+.selected::before {
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: calc(100% - 20px);
+  background-color: #F5B32F;
+  left: 10px;
+  bottom: 7px;
+}
+
+.authorImageTemplate{
+  background: #cba10a;
+  width: 40px !important;
+  height: 40px !important;
+  line-height: 40px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #ccc;
+}
+
+
+
+
 input[type=text],
 input[type=email],
 input[type=number],
@@ -501,7 +593,7 @@ div.navlinks{
   gap: 5.5vw !important;
 }
 
-.navlinks ul li a, div.preNavLogin h5 a, div.preNavLinks ul li a, div.preNavLogo a{
+.navlinks ul li a, div.preNavLogin h5 a, div.preNavLinks ul li a, div.preNavLogo a, #dropdownSortOptions a{
   background-image: none !important;
 }
 

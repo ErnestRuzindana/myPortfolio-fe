@@ -1,19 +1,19 @@
 
 async function loggedInUser(){
     const preNavLogin = document.getElementById("preNavLogin");
-    const preNavToken = sessionStorage.getItem("token")
+    const preNavToken = localStorage.getItem("token")
     if(preNavToken){
         preNavLogin.innerHTML = `<img src="../images/Spinner.gif" alt="" width="40px">`
         document.title = "Loading..."
     }
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
   let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
-  const fetchedData = await response.json()
-  console.log(fetchedData)
+  const serverData = await response.json()
+  const fetchedData = serverData.loggedInUser
   preNavLogin.style.display = "none"
   document.title = "Ernest Ruzindana"
   

@@ -1,26 +1,3 @@
-/* 
-/*------------------------------------------------------------------
-* Project:        Suchana
-* Author:         CN-InfoTech
-* URL:            hthttps://themeforest.net/user/cn-infotech
-* Created:        6/24/2019
--------------------------------------------------------------------
-
-- // TABLE OF CONTENTS // -
-
-========================================================================
- 
- 1.* Bootstrap v3.3.7 
- 2.* jQuery One Page Nav Plugin
- 3.* jQuery Easing v1.3 
- 4.* Swiper 4.0.7
- 5.* Slick
- 6.* jquery.slicknav.min.js
- 7.* Wow Js
- 8.* Bootstrap Validator
- 9.* jQuery Validation Plugin
-
-
 
 
 /*!

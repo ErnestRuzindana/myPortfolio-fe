@@ -12,7 +12,7 @@ async function users(){
     countTraffic.innerHTML = `<img src="../../../images/spinner.gif" alt="" width="40px">`
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 // Registered Users
   let response = await fetch("http://localhost:5000/register/getRegisteredUsers", getData)

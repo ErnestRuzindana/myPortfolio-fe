@@ -6950,10 +6950,14 @@ div.createPost form input[type="file"]{
   padding: 10px;
 }
 
-div.createPost form input[type="text"]{
+div.createPost form input[type="text"], div.createPost form select{
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+div.createPost form select{
+  padding: 10px;
 }
 
 div.createPost form label{

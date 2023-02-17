@@ -31,7 +31,7 @@ function closePopupCommentsRepliesValidation(){
 }
 
 const post_id = localStorage.getItem("postId")
-const checkToken = JSON.parse(sessionStorage.getItem("token"))
+const checkToken = JSON.parse(localStorage.getItem("token"))
 
 async function comment(){
     document.title = "Loading..."
@@ -43,7 +43,7 @@ async function comment(){
     //LoggedIn user
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
     let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
@@ -94,7 +94,7 @@ async function comment(){
     const sendData = {
         method: "PUT",
         body: JSON.stringify(data),
-        headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
+        headers: new Headers({"auth_token": JSON.parse(localStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
     fetch("http://localhost:5000/createComment/"+post_id, sendData)
@@ -162,7 +162,7 @@ async function getSingleComment(postId, comment_Id){
 
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
     let response = await fetch(`http://localhost:5000/getSingleComment/${postId}/${comment_Id}`, getData)
@@ -184,7 +184,7 @@ async function commentReply(){
     //LoggedIn user
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
     let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
@@ -267,7 +267,7 @@ async function commentReply(){
     const sendData = {
         method: "PUT",
         body: JSON.stringify(data),
-        headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
+        headers: new Headers({"auth_token": JSON.parse(localStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
     fetch(`http://localhost:5000/commentReply/${post_id}/${commentId}`, sendData)
@@ -286,7 +286,7 @@ async function commentReply(){
 async function getAllReplies(){
     const getData = {
         method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
     let response = await fetch(`http://localhost:5000/getSingleComment/${post_id}/${commentId}`, getData)

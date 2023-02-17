@@ -1,8 +1,52 @@
-// Creating a post
+const postCategory = document.getElementById("postCategory");
 
+//Get post categories
+async function postCategoryFunction(){
+    const getData = {
+        method: "GET"
+    }
+
+    let response = await fetch("http://localhost:5000/getAllCategories", getData)
+    const fetchedData = await response.json()
+    const categories = fetchedData.allCategories;
+
+    if(categories.length === 0){
+        postCategory.innerHTML = `
+            <div class="perfectCenteredNoItemFound">
+                No Services found!
+            </div>
+        
+        `
+    }
+
+    else{
+
+    for(let i=0; i<categories.length; i++){
+        const categoryArray = categories[i];
+
+        const category_id = categoryArray._id;
+        const name = categoryArray.name;
+        
+        const categoryTemplate = `
+        <option value="" id="${category_id}" >${name}</option>
+        `
+        
+        postCategory.innerHTML += categoryTemplate
+    }
+
+}
+}
+
+postCategoryFunction()
+
+
+
+// Creating a post
 const submitPosts = document.getElementById("submitPost");
 const postMessages = document.getElementById("postMessage");
-
+const postImage = document.getElementById("postImage");
+const postTitle = document.getElementById("postTitle");
+const postBody = document.getElementById("summernote");
 postMessages.style.display = "none"
 
 submitPosts.addEventListener("click", (event) =>{
@@ -16,83 +60,30 @@ submitPosts.addEventListener("click", (event) =>{
 
 
 async function createPost(){
-    const postImage = document.getElementById("postImage");
-    const headerImage = document.getElementById("headerImage");
-    const postTitle = document.getElementById("postTitle");
-    const postBody = document.getElementById("summernote");
 
     if (!postImage.files[0]) {
         postMessages.style.color = "red"
         postMessages.innerHTML = "Please add a post image!"
         return;
       }
-
-      if (!headerImage.files[0]) {
-        postMessages.style.color = "red"
-        postMessages.innerHTML = "Please add a header image!"
-        return;
-    }
-    
-    const getData = {
-        method: "GET",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
-    }
-
-    let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
-    const fetchedData = await response.json()
-    console.log(fetchedData)
-
-    const authorNames = fetchedData.firstName +" "+ fetchedData.lastName
-
-    var authorPicture
-    if(fetchedData.imageLink){
-        authorPicture = fetchedData.imageLink
-    }
-
-    else{
-        authorPicture = fetchedData.firstName.charAt(0)+fetchedData.lastName.charAt(0)
-    }
-    
-
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var yyyy = today.getFullYear();
-
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-    ];
-
-    const month = monthNames[today.getMonth()]
-
-
-    today = month + ' ' + dd + ', ' + yyyy;
-
     
     const reader =  new FileReader();
      reader.readAsDataURL(postImage.files[0])
      reader.addEventListener("load",()=>{
     const finalPostImage = reader.result
 
-    const reader2 =  new FileReader();
-     reader2.readAsDataURL(headerImage.files[0])
-     reader2.addEventListener("load",()=>{
-        const finalHeaderImage = reader2.result
-
     const data = {
         title: postTitle.value, 
         postBody: postBody.value,
-        authorName: authorNames,
-        authorImage: authorPicture,
         postImage: finalPostImage,
-        headerImage: finalHeaderImage,
-        dateCreated: today
+        category: postCategory.options[postCategory.selectedIndex].id,
     }
         
 
     const sendData = {  
         method: "POST",
         body: JSON.stringify(data),
-        headers: new Headers({"auth_token": JSON.parse(sessionStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
+        headers: new Headers({"auth_token": JSON.parse(localStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
 fetch("http://localhost:5000/createPost", sendData)
@@ -103,7 +94,7 @@ fetch("http://localhost:5000/createPost", sendData)
     if (fetchedData.successMessage){
         postMessages.style.color = "green"
         postMessages.innerHTML = fetchedData.successMessage
-        location = "viewAllPosts"
+        location = "viewAllPosts.html"
     }
 
     else if (fetchedData.validationError){
@@ -111,12 +102,16 @@ fetch("http://localhost:5000/createPost", sendData)
         postMessages.innerHTML = fetchedData.validationError
     }
 
+    else if (fetchedData.duplicationError){
+        postMessages.style.color = "red"
+        postMessages.innerHTML = fetchedData.duplicationError
+    }
+
     else{
         postMessages.style.color = "red"
-        postMessages.innerHTML = fetchedData.message
+        postMessages.innerHTML = "Something went wrong! We were unable to peform this request!"
     }
 })
 
-     })
     })
 }

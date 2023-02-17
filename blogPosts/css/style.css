@@ -948,7 +948,7 @@ section#mt_blog .blog_post_sec.fullwidth{width: 80%; margin: 0 auto;}
 
 .bg-orange{
   background-color: #e77842;
-  background-image: linear-gradient(45deg,#e77842,#f7c068);
+  background: linear-gradient(45deg,#cba10a,#f7c068);
 }
 
 .bg-red{
@@ -1645,6 +1645,10 @@ h5.bg-orange {
 
 @media(max-width: 991px){
   .mt_instagram{text-align: center;}
+
+  .dropdown{
+    display: none;
+  }
 
   .mt_instagram .sectio-title{
     position: inherit;

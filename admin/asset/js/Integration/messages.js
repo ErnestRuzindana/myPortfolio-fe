@@ -21,7 +21,7 @@ let deleteMessage= async() => {
         method: 'DELETE',
         headers: {
         
-         'auth-token': JSON.parse(sessionStorage.getItem('token'))
+         'auth-token': JSON.parse(localStorage.getItem('token'))
      
        },
     }
@@ -131,7 +131,7 @@ let getSingleMessage= async(messageId) => {
         method: 'GET',
         headers: {
         
-         'auth-token': JSON.parse(sessionStorage.getItem('token'))
+         'auth-token': JSON.parse(localStorage.getItem('token'))
      
        },
     }

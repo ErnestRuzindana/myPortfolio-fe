@@ -35,73 +35,14 @@ $('#menu').onePageNav({
 });
 
 
-
-
-
-// For the thumbnail demo! :]
-
-var count = 1
-setTimeout(demo, 500)
-setTimeout(demo, 700)
-setTimeout(demo, 900)
-setTimeout(reset, 2000)
-
-setTimeout(demo, 2500)
-setTimeout(demo, 2750)
-setTimeout(demo, 3050)
-
-
-var mousein = false
-function demo() {
-   if(mousein) return
-   document.getElementById('demo' + count++)
-      .classList.toggle('hover')
-   
-}
-
-function demo2() {
-   if(mousein) return
-   document.getElementById('demo2')
-      .classList.toggle('hover')
-}
-
-function reset() {
-   count = 1
-   var hovers = document.querySelectorAll('.hover')
-   for(var i = 0; i < hovers.length; i++ ) {
-      hovers[i].classList.remove('hover')
-   }
-}
-
-document.addEventListener('mouseover', function() {
-   mousein = true
-   reset()
-})
-
-
-
-
 // Showing login/signup or logout in footer using the normal login
 
 async function MediaLoginLogout(){
    const loginLogoutUser = document.getElementById("loginLogout");
    const logoutUser = document.getElementById("logoutUser");
-   const MyToken = JSON.parse(sessionStorage.getItem("token"))
-
-
-   const getData = {
-      method: "GET",
-      headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
-   }
-
-   let response = await fetch("http://localhost:5000/socialMediaLoggedInUser", getData)
-   const fetchedData = await response.json()
+   const MyToken = JSON.parse(localStorage.getItem("token"))
 
    if (MyToken){
-      loginLogoutUser.style.display = "none";
-   }
-
-   else if(!fetchedData.message){
       loginLogoutUser.style.display = "none";
    }
 

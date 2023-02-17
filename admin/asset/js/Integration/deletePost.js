@@ -17,7 +17,7 @@ async function deletePost(){
     document.title = "Loading..."
     const getData = {
         method: "DELETE",
-        headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
+        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
     
     let response = await fetch("http://localhost:5000/deletePost/"+postIdDeletion, getData)

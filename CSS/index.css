@@ -104,6 +104,17 @@ body::-webkit-scrollbar-thumb {
 
   /* Loading Dots */
 
+  .perfectCenteredNoItemFound{
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	font-size: 25px;
+	padding: 50px;
+	font-weight: bold;
+	color: rgb(177, 177, 177) ;
+}
+
   .loadingDotsReadmore{
     visibility: hidden;
   }
@@ -185,7 +196,7 @@ body::-webkit-scrollbar-thumb {
         font-weight: bold;
         font-size: 20px;
         cursor: pointer;
-        text-align: center;
+        text-align: center !important;
         margin-top: 5px;
     }
 
@@ -543,7 +554,7 @@ div.userProfile{
 
 
 nav.menu-btn{
-    display: block;
+    display: block !important;
 }
 
 section.nav{
