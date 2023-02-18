@@ -266,11 +266,11 @@
         <div class="dropdown">
             <button id="dropdownBtnSort">Sort By <i class="fa fa-sort-up"></i></button>
             <div id="dropdownSortOptions" class="dropdownSortOptions">
-              <a href="#" class="sortOption">Default <span>Newest</span></a>
-              <a href="#" class="sortOption">Date <span>Oldest</span></a>
-              <a href="#" class="sortOption">Ascending <span>A - Z</span></a>
-              <a href="#" class="sortOption">Descending <span>Z - A</span></a>
-              <a href="#" class="sortOption">Most Liked <span>DESC</span></a>
+              <a href="blog.html?sortBy=createdAt&sortOrder=desc" class="sortOption">Default <span>Newest</span></a>
+              <a href="blog.html?sortBy=createdAt&sortOrder=asc" class="sortOption">Date <span>Oldest</span></a>
+              <a href="blog.html?sortBy=title&sortOrder=asc" class="sortOption">Ascending <span>A - Z</span></a>
+              <a href="blog.html?sortBy=title&sortOrder=desc" class="sortOption">Descending <span>Z - A</span></a>
+              <a href="blog.html?sortBy=likes_count&sortOrder=desc" class="sortOption">Most Liked <span>DESC</span></a>
             </div>
           </div>
         <input type="text" class="searchTerm" id="searchField" placeholder="Search for a post...">
@@ -328,13 +328,8 @@
                                     <h3 class="white">Categories</h3>
                                 </div>
                                 <div class="widget-category-main">
-                                    <ul class="widget-category-list">
-                                        <li><a href="categoryPosts.html">Land Use Planning</a></li>
-                                        <li><a href="categoryPosts.html">Geographic Information System</a></li>
-                                        <li><a href="categoryPosts.html">Machine Learning & AI</a></li>
-                                        <li><a href="categoryPosts.html">Web Design & Development</a></li>
-                                        <li><a href="categoryPosts.html">Infographic Design</a></li>
-                                        <li><a href="categoryPosts.html">Other</a></li>
+                                    <ul class="widget-category-list" id="categoriesContainer">
+                                        
                                     </ul>
                                 </div>
                             </div>

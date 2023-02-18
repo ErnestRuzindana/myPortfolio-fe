@@ -44,16 +44,16 @@ async function postsAdvertisment(){
             <div class="banner_caption_text">
                   <div class="post-category">
                       <ul>
-                          <li class="cat-yellow"><a href="#" class="white">${eachPost.categoryDetails.name}</a></li>
+                          <li class="cat-yellow"><a href="categoryPosts.html?category=${eachPost.categoryDetails.slug}" class="white">${eachPost.categoryDetails.name}</a></li>
                       </ul>
                   </div>
-                  <h1><a href="blogDetails.html?slug=${eachPost.slug}">${eachPost.title}</a></h1>
+                  <h1><a href="blogDetails.html?slug=${eachPost.slug}&category=${eachPost.categoryDetails.slug}">${eachPost.title}</a></h1>
                   <div class="item-meta">
                       <div class="blogAuthor blogAuthorAdvert">
 
                           ${authorTemplate}
                           <div>
-                            <small><a href="authorPosts.html" class="AuthorName">${eachPost.postCreator.firstName +' '+ eachPost.postCreator.lastName}</a></small>
+                            <small><a href="authorPosts.html?userId=${eachPost.postCreator._id}" class="AuthorName">${eachPost.postCreator.firstName +' '+ eachPost.postCreator.lastName}</a></small>
                             <small> / ${eachPost.createdAt}</small>
                           </div>
                           
@@ -182,11 +182,20 @@ async function getAllPosts(){
     const getPageNumber = url.searchParams.get('page');
     getPageNumber ? pageCount = parseInt(getPageNumber) : pageCount = 1;
     searchKeyword = url.searchParams.get('keyword');
+    let sortBy = url.searchParams.get('sortBy')
+    let sortOrder = url.searchParams.get('sortOrder')
 
     let query = `?page=${pageCount}`;
     if (searchKeyword) {
         query += `&keyword=${searchKeyword}`;
+    }
 
+    if(sortBy){
+        query += `&sortBy=${sortBy}`;
+    }
+
+    if(sortOrder){
+        query += `&sortOrder=${sortOrder}`;
     }
   
     let response = await fetch(`http://localhost:5000/getAllPosts`+query)   
@@ -198,7 +207,7 @@ async function getAllPosts(){
     if(posts.length === 0){
         postsContainer.innerHTML = `
             <div class="perfectCenteredNoItemFound">
-                No Post found
+                No Post found!
             </div>
         
         `
@@ -236,14 +245,14 @@ async function getAllPosts(){
                   <p><span>${eachPost.comments_count}</span> <i class="fa fa-comments"></i></p>
               </div>
               <h2 class="entry-title">
-                  <a href="blogDetails.html?slug=${eachPost.slug}" class="">${eachPost.title}</a>
+                  <a href="blogDetails.html?slug=${eachPost.slug}&category=${eachPost.categoryDetails.slug}" class="">${eachPost.title}</a>
               </h2>
               <div class="item-meta">
                   <div class="blogAuthor">
 
                       ${authorTemplate}
                       <div>
-                        <small><a href="authorPosts.html" class="AuthorName">${eachPost.postCreator.firstName +' '+ eachPost.postCreator.lastName}</a></small>
+                        <small><a href="authorPosts.html?userId=${eachPost.postCreator._id}" class="AuthorName">${eachPost.postCreator.firstName +' '+ eachPost.postCreator.lastName}</a></small>
                         <small> / ${eachPost.createdAt}</small>
                       </div>
                       
@@ -322,13 +331,32 @@ submitSearchRequest.addEventListener("click", (event) =>{
 
 function updateState(pageNumber){
     getAllPosts(pageCount = pageNumber)
-    history.pushState(null, null, `?page=${pageNumber}`)
+
+    const urlParams = new URLSearchParams(window.location.search);
+
+    if (urlParams.has('sortBy') && urlParams.has('sortOrder') || urlParams.has('page')) {
+    urlParams.set('page', pageNumber);
+    } else {
+    urlParams.append('page', pageNumber);
+    }
+
+    history.pushState(null, null, `?${urlParams.toString()}`);
+
     location.reload();
 }
 
 function updateSearchKeyword(searchKeyword){
     getAllPosts(keyword = searchKeyword)
-    history.pushState(null, null, `?keyword=${searchKeyword}`)
+    // history.pushState(null, null, `?keyword=${searchKeyword}`)
+    const urlParams = new URLSearchParams(window.location.search);
+
+    if (urlParams.has('sortBy') && urlParams.has('sortOrder')) {
+    urlParams.set('keyword', searchKeyword);
+    } else {
+    urlParams.append('keyword', searchKeyword);
+    }
+
+    history.pushState(null, null, `?${urlParams.toString()}`);
     location.reload();
 }
 
@@ -343,4 +371,39 @@ window.addEventListener('load', function() {
 });
 
 
+// Render post categories
+const categoriesContainer = document.getElementById("categoriesContainer")
+async function getAllCategories(){
+  
+    let response = await fetch("http://localhost:5000/getAllCategories")    
+    const allCategories = await response.json(); 
+    let categories = allCategories.allCategories;
+     
+    if(categories.length === 0){
+        postsContainer.innerHTML = `
+            <div class="perfectCenteredNoItemFound">
+                No Categories added!
+            </div>
+        
+        `
+    }
 
+    else{
+
+      const categoriesTemplate = categories.map(myFunction).join(' ');
+
+      function myFunction(eachCategory) {
+
+      return `
+      <li><a href="categoryPosts.html?category=${eachCategory.slug}">${eachCategory.name}</a></li>
+      `
+      }
+
+      categoriesContainer.innerHTML = categoriesTemplate;
+
+}
+
+
+}
+
+getAllCategories()

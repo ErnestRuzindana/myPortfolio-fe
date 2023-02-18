@@ -143,11 +143,12 @@ h6 {
 hr {border: 0.5px solid #444444; }
 
 p {
-  font-weight: 300;
+  font-weight: 400;
   line-height:1.6;
   margin-bottom: 15px;
-  color: #5d5c5c;
-  font-size: 15px; 
+  color: #333a65;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px; 
 }
 
 ul {margin: 0; padding: 0; }
@@ -339,7 +340,13 @@ div.logo a{
   box-shadow: 0 0 15px #ccc;
 }
 
+img {
+  max-width: 100%;
+}
 
+.note-video-clip {
+  max-width: 100%;
+}
 
 
 input[type=text],
