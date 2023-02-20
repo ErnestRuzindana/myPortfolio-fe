@@ -58,7 +58,17 @@ body {
   transform: translate(-50%, -50%) scale(1);
 }
 
-
+.perfectCenteredNoItemFound{
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+  width: 100%;
+	font-size: 25px;
+	padding: 200px 0px;
+	font-weight: bold;
+	color: rgb(177, 177, 177) ;
+}
 
 .popupBox img{
   width: 150px;

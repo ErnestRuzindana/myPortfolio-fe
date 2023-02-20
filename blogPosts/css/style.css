@@ -502,10 +502,13 @@ span.featured-label {
     color: #fff;
 }
 
+
+
 #mt_banner .banner_caption_text {
     left: 0;
     position: absolute;
-    top: 7%;
+    top: 50%;
+    transform: translateY(-50%);
     width: 50%;
     z-index: 1;
     background: #fff;
@@ -529,7 +532,7 @@ span.featured-label {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
-  max-height: 4.5em;
+  max-height: 4.6em;
 }
 
 #mt_banner .banner_caption_text h1 a{
@@ -768,9 +771,14 @@ span.featured-label {
 
   #mt_banner.single-slider .banner_caption_text{width: 90%;}
 
+  #mt_banner .banner_caption_text h1 {
+    max-height: 5em;
+  }
+
   #mt_banner .banner_caption_text{
-    top: 28%;
+    top: 25%;
     width: 80%;
+    transform: unset;
     right: 0;
     margin: 0 auto;
     text-align: center;
@@ -818,10 +826,25 @@ span.featured-label {
     max-width: 100% ;
     height: auto !important;
   }
+
+  .postDate{
+    display: none;
+  }
   
   .note-video-clip {
     max-width: 100% !important;
     height: auto !important;
+  }
+
+  div.likesAndComments{
+    border-top: 2px solid #cba10a;
+    margin: -15px 0px -30px 6px;
+    padding-top: 7px;
+  }
+
+  
+  #mt_banner .banner_caption_text{
+    top: 21% !important;
   }
 
   #mt_banner .banner_caption_text h1{font-size: 32px;}
@@ -1298,6 +1321,14 @@ h5.bg-orange {
     justify-content: center;
   }
 
+  .pagination__wrapper{
+    z-index: 99;
+  }
+
+  .otherCategoriesToCheck{
+    margin-bottom: 5px !important;
+  }
+
   .search {
     padding: 50px 20px 0px 20px;
   }
@@ -1373,7 +1404,7 @@ h5.bg-orange {
     border: 5px solid #cba10a;
     padding: 20px 30px;
     box-shadow: 0 0 15px #cccccc30;
-    border-radius: 0 26px 0 26px;
+    border-radius: 0 26px 0 0px;
     position: relative;
     overflow: hidden;
     font-family: poppins !important;
@@ -1410,7 +1441,7 @@ h5.bg-orange {
   display: flex;
 }
 
-#blog_main_sec .author_box .author_img {float: left;width: 15%; }
+#blog_main_sec .author_box .author_img {float: left; }
 
 #blog_main_sec .author_box .author_img img {
   margin-bottom: 10px;

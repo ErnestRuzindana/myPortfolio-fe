@@ -1,82 +1,70 @@
 
-function hideviewAllPostsLoader(){
-    viewAllPosts_preloader.classList.remove("show")
-}
 
-async function update_delete_post(){
-    const getData = {
-        method: "GET",
-        headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
-    }
+let updateDeletePost = document.getElementById("updateDeletePost");
 
-    let response = await fetch("http://localhost:5000/getAllPosts", getData)
-    const fetchedData = await response.json()
-    hideviewAllPostsLoader()
-    document.title = "Ernest Ruzindana | Dashboard"
-    const posts = fetchedData.allAvailablePosts;
-
-    for(let i=0; i<posts.length; i++){
-        const postArray = posts[i];
-
-        const title = postArray.title;
-        const body = postArray.postBody.slice(0, 600)+"...";
-        const image = postArray.postImage;
-        const post_id = postArray._id;
-        const date = postArray.dateCreated
-        const authorName = postArray.authorName
-        const authorImage = postArray.authorImage 
-
-        const str = "https" || "http"
-        var authorImageTemplate;
-        if(authorImage.includes(str)){
-           authorImageTemplate = 
-           `<img src="${authorImage}" alt="" class="AuthorImage" id="authorProfilePicture">`
-        }
-             
-        else{
-            authorImageTemplate = 
-           ` <div class="authorImageCharts" id="authorImageCharts">
-           ${authorImage}
-           </div>`
-        }
-
-
-
-        const updateDeletePost = document.getElementById("updateDeletePost");
+async function getAllPosts(){
+  
+    let response = await fetch(`http://localhost:5000/getAllPosts?perPage=1000000000`)    
+    const allPosts = await response.json(); 
+    let posts = allPosts.allAvailablePosts;
+    console.log(posts) 
+     
+    if(posts.length === 0){
+        updateDeletePost.innerHTML = `
+            <div class="perfectCenteredNoItemFound">
+                No Post found!
+            </div>
         
-        const postTemplate = `
-                <div class="blogBoxes blogBox1">
-                    <div class="blogImage">
-                        <img src="${image}" alt="" >
-                    </div>
-                    <div class="blogContent">
-                        <h3> <a style="cursor: pointer; font-family: poppins;">${title}</a> </h3>
-                        <hr>
-                        <div class="blogAuthor">
-                            ${authorImageTemplate}
-                            <small><a href="" class="AuthorName">${authorName}</a></small>
-                            <small> /${date}</small>
-                        </div>
-                        <p class="ContentSection" style="font-family: calibri;">
-                            ${body}
-                        </p>
-
-                        
-                        
-                        <button onclick="getSinglePost('${post_id}')" style="background: #cba10a; border-color: #cba10a; color: white; font-weight: bold;">Update post</button> &nbsp;
-                        <button  style="background: #ff6b6b;  border-color: #ff6b6b; color: white; font-weight: bold;" onclick="openPopup('${post_id}')">Delete post</button>
-                    </div>
-                </div>
         `
-        
-        updateDeletePost.innerHTML += postTemplate
     }
+
+    else{
+
+      const postsTemplate = posts.map(myFunction).join(' ');
+
+      function myFunction(eachPost) {
+
+      let authorTemplate;
+      if(eachPost.postCreator.imageLink){
+        authorTemplate = `<img src="${eachPost.postCreator.imageLink}" class="AuthorImage" id="authorProfilePicture" alt="">`
+      }
+      else{
+        authorTemplate = `<div class="authorImageCharts" id="authorImageCharts">
+        ${eachPost.postCreator.firstName.charAt(0) + eachPost.postCreator.lastName.charAt(0)}
+        </div>`         
+      }
+
+      return `
+        <div class="blogBoxes blogBox1">
+            <div class="blogImage">
+                <img src="${eachPost.postImage}" alt="" >
+            </div>
+            <div class="blogContent">
+                <h3> <a href="blogDetails.html?slug=${eachPost.slug}&category=${eachPost.categoryDetails.slug}" style="cursor: pointer; font-family: poppins;">${eachPost.title}</a> </h3>
+                <hr>
+                <div class="blogAuthor">
+                    ${authorTemplate}
+                    <small><a href="" class="AuthorName">${eachPost.postCreator.firstName +' '+ eachPost.postCreator.lastName}</a></small>
+                    <small> /${eachPost.createdAt}</small>
+                </div>
+                <p class="ContentSection" style="font-family: calibri;">
+                Category: ${eachPost.categoryDetails.name}
+                </p>
+
+                
+                
+                <button style="background: #cba10a; border-color: #cba10a; color: white; font-weight: bold;"><a style="color: white;" href="updatePost.html?slug=${eachPost.slug}">Update post</a></button> &nbsp;
+                <button  style="background: #ff6b6b;  border-color: #ff6b6b; color: white; font-weight: bold;" onclick="openPopup('${eachPost._id}')">Delete post</button>
+            </div>
+        </div>
+      `
+      }
+
+      updateDeletePost.innerHTML = postsTemplate;
+
 }
 
 
-update_delete_post()
+}
 
-
-
-
-
+getAllPosts()

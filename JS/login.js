@@ -71,7 +71,7 @@ function login(){
         else if (fetchedData.successMessage){
 
             localStorage.setItem("token", JSON.stringify(fetchedData.Access_Token))
-            location = "../index"
+            location = document.referrer;
         }
 
         else{

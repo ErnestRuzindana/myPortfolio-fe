@@ -23,6 +23,7 @@ async function postsAdvertisment(){
     }
 
     else{
+        
 
         const postTemplate = results.map(myFunction).join(' ');
 
@@ -44,7 +45,7 @@ async function postsAdvertisment(){
             <div class="banner_caption_text">
                   <div class="post-category">
                       <ul>
-                          <li class="cat-yellow"><a href="categoryPosts.html?category=${eachPost.categoryDetails.slug}" class="white">${eachPost.categoryDetails.name}</a></li>
+                          <li class="cat-yellow"><a href="categoryPosts.html?category=${eachPost.categoryDetails.slug}&name=${eachPost.categoryDetails.name}" class="white">${eachPost.categoryDetails.name}</a></li>
                       </ul>
                   </div>
                   <h1><a href="blogDetails.html?slug=${eachPost.slug}&category=${eachPost.categoryDetails.slug}">${eachPost.title}</a></h1>
@@ -53,8 +54,8 @@ async function postsAdvertisment(){
 
                           ${authorTemplate}
                           <div>
-                            <small><a href="authorPosts.html?userId=${eachPost.postCreator._id}" class="AuthorName">${eachPost.postCreator.firstName +' '+ eachPost.postCreator.lastName}</a></small>
-                            <small> / ${eachPost.createdAt}</small>
+                            <small><a href="authorPosts.html?userId=${eachPost.postCreator._id}&name=${eachPost.postCreator.firstName}" class="AuthorName">${eachPost.postCreator.firstName +' '+ eachPost.postCreator.lastName}</a></small>
+                            <small class="postDate"> / ${eachPost.createdAt}</small>
                           </div>
                           
                       </div>
@@ -237,7 +238,7 @@ async function getAllPosts(){
           <div class="post-content">
               <div class="post-category">
                   <ul>
-                      <li class="cat-yellow"><a href="#" class="white">${eachPost.categoryDetails.name}</a></li>
+                      <li class="cat-yellow"><a href="categoryPosts.html?category=${eachPost.categoryDetails.slug}&name=${eachPost.categoryDetails.name}" class="white">${eachPost.categoryDetails.name}</a></li>
                   </ul>
               </div>
               <div class="post-date">
@@ -252,8 +253,8 @@ async function getAllPosts(){
 
                       ${authorTemplate}
                       <div>
-                        <small><a href="authorPosts.html?userId=${eachPost.postCreator._id}" class="AuthorName">${eachPost.postCreator.firstName +' '+ eachPost.postCreator.lastName}</a></small>
-                        <small> / ${eachPost.createdAt}</small>
+                        <small><a href="authorPosts.html?userId=${eachPost.postCreator._id}&name=${eachPost.postCreator.firstName}" class="AuthorName">${eachPost.postCreator.firstName +' '+ eachPost.postCreator.lastName}</a></small>
+                        <small class="postDate"> / ${eachPost.createdAt}</small>
                       </div>
                       
                   </div>
@@ -395,7 +396,7 @@ async function getAllCategories(){
       function myFunction(eachCategory) {
 
       return `
-      <li><a href="categoryPosts.html?category=${eachCategory.slug}">${eachCategory.name}</a></li>
+      <li><a href="categoryPosts.html?category=${eachCategory.slug}&name=${eachCategory.name}">${eachCategory.name}</a></li>
       `
       }
 

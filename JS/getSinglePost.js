@@ -33,7 +33,7 @@ async function postDetails(){
         <div class="banner_caption_text">
               <div class="post-category">
                   <ul>
-                      <li class="cat-yellow"><a href="categoryPosts.html?category=${singlePost.categoryDetails.slug}" class="white">${singlePost.categoryDetails.name}</a></li>
+                      <li class="cat-yellow"><a href="categoryPosts.html?category=${singlePost.categoryDetails.slug}&name=${singlePost.categoryDetails.name}" class="white">${singlePost.categoryDetails.name}</a></li>
                   </ul>
               </div>
               <h1><a href="blogDetails.html?slug=${singlePost.slug}&category=${singlePost.categoryDetails.slug}">${singlePost.title}</a></h1>
@@ -42,7 +42,7 @@ async function postDetails(){
 
                       ${authorImageTemplate}
                       <div>
-                        <small><a href="authorPosts.html?userId=${singlePost.postCreator._id}" class="AuthorName">${singlePost.postCreator.firstName +' '+ singlePost.postCreator.lastName}</a></small>
+                        <small><a href="authorPosts.html?userId=${singlePost.postCreator._id}&name=${singlePost.postCreator.firstName}" class="AuthorName">${singlePost.postCreator.firstName +' '+ singlePost.postCreator.lastName}</a></small>
                         <small> / ${singlePost.createdAt}</small>
                       </div>
                       
@@ -54,48 +54,48 @@ async function postDetails(){
     const singleBlogContentParagraph = document.getElementById("singleBlogContentParagraph")
     singleBlogContentParagraph.innerHTML = singlePost.postBody
 
-    // const countLikes = document.getElementById("countLikes")
-    // countLikes.innerHTML = `${singlePost.likes_count} `
+    const countLikes = document.getElementById("countLikes")
+    countLikes.innerHTML = `${singlePost.likes_count} `
 
     // Change like text
-    // const postLike = document.getElementById("postLike")
-    // if(fetchedData.fetchedPostDetails.liked_by_current_user == true){
-    //     postLike.innerHTML = "Unlike"
-    // }
+    const postLike = document.getElementById("postLike")
+    if(fetchedData.fetchedPostDetails.liked_by_current_user == true){
+        postLike.innerHTML = "Unlike"
+    }
 
     // Change the picture above the comment body
 
-    // const commentorAvatar = document.getElementById("commentorAvatar")
-	// const Token = JSON.parse(localStorage.getItem("token"))
-	// if (!Token){
-	// 	commentorAvatar.innerHTML = `<img src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg" alt="avatar"/>`
-	//    }
-    // else{
+    const commentorAvatar = document.getElementById("commentorAvatar")
+	const Token = JSON.parse(localStorage.getItem("token"))
+	if (!Token){
+		commentorAvatar.innerHTML = `<img src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg" alt="avatar"/>`
+	   }
+    else{
 
-    //     const userGetData = {
-    //         method: "GET",
-    //         headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
-    //     }
+        const userGetData = {
+            method: "GET",
+            headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
+        }
 
-    //     let userResponse = await fetch("https://rockassociates-api.herokuapp.com/loggedInUser", userGetData)
-    //     const userFetchedData = await userResponse.json()
-    //     console.log(userFetchedData)
+        let userResponse = await fetch("http://localhost:5000/login/loggedInUser", userGetData)
+        const userFetchedData = await userResponse.json()
+        console.log(userFetchedData)
 
-    //     if(userFetchedData.successMessage){
-    //         if(userFetchedData.loggedInUser.imageLink){
-    //             const commentorPicture = userFetchedData.loggedInUser.imageLink
-    //             commentorAvatar.innerHTML = 
-    //             `<img src="${commentorPicture}" alt="" class="AuthorImage" id="authorProfilePicture">`
-    //         }
+        if(userFetchedData.successMessage){
+            if(userFetchedData.loggedInUser.imageLink){
+                const commentorPicture = userFetchedData.loggedInUser.imageLink
+                commentorAvatar.innerHTML = 
+                `<img src="${commentorPicture}" alt="" class="AuthorImage" id="authorProfilePicture">`
+            }
     
-    //         else{
-    //             commentorAvatar.innerHTML = 
-    //             ` <div class="authorImageCharts" id="authorImageCharts">
-    //             ${userFetchedData.loggedInUser.firstName.charAt(0)+userFetchedData.loggedInUser.lastName.charAt(0)}
-    //             </div>`
-    //         }
-    //     }
-    // }
+            else{
+                commentorAvatar.innerHTML = 
+                ` <div class="authorImageTemplate" id="authorImageCharts">
+                ${userFetchedData.loggedInUser.firstName.charAt(0)+userFetchedData.loggedInUser.lastName.charAt(0)}
+                </div>`
+            }
+        }
+    }
 
 
     return {"postInfo": singlePost, "otherPostDetails": fetchedData.fetchedPostDetails};
@@ -137,7 +137,7 @@ async function getRelatedPosts(){
             </div>
             <div class="post-title">
                 <div class="widget-cats">
-                    <a href="categoryPosts.html?category=${eachPost.categoryDetails.slug}">${eachPost.categoryDetails.name}</a>
+                    <a href="categoryPosts.html?category=${eachPost.categoryDetails.slug}&name=${eachPost.categoryDetails.name}">${eachPost.categoryDetails.name}</a>
                 </div>
                 <h4><a href="blogDetails.html?slug=${eachPost.slug}&category=${eachPost.categoryDetails.slug}">${eachPost.title}</a></h4>
             </div>
@@ -183,7 +183,7 @@ async function getRecommendedPosts(){
             </div>
             <div class="post-title">
                 <div class="widget-cats">
-                    <a href="categoryPosts.html?category=${eachPost.categoryDetails.slug}">${eachPost.categoryDetails.name}</a>
+                    <a href="categoryPosts.html?category=${eachPost.categoryDetails.slug}&name=${eachPost.categoryDetails.name}">${eachPost.categoryDetails.name}</a>
                 </div>
                 <h4><a href="blogDetails.html?slug=${eachPost.slug}&category=${eachPost.categoryDetails.slug}">${eachPost.title}</a></h4>
             </div>
@@ -225,7 +225,7 @@ async function getAllRelatedCategories(){
       function myFunction(eachCategory) {
 
       return `
-      <a href="categoryPosts.html?category=${eachCategory.slug}" class="" >${eachCategory.name}</a>
+      <a href="categoryPosts.html?category=${eachCategory.slug}&name=${eachCategory.name}" class="" >${eachCategory.name}</a>
       `
       }
 

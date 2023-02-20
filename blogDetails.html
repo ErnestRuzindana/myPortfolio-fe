@@ -18,7 +18,8 @@
     <!--Default CSS-->
     <link href="blogPosts/css/default.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="CSS/index.css">
-
+    <link rel="stylesheet" href="CSS/singleBlog.css">
+    <script src="https://kit.fontawesome.com/557e6c8ef8.js" crossorigin="anonymous"></script>
     <!--Custom CSS-->
     <link href="blogPosts/css/style.css" rel="stylesheet" type="text/css">
 
@@ -200,7 +201,7 @@
                     </ul>
                 </div>
                 <div class="preNavLogin" id="preNavLogin">
-                    <h5><a href="login">Login / Sign Up</a></h5>
+                    <h5><a style="color: white !important;" href="login">Login / Sign Up</a></h5>
                 </div>
 
                 <div class="addProfile" id="addProfile">
@@ -227,16 +228,16 @@
                     <li class="closeButton" id="closeButton">
                         <i class="fa-solid fa-xmark"></i>
                     </li>
-                    <li><a href="#myProfile">Home</a></li>
-                    <li><a href="#aboutme">About</a></li>
-                    <li><a href="#Skills">My skills</a></li>
-                    <li><a href="#Testimonials">Testimonials</a></li>
-                    <li><a href="#work">My work</a></li>
+                    <li><a href="index.html#myProfile">Home</a></li>
+                    <li><a href="index.html#aboutme">About</a></li>
+                    <li><a href="index.html#Skills">My skills</a></li>
+                    <li><a href="index.html#Testimonials">Testimonials</a></li>
+                    <li><a href="index.html#work">My work</a></li>
                     <li class="active"><a href="blog">Blog</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="index.html#services">Services</a></li>
                     <li class="videoExercises"><a href="exercises">GIS Exercises</a></li>
                     <li class="videoExercises"><a href="videos">GIS Video Tutorials</a></li>
-                    <li class="loginlinksLi"><a href="#contact" class="loginlinks active">
+                    <li class="loginlinksLi"><a href="index.html#contact" class="loginlinks active">
                         <div>Contact</div>
                     </a></li>
                 </ul>
@@ -271,20 +272,72 @@
                           
                         </div>
 
+                        <!-- Likes -->
+                     <!-- Likes and comments -->
+								 <div class="likesAndComments">
+                        
+									<ul id="listLikes" class="listLikes">
+										<p class="tools_comment postLikes">
+											<a class="like" id="postLike">Like</a>
+											<span aria-hidden="true"> · </span>
+											<i class="fa fa-thumbs-o-up"></i> <span class="count" id="countLikes"></span> 
+										</p>
+									</ul>
+			
+									<a href="">
+										<p class="postComments">
+											<img class="postLikes" src="images/Comments.png" alt=""><span id="countComments"></span>
+										</p> 
+									</a> 
+								</div>
+
                         <div class="tag mar-top-30">
                             <div class="widget-tags-main">
-                                <h5 class="bg-orange">Other Categories you might like:</h5>
+                                <h5 class="bg-orange otherCategoriesToCheck">Other Categories you might like:</h5>
                                 <span id="relatedCategoriesContainer">
-                                    <a href="#" class="" >Land Use Planning</a>
-                                    <a href="#" class="" >Geographic Information System</a>
-                                    <a href="#" class="" >Machine Learning & AI</a>
-                                    <a href="#" class="" >Web Design & Development</a>
-                                    <a href="#" class="" >Infographic Design</a>
-                                    <a href="#" class="" >Other</a>
+                                    
                                 </span>
                                 
                             </div>
                         </div>
+
+                        <!-- Comments -->
+
+                        <section class="comments">
+                            <div class="" id="fbcomment">
+                    
+                                <div class="body_comment">
+                                    <div class="topBox">
+                                        <div class="avatar_comment" id="commentorAvatar" >
+                                            
+                                        </div>
+                                        <div class="box_comment">
+                                            <textarea class="commentar" placeholder="Add a comment..." id="commentBody"></textarea>
+                                            <div class="box_post">
+                                            <div class="pull-right">
+                                                <button  type="button" value="1" id="submitComment">Post</button>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="group-title">
+                                        <h4>Comments</h4>
+                                    </div>
+
+                                    <ul id="list_comment" class="col-md-12">
+                                        
+                                        
+                                    </ul> 
+                                    
+                                </div>
+                            </div>
+
+                        </section>
+
+                        <!--=========================* Comment Sec*===========================-->
+                        
+                        <!--=========================*End Comment Sec*===========================-->
 
                         <div class="author_box">
                             <div class="author_img">
@@ -317,15 +370,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <!--=========================* Comment Sec*===========================-->
-                        <div id="comments">
-                            <div class="comments-wrap">
-                                <h3 class="single-post_heading blog_heading_border">Comments (0)</h3>
-                                
-                                
-                            </div>
-                        </div>
-                        <!--=========================*End Comment Sec*===========================-->
+                        
                         <!--* End Blog Content Sec*-->
                     </div> 
                 </div>
@@ -363,9 +408,70 @@
     </section>
     <!--*End Blog Main Sec*-->
 
-     <!--* Blog*-->
+
+    <!-- popup boxes -->
     
-    <!--* End Blog*-->
+    <div class="popupBox" id="popupBoxLikes">
+        <img src="images/attention.png" alt="">
+        <p>Please Login to like a post!</p>
+        <div class="buttons">
+            <button onclick="closePopupSingleBlog()"  class="deletePost">Close</button>
+            <button type="submit" class="cancel login" onclick="goToLogin()">Login</button>        
+        </div>
+	</div>
+	
+	<div class="popupBox" id="popupBoxCommentLikes">
+	<img src="images/attention.png" alt="">
+	<p>Please Login to like a comment!</p>
+	<div class="buttons">
+		<button onclick="closePopupCommentLikes()"  class="deletePost">Close</button>
+		<button type="submit" class="cancel login" onclick="goToLogin()">Login</button>        
+	</div>
+	</div>
+
+	<div class="popupBox" id="popupBoxCommentsReplies">
+        <img src="images/attention.png" alt="">
+        <p>Please Login to add a reply!</p>
+        <div class="buttons">
+            <button onclick="closePopupCommentsReplies()"  class="deletePost">Close</button>
+            <button type="submit" class="cancel login" onclick="goToLogin()">Login</button>        
+        </div>
+    </div>
+
+	<div class="popupBox" id="popupBoxComments">
+        <img src="images/attention.png" alt="">
+        <p>Please Login to add comment!</p>
+        <div class="buttons">
+            <button onclick="closePopupComments()"  class="deletePost">Close</button>
+            <button type="submit" class="cancel login" onclick="goToLogin()">Login</button>        
+        </div>
+    </div>
+
+	<div class="popupBox" id="popupBoxCommentsValidation">
+        <img src="images/attention.png" alt="">
+        <p>The comment field can not be empty!</p>
+        <div class="buttons">
+            <button type="submit" class="cancel login" onclick="closePopupCommentsValidation()">Ok</button>        
+        </div>
+    </div>
+
+	<div class="popupBox" id="popupBoxCommentsReplies">
+        <img src="images/attention.png" alt="">
+        <p>Please Login to add a reply!</p>
+        <div class="buttons">
+            <button onclick="closePopupCommentsReplies()"  class="deletePost">Close</button>
+            <button type="submit" class="cancel login" onclick="goToLogin()">Login</button>        
+        </div>
+    </div>
+
+	<div class="popupBox" id="popupBoxCommentsRepliesValidation">
+        <img src="images/attention.png" alt="">
+        <p>The reply field can not be empty!</p>
+        <div class="buttons">
+            <button type="submit" class="cancel login" onclick="closePopupCommentsRepliesValidation()">Ok</button>        
+        </div>
+    </div>
+	
 
     
 
@@ -464,6 +570,9 @@
     <!-- main default Jquery --><script src="blogPosts/js/main.js"></script>
 
     <script src="JS/getSinglePost.js"></script>
+    <script src="JS/comments.js"></script>
+    <script src="JS/likes.js"></script>
+    <script src="JS/jQuerySinglePost.js"></script>
     <script src="../JS/loggedInUser.js"></script>
     <script src="JS/index.js"></script>
     <script src="../JS/socialMediaLogout.js"></script>

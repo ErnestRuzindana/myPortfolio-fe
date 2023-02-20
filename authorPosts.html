@@ -19,7 +19,7 @@
     <!--Default CSS-->
     <link href="blogPosts/css/default.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="CSS/index.css">
-
+    <script src="https://kit.fontawesome.com/557e6c8ef8.js" crossorigin="anonymous"></script>
     <!--Custom CSS-->
     <link href="blogPosts/css/mag.css" rel="stylesheet" type="text/css">
 
@@ -227,16 +227,16 @@
                     <li class="closeButton" id="closeButton">
                         <i class="fa-solid fa-xmark"></i>
                     </li>
-                    <li><a href="#myProfile">Home</a></li>
-                    <li><a href="#aboutme">About</a></li>
-                    <li><a href="#Skills">My skills</a></li>
-                    <li><a href="#Testimonials">Testimonials</a></li>
-                    <li><a href="#work">My work</a></li>
+                    <li><a href="index.html#myProfile">Home</a></li>
+                    <li><a href="index.html#aboutme">About</a></li>
+                    <li><a href="index.html#Skills">My skills</a></li>
+                    <li><a href="index.html#Testimonials">Testimonials</a></li>
+                    <li><a href="index.html#work">My work</a></li>
                     <li class="active"><a href="blog">Blog</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="index.html#services">Services</a></li>
                     <li class="videoExercises"><a href="exercises">GIS Exercises</a></li>
                     <li class="videoExercises"><a href="videos">GIS Video Tutorials</a></li>
-                    <li class="loginlinksLi"><a href="#contact" class="loginlinks active">
+                    <li class="loginlinksLi"><a href="index.html#contact" class="loginlinks active">
                         <div>Contact</div>
                     </a></li>
                 </ul>
@@ -255,83 +255,11 @@
     <section id="mt_blog" class="category-list">
         <div class="container">
             <div class="section-title">
-                <h2>All Ernest's Posts</h2>
+                <h2 id="authorPostsTitleName"></h2>
             </div>
             <div class="blog_post_sec blog_post_inner">
-                <div class="row">
-                    <div class="col-md-4 col-sm-12">
-                        <div class="blog-post_wrapper image-wrapper">
-                            <div class="blog-post-image">
-                                <img src="blogPosts/images/blog-listing/ablog_13.jpg" alt="image" class="img-responsive center-block post_img" />
-                            </div>
-                            <div class="post-content">
-                                <div class="post-category">
-                                    <ul>
-                                        <li class="cat-yellow"><a href="#" class="white">Machine Learning & AI</a></li>
-                                    </ul>
-                                </div>
-                                <div class="post-date">
-                                    <p><a href="#">15th August 2019</a></p>
-                                </div>
-                                <h2 class="entry-title">
-                                    <a href="blog-details.html" class="white">I'm passionate about food, the tradition of it, cooking it, sharing it</a>
-                                </h2>
-                                <div class="item-meta white">
-                                    <span>by</span>
-                                    <a class="author-name white" href="author.html">Ernest Ruzindana</a>
-                                </div>
+                <div class="row" id="authorPostsContainer">
 
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4 col-sm-12">                            
-                        <div class="blog-post_wrapper front-wrapper bg-orange">
-                            <div class="post-content">
-                                <div class="post-category">
-                                    <ul>
-                                        <li class="cat-blue"><a href="#" class="white">Land Use Planning</a></li>
-                                    </ul>
-                                </div>
-                                <div class="post-date">
-                                    <p><a href="#">15th August 2019</a></p>
-                                </div>
-                                <h2 class="entry-title">
-                                    <a href="blog-details.html" class="white">The future of architecture is culture</a>
-                                </h2>
-                                <div class="item-meta white">
-                                    <span>by</span>
-                                    <a class="author-name white" href="author.html">Ernest Ruzindana</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-12">
-                        <div class="blog-post_wrapper image-wrapper">
-                            <div class="blog-post-image">
-                                <img src="blogPosts/images/blog-listing/ablog_13.jpg" alt="image" class="img-responsive center-block post_img" />
-                            </div>
-                            <div class="post-content">
-                                <div class="post-category">
-                                    <ul>
-                                        <li class="cat-yellow"><a href="#" class="white">Machine Learning & AI</a></li>
-                                    </ul>
-                                </div>
-                                <div class="post-date">
-                                    <p><a href="#">15th August 2019</a></p>
-                                </div>
-                                <h2 class="entry-title">
-                                    <a href="blog-details.html" class="white">I'm passionate about food, the tradition of it, cooking it, sharing it</a>
-                                </h2>
-                                <div class="item-meta white">
-                                    <span>by</span>
-                                    <a class="author-name white" href="author.html">Ernest Ruzindana</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
                 </div>    
             </div>   
         </div>
@@ -345,7 +273,7 @@
                 <h2>Other Posts</h2>
             </div>
             <div class="blog_post_sec blog_post_inner">
-                <div class="row">
+                <div class="row" id="otherAuthorPostsContainer">
                     <div class="col-md-4 col-sm-12">
                         <article class="post-list-main mar-bottom-20">
                             <div class="entry-thumb">
@@ -353,25 +281,26 @@
                                     <a href="blog-details.html">
                                         <img src="blogPosts/images/blog-listing/blog_13.jpg" alt="post">
                                     </a>
-                                </figure><!--./ thumb-wrap -->
-                            </div><!--./ entry-thumb -->
+                                </figure>
+                            </div>
                             <div class="content-entry-wrap">
                                 <div class="post-category">
                                     <ul>
                                         <li class="cat-blue"><a href="#" class="white">Land Use Planning</a></li>
                                     </ul>
-                                </div><!--./ entry-category -->
+                                </div>
                                 <div class="entry-content">
                                     <h4 class="entry-title mar-bottom-5">
                                         <a href="post-details.html">iPhone x could come in hot pink/gold</a>
-                                    </h4><!--./ entry-title -->
-                                </div><!--./ entry-content -->
+                                    </h4>
+                                </div>
                                 <div class="entry-meta-content">
-                                    <div class="entry-date">
-                                        <a href="category-detail.html">July 24, 2019 </a>
-                                    </div><!--./ entry-date -->
-                                </div><!--./ entry-meta-content -->
-                            </div><!--./ content-entry-wrap -->
+                                    <div class="item-meta">
+                                        <span>by</span>
+                                        <a class="author-name" href="">Ernest Ruzindana</a>
+                                    </div>
+                                </div>
+                            </div>
                         </article>
                     </div>
                     <div class="col-md-4 col-sm-12">
@@ -696,6 +625,12 @@
     <!-- Plugin Jquery --><script src="blogPosts/js/plugin.js"></script>
     <!-- custom nav jquery --><script src="blogPosts/js/custom-nav.js"></script>
     <!-- main default Jquery --><script src="blogPosts/js/main.js"></script>
+
+    <script src="JS/getAuthorPosts.js"></script>
+    <script src="../JS/loggedInUser.js"></script>
+    <script src="JS/index.js"></script>
+    <script src="../JS/socialMediaLogout.js"></script>
+    <script src="../JS/subscribe.js"></script>
 </body>
 
 

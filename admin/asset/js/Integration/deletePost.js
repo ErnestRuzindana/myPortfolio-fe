@@ -1,5 +1,6 @@
 //popup
 const popupBox = document.getElementById("popupBox")
+const accessDeniedText = document.getElementById("accessDeniedText")
 let postIdDeletion;
 
 function openPopup(post_id){
@@ -14,7 +15,6 @@ function closePopup(){
 
  
 async function deletePost(){
-    document.title = "Loading..."
     const getData = {
         method: "DELETE",
         headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
@@ -25,8 +25,12 @@ async function deletePost(){
     console.log(fetchedData)
 
     if (fetchedData.deletedPost){
-      location = "viewAllPosts"   
+      location = "viewAllPosts.html"   
+    }
+
+    else if (fetchedData.unauthorizedError){
+        accessDeniedText.innerHTML = fetchedData.unauthorizedError;
+        setTimeout(()=>{location = "viewAllPosts.html"}, 2500)   
     }
 }
-
 

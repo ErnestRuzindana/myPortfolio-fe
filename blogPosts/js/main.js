@@ -198,34 +198,6 @@ $('.slider-items').slick({
   ]
 });
 
-$('.slider-foods').slick({
-  infinite: true,
-  autoplay: true,
-  arrows: false,
-  dots: false,
-  speed:3000,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  responsive: [
-      {
-      breakpoint: 991,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        infinite: true,
-        }
-      },  
-      {
-      breakpoint: 767,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-      }
-    }
-  ]
-});
-
 $('.slider-sports').slick({
   infinite: true,
   autoplay: true,

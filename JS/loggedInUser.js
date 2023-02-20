@@ -1,11 +1,11 @@
 
 async function loggedInUser(){
     const preNavLogin = document.getElementById("preNavLogin");
-    const preNavToken = localStorage.getItem("token")
-    if(preNavToken){
-        preNavLogin.innerHTML = `<img src="../images/Spinner.gif" alt="" width="40px">`
-        document.title = "Loading..."
-    }
+    // const preNavToken = localStorage.getItem("token")
+    // if(preNavToken){
+    //     preNavLogin.innerHTML = `<img src="../images/Spinner.gif" alt="" width="40px">`
+    //     document.title = "Loading..."
+    // }
     const getData = {
         method: "GET",
         headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
@@ -14,8 +14,9 @@ async function loggedInUser(){
   let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
   const serverData = await response.json()
   const fetchedData = serverData.loggedInUser
-  preNavLogin.style.display = "none"
-  document.title = "Ernest Ruzindana"
+  if(!fetchedData.invalidToken){
+    preNavLogin.style.display = "none"
+  }
   
   const addProfile = document.getElementById("addProfile");
   addProfile.innerHTML = `
