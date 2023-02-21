@@ -4,7 +4,7 @@ async function getSinglePost(postId){
         headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
-    let response = await fetch("http://localhost:5000/getSinglePost/"+postId, getData)
+    let response = await fetch("https://ernestruzindana-api.herokuapp.com/getSinglePost/"+postId, getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 
@@ -24,7 +24,7 @@ async function postDetails(){
         headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
-    let response = await fetch("http://localhost:5000/getSinglePost/"+postId, getData)
+    let response = await fetch("https://ernestruzindana-api.herokuapp.com/getSinglePost/"+postId, getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 

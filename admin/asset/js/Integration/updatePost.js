@@ -1,5 +1,10 @@
 const url = new URL(window.location.href);
-const slug = url.searchParams.get('slug');   
+const slug = url.searchParams.get('slug'); 
+
+function removeupdatePostLoader(){
+    updatePost_preloader.classList.remove("show")
+    document.title = "Ernest Ruzindana"
+}
 
 async function getPostDetails(){
     const getData = {
@@ -7,10 +12,10 @@ async function getPostDetails(){
         headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
     
-    let response = await fetch(`http://localhost:5000/getSinglePost?slug=${slug}`, getData)
+    let response = await fetch(`https://ernestruzindana-api.herokuapp.com/getSinglePost?slug=${slug}`, getData)
     console.log(response)
     const fetchedData = await response.json() 
-
+    removeupdatePostLoader()
     const singlePost = fetchedData.fetchedPost
 
     const updatePostImage = document.getElementById("updatePostImage")
@@ -81,7 +86,7 @@ function UpdatePost(){
         headers: new Headers({"auth_token": JSON.parse(localStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-fetch(`http://localhost:5000/updatePost?slug=${slug}`, sendData)
+fetch(`https://ernestruzindana-api.herokuapp.com/updatePost?slug=${slug}`, sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)
@@ -121,7 +126,7 @@ fetch(`http://localhost:5000/updatePost?slug=${slug}`, sendData)
       headers: new Headers({"auth_token": JSON.parse(localStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
   }
 
-  fetch(`http://localhost:5000/updatePost?slug=${slug}`, sendData)
+  fetch(`https://ernestruzindana-api.herokuapp.com/updatePost?slug=${slug}`, sendData)
   .then(response => response.json())
   .then((fetchedData)=>{
   console.log(fetchedData)

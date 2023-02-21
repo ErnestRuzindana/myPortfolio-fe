@@ -9,8 +9,8 @@ jQuery(document).ready(function () {
     $window.on( 'load', function () {
 
         $("#status").fadeOut();
-        $("#preloader").delay(350).fadeOut("slow");
-        $("body").delay(350).css({ "overflow": "visible" });
+        $("#preloader").delay(400).fadeOut("slow");
+        $("body").delay(400).css({ "overflow": "visible" });
 
         
         /* Init Wow Js */
@@ -21,7 +21,7 @@ jQuery(document).ready(function () {
         /* Preloader */
         
         $("#status").fadeOut();
-        $("#preloader").delay(350).fadeOut("slow");
+        $("#preloader").delay(400).fadeOut("slow");
 
         /* END of Preloader */
 

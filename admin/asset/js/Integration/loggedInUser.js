@@ -10,7 +10,7 @@ async function loggedInUser(){
         headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
-  let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
+  let response = await fetch("https://ernestruzindana-api.herokuapp.com/login/loggedInUser", getData)
   const serverData = await response.json()
   fetchedData = serverData.loggedInUser;
 

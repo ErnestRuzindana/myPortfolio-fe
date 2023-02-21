@@ -24,25 +24,14 @@ function closePopupCommentsRepliesValidation(){
 
 submitComment.addEventListener("click", (event) =>{
     event.preventDefault(); 
-
+    submitComment.innerHTML = `<img src="../images/Spinner.gif" alt="Loading..." width="150px" height="150px">`
     comment();
 });
 
 async function comment(){
 
-    const post__id = (await postDetails()).postInfo._id
-
-    const getData = {
-            method: "GET",
-            headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
-        }
-    
-        let response = await fetch("http://localhost:5000/getAllComments/"+post__id, getData)
-        const fetchedData = await response.json()
-    
-        const comments = fetchedData.allAvailableComments;
-
-    
+    const post__id = localStorage.getItem("postId")
+    const allComments = JSON.parse(localStorage.getItem("comments")) 
 
     const data = {
         comment: commentBody.value, 
@@ -54,71 +43,71 @@ async function comment(){
         headers: new Headers({"auth_token": JSON.parse(localStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-fetch("http://localhost:5000/createComment/"+post__id, sendData)
+fetch("https://ernestruzindana-api.herokuapp.com/createComment/"+post__id, sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)
 
     if(fetchedData.invalidToken){
-        popupBoxComments.classList.add("open-popup")
+       submitComment.innerHTML = "Post"
+       return popupBoxComments.classList.add("open-popup")
+       
     }
 
-    else if(fetchedData.validationError){
-        popupBoxCommentsValidation.classList.add("open-popup")
+    if(fetchedData.validationError){
+       submitComment.innerHTML = "Post"
+       return popupBoxCommentsValidation.classList.add("open-popup")
     }
 
-    else if(fetchedData.successMessage){
-        if(comments.length === 0){
-            commentList.innerHTML = ""
-        }
-        
-        const commentorNames = fetchedData.commentContent.user_id.firstName +" "+ fetchedData.commentContent.user_id.lastName
-        var commentorPicture
-        var commentorImageTemplate;
+    if(allComments.length === 0){
+        commentList.innerHTML = ""
+    }
 
-        if(fetchedData.commentContent.user_id.imageLink){
-            commentorPicture = fetchedData.commentContent.user_id.imageLink
-            commentorImageTemplate = 
-            `<img src="${commentorPicture}" alt="" class="AuthorImage" id="authorProfilePicture">`
-        }
+    const commentorNames = fetchedData.commentContent.user_id.firstName +" "+ fetchedData.commentContent.user_id.lastName
+    var commentorPicture
+    var commentorImageTemplate;
 
-        else{
-            commentorPicture = fetchedData.commentContent.user_id.firstName.charAt(0)+fetchedData.commentContent.user_id.lastName.charAt(0)
-            commentorImageTemplate = 
-            ` <div class="authorImageTemplate" id="authorImageCharts">
-            ${fetchedData.commentContent.user_id.firstName.charAt(0)+fetchedData.commentContent.user_id.lastName.charAt(0)}
-            </div>`
-        }
+    if(fetchedData.commentContent.user_id.imageLink){
+        commentorPicture = fetchedData.commentContent.user_id.imageLink
+        commentorImageTemplate = 
+        `<img src="${commentorPicture}" alt="" class="AuthorImage" id="authorProfilePicture">`
+    }
 
-        // Highlight Comment
+    else{
+        commentorPicture = fetchedData.commentContent.user_id.firstName.charAt(0)+fetchedData.commentContent.user_id.lastName.charAt(0)
+        commentorImageTemplate = 
+        ` <div class="authorImageTemplate" id="authorImageCharts">
+        ${fetchedData.commentContent.user_id.firstName.charAt(0)+fetchedData.commentContent.user_id.lastName.charAt(0)}
+        </div>`
+    }
 
-        el = document.createElement('li');
-        el.className = "box_result row";
-        el.innerHTML =
-        `
-        <div class="comments">
-            <div class="avatar_comment">
-                ${commentorImageTemplate}
-            </div>
-            <div class="result_comment">
-                <h4>${commentorNames} <span> &nbsp &nbsp/ ${fetchedData.commentContent.createdAt}</span></h4>
-                <p>${fetchedData.commentContent.comment}</p>
-                <div class="tools_comment">
-                    <a class="like" onclick="likeComment('${fetchedData.commentContent._id}')">Like</a>
-                    <span aria-hidden="true"> · </span>
-                    <i class="fa fa-thumbs-o-up"></i> <span class="count" id="count">0</span> 
-                    <span aria-hidden="true"> · </span>
-                    <a class="replay addCSSToReply" onclick="storeCommentId('${fetchedData.commentContent._id}')">Reply</a>
-                </div>
-                <ul class="child_replay" style="display: flex; flex-direction: column-reverse;"></ul>
-            </div>
+    // Highlight Comment
+
+    el = document.createElement('li');
+    el.className = "box_result row";
+    el.innerHTML =
+    `
+    <div class="comments">
+        <div class="avatar_comment">
+            ${commentorImageTemplate}
         </div>
-        `
-        
-            document.getElementById('list_comment').prepend(el);
-            $('.commentar').val('');
+        <div class="result_comment">
+            <h4>${commentorNames} <span> &nbsp &nbsp/ ${fetchedData.commentContent.createdAt}</span></h4>
+            <p>${fetchedData.commentContent.comment}</p>
+            <div class="tools_comment">
+                <a class="like" onclick="likeComment('${fetchedData.commentContent._id}')">Like</a>
+                <span aria-hidden="true"> · </span>
+                <i class="fa fa-thumbs-o-up"></i> <span class="count" id="count">0</span> 
+            </div>
+            <ul class="child_replay" style="display: flex; flex-direction: column-reverse;"></ul>
+        </div>
+    </div>
+    `
+        submitComment.innerHTML = "Post"
+        document.getElementById('list_comment').prepend(el);
+        $('.commentar').val('');
 
-    }
+
 
 })
 
@@ -137,14 +126,12 @@ async function getAllComments(){
         headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
-    let response = await fetch("http://localhost:5000/getAllComments/"+postId, getData)
+    let response = await fetch("https://ernestruzindana-api.herokuapp.com/getAllComments/"+postId, getData)
     const fetchedData = await response.json()
     console.log(fetchedData)
 
     const comments = fetchedData.allAvailableComments;
-
-    const countComments = document.getElementById("countComments")
-    countComments.innerHTML = `<span>(${comments.length})</span>`
+    localStorage.setItem("comments", JSON.stringify(comments));
 
     if(comments.length === 0){
         commentList.innerHTML = `
@@ -154,6 +141,8 @@ async function getAllComments(){
         
         `
     }
+
+    
 
     for(let i=0; i<comments.length; i++){
         const commentsArray = comments[i];  
@@ -181,7 +170,7 @@ async function getAllComments(){
         }
 
 
-        let responseReplies = await fetch("http://localhost:5000/getAllCommentReplies/"+comment_id, getData)
+        let responseReplies = await fetch("https://ernestruzindana-api.herokuapp.com/getAllCommentReplies/"+comment_id, getData)
         const fetchedDataReplies = await responseReplies.json()
 
         const replies = fetchedDataReplies.allAvailableReplies;
@@ -229,7 +218,7 @@ async function getAllComments(){
    
         if(likeToken){
 
-        let responseLikes = await fetch("http://localhost:5000/login/loggedInUser", getData)
+        let responseLikes = await fetch("https://ernestruzindana-api.herokuapp.com/login/loggedInUser", getData)
         
         
             const fetchedDataLikes = await responseLikes.json()
@@ -312,7 +301,7 @@ async function commentReply(){
         headers: new Headers({"auth_token": JSON.parse(localStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-fetch("http://localhost:5000/commentReply/"+commentId, sendData)
+fetch("https://ernestruzindana-api.herokuapp.com/commentReply/"+commentId, sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)

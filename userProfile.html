@@ -26,9 +26,9 @@
 
 </head>
 <body id="myBody">
-
+<!-- 
     <div id="userProfile_preloader"></div>
-    <script src="JS/userProfilePreloader.js"></script>
+    <script src="JS/userProfilePreloader.js"></script> -->
 
     <section class="preNav">
         <div class="preNavLinks">
@@ -280,14 +280,13 @@
                          Edit Image
                         </span>
                         </label>
-                        <input id="file" type="file" name="profileImage"/>
+                        <input id="file" onchange="UpdateUserProfile()" type="file" name="profileImage"/>
                         
                         <div class="profile-picRight" id="profilePicRight">
                         
                         </div>
                         <img src="" id="profileImageLink" width="200"/>
                     </div>
-                    <div id="showUploadMessage" style="color: green; font-weight: bold;"></div>
 
 
                     <form action="">
@@ -299,7 +298,7 @@
                         <input type="text" name="lastName" id="profileLastName" value="">
                         <br>
                         <label for="email"> Email* </label>
-                        <input type="email" name="email" id="profileEmail" value="">
+                        <input type="email" name="email" id="profileEmail" value="" disabled>
                         <br>
                         <label for="profileFacebook"> Facebook </label>
                         <input type="text" name="profileFacebook" id="UserProfileFacebook" value="">
@@ -333,7 +332,10 @@
 
 
 
-
+<!-- Global -->
+<div class="globalPreloader" id="globalPreloader">
+    <img src="images/preloader2.gif" alt="Loading...">
+</div>
 
 
 <!-- popup box -->

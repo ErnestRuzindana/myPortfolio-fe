@@ -11,9 +11,13 @@ async function postDetails(){
         headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
-    let response = await fetch(`http://localhost:5000/getSinglePost?slug=${slug}`, getData)
+    let response = await fetch(`https://ernestruzindana-api.herokuapp.com/getSinglePost?slug=${slug}`, getData)
     const fetchedData = await response.json() 
     const singlePost = fetchedData.fetchedPost;
+
+    $("#statusBlogDetails").fadeOut();
+        $("#preloaderBlogDetails").fadeOut("slow");
+        $("body").css({ "overflow": "visible" });
 
     localStorage.setItem("postId", singlePost._id)
 
@@ -33,16 +37,16 @@ async function postDetails(){
         <div class="banner_caption_text">
               <div class="post-category">
                   <ul>
-                      <li class="cat-yellow"><a href="categoryPosts.html?category=${singlePost.categoryDetails.slug}&name=${singlePost.categoryDetails.name}" class="white">${singlePost.categoryDetails.name}</a></li>
+                      <li class="cat-yellow"><a href="categoryPosts?category=${singlePost.categoryDetails.slug}&name=${singlePost.categoryDetails.name}" class="white">${singlePost.categoryDetails.name}</a></li>
                   </ul>
               </div>
-              <h1><a href="blogDetails.html?slug=${singlePost.slug}&category=${singlePost.categoryDetails.slug}">${singlePost.title}</a></h1>
+              <h1><a href="blogDetails?slug=${singlePost.slug}&category=${singlePost.categoryDetails.slug}">${singlePost.title}</a></h1>
               <div class="item-meta">
                   <div class="blogAuthor blogAuthorAdvert">
 
                       ${authorImageTemplate}
                       <div>
-                        <small><a href="authorPosts.html?userId=${singlePost.postCreator._id}&name=${singlePost.postCreator.firstName}" class="AuthorName">${singlePost.postCreator.firstName +' '+ singlePost.postCreator.lastName}</a></small>
+                        <small><a href="authorPosts?userId=${singlePost.postCreator._id}&name=${singlePost.postCreator.firstName}" class="AuthorName">${singlePost.postCreator.firstName +' '+ singlePost.postCreator.lastName}</a></small>
                         <small> / ${singlePost.createdAt}</small>
                       </div>
                       
@@ -56,6 +60,9 @@ async function postDetails(){
 
     const countLikes = document.getElementById("countLikes")
     countLikes.innerHTML = `${singlePost.likes_count} `
+
+    const countComments = document.getElementById("countComments")
+    countComments.innerHTML = `<span>(${singlePost.comments_count})</span>`
 
     // Change like text
     const postLike = document.getElementById("postLike")
@@ -77,7 +84,7 @@ async function postDetails(){
             headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
         }
 
-        let userResponse = await fetch("http://localhost:5000/login/loggedInUser", userGetData)
+        let userResponse = await fetch("https://ernestruzindana-api.herokuapp.com/login/loggedInUser", userGetData)
         const userFetchedData = await userResponse.json()
         console.log(userFetchedData)
 
@@ -110,7 +117,7 @@ getRecommendedPosts();
 let sameCategoryPostsContainer = document.getElementById("sameCategoryPostsContainer");
 async function getRelatedPosts(){
 
-    let response = await fetch(`http://localhost:5000/getAllPosts?perPage=10000000000&category=${category}`)    
+    let response = await fetch(`https://ernestruzindana-api.herokuapp.com/getAllPosts?perPage=10000000000&category=${category}`)    
     const allPosts = await response.json();
     let relatedPosts = allPosts.allAvailablePosts; 
     let posts = relatedPosts.filter(post => post.slug !== slug);
@@ -137,9 +144,9 @@ async function getRelatedPosts(){
             </div>
             <div class="post-title">
                 <div class="widget-cats">
-                    <a href="categoryPosts.html?category=${eachPost.categoryDetails.slug}&name=${eachPost.categoryDetails.name}">${eachPost.categoryDetails.name}</a>
+                    <a href="categoryPosts?category=${eachPost.categoryDetails.slug}&name=${eachPost.categoryDetails.name}">${eachPost.categoryDetails.name}</a>
                 </div>
-                <h4><a href="blogDetails.html?slug=${eachPost.slug}&category=${eachPost.categoryDetails.slug}">${eachPost.title}</a></h4>
+                <h4><a href="blogDetails?slug=${eachPost.slug}&category=${eachPost.categoryDetails.slug}">${eachPost.title}</a></h4>
             </div>
         </div>
         `
@@ -156,7 +163,7 @@ async function getRelatedPosts(){
 let recommendedPostsContainer = document.getElementById("recommendedPostsContainer");
 async function getRecommendedPosts(){
 
-    let response = await fetch(`http://localhost:5000/getAllPosts?perPage=10000000000`)    
+    let response = await fetch(`https://ernestruzindana-api.herokuapp.com/getAllPosts?perPage=20`)    
     const allPosts = await response.json();
     let recommendedPosts = allPosts.allAvailablePosts; 
     let posts = recommendedPosts.filter(post => post.slug !== slug && post.categoryDetails.slug !== category);
@@ -183,9 +190,9 @@ async function getRecommendedPosts(){
             </div>
             <div class="post-title">
                 <div class="widget-cats">
-                    <a href="categoryPosts.html?category=${eachPost.categoryDetails.slug}&name=${eachPost.categoryDetails.name}">${eachPost.categoryDetails.name}</a>
+                    <a href="categoryPosts?category=${eachPost.categoryDetails.slug}&name=${eachPost.categoryDetails.name}">${eachPost.categoryDetails.name}</a>
                 </div>
-                <h4><a href="blogDetails.html?slug=${eachPost.slug}&category=${eachPost.categoryDetails.slug}">${eachPost.title}</a></h4>
+                <h4><a href="blogDetails?slug=${eachPost.slug}&category=${eachPost.categoryDetails.slug}">${eachPost.title}</a></h4>
             </div>
         </div>
         `
@@ -204,7 +211,7 @@ async function getRecommendedPosts(){
 const relatedCategoriesContainer = document.getElementById("relatedCategoriesContainer")
 async function getAllRelatedCategories(){
   
-    let response = await fetch("http://localhost:5000/getAllCategories")    
+    let response = await fetch("https://ernestruzindana-api.herokuapp.com/getAllCategories")    
     const allCategories = await response.json(); 
     let relatedCategories = allCategories.allCategories;
     let categories = relatedCategories.filter(relatedCategory => relatedCategory.slug !== category);
@@ -212,7 +219,7 @@ async function getAllRelatedCategories(){
     if(categories.length === 0){
         relatedCategoriesContainer.innerHTML = `
             <div class="perfectCenteredNoItemFound">
-                No Categories added!
+                No Categories!
             </div>
         
         `
@@ -225,7 +232,7 @@ async function getAllRelatedCategories(){
       function myFunction(eachCategory) {
 
       return `
-      <a href="categoryPosts.html?category=${eachCategory.slug}&name=${eachCategory.name}" class="" >${eachCategory.name}</a>
+      <a href="categoryPosts?category=${eachCategory.slug}&name=${eachCategory.name}" class="" >${eachCategory.name}</a>
       `
       }
 

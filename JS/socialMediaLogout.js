@@ -4,12 +4,12 @@ async function socialMediaLogoutUser(){
         headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-  let response = await fetch("http://localhost:5000/socialMediaLogoutUser", getData)
+  let response = await fetch("https://ernestruzindana-api.herokuapp.com/socialMediaLogoutUser", getData)
   const fetchedData = await response.json()
   console.log(fetchedData)
 
   if (fetchedData.message){
-        location = "../index"
+    location.reload()
   }
 }
 
@@ -20,12 +20,12 @@ async function footerSocialMediaLogoutUser(){
       headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
   }
 
-let response = await fetch("http://localhost:5000/socialMediaLogoutUser", getData)
+let response = await fetch("https://ernestruzindana-api.herokuapp.com/socialMediaLogoutUser", getData)
 const fetchedData = await response.json()
 console.log(fetchedData)
 
 if (fetchedData.message){
-      location = "../index"
+  location.reload()
 }
 }
 

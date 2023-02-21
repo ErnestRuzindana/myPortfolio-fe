@@ -6,7 +6,7 @@ const firstName = url.searchParams.get('name');
 let authorPostsContainer = document.getElementById("authorPostsContainer");
 async function getAuthorPosts(){
 
-    let response = await fetch(`http://localhost:5000/getAllPosts?perPage=10000000000&userId=${userId}`)    
+    let response = await fetch(`https://ernestruzindana-api.herokuapp.com/getAllPosts?perPage=10000000000&userId=${userId}`)    
     const allPosts = await response.json();
     let posts = allPosts.allAvailablePosts; 
     console.log(posts)
@@ -37,18 +37,18 @@ async function getAuthorPosts(){
                 <div class="post-content">
                     <div class="post-category">
                         <ul>
-                            <li class="cat-yellow"><a href="categoryPosts.html?category=${eachPost.categoryDetails.slug}&name${eachPost.categoryDetails.name}" class="white">${eachPost.categoryDetails.name}</a></li>
+                            <li class="cat-yellow"><a href="categoryPosts?category=${eachPost.categoryDetails.slug}&name${eachPost.categoryDetails.name}" class="white">${eachPost.categoryDetails.name}</a></li>
                         </ul>
                     </div>
                     <div class="post-date">
                         <p><a href="#">${eachPost.createdAt}</a></p>
                     </div>
                     <h2 class="entry-title">
-                        <a href="blogDetails.html?slug=${eachPost.slug}&category=${eachPost.categoryDetails.slug}" class="white">${eachPost.title}</a>
+                        <a href="blogDetails?slug=${eachPost.slug}&category=${eachPost.categoryDetails.slug}" class="white">${eachPost.title}</a>
                     </h2>
                     <div class="item-meta white">
                         <span>by</span>
-                        <a class="author-name white" href="authorPosts.html?userId=${eachPost.postCreator._id}&name=${eachPost.postCreator.firstName}">${eachPost.postCreator.firstName +' '+ eachPost.postCreator.lastName}</a>
+                        <a class="author-name white" href="authorPosts?userId=${eachPost.postCreator._id}&name=${eachPost.postCreator.firstName}">${eachPost.postCreator.firstName +' '+ eachPost.postCreator.lastName}</a>
                     </div>
 
                 </div>
@@ -73,7 +73,7 @@ getOtherPosts()
 let otherAuthorPostsContainer = document.getElementById("otherAuthorPostsContainer");
 async function getOtherPosts(){
 
-    let response = await fetch(`http://localhost:5000/getAllPosts?perPage=10000000000`)    
+    let response = await fetch(`https://ernestruzindana-api.herokuapp.com/getAllPosts?perPage=10000000000`)    
     const allPosts = await response.json();
     let otherPosts = allPosts.allAvailablePosts; 
     let posts = otherPosts.filter(post => post.postCreator._id !== userId);
@@ -101,26 +101,21 @@ async function getOtherPosts(){
             <article class="post-list-main mar-bottom-20">
                 <div class="entry-thumb">
                     <figure class="thumb-wrap">
-                        <a href="blog-details.html">
+                        <a href="blog-details">
                             <img src="${eachPost.postImage}" alt="post">
                         </a>
                     </figure>
                 </div>
                 <div class="content-entry-wrap">
-                    <div class="post-category">
-                        <ul>
-                            <li class="cat-blue"><a href="categoryPosts.html?category=${eachPost.categoryDetails.slug}&name${eachPost.categoryDetails.name}" class="white">${eachPost.categoryDetails.name}</a></li>
-                        </ul>
-                    </div>
                     <div class="entry-content">
                         <h4 class="entry-title mar-bottom-5">
-                            <a href="blogDetails.html?slug=${eachPost.slug}&category=${eachPost.categoryDetails.slug}">${eachPost.title}</a>
+                            <a href="blogDetails?slug=${eachPost.slug}&category=${eachPost.categoryDetails.slug}" style="color: #cba10a;">${eachPost.title}</a>
                         </h4>
                     </div>
                     <div class="entry-meta-content">
                         <div class="item-meta">
                             <span>by</span>
-                            <a class="author-name" href="authorPosts.html?userId=${eachPost.postCreator._id}&name=${eachPost.postCreator.firstName}">${eachPost.postCreator.firstName +' '+ eachPost.postCreator.lastName}</a>
+                            <a class="author-name" href="authorPosts?userId=${eachPost.postCreator._id}&name=${eachPost.postCreator.firstName}">${eachPost.postCreator.firstName +' '+ eachPost.postCreator.lastName}</a>
                         </div>
                     </div>
                 </div>

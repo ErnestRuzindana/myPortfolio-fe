@@ -45,6 +45,31 @@ body::-webkit-scrollbar-thumb {
     
 /* End of custom scrollbar */
 
+/* Global Preloader */
+
+.globalPreloader{
+    width: 250px;
+    background: transparent;
+    border-radius: 6px !important;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%) scale(1);
+    text-align: center;
+    color: #333;
+    z-index: 999;
+    visibility: hidden;
+  }
+  
+  .open-globalPreloader{
+    visibility: visible;
+  }
+  
+  
+  .globalPreloader img{
+    width: 100%;
+  }
+
 /* popup box */
 
 .popupBox{
@@ -165,7 +190,7 @@ body::-webkit-scrollbar-thumb {
         text-align: center;
         padding-top: 20px;
         color: white;
-        Height: auto;
+        height: auto;
         
     }
 
@@ -212,7 +237,8 @@ body::-webkit-scrollbar-thumb {
 
     img.inProfileImage{
         border: 1px solid black;
-        width: 70px;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
         cursor: pointer;
         text-align: center; 
@@ -540,6 +566,7 @@ div.userProfile{
     text-align: center;
     padding-top: 20px;
     color: white;
+    height: auto;
 }
 
 

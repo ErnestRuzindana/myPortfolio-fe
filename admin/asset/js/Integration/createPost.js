@@ -6,7 +6,7 @@ async function postCategoryFunction(){
         method: "GET"
     }
 
-    let response = await fetch("http://localhost:5000/getAllCategories", getData)
+    let response = await fetch("https://ernestruzindana-api.herokuapp.com/getAllCategories", getData)
     const fetchedData = await response.json()
     const categories = fetchedData.allCategories;
 
@@ -86,7 +86,7 @@ async function createPost(){
         headers: new Headers({"auth_token": JSON.parse(localStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-fetch("http://localhost:5000/createPost", sendData)
+fetch("https://ernestruzindana-api.herokuapp.com/createPost", sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)

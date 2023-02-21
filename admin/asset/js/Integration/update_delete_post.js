@@ -4,7 +4,7 @@ let updateDeletePost = document.getElementById("updateDeletePost");
 
 async function getAllPosts(){
   
-    let response = await fetch(`http://localhost:5000/getAllPosts?perPage=1000000000`)    
+    let response = await fetch(`https://ernestruzindana-api.herokuapp.com/getAllPosts?perPage=1000000000`)    
     const allPosts = await response.json(); 
     let posts = allPosts.allAvailablePosts;
     console.log(posts) 
@@ -40,15 +40,15 @@ async function getAllPosts(){
                 <img src="${eachPost.postImage}" alt="" >
             </div>
             <div class="blogContent">
-                <h3> <a href="blogDetails.html?slug=${eachPost.slug}&category=${eachPost.categoryDetails.slug}" style="cursor: pointer; font-family: poppins;">${eachPost.title}</a> </h3>
+                <h3> <a href="updatePost.html?slug=${eachPost.slug}" style="cursor: pointer; font-family: poppins;">${eachPost.title}</a> </h3>
                 <hr>
                 <div class="blogAuthor">
                     ${authorTemplate}
                     <small><a href="" class="AuthorName">${eachPost.postCreator.firstName +' '+ eachPost.postCreator.lastName}</a></small>
                     <small> /${eachPost.createdAt}</small>
                 </div>
-                <p class="ContentSection" style="font-family: calibri;">
-                Category: ${eachPost.categoryDetails.name}
+                <p class="ContentSection" style="font-family: calibri; color: #cba10a; font-weight: bold; padding: 15px 0px 10px; font-size: 17px;">
+                 ${eachPost.categoryDetails.name}
                 </p>
 
                 

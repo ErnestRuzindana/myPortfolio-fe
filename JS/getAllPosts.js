@@ -8,7 +8,7 @@ async function postsAdvertisment(){
         headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
-    let response = await fetch("http://localhost:5000/getAllPosts?perPage=1000000000", getData)
+    let response = await fetch("https://ernestruzindana-api.herokuapp.com/getAllPosts?perPage=1000000000", getData)
     
     const allPosts = await response.json(); 
     const results = allPosts.allAvailablePosts;
@@ -45,16 +45,16 @@ async function postsAdvertisment(){
             <div class="banner_caption_text">
                   <div class="post-category">
                       <ul>
-                          <li class="cat-yellow"><a href="categoryPosts.html?category=${eachPost.categoryDetails.slug}&name=${eachPost.categoryDetails.name}" class="white">${eachPost.categoryDetails.name}</a></li>
+                          <li class="cat-yellow"><a href="categoryPosts?category=${eachPost.categoryDetails.slug}&name=${eachPost.categoryDetails.name}" class="white">${eachPost.categoryDetails.name}</a></li>
                       </ul>
                   </div>
-                  <h1><a href="blogDetails.html?slug=${eachPost.slug}&category=${eachPost.categoryDetails.slug}">${eachPost.title}</a></h1>
+                  <h1><a href="blogDetails?slug=${eachPost.slug}&category=${eachPost.categoryDetails.slug}">${eachPost.title}</a></h1>
                   <div class="item-meta">
                       <div class="blogAuthor blogAuthorAdvert">
 
                           ${authorTemplate}
                           <div>
-                            <small><a href="authorPosts.html?userId=${eachPost.postCreator._id}&name=${eachPost.postCreator.firstName}" class="AuthorName">${eachPost.postCreator.firstName +' '+ eachPost.postCreator.lastName}</a></small>
+                            <small><a href="authorPosts?userId=${eachPost.postCreator._id}&name=${eachPost.postCreator.firstName}" class="AuthorName">${eachPost.postCreator.firstName +' '+ eachPost.postCreator.lastName}</a></small>
                             <small class="postDate"> / ${eachPost.createdAt}</small>
                           </div>
                           
@@ -199,7 +199,7 @@ async function getAllPosts(){
         query += `&sortOrder=${sortOrder}`;
     }
   
-    let response = await fetch(`http://localhost:5000/getAllPosts`+query)   
+    let response = await fetch(`https://ernestruzindana-api.herokuapp.com/getAllPosts`+query)   
     window.scrollTo(0, 0); 
     const allPosts = await response.json(); 
     let posts = allPosts.allAvailablePosts;
@@ -238,7 +238,7 @@ async function getAllPosts(){
           <div class="post-content">
               <div class="post-category">
                   <ul>
-                      <li class="cat-yellow"><a href="categoryPosts.html?category=${eachPost.categoryDetails.slug}&name=${eachPost.categoryDetails.name}" class="white">${eachPost.categoryDetails.name}</a></li>
+                      <li class="cat-yellow"><a href="categoryPosts?category=${eachPost.categoryDetails.slug}&name=${eachPost.categoryDetails.name}" class="white">${eachPost.categoryDetails.name}</a></li>
                   </ul>
               </div>
               <div class="post-date">
@@ -246,14 +246,14 @@ async function getAllPosts(){
                   <p><span>${eachPost.comments_count}</span> <i class="fa fa-comments"></i></p>
               </div>
               <h2 class="entry-title">
-                  <a href="blogDetails.html?slug=${eachPost.slug}&category=${eachPost.categoryDetails.slug}" class="">${eachPost.title}</a>
+                  <a href="blogDetails?slug=${eachPost.slug}&category=${eachPost.categoryDetails.slug}" class="">${eachPost.title}</a>
               </h2>
               <div class="item-meta">
                   <div class="blogAuthor">
 
                       ${authorTemplate}
                       <div>
-                        <small><a href="authorPosts.html?userId=${eachPost.postCreator._id}&name=${eachPost.postCreator.firstName}" class="AuthorName">${eachPost.postCreator.firstName +' '+ eachPost.postCreator.lastName}</a></small>
+                        <small><a href="authorPosts?userId=${eachPost.postCreator._id}&name=${eachPost.postCreator.firstName}" class="AuthorName">${eachPost.postCreator.firstName +' '+ eachPost.postCreator.lastName}</a></small>
                         <small class="postDate"> / ${eachPost.createdAt}</small>
                       </div>
                       
@@ -376,14 +376,14 @@ window.addEventListener('load', function() {
 const categoriesContainer = document.getElementById("categoriesContainer")
 async function getAllCategories(){
   
-    let response = await fetch("http://localhost:5000/getAllCategories")    
+    let response = await fetch("https://ernestruzindana-api.herokuapp.com/getAllCategories")    
     const allCategories = await response.json(); 
     let categories = allCategories.allCategories;
      
     if(categories.length === 0){
-        postsContainer.innerHTML = `
+        categoriesContainer.innerHTML = `
             <div class="perfectCenteredNoItemFound">
-                No Categories added!
+                No Categories!
             </div>
         
         `
@@ -396,7 +396,7 @@ async function getAllCategories(){
       function myFunction(eachCategory) {
 
       return `
-      <li><a href="categoryPosts.html?category=${eachCategory.slug}&name=${eachCategory.name}">${eachCategory.name}</a></li>
+      <li><a href="categoryPosts?category=${eachCategory.slug}&name=${eachCategory.name}">${eachCategory.name}</a></li>
       `
       }
 

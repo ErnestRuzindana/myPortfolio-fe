@@ -3,20 +3,15 @@ const popupUserProfile = document.getElementById("popupUserProfile")
 
 
 
-function hideUserProfileLoader(){
-  userProfile_preloader.classList.remove("show")
-}
-
 async function UserProfile(){
       const getData = {
           method: "GET",
           headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
       }
 
-    let response = await fetch("http://localhost:5000/login/loggedInUser", getData)
-    const profileFetchedData = await response.json()
-    hideUserProfileLoader()
-
+    let response = await fetch("https://ernestruzindana-api.herokuapp.com/login/loggedInUser", getData)
+    const userFetchedData = await response.json()
+    const profileFetchedData = userFetchedData.loggedInUser;
 
   const userProfileNames = document.getElementById("userProfileNames");
   userProfileNames.innerHTML = profileFetchedData.firstName +"  "+ profileFetchedData.lastName
@@ -37,9 +32,6 @@ async function UserProfile(){
     profileImageLinkLeft.style.display = "none"
   }
 
-
-
-
   const userProfileBio = document.getElementById("userProfileBio");
   if (profileFetchedData.bio){
     userProfileBio.innerHTML = profileFetchedData.bio
@@ -49,7 +41,6 @@ async function UserProfile(){
     userProfileBio.innerHTML = "Your biography goes here!"
   }
 
-
   const profileFacebook = document.getElementById("profileFacebook");
   if(profileFetchedData.profileFacebook){
     profileFacebook.innerHTML = `<img src="../images/facebook_black.png" alt=""> &nbsp; ${profileFetchedData.profileFacebook}`
@@ -58,7 +49,6 @@ async function UserProfile(){
   else{
     profileFacebook.innerHTML = ""
   }
-
 
   const profileTwitter = document.getElementById("profileTwitter");
   if(profileFetchedData.profileTwitter){
@@ -181,91 +171,105 @@ UserProfile()
 
 const updateChanges = document.getElementById("updateChanges");
 const profileMessage = document.getElementById("profileMessage");
+let globalPreloader = document.getElementById("globalPreloader");
 
 profileMessage.style.display = "none"
 
 updateChanges.addEventListener("click", (event) =>{
     event.preventDefault();
-    profileMessage.style.display = "block"
-
-    profileMessage.innerHTML = `<img src="../images/Spinner.gif" alt="Loading..." width="50px" height="50px">`
 
     UpdateUserProfile();
 });
 
-const showUploadMessage = document.getElementById("showUploadMessage");
-const file = document.getElementById("file");
-showUploadMessage.style.display = "none"
 
-file.addEventListener("change", () =>{
-  showUploadMessage.style.display = "block"
-  showUploadMessage.innerHTML = `Picture uploaded successfully! </br> After changing your other desired fields, Click Update Changes down below to save your changes.`
-})
 
 function UpdateUserProfile(){
-    const profileFirstName = document.getElementById("profileFirstName");
-    const profileLastName = document.getElementById("profileLastName");
-    const profileEmail = document.getElementById("profileEmail");
-    const UserProfileFacebook = document.getElementById("UserProfileFacebook");
-    const UserProfileTwitter = document.getElementById("UserProfileTwitter");
-    const UserProfileLinkedin = document.getElementById("UserProfileLinkedin");
-    const UserProfileInstagram = document.getElementById("UserProfileInstagram");
-    const profileBio = document.getElementById("profileBio");
-    
-    
+  globalPreloader.classList.add("open-globalPreloader") 
+  const profileFirstName = document.getElementById("profileFirstName");
+  const profileLastName = document.getElementById("profileLastName");
+  const UserProfileFacebook = document.getElementById("UserProfileFacebook");
+  const UserProfileTwitter = document.getElementById("UserProfileTwitter");
+  const UserProfileLinkedin = document.getElementById("UserProfileLinkedin");
+  const UserProfileInstagram = document.getElementById("UserProfileInstagram");
+  const profileBio = document.getElementById("profileBio");
+  const profileImage = document.getElementById("file");
+  
 
-    if (!file.files[0]) {
-      popupUserProfile.classList.add("open-popup")
+  if (profileImage.files.length && !profileImage.files[0]) {
+      profileMessage.style.color = "red"
+      profileMessage.innerHTML = "Please add a new profile image or confirm the previous one to be able to edit your profile!"
       return;
     }
-
-
-    const reader =  new FileReader();
-     reader.readAsDataURL(file.files[0])
-     reader.addEventListener("load",()=>{
-    const finalUserImage = reader.result
-
-    console.log(finalUserImage)
 
     const data = {
       firstName: profileFirstName.value,
       lastName: profileLastName.value,
-      email: profileEmail.value,
       profileFacebook: UserProfileFacebook.value,
       profileTwitter: UserProfileTwitter.value,
       profileLinkedin: UserProfileLinkedin.value,
       profileInstagram: UserProfileInstagram.value,  
-      bio: profileBio.value,
-      imageLink: finalUserImage
+      bio: profileBio.value
     }
 
-    console.log(data)
-        
+  if (profileImage.files[0]){
 
-    const sendData = {  
+  const reader =  new FileReader();
+   reader.readAsDataURL(profileImage.files[0])
+   reader.addEventListener("load",()=>{
+    const finalUserImage = reader.result
+    data.imageLink = finalUserImage;
+
+  const sendData = {  
+      method: "PUT",
+      body: JSON.stringify(data),
+      headers: new Headers({"auth_token": JSON.parse(localStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
+  }
+
+fetch(`https://ernestruzindana-api.herokuapp.com/login/updateUser`, sendData)
+.then(response => response.json())
+.then((fetchedData)=>{
+  console.log(fetchedData)
+
+  if (fetchedData.successMessage){
+    profileMessage.style.color = "green"
+    profileMessage.style.fontWeight = "bold"
+    profileMessage.innerHTML = fetchedData.successMessage
+    globalPreloader.classList.remove("open-globalPreloader")  
+    history.go(0)
+  }
+
+  else{
+      profileMessage.style.color = "red"
+      profileMessage.innerHTML = "Something went wrong, we were unable to process this request!"
+  }
+
+    })
+
+})
+} else{
+      const sendData = {  
         method: "PUT",
         body: JSON.stringify(data),
         headers: new Headers({"auth_token": JSON.parse(localStorage.getItem("token")), 'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-fetch("http://localhost:5000/login/updateUser", sendData)
-.then(response => response.json())
-.then((fetchedData)=>{
+    fetch(`https://ernestruzindana-api.herokuapp.com/login/updateUser`, sendData)
+    .then(response => response.json())
+    .then((fetchedData)=>{
     console.log(fetchedData)
 
-    if (fetchedData.message){
-        profileMessage.style.color = "green"
-        profileMessage.style.fontWeight = "bold"
-        profileMessage.innerHTML = fetchedData.message
-        location = "userProfile"
+    if (fetchedData.successMessage){
+      profileMessage.style.color = "green"
+      profileMessage.style.fontWeight = "bold"
+      profileMessage.innerHTML = fetchedData.successMessage
+      location.reload()
     }
-})
 
-   })
+    else{
+        profileMessage.style.color = "red"
+        profileMessage.innerHTML = "Something went wrong, we were unable to process this request!"
+    }
 
+      })
 }
-
-function closePopupUserProfile(){
-  popupUserProfile.classList.remove("open-popup")
-  profileMessage.style.display = "none"
 }

@@ -8,7 +8,7 @@ async function registeredUsers(){
         headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}
     }
 
-  let response = await fetch("http://localhost:5000/register/getRegisteredUsers", getData)
+  let response = await fetch("https://ernestruzindana-api.herokuapp.com/register/getRegisteredUsers", getData)
   const fetchedData = await response.json()
   hideAssignRoleLoader()
   document.title = "Ernest Ruzindana | Dashboard"

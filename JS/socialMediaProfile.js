@@ -4,7 +4,7 @@ async function socialMediaLoggedInUser(){
         headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-  let response = await fetch("http://localhost:5000/socialMediaLoggedInUser", getData)
+  let response = await fetch("https://ernestruzindana-api.herokuapp.com/socialMediaLoggedInUser", getData)
   const fetchedData = await response.json()
   console.log(fetchedData)
 

@@ -6,7 +6,7 @@ const categoryName = url.searchParams.get('name');
 let categoryPostsContainer = document.getElementById("categoryPostsContainer");
 async function getCategoryPosts(){
 
-    let response = await fetch(`http://localhost:5000/getAllPosts?perPage=10000000000&category=${category}`)    
+    let response = await fetch(`https://ernestruzindana-api.herokuapp.com/getAllPosts?perPage=10000000000&category=${category}`)    
     const allPosts = await response.json();
     let posts = allPosts.allAvailablePosts; 
     console.log(posts)
@@ -37,11 +37,11 @@ async function getCategoryPosts(){
                 <div class="post-content">
                     <div class="post-category">
                         <ul>
-                            <li class="cat-red"><a href="categoryPosts.html?category=${eachPost.categoryDetails.slug}&name${eachPost.categoryDetails.name}" class="white">${eachPost.categoryDetails.name}</a></li>
+                            <li class="cat-red"><a href="categoryPosts?category=${eachPost.categoryDetails.slug}&name${eachPost.categoryDetails.name}" class="white">${eachPost.categoryDetails.name}</a></li>
                         </ul>
                     </div>
                     <h3 class="entry-title mar-0">
-                        <a href="blogDetails.html?slug=${eachPost.slug}&category=${eachPost.categoryDetails.slug}" class="white">${eachPost.title}</a>
+                        <a href="blogDetails?slug=${eachPost.slug}&category=${eachPost.categoryDetails.slug}" class="white">${eachPost.title}</a>
                     </h3>
 
                 </div>
@@ -96,7 +96,7 @@ getAllRelatedCategories()
 const relatedCategoriesContainer = document.getElementById("relatedCategoriesContainer")
 async function getAllRelatedCategories(){
   
-    let response = await fetch("http://localhost:5000/getAllCategories")    
+    let response = await fetch("https://ernestruzindana-api.herokuapp.com/getAllCategories")    
     const allCategories = await response.json(); 
     let relatedCategories = allCategories.allCategories;
     let categories = relatedCategories.filter(relatedCategory => relatedCategory.slug !== category);
@@ -104,7 +104,7 @@ async function getAllRelatedCategories(){
     if(categories.length === 0){
         relatedCategoriesContainer.innerHTML = `
             <div class="perfectCenteredNoItemFound">
-                No Categories added!
+                No Categories!
             </div>
         
         `
@@ -117,7 +117,7 @@ async function getAllRelatedCategories(){
       function myFunction(eachCategory) {
 
       return `
-      <a href="categoryPosts.html?category=${eachCategory.slug}&name=${eachCategory.name}" class="" >${eachCategory.name}</a>
+      <a href="categoryPosts?category=${eachCategory.slug}&name=${eachCategory.name}" class="" >${eachCategory.name}</a>
       `
       }
 

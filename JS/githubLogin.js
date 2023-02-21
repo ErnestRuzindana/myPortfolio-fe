@@ -2,5 +2,5 @@ const loginGithubButton = document.getElementById("loginGithub");
 
 
 loginGithubButton.addEventListener("click", ()=>{
-    location = "http://localhost:5000/github"
+    location = "https://ernestruzindana-api.herokuapp.com/github"
 })

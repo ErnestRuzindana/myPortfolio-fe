@@ -27,7 +27,7 @@ function subscription(){
         headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-fetch("http://localhost:5000/Subscribe", sendData)
+fetch("https://ernestruzindana-api.herokuapp.com/Subscribe", sendData)
 .then(response => response.json())
 .then((fetchedData)=>{
     console.log(fetchedData)
