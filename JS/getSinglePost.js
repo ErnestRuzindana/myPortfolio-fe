@@ -47,7 +47,7 @@ async function postDetails(){
                       ${authorImageTemplate}
                       <div>
                         <small><a href="authorPosts?userId=${singlePost.postCreator._id}&name=${singlePost.postCreator.firstName}" class="AuthorName">${singlePost.postCreator.firstName +' '+ singlePost.postCreator.lastName}</a></small>
-                        <small> / ${singlePost.createdAt}</small>
+                        <small class="postDate"> / ${singlePost.createdAt}</small>
                       </div>
                       
                   </div>

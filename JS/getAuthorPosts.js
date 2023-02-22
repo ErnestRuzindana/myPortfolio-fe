@@ -31,13 +31,13 @@ async function getAuthorPosts(){
         return `
         <div class="col-md-4 col-sm-12" style="margin-bottom: 30px">
             <div class="blog-post_wrapper image-wrapper">
-                <div class="blog-post-image">
+                <div class="blog-post-image categoryImage">
                     <img src="${eachPost.postImage}" alt="image" class="img-responsive center-block post_img" />
                 </div>
                 <div class="post-content">
                     <div class="post-category">
                         <ul>
-                            <li class="cat-yellow"><a href="categoryPosts?category=${eachPost.categoryDetails.slug}&name${eachPost.categoryDetails.name}" class="white">${eachPost.categoryDetails.name}</a></li>
+                            <li class="cat-yellow"><a href="categoryPosts?category=${eachPost.categoryDetails.slug}&name=${eachPost.categoryDetails.name}" class="white">${eachPost.categoryDetails.name}</a></li>
                         </ul>
                     </div>
                     <div class="post-date">

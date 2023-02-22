@@ -987,11 +987,6 @@ span.featured-label {
 
 }
 
-@media(max-width: 735px){
-  #mt_blog .blog-post_wrapper .blog-post-image img{ 
-    height: 100%;
-  }
-}
 
 @media(max-width: 639px){
 

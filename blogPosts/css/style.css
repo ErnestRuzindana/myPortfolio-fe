@@ -823,12 +823,18 @@ span.featured-label {
 
 @media(max-width: 735px){
 
- 
+  .categoryImage img{
+    height: 450px;
+  }
 
   img {
     max-width: 100% ;
     height: auto !important;
   }
+
+  div.logo {
+    padding: 25px 18px 0px !important;
+}
 
   .postDate{
     display: none;
@@ -905,6 +911,10 @@ div.userProfile{
   #mt_banner.innerbanner .banner_caption_text{padding:30px;}
 
   #mt_banner.innerbanner .banner_caption_text h1{font-size: 28px;}
+
+    .categoryImage img{
+      height: 250px !important;
+    }
 }
 
 @media(max-width: 360px){

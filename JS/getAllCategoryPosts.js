@@ -31,13 +31,13 @@ async function getCategoryPosts(){
         return `
         <div class="col-md-4 col-sm-12">
             <div class="blog-post_wrapper image-wrapper">
-                <div class="blog-post-image">
-                    <img src="${eachPost.postImage}" alt="image" width="100%" height="100%" class="img-responsive center-block post_img" />
+                <div class="blog-post-image categoryImage">
+                    <img src="${eachPost.postImage}" alt="image" class="img-responsive center-block post_img" />
                 </div>
                 <div class="post-content">
                     <div class="post-category">
                         <ul>
-                            <li class="cat-red"><a href="categoryPosts?category=${eachPost.categoryDetails.slug}&name${eachPost.categoryDetails.name}" class="white">${eachPost.categoryDetails.name}</a></li>
+                            <li class="cat-red"><a href="categoryPosts?category=${eachPost.categoryDetails.slug}&name=${eachPost.categoryDetails.name}" class="white">${eachPost.categoryDetails.name}</a></li>
                         </ul>
                     </div>
                     <h3 class="entry-title mar-0">
