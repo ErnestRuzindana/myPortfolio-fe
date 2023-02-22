@@ -100,7 +100,7 @@ $(document).ready(function() {
 						<div class="box_post">
 							<div class="pull-right">
 							<button class="cancel" onclick="cancel_reply()" type="button">Cancel</button>
-							<button onclick="commentReply()" type="button" value="1">Reply</button>
+							<button id="replyButton" onclick="commentReply()" type="button" value="1">Reply</button>
 							</div>
 						</div>
 						</div>

@@ -288,6 +288,9 @@ function storeCommentId(commentId){
 
 
 async function commentReply(){
+    var replyButton = document.getElementById('replyButton');
+    replyButton.innerHTML = `<img src="../images/Spinner.gif" alt="Loading..." width="150px" height="150px">`;
+
     let commentId = localStorage.getItem("commentId")
 
     var comment_replay = $('.comment_replay').val();
@@ -307,10 +310,12 @@ fetch("https://ernestruzindana-api.herokuapp.com/commentReply/"+commentId, sendD
     console.log(fetchedData)
 
     if(fetchedData.invalidToken){
+        replyButton.innerHTML = "Reply"
         popupBoxCommentsReplies.classList.add("open-popup")
     }
 
     else if(fetchedData.validationError){
+        replyButton.innerHTML = "Reply"
         popupBoxCommentsRepliesValidation.classList.add("open-popup")
     }
 
@@ -351,6 +356,7 @@ fetch("https://ernestruzindana-api.herokuapp.com/commentReply/"+commentId, sendD
     </div>
 
     `
+    replyButton.innerHTML = "Reply";
     $current.closest('li').find('.child_replay').prepend(el);
     $('.comment_replay').val('');
     cancel_reply();

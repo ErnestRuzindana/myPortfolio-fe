@@ -416,6 +416,11 @@ img {
   height: 25px;
 }
 
+#replyButton img{
+  width: 25px;
+  height: 25px;
+}
+
 
 input[type=text],
 input[type=email],
