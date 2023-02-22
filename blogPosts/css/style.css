@@ -1391,6 +1391,10 @@ h5.bg-orange {
    justify-content: center;
   }
 
+  .authorPostDate{
+    justify-content: unset !important;
+  }
+
   .home-1 #mt_blog .blog-post_wrapper{display: block;}
 
   .home-1 #mt_blog .blog-post_wrapper .post-content, .home-1 #mt_blog .blog-post_wrapper .blog-post-image{width: 100%; text-align: center;}

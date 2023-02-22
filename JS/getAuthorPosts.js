@@ -40,7 +40,7 @@ async function getAuthorPosts(){
                             <li class="cat-yellow"><a href="categoryPosts?category=${eachPost.categoryDetails.slug}&name=${eachPost.categoryDetails.name}" class="white">${eachPost.categoryDetails.name}</a></li>
                         </ul>
                     </div>
-                    <div class="post-date">
+                    <div class="post-date authorPostDate">
                         <p><a href="#">${eachPost.createdAt}</a></p>
                     </div>
                     <h2 class="entry-title">
