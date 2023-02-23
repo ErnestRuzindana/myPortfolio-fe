@@ -14,6 +14,7 @@ async function loggedInUser(){
   let response = await fetch("https://ernestruzindana-api.herokuapp.com/login/loggedInUser", getData)
   const serverData = await response.json()
   const fetchedData = serverData.loggedInUser
+  document.title = "Ernest Ruzindana"
   if(!fetchedData.invalidToken){
     preNavLogin.style.display = "none"
   }
