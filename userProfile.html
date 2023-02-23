@@ -345,6 +345,13 @@
     <button type="submit" class="cancel" onclick="closePopupUserProfile()">Ok</button>
 </div>
 
+<!-- popup box -->
+<div class="popupBox" id="popupBoxSubscription">
+    <img id="subscriptionLogo" src="../images/successLogo.png" alt="">
+    <h2 id="subscriptionStatus">Done!</h2>
+    <p id="subscriptionErrorMessage">Thank you for subscribing my News Letter! To receive my daily updates, go to your email to verify this email address!</p>
+    <button type="submit" class="cancel" onclick="closePopupSubscripiton()">Ok</button>
+</div>
 
     <!-- Footer section -->
     <section class="footer">
@@ -354,9 +361,12 @@
                     <h3>Be the first to know</h3>
                     <p>Please subscribe to this platform with your email to know more about what I do and stay connected</p>
                 </div>
-                <div class="myFooterTopForm" autocomplete="on">
-                    <input type="email" placeholder="Email address">
-                    <input type="submit" value="Subscribe">
+                <div class="myFooterTopForm">
+                    <form action="" id="subscriberForm">
+                        <input type="email" placeholder="Email address" id="subscriberEmail">
+                        <input type="submit" value="Subscribe" id="submitSubscription">
+                    </form>
+                    
                 </div>
                 <p class="border"></p>
             </div>
@@ -422,7 +432,7 @@
     <script src="../JS/socialMediaLogout.js"></script>
     <script src="../JS/userProfile.js"></script>
     
-
+    <script src="JS/subscribe.js"></script>
 
     
 </body>

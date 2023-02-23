@@ -1,11 +1,11 @@
 
 async function loggedInUser(){
     const preNavLogin = document.getElementById("preNavLogin");
-    // const preNavToken = localStorage.getItem("token")
-    // if(preNavToken){
-    //     preNavLogin.innerHTML = `<img src="../images/Spinner.gif" alt="" width="40px">`
-    //     document.title = "Loading..."
-    // }
+    const preNavToken = localStorage.getItem("token")
+    if(preNavToken){
+        preNavLogin.innerHTML = `<img src="../images/Spinner.gif" alt="" width="40px">`
+        document.title = "Loading..."
+    }
     const getData = {
         method: "GET",
         headers: {"auth_token": JSON.parse(localStorage.getItem("token"))}

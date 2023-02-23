@@ -3,14 +3,13 @@ const submitSubscription = document.getElementById("submitSubscription");
 const subscriberEmail = document.getElementById("subscriberEmail");
 const subscriberForm = document.getElementById("subscriberForm");
 const popupBoxSubscription = document.getElementById("popupBoxSubscription")
-const subscriptionMessage = document.getElementById("subscriptionMessage");
-subscriptionMessage.style.display = "none";
+const subscriptionStatus = document.getElementById("subscriptionStatus")
+const subscriptionLogo = document.getElementById("subscriptionLogo")
+const subscriptionErrorMessage = document.getElementById("subscriptionErrorMessage")
 
 submitSubscription.addEventListener("click", (event) =>{
-    event.preventDefault();
-    subscriptionMessage.style.display = "block";   
-    subscriptionMessage.innerHTML = `<img src="../images/Spinner.gif" alt="Loading..." width="50px" height="50px">`
-    document.title = "Loading..."
+    event.preventDefault();   
+    submitSubscription.value = "Loading..."   
     subscription();
 });
 
@@ -33,21 +32,43 @@ fetch("https://ernestruzindana-api.herokuapp.com/Subscribe", sendData)
     console.log(fetchedData)
 
     if (fetchedData.successMessage){
-        subscriptionMessage.style.display = "none";
         popupBoxSubscription.classList.add("open-popup")
-        document.title = "Ernest Ruzindana"
+        subscriptionLogo.src = "../images/successLogo.png"
+        subscriptionStatus.style.color = "black"
+        subscriptionErrorMessage.style.color = "black"
+        subscriptionStatus.innerHTML = "Done!"
+        subscriptionErrorMessage.innerHTML = "Thank you for subscribing my News Letter! To receive my daily updates, go to your email to verify this email address!"
+        submitSubscription.value = "Subscribe"
     }
 
     else if (fetchedData.validationError){
-        subscriptionMessage.style.color = "red"
-        subscriptionMessage.innerHTML = fetchedData.validationError
-        document.title = "Ernest Ruzindana"
+        popupBoxSubscription.classList.add("open-popup")
+        subscriptionLogo.src = "../images/attention.png"
+        subscriptionStatus.style.color = "red"
+        subscriptionErrorMessage.style.color = "red"
+        subscriptionStatus.innerHTML = "Fail!"
+        subscriptionErrorMessage.innerHTML = fetchedData.validationError
+        submitSubscription.value = "Subscribe"
+    }
+
+    else if (fetchedData.duplicateError){
+        popupBoxSubscription.classList.add("open-popup")
+        subscriptionLogo.src = "../images/attention.png"
+        subscriptionStatus.style.color = "red"
+        subscriptionErrorMessage.style.color = "red"
+        subscriptionStatus.innerHTML = "Fail!"
+        subscriptionErrorMessage.innerHTML = fetchedData.duplicateError
+        submitSubscription.value = "Subscribe"
     }
 
     else {
-        subscriptionMessage.style.color = "red"
-        subscriptionMessage.innerHTML = fetchedData.errorMessage
-        document.title = "Ernest Ruzindana"
+        popupBoxSubscription.classList.add("open-popup")
+        subscriptionLogo.src = "../images/attention.png"
+        subscriptionStatus.style.color = "red"
+        subscriptionErrorMessage.style.color = "red"
+        subscriptionStatus.innerHTML = "Fail!"
+        subscriptionErrorMessage.innerHTML = "Something went wrong, we were unable to process this request!"
+        submitSubscription.value = "Subscribe"
     }
 })
 

@@ -421,6 +421,10 @@ img {
   height: 25px;
 }
 
+#subscriberForm{
+  padding-right: 15px;
+}
+
 
 input[type=text],
 input[type=email],

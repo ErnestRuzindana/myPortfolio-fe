@@ -201,16 +201,20 @@
 
 <div class="createPost">
 
-    <h3>Add a Category</h3>
+    <h3>Add a Project</h3>
     <form action="">
+        <label for="">Project Image:</label>
+        <input type="file" id="projectImage" name="postImage">
 
-        <label for="">Category Name:</label>
-        <input type="text" placeholder="Write the category name here" id="categoryName" name="title">
+        <label for="">Project Title:</label>
+        <input type="text" placeholder="Write the project title here" id="projectTitle" name="title">
 
+        <label for="">Project Link:</label>
+        <input type="text" placeholder="Add the project link here" id="projectLink" name="title">
 
-        <div class="postMessage" id="categoryMessage"></div>
+        <div class="postMessage" id="projectMessage"></div>
 
-        <input type="submit" id="submitCategory" value="Add Category" style="margin-top: 30px;">
+        <input type="submit" id="submitProject" value="Add Project" style="margin-top: 30px;">
     </form>
 </div>
 
@@ -232,7 +236,7 @@
 
 <!-- Integration scripts -->
 <script src="asset/js/Integration/loggedInUser.js"></script>
-<script src="asset/js/Integration/createCategory.js"></script>
+<script src="asset/js/Integration/addProject.js"></script>
 <script src="asset/js/Integration/protectAdmin.js"></script>
 
 

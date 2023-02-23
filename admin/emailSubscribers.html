@@ -199,23 +199,33 @@
           </div>                    
         </div>
 
-<div class="createPost">
+        <div class="createPost">
+            <h3>Email Subscribers</h3>
+            <form action="">
+        
+                <label for="" class="postBody">Email body</label>
+                <div id="content">
+           
+                        <div class="panel positionPanelBody">
+                            <div class="panel-body">
+                            <!-- <div id="summernote" name="postBody" style="display: block;"></div> -->
+                            <textarea class="emailBody" cols="30" rows="10" name="postBody" id="emailBody"></textarea>
+                            </div>
+                        </div>
+        
+                </div>
+        
+                <input type="submit"  id="submitRequest" value="Send Email">
+            </form>
+        </div>
 
-    <h3>Add a Category</h3>
-    <form action="">
 
-        <label for="">Category Name:</label>
-        <input type="text" placeholder="Write the category name here" id="categoryName" name="title">
-
-
-        <div class="postMessage" id="categoryMessage"></div>
-
-        <input type="submit" id="submitCategory" value="Add Category" style="margin-top: 30px;">
-    </form>
-</div>
-
-
-
+        <div class="popupBox" id="popupBoxSubscription">
+            <img src="../images/successLogo.png" alt="">
+            <h2>Success!</h2>
+            <p>Email sent successfully to all your subscribers!</p>
+            <button type="submit" class="cancel" onclick="closePopupSubscription()">Ok</button>
+        </div>
 
 
 
@@ -232,7 +242,7 @@
 
 <!-- Integration scripts -->
 <script src="asset/js/Integration/loggedInUser.js"></script>
-<script src="asset/js/Integration/createCategory.js"></script>
+<script src="asset/js/Integration/emailSubscribers.js"></script>
 <script src="asset/js/Integration/protectAdmin.js"></script>
 
 

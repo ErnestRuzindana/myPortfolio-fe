@@ -235,7 +235,7 @@
     <section class="myProfile" id="myProfile">
         <div class="profile">
             <div class="intro">
-                <p>Hi, <br> I'm <span>Ernest</span>, <br> GIS Developer</p>
+                <p>Hi, <br> I'm <span>Ernest</span>, <br> <span id="careerEffect" style="color: #cba10a;"></span></p>
                 <img src="../images/IntroDesignedImage-01.png" alt="" class="animateIntroImage">
             </div>
         </div>
@@ -249,19 +249,25 @@
 
                         <div class="right">
                             <img src="../images/Ruzindana.jpg" alt="">
+                            <ul class="social-box">
+								<li><a href="https://web.facebook.com/ruzindana.elannoernest/" target="_blank"><span class="fa fa-facebook-f"></span></a></li>
+								<li><a href="https://www.instagram.com/elanno_official/" target="_blank"><span class="fa fa-instagram"></span></a></li>
+								<li><a href="https://www.linkedin.com/in/ernest-ruzindana-7481b8183/" target="_blank"><span class="fa fa-linkedin"></span></a></li>
+								<li><a href="https://twitter.com/ruzindanaernes5" target="_blank"><span class="fa fa-twitter"></span></a></li>
+							</ul>
                         </div>
 
 
                         <div class="left" >
                             <h2>About</h2>
                             <h5>I'm Ernest RUZINDANA</h5>
-                            <p>
-                                GIS developer with expertise in the use of python libraries such as GDAL, Pyproj, Fiona, Geopandas for 
+                            <p id="aboutUsText">
+                                <!-- GIS developer with expertise in the use of python libraries such as GDAL, Pyproj, Fiona, Geopandas for 
                                 intelligent mapping and geospatial data science. GIS engineer experienced in land use planning and 
                                 spatial data analysis using geospatial technologies, particularly GIS and remote sensing. 
                                 A full stack web developer using the python django framework for backend development; JS and web related 
                                 frameworks such as React and Bootstrap for frontend development and hosting the projects on various servers, 
-                                including AWS Amazon.
+                                including AWS Amazon. -->
                             </p>
 
                             <a href="../Documents/CV - Ernest Ruzindana.pdf" download="Ernest CV">
@@ -273,7 +279,6 @@
                     </div>
         </div>
     </section>
-
     
     <section class="Skills" id="Skills">
         <div class="mySkillsTitle" id="hideUserProfile">
@@ -588,62 +593,16 @@
                 <p>Check out what I have managed to complete inline with my professional career and services I provide</p>
             </div>
 
-            <div class="myWorkGrids">
-                <div class="myWorkGridBox">
-
-                    <div class="myWorkDesign1 myWorkDesign">
-
-                    </div>
-
-                    <h4>Land Use Planning</h4>
-                    <a href="https://drive.google.com/drive/folders/1W8hQGGf91L1jul7AojXpRn-7x_8tP20M?usp=sharing" target="_blank">
-                        <img src="images/Card1.jpg" alt="my first work">
-                    </a>
-                </div>
-
-                <div class="myWorkGridBox">
-                    <h4>Settlement Planning</h4>
-                    <a href="https://drive.google.com/drive/folders/1445GfXBtS7JXQChMWbTNcz5wszSkUa5F?usp=sharing" target="_blank">
-                        <img src="images/Card2.jpg" alt="my first work">
-                    </a>
-                </div>
-
-                <div class="myWorkGridBox">
-                    <div class="myWorkDesign3 myWorkDesign">
-
-                    </div>
-                    <h4>GIS Full Package Tutorials</h4>
-                    <a href="https://www.youtube.com/@ernestruzindana8286/videos" target="_blank">
-                        <img src="images/Card3.jpg" alt="my first work">
-                    </a>
-                </div>
-
-                <div class="myWorkGridBox">
-                    <div class="myWorkDesign4 myWorkDesign">
-
-                    </div>
-                    <h4>GeoDR Hub Website</h4>
-                    <a href="http://www.geodrhub.com/" target="_blank">
-                        <img src="images/Card4.jpg" alt="my first work">
-                    </a>
-                </div>
-
-                <div class="myWorkGridBox">
-                    <h4>CBB Kigali Website</h4>
-                    <a href="http://cbbkigali.com/" target="_blank">
-                        <img src="images/Card5.jpg" alt="my first work">
-                    </a>
-                </div>
-                <div class="myWorkGridBox">
-                    <div class="myWorkDesign6 myWorkDesign">
-
-                    </div>
-                    <h4>Intelligent Blogs</h4>
-                    <a href="https://ernestruzindana.com/blog" target="_blank">
-                        <img src="images/Card6.jpg" alt="my first work">
-                    </a>
-                </div>
+            <div class="myWorkGrids" id="projectsContainer">
+               
             </div>
+
+            <!--Post Share Options-->
+			<div class="styled-pagination text-center">
+				<ul class="clearfix" id="projectsPagination">
+
+				</ul>
+			</div>
         </div>
     </section>
 
@@ -721,10 +680,6 @@
                 <p>or you can use the form below</p>
                 <form action="" id="contactForm">
 
-                    <div id="contactMessage" style="text-align: center; padding: 20px; font-weight: bold;">
-                        
-                    </div>
-
                     <input type="text" placeholder="Your names" id="visitorName">
                     <input type="email" placeholder="Your email" id="visitorEmail">
                     <input type="tel" placeholder="Your phone number" id="visitorTel">
@@ -751,16 +706,15 @@
     <!-- Footer section -->
     <!-- popup box -->
     <div class="popupBox" id="popupBoxSubscription">
-        <img src="../images/successLogo.png" alt="">
-        <h2>Done!</h2>
-        <p>Thank you for subscribing on this site! To receive my daily updates, go to your email to verify this email address!</p>
+        <img id="subscriptionLogo" src="../images/successLogo.png" alt="">
+        <h2 id="subscriptionStatus">Done!</h2>
+        <p id="subscriptionErrorMessage">Thank you for subscribing my News Letter! To receive my daily updates, go to your email to verify this email address!</p>
         <button type="submit" class="cancel" onclick="closePopupSubscripiton()">Ok</button>
     </div>
 
 
     <section class="footer">
         <div class="myFooter" id="hideUserProfile">
-            <div id="subscriptionMessage" class="subscriptionMessage"></div>
             <div class="myFooterTop">
                 <div class="myFooterTopBeFirst">
                     <h3>Be the first to know</h3>
@@ -830,6 +784,9 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <script src="JS/index.js"></script>
+    <script src="JS/headerEffect.js"></script>
+    <script src="JS/getAllProjects.js"></script>
+    <script src="JS/about.js"></script>
     <script type="text/javascript" src="JS/webActiveNav.js"></script>
     <script src="JS/contact.js"></script>
     <script src="JS/loggedInUser.js"></script>
